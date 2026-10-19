@@ -1,14 +1,13 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { resolve } from '$app/paths';
-	import { parseRichText } from '#lib/text/richText.ts';
+	import { plainText } from '#lib/text/richText.ts';
 	import { isMastered, loadProgress, type Progress } from '#lib/quiz/progress.ts';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
 
 	// Terms are buttons, which cannot nest inside the card link.
-	const plain = (text: string) => parseRichText(text).map((s) => s.text).join('');
 
 	let progress = $state<Progress>({});
 	onMount(() => {
@@ -36,7 +35,7 @@
 							<span class="badge">{p.strength}</span>
 						</span>
 						<span class="system">{p.system}</span>
-						<span class="summary">{plain(p.summary)}</span>
+						<span class="summary">{plainText(p.summary)}</span>
 						<span class="done" class:some={done > 0}>{done} / {p.slots.length} positions mastered</span>
 					</a>
 				</li>

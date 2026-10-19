@@ -15,6 +15,12 @@ export function parseRichText(s: string): Segment[] {
 	return out;
 }
 
+export function plainText(s: string): string {
+	return parseRichText(s)
+		.map((seg) => seg.text)
+		.join('');
+}
+
 export function termRefs(s: string): string[] {
 	return parseRichText(s).flatMap((seg) => (seg.kind === 'term' ? [seg.id] : []));
 }

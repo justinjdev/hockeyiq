@@ -10,11 +10,10 @@
 		playsByCategory
 	} from '#lib/content/registry.ts';
 	import { isMastered, loadProgress, type Progress } from '#lib/quiz/progress.ts';
-	import { parseRichText } from '#lib/text/richText.ts';
+	import { plainText } from '#lib/text/richText.ts';
 	import type { PlayCategory } from '#lib/content/types.ts';
 
 	// Terms are buttons, which cannot nest inside a link.
-	const plain = (text: string) => parseRichText(text).map((s) => s.text).join('');
 
 	let progress = $state<Progress>({});
 	onMount(() => {
@@ -72,7 +71,7 @@
 				<li>
 					<a href={resolve('/learn/[id]', { id: l.id })}>
 						<span class="t">{l.title}</span>
-						<span class="s">{plain(l.summary)}</span>
+						<span class="s">{plainText(l.summary)}</span>
 					</a>
 				</li>
 			{/each}
@@ -87,7 +86,7 @@
 					<li>
 						<a href={resolve('/compare/[id]', { id: c.id })}>
 							<span class="t">{getPlay(c.a)?.title ?? c.a} vs {getPlay(c.b)?.title ?? c.b}</span>
-							<span class="s">{plain(c.summary)}</span>
+							<span class="s">{plainText(c.summary)}</span>
 						</a>
 					</li>
 				{/each}

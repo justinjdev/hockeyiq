@@ -51,9 +51,7 @@
 
 <main>
 	<nav class="crumbs" aria-label="Breadcrumb">
-		<a href={resolve('/')}>Hockey IQ</a>
-		<span aria-hidden="true">/</span>
-		<span>{CATEGORY_LABELS[play.category]}</span>
+		<a href={resolve('/plays/[category]', { category: play.category })}>{CATEGORY_LABELS[play.category]}</a>
 		<span aria-hidden="true">/</span>
 		<span>{play.system}</span>
 	</nav>

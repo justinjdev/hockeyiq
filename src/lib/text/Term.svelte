@@ -1,11 +1,12 @@
 <script lang="ts">
+	import { resolve } from '$app/paths';
 	import { glossary } from '#lib/content/glossary.ts';
 
 	let { id, text }: { id: string; text: string } = $props();
 
 	const uid = $props.id();
 	const entry = $derived(glossary.find((t) => t.id === id));
-	// Click toggles `pinned`, so a tap opens and a second tap closes. Hover counts for mouse
+	// Click toggles `pinned`, so a tap opens and a second tap closes (a click while only hovered pins it). Hover counts for mouse
 	// pointers only (touch emulates it before the click) and focus for keyboard focus only.
 	let pinned = $state(false);
 	let hovered = $state(false);
@@ -52,9 +53,11 @@
 		type="button"
 		aria-describedby={open && entry ? `${uid}-def` : undefined}
 		aria-expanded={open}
-		onclick={() => (open ? close() : (pinned = true))}
+		onclick={() => (pinned ? close() : (pinned = true))}
 		onfocus={(e) => (focused = e.currentTarget.matches(':focus-visible'))}
-		onblur={close}
+		onblur={(e) => {
+			if (!root?.contains(e.relatedTarget as Node | null)) close();
+		}}
 		onkeydown={(e) => {
 			if (e.key === 'Escape' && open) {
 				e.stopPropagation();
@@ -62,7 +65,8 @@
 			}
 		}}>{text}</button
 	>{#if open && entry}
-		<span bind:this={pop} class="pop" id="{uid}-def" role="tooltip"><b>{entry.term}</b> {entry.definition}</span>{/if}</span>
+		<span bind:this={pop} class="pop" id="{uid}-def" role="tooltip"><b>{entry.term}</b> {entry.definition}
+			<a class="more" onblur={(e) => !root?.contains(e.relatedTarget as Node | null) && close()} onkeydown={(e) => e.key === 'Escape' && close()} href="{resolve('/glossary')}#{entry.id}">Glossary</a></span>{/if}</span>
 
 <style>
 	.term {
@@ -95,6 +99,11 @@
 		font-size: 0.85rem;
 		line-height: 1.35;
 		box-shadow: 0 6px 18px rgb(0 0 0 / 0.45);
+	}
+	.more {
+		display: block;
+		margin-top: 0.3rem;
+		color: var(--goal-light);
 	}
 	.pop b {
 		color: var(--goal-light);

@@ -2,7 +2,7 @@
 	import { tick } from 'svelte';
 	import type { DecisionQuizDef, Play } from '#lib/content/types.ts';
 	import PlayCanvas from '#lib/play/PlayCanvas.svelte';
-	import { parseRichText } from '#lib/text/richText.ts';
+	import { plainText } from '#lib/text/richText.ts';
 	import RichText from '#lib/text/RichText.svelte';
 
 	type Props = {
@@ -21,11 +21,6 @@
 	let nextButton: HTMLButtonElement | undefined = $state();
 
 	// Option buttons can't contain Term buttons, so jargon is plain until the answer is revealed.
-	const plain = (s: string) =>
-		parseRichText(s)
-			.map((seg) => seg.text)
-			.join('');
-
 	function choose(i: number) {
 		if (chosen !== null) return;
 		chosen = i;
@@ -47,7 +42,7 @@
 			{#each def.options as opt, i (i)}
 				<li>
 					{#if chosen === null}
-						<button type="button" class="opt" onclick={() => choose(i)}>{plain(opt.text)}</button>
+						<button type="button" class="opt" onclick={() => choose(i)}>{plainText(opt.text)}</button>
 					{:else}
 						<div class="opt done" class:good={opt.correct} class:bad={!opt.correct} class:picked={i === chosen}>
 							<p class="mark">

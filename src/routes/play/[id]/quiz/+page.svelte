@@ -81,8 +81,6 @@
 
 <main>
 	<nav class="crumbs" aria-label="Breadcrumb">
-		<a href={resolve('/')}>Hockey IQ</a>
-		<span aria-hidden="true">/</span>
 		<a href={`/play/${play.id}?as=${studySlot}`}>{play.title}</a>
 		<span aria-hidden="true">/</span>
 		<span>Quiz</span>

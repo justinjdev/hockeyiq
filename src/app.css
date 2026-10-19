@@ -36,7 +36,6 @@ body {
 		radial-gradient(ellipse 60% 40% at 80% -5%, rgb(245 184 46 / 0.1), transparent 70%),
 		var(--arena);
 	background-attachment: fixed;
-	overflow-x: hidden;
 }
 
 h1,

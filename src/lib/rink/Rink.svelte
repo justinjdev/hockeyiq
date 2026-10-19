@@ -6,19 +6,22 @@
 	const midY = RINK.height / 2;
 	const [ourGoalX, theirGoalX] = RINK.goalLineX;
 	const creaseR = 6;
+	const uid = $props.id();
+	const clipId = `rink-clip-${uid}`;
+	const boardInset = 0.5; // half the boards stroke, so the stroke is not clipped at the viewBox edge
 </script>
 
 <!-- Markings in rink units; the parent supplies <svg viewBox="0 0 200 85">. -->
 <g class="rink" aria-hidden="true">
 	<defs>
-		<clipPath id="rink-clip">
+		<clipPath id={clipId}>
 			<rect width={RINK.length} height={RINK.height} rx={RINK.cornerRadius} />
 		</clipPath>
 	</defs>
 
 	<rect class="ice" width={RINK.length} height={RINK.height} rx={RINK.cornerRadius} />
 
-	<g clip-path="url(#rink-clip)">
+	<g clip-path={`url(#${clipId})`}>
 		<line class="red" x1={RINK.redLineX} x2={RINK.redLineX} y1="0" y2={RINK.height} stroke-width="1" />
 		{#each RINK.blueLineX as x}
 			<line class="blue" x1={x} x2={x} y1="0" y2={RINK.height} stroke-width="1" />
@@ -50,7 +53,14 @@
 	<circle class="goalie us" cx="13" cy={midY} r="1.6" />
 	<circle class="goalie them" cx="187" cy={midY} r="1.6" />
 
-	<rect class="boards" width={RINK.length} height={RINK.height} rx={RINK.cornerRadius} />
+	<rect
+		class="boards"
+		x={boardInset}
+		y={boardInset}
+		width={RINK.length - 2 * boardInset}
+		height={RINK.height - 2 * boardInset}
+		rx={RINK.cornerRadius - boardInset}
+	/>
 </g>
 
 <style>

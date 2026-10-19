@@ -14,6 +14,7 @@
 	const open = $derived(pinned || hovered || focused);
 
 	let root: HTMLElement | undefined = $state();
+	let button: HTMLButtonElement | undefined = $state();
 	let pop: HTMLElement | undefined = $state();
 
 	function close() {
@@ -50,6 +51,7 @@
 	onpointerleave={() => (hovered = false)}
 >
 	<button
+		bind:this={button}
 		type="button"
 		aria-describedby={open && entry ? `${uid}-def` : undefined}
 		aria-expanded={open}
@@ -66,7 +68,21 @@
 		}}>{text}</button
 	>{#if open && entry}
 		<span bind:this={pop} class="pop" id="{uid}-def" role="tooltip"><b>{entry.term}</b> {entry.definition}
-			<a class="more" onblur={(e) => !root?.contains(e.relatedTarget as Node | null) && close()} onkeydown={(e) => e.key === 'Escape' && close()} href="{resolve('/glossary')}#{entry.id}">Glossary</a></span>{/if}</span>
+			<a
+				class="more"
+				aria-label="Glossary: {entry.term}"
+				href="{resolve('/glossary')}#{entry.id}"
+				onblur={(e) => {
+					if (!root?.contains(e.relatedTarget as Node | null)) close();
+				}}
+				onkeydown={(e) => {
+					if (e.key !== 'Escape') return;
+					e.stopPropagation();
+					// Focus first: the button's focus handler may reopen the popover, close() then wins.
+					button?.focus();
+					close();
+				}}>Glossary</a
+			></span>{/if}</span>
 
 <style>
 	.term {

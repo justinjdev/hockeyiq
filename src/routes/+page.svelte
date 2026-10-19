@@ -13,8 +13,6 @@
 	import { plainText } from '#lib/text/richText.ts';
 	import type { PlayCategory } from '#lib/content/types.ts';
 
-	// Terms are buttons, which cannot nest inside a link.
-
 	let progress = $state<Progress>({});
 	onMount(() => {
 		progress = loadProgress();

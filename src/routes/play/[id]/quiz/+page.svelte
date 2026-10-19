@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { untrack } from 'svelte';
 	import { page } from '$app/state';
-	import { resolve } from '$app/paths';
 	import DragQuiz from '#lib/quiz/DragQuiz.svelte';
 	import DecisionQuiz from '#lib/quiz/DecisionQuiz.svelte';
 	import { listQuizItems, type QuizItem } from '#lib/quiz/quizItems.ts';

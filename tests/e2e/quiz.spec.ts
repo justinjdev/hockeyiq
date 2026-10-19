@@ -1,3 +1,4 @@
+import { open } from './helpers';
 import { expect, test, type Page } from '@playwright/test';
 import bo from '../../src/lib/content/plays/breakout/bo-standard';
 import { listQuizItems } from '../../src/lib/quiz/quizItems';
@@ -42,21 +43,21 @@ async function answerRw(page: Page, kind: 'drag' | 'decision', step: number) {
 test('RW quiz: decision shows explanations, drag grades correct, mastery persists', async ({ page }) => {
 	expect(rwItems.some((i) => i.kind === 'drag')).toBe(true);
 	expect(rwItems.some((i) => i.kind === 'decision')).toBe(true);
-	await page.goto('/play/bo-standard/quiz?as=rw');
+	await open(page, '/play/bo-standard/quiz?as=rw');
 
 	for (const item of rwItems) await answerRw(page, item.kind, item.step);
 
 	await expect(page.getByText(`${rwItems.length}/${rwItems.length}`)).toBeVisible();
 	await expect(page.getByText('RW mastered')).toBeVisible();
 
-	await page.goto('/play/bo-standard');
+	await open(page, '/play/bo-standard');
 	const chip = (name: string) => page.locator('.chips .chip', { hasText: new RegExp(`^\\s*${name}\\s*(✓)?\\s*$`) });
 	await expect(chip('RW').getByLabel('mastered')).toBeVisible();
 	await expect(page.getByLabel('mastered')).toHaveCount(1);
 });
 
 test('a wrong answer does not master the slot', async ({ page }) => {
-	await page.goto('/play/bo-standard/quiz?as=rw');
+	await open(page, '/play/bo-standard/quiz?as=rw');
 	for (const item of rwItems) {
 		if (item.kind === 'decision') {
 			const def = bo.steps[item.step].quiz!.rw!.decision!;
@@ -67,7 +68,7 @@ test('a wrong answer does not master the slot', async ({ page }) => {
 			await answerRw(page, 'drag', item.step);
 		}
 	}
-	await page.goto('/play/bo-standard');
+	await open(page, '/play/bo-standard');
 	await expect(page.getByLabel('mastered')).toHaveCount(0);
 });
 
@@ -82,7 +83,8 @@ test('quiz works with localStorage unavailable and logs no errors', async ({ pag
 			}
 		});
 	});
-	await page.goto('/play/bo-standard/quiz?as=rw');
+	await open(page, '/play/bo-standard/quiz?as=rw');
+	expect(await page.evaluate(() => { try { return window.localStorage.length; } catch { return 'throws'; } })).toBe('throws');
 	const first = rwItems[0];
 	await answerRw(page, first.kind, first.step);
 

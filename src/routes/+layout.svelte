@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
 	import '../app.css';
 	import favicon from '#lib/assets/favicon.svg';
 	import { page } from '$app/state';
@@ -8,6 +9,11 @@
 	import type { LayoutProps } from './$types';
 
 	let { children }: LayoutProps = $props();
+
+	// Lets e2e tests wait until event handlers are attached.
+	onMount(() => {
+		document.documentElement.dataset.hydrated = '';
+	});
 
 	const categories = Object.keys(CATEGORY_LABELS) as PlayCategory[];
 	const section = $derived(page.route.id?.split('/')[1] ?? '');

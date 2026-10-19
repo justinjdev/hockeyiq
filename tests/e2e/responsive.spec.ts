@@ -1,3 +1,4 @@
+import { open } from './helpers';
 import { expect, test } from '@playwright/test';
 import { comparisons } from '../../src/lib/content/comparisons';
 
@@ -14,7 +15,7 @@ if (comparisons.length) pages.push({ path: `/compare/${comparisons[0].id}` });
 
 for (const { path, stacked } of pages) {
 	test(`no horizontal scroll at 360px: ${path}`, async ({ page }) => {
-		await page.goto(path);
+		await open(page, path);
 		await expect(page.locator('h1')).toBeVisible();
 		const width = await page.evaluate(() => document.documentElement.scrollWidth);
 		expect(width).toBeLessThanOrEqual(360);
@@ -22,13 +23,15 @@ for (const { path, stacked } of pages) {
 		if (stacked) {
 			const rink = await page.locator('svg.canvas').first().boundingBox();
 			const panel = await page.locator(stacked).first().boundingBox();
-			expect(rink && panel && panel.y).toBeGreaterThanOrEqual(rink!.y + rink!.height - 0.5);
+			expect(rink).not.toBeNull();
+			expect(panel).not.toBeNull();
+			expect(panel!.y).toBeGreaterThanOrEqual(rink!.y + rink!.height - 0.5);
 		}
 	});
 }
 
 test('term popover stays inside the viewport and links to the glossary', async ({ page }) => {
-	await page.goto('/play/bo-standard');
+	await open(page, '/play/bo-standard');
 	const term = page.locator('.term button').first();
 	await term.click();
 	const pop = page.getByRole('tooltip');
@@ -37,4 +40,20 @@ test('term popover stays inside the viewport and links to the glossary', async (
 	expect(box!.x).toBeGreaterThanOrEqual(0);
 	expect(box!.x + box!.width).toBeLessThanOrEqual(360);
 	await expect(pop.getByRole('link')).toHaveAttribute('href', /\/glossary#[\w-]+$/);
+});
+
+test('keyboard: Escape on the glossary link closes the popover and refocuses the term', async ({ page }) => {
+	await open(page, '/play/bo-standard');
+	const term = page.locator('.term button').first();
+	await term.focus();
+	await page.keyboard.press('Enter');
+	const link = page.getByRole('tooltip').getByRole('link');
+	await expect(link).toHaveAccessibleName(/^Glossary: /);
+	await page.keyboard.press('Tab');
+	await expect(link).toBeFocused();
+
+	await page.keyboard.press('Escape');
+
+	await expect(page.getByRole('tooltip')).toHaveCount(0);
+	await expect(term).toBeFocused();
 });

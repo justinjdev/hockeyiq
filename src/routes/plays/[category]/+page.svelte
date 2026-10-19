@@ -7,8 +7,6 @@
 
 	let { data }: PageProps = $props();
 
-	// Terms are buttons, which cannot nest inside the card link.
-
 	let progress = $state<Progress>({});
 	onMount(() => {
 		progress = loadProgress();

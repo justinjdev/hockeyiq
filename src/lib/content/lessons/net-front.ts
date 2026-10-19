@@ -65,7 +65,7 @@ const lesson: Lesson = {
 			body: 'Some coaches, especially on the penalty kill, have the defender stand in front of the attacker (between him and the shooter) instead of behind him. That blocks the shot before it gets to the net-front. The trade-off: you lose sight of him, so he is free behind you to tip the shot or grab the rebound. Whichever your team uses, the same habit applies: be in position before the shot, not after.'
 		}
 	],
-	examplePlays: ['dz-net-front-battle', 'oz-point-shot-screen', 'oz-net-drive', 'oz-behind-net']
+	examplePlays: ['dz-net-front-battle', 'oz-point-shot-screen', 'oz-net-drive', 'pp-1-3-1']
 };
 
 export default lesson;

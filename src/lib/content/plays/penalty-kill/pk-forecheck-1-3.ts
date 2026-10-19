@@ -21,7 +21,7 @@ const play: Play = {
 		{ id: 'o4', label: 'F' },
 		{ id: 'o5', label: 'F' }
 	],
-	keyConcepts: [],
+	keyConcepts: ['gap-control', 'passing-lanes'],
 	variations:
 		'Coaches use different numbers for similar ideas. The 1-3 here (one forechecker, three across the line) is the most common passive shape in the NHL. A 2-2 (see the PK 2-2 play) uses two forecheckers and two D back. Some teams play a 1-1-2, with one forward pressuring deep and the second forward in a middle layer, which looks like a 5-on-5 [[forecheck]] with one player missing. Others play a retreating diamond whose back player is ready to chase down dump-ins. How far up the three-across line sits (your blue line or closer to the red line) also varies; the line in this play sits just outside your blue line. Be warned that a 1-3 can leave a lot of open ice if the forechecker is beaten or the line backs off too early.',
 	sources: [

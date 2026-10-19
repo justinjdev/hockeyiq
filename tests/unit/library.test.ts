@@ -4,8 +4,10 @@ import { glossary } from '../../src/lib/content/glossary';
 import { validateLibrary } from '../../src/lib/content/validate';
 
 describe('content library', () => {
-	it('has at least one play', () => {
-		expect(plays.length).toBeGreaterThan(0);
+	it('has the full library: 35 plays, 7 lessons, 6 comparisons', () => {
+		expect(plays.length).toBe(35);
+		expect(lessons.length).toBe(7);
+		expect(comparisons.length).toBe(6);
 	});
 
 	it('passes validation', () => {

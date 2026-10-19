@@ -28,7 +28,7 @@ const play: Play = {
 		{ id: 'o4', label: 'Net-front' },
 		{ id: 'o5', label: 'Goal line' }
 	],
-	keyConcepts: [],
+	keyConcepts: ['passing-lanes', 'net-front'],
 	variations:
 		'Who plays which corner of the diamond varies. Many teams put a forward on top and a forward plus a D on the sides, as here; others put both forwards on the sides and a D on top. The diamond also rotates: as the puck moves, the corners slide so the player nearest the puck becomes the pressure and the shape can look like a tilted [[box]] (a common saying is that a diamond is just a box turned an eighth). Its known weakness is that only one player is low, often against two attackers, and a pass across to the far flank or the far post can beat it, so the weak-side player must sit in that [[seam]].',
 	sources: [

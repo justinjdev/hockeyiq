@@ -23,7 +23,7 @@ const play: Play = {
 		{ id: 'o3', label: 'D' },
 		{ id: 'o4', label: 'D' }
 	],
-	keyConcepts: [],
+	keyConcepts: ['passing-lanes', 'net-front'],
 	variations:
 		'Naming is loose. Many coaches and broadcasters call any setup with one player at the top and two shooters on the sides "the umbrella", including the 1-3-1. In the classic umbrella shown here there are three high and two low, with both low forwards at the net and nobody in the middle of the zone. The 1-3-1 pulls the two flanks lower, toward the faceoff dots, and puts a [[bumper]] in the [[slot]], leaving one player at the net. Units differ in who plays where: most NHL units use one D at the top and four forwards, so a forward plays the flank; rec teams often put both D high, as here, so your RD plays the right flank. Some coaches stack the two low forwards (one in front, one a step behind) instead of side by side, and coaches disagree on handedness: some want each flank on his strong side (a left shot on the left) so passes arrive on his forehand, others want the off-hand side (a right shot on the left) so he can take a [[one-timer]].',
 	sources: [

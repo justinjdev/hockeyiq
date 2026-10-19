@@ -43,7 +43,7 @@ const play: Play = {
 		{ id: 'o4', label: 'D' },
 		{ id: 'o5', label: 'D' }
 	],
-	keyConcepts: [],
+	keyConcepts: ['net-front'],
 	variations:
 		'Teams run many set plays from this dot. Common ones: win it to the D on the wall, who passes to a winger sliding into the middle for a [[one-timer]]; win it back to the boards-side winger, who loops around the top of the circle with speed; or push it forward past their center for a winger to skate onto. Who takes the shot is usually the best-shooting D, but teams switch it up so the other side cannot read it. Some coaches line the wingers up the other way around (shooter on the boards side). On a loss, some teams send the boards-side winger after their D and others send the center, depending on where the puck went.',
 	sources: [

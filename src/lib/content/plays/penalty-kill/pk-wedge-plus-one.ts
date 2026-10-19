@@ -21,7 +21,7 @@ const play: Play = {
 		{ id: 'o4', label: 'Goal line' },
 		{ id: 'o5', label: 'Net-front' }
 	],
-	keyConcepts: [],
+	keyConcepts: ['net-front'],
 	variations:
 		'How hard the +1 goes is the big difference between teams. A more expanded version lets the [[weak-side]] forward cheat toward a [[d-to-d|D-to-D]] pass instead of sitting in the wedge, which creates more turnovers but leaves more room in front of the net. Some teams only send the +1 on set triggers (a bobble, a puck on the wall, a player facing the boards) and otherwise hold a [[box]]. The rotations take practice: NHL teams have described the system as needing many switches and reads, and a +1 who pushes too early or too late opens a [[seam]] behind him. If they put a second player in front of the net, you may need to switch formations.',
 	sources: [

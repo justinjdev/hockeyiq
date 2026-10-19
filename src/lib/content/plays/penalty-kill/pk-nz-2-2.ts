@@ -21,7 +21,7 @@ const play: Play = {
 		{ id: 'o4', label: 'F' },
 		{ id: 'o5', label: 'F' }
 	],
-	keyConcepts: [],
+	keyConcepts: ['gap-control'],
 	variations:
 		'The 2-2 is sometimes called a retreating box. Its main weakness is the [[gap]]: with only two players up front and two back, there is a big space between the pairs, and it is harder for the D to stand up at the blue line than in a 1-3 (three across the line). That is why many teams now prefer the 1-3. Some coaches let the forwards push higher and pressure the D in his own end before falling back into the 2-2; others keep both forwards near the red line the whole time.',
 	sources: [

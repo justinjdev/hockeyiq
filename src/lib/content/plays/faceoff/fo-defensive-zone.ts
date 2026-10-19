@@ -43,7 +43,7 @@ const play: Play = {
 		{ id: 'o4', label: 'D' },
 		{ id: 'o5', label: 'D' }
 	],
-	keyConcepts: [],
+	keyConcepts: ['strong-weak-side', 'shoulder-checks'],
 	variations:
 		'Alignments change with the center\'s plan and with how they line up. Some teams put the boards-side D on the hash mark and the winger behind the center instead; some line both D up beside the circle and keep both wingers high. If their winger lines up higher on the circle, a quick draw back to him for a shot is a threat, and our winger has a harder trip out to the point. Talk before the drop: the center usually calls where he is going with it ("win back", "[[tie-up|tie up]]") and the D call switches ("Switch!") if they swap players in a scramble. On the [[penalty-kill]] the plan changes: the center\'s first job is to win it or tie up their center.',
 	sources: [

@@ -23,7 +23,7 @@ const play: Play = {
 		{ id: 'o3', label: 'D' },
 		{ id: 'o4', label: 'D' }
 	],
-	keyConcepts: [],
+	keyConcepts: ['passing-lanes', 'net-front'],
 	variations:
 		'Some people call this setup "the umbrella" because the point and the two flanks still make an umbrella shape. The difference is real: the classic umbrella has three players high near the blue line and two at the net, while the 1-3-1 brings the flanks down to the faceoff dots and puts a [[bumper]] in the middle. Most coaches put each flank on his off-hand side (a right shot on the left flank, a left shot on the right) so the [[one-timer]] is on his forehand. Most NHL units use one D at the point and four forwards; rec units often have a second D, who plays a flank as here. The unit does not have to be run from the point: some teams quarterback it from the [[half-wall]] or from below the goal line, and good units keep moving the puck low to high and back so the penalty killers never get set.',
 	sources: [

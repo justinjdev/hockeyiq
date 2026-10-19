@@ -67,7 +67,7 @@ const lesson: Lesson = {
 			body: 'A triangle is not a set of spots. When the puck is passed, the new carrier needs two new options, so everyone shifts. The player who just passed is usually one of them: pass, then move to a new open spot instead of standing and watching. If you are the third player and both other spots are taken, find the open point of the triangle rather than joining the crowd at the puck.'
 		}
 	],
-	examplePlays: ['bo-standard', 'oz-cycle-low', 'bo-reverse']
+	examplePlays: ['bo-standard', 'oz-cycle-low', 'pp-overload', 'bo-reverse']
 };
 
 export default lesson;

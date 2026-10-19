@@ -28,7 +28,7 @@ const play: Play = {
 		{ id: 'o4', label: 'Goal line' },
 		{ id: 'o5', label: 'Net-front' }
 	],
-	keyConcepts: [],
+	keyConcepts: ['passing-lanes', 'net-front', 'strong-weak-side'],
 	variations:
 		'Teams differ on how hard the box pushes. A passive box sits in its shape and only attacks on a bobble, a bad pass or a puck on the wall. An aggressive box sends the closest player at the puck more often and accepts more open ice behind him. A common rule of thumb, used here, is "above the [[hash-marks|hash marks]] it is a forward\'s puck, below them it is a D\'s puck"; some teams let the strong-side D step up to the [[half-wall]] instead. Against a 1-3-1 power play with a player in the middle of the box, many teams switch to a [[diamond]] or tilt the box. In USA Hockey 14U and younger a team on the penalty kill can no longer ice the puck; most adult leagues still allow it, but check yours.',
 	sources: [

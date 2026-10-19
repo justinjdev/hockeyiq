@@ -246,4 +246,19 @@ export const glossary: Term[] = [
 		term: "Puck-side",
 		definition: "The side of the ice where the puck currently is, the same as the strong side."
 	},
+	{
+		id: "trap",
+		term: "Trap",
+		definition: "A neutral zone defensive setup that waits for the other team in layers, pushes the puck to one side, and squeezes it there instead of chasing it in their end."
+	},
+	{
+		id: "dump-in",
+		term: "Dump-in",
+		definition: "Shooting or flipping the puck into the other team's end instead of carrying it in, then chasing it."
+	},
+	{
+		id: "delayed-offside",
+		term: "Delayed offside",
+		definition: "The linesman raises an arm instead of blowing the whistle when the puck enters the zone with an attacker already in it. Play goes on as long as the attackers clear the zone without touching the puck."
+	},
 ];

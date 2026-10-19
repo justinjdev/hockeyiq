@@ -246,4 +246,29 @@ export const glossary: Term[] = [
 		term: "Puck-side",
 		definition: "The side of the ice where the puck currently is, the same as the strong side."
 	},
+	{
+		id: "box-out",
+		term: "Box out",
+		definition: "Getting your body between an attacker and your own net so he cannot screen, tip shots or reach rebounds."
+	},
+	{
+		id: "back-door",
+		term: "Back door",
+		definition: "The far post, on the side of the net away from the puck, where a pass across can be tapped into an open net."
+	},
+	{
+		id: "odd-man-rush",
+		term: "Odd-man rush",
+		definition: "An attack where the puck-carrying team has more players than the defense, like a 2-on-1 or 3-on-2."
+	},
+	{
+		id: "dump-in",
+		term: "Dump-in",
+		definition: "Shooting the puck deep into the other team's end, usually into a corner, instead of carrying it in."
+	},
+	{
+		id: "crease",
+		term: "Crease",
+		definition: "The painted half-circle right in front of the goal. It belongs to the goalie."
+	},
 ];

@@ -32,7 +32,7 @@ const play: Play = {
 	],
 	keyConcepts: [],
 	variations:
-		'Zone systems differ mostly in how far the wingers sag. In a "box plus one" the wingers sit near the tops of the circles and the center is the extra player chasing the puck. In tighter versions the [[weak-side]] winger drops all the way to the [[low-slot|low slot]]. Some coaches send whichever forward is first back down low instead of always the center. Many teams play zone when the puck is low and switch to [[man-to-man]] on the points when it goes high. Every version depends on talking: call "switch" or "yours" every time an attacker moves from one area to the next.',
+		'Zone systems differ mostly in how far the wingers sag. In the most common version the wingers sit near the tops of the circles and the center is the extra player chasing the puck. In tighter versions the [[weak-side]] winger drops all the way to the [[low-slot|low slot]]. Some coaches send whichever forward is first back down low instead of always the center. Many teams play zone when the puck is low and switch to [[man-to-man]] on the points when it goes high. Every version depends on talking: call "switch" or "yours" every time an attacker moves from one area to the next.',
 	sources: [
 		{
 			title: 'Explained: Zone Defensive Coverage',
@@ -80,19 +80,19 @@ const play: Play = {
 			roles,
 			notes: {
 				lw: {
-					where: 'Backchecking on the left side of the middle, aiming for the area inside the left circle.',
+					where: '[[backcheck|Backchecking]] on the left side of the middle, aiming for the middle between the faceoff dots.',
 					read: 'Watch the puck and their trailing forward on your side. You are heading for space, not chasing a player.',
 					why: 'The [[weak-side]] winger protects the middle. Getting inside the dots first matters more than getting to the point.'
 				},
 				c: {
-					where: 'Backchecking hard through the middle toward the strong-side circle.',
-					read: 'Watch the puck carrier and RD. You are going low on the puck side to help RD.',
+					where: '[[backcheck|Backchecking]] hard through the middle toward the strong-side circle.',
+					read: 'Watch the puck carrier and RD. You are going low on the [[puck-side|puck side]] to help RD.',
 					why: 'In zone the center is the extra player down low. Arriving early turns RD\'s 1-on-1 in the corner into a 2-on-1 for us.'
 				},
 				rw: {
 					where: 'Coming back on the right side toward the top of the right circle.',
 					read: 'Watch the puck going down your side, and note their D coming in behind you to the [[point]].',
-					why: 'Your area is the [[strong-side]] wall up to the point. Being level with the puck lets you cover both the half-wall and the point.'
+					why: 'Your area is the [[strong-side]] wall up to the point. Being level with the puck lets you cover both the [[half-wall]] and the point.'
 				},
 				ld: {
 					where: 'Backing into the middle toward the front of our net.',
@@ -119,7 +119,7 @@ const play: Play = {
 							'Their forward carries the puck down the right side into our zone. You are C in zone coverage. Where do you go?',
 						options: [
 							{
-								text: 'Low on the puck side, to help RD in the corner',
+								text: 'Low on the [[puck-side|puck side]], to help RD in the corner',
 								correct: true,
 								why: 'The center is the extra player down low. You and RD make it 2-on-1 on the puck while LD holds the net.'
 							},
@@ -144,28 +144,28 @@ const play: Play = {
 			phase: 'puck-low',
 			positions: {
 				lw: { x: 40, y: 36 },
-				c: { x: 24, y: 60 },
+				c: { x: 19, y: 67 },
 				rw: { x: 48, y: 62 },
 				ld: { x: 15.5, y: 46 },
-				rd: { x: 20, y: 66 },
-				o1: { x: 16, y: 70 },
+				rd: { x: 14, y: 72 },
+				o1: { x: 11, y: 75 },
 				o2: { x: 19.5, y: 49 },
 				o3: { x: 34, y: 22 },
 				o4: { x: 72, y: 14 },
 				o5: { x: 72, y: 72 }
 			},
-			puck: { x: 14, y: 72 },
+			puck: { x: 9.5, y: 77.5 },
 			puckCarrier: 'o1',
 			arrows: [{ kind: 'pass', from: 'o1', to: { x: 70, y: 74 }, via: { x: 40, y: 82 } }],
 			roles,
 			notes: {
 				lw: {
-					where: 'Inside the left circle, between the dots, a little above the [[slot]].',
+					where: 'In the middle on the left side, between the faceoff dots, a little above the [[slot]].',
 					read: 'Watch the puck and the forward lurking near the left dot. You are in the lane between them.',
 					why: 'From here you guard the middle, can reach the back door, and are still a few strides from the [[point]]. The open man at the far point is allowed; the slot is not.'
 				},
 				c: {
-					where: 'Low on the right side, just off RD\'s hip, a few feet from the boards.',
+					where: 'Low on the right side, a stride inside RD, between the puck and the [[slot]].',
 					read: 'Watch RD\'s battle. If the puck squirts loose, it is yours; if the carrier spins off RD, you take him.',
 					why: 'Two of us on one of them in the corner is the point of the system. RD takes away his space, you take the puck.'
 				},
@@ -199,7 +199,7 @@ const play: Play = {
 						correct:
 							'Yes. Inside the dots on the [[weak-side|weak side]], between the lurking forward and the middle, still close enough to step out.',
 						incorrect:
-							'The [[weak-side]] winger sags into the middle, inside the left circle between the dots. Out at the point leaves the slot open; down at the net crowds LD.'
+							'The [[weak-side]] winger sags into the middle, between the faceoff dots. Out at the point leaves the slot open; down at the net crowds LD.'
 					}
 				},
 				rd: {
@@ -253,7 +253,7 @@ const play: Play = {
 			roles,
 			notes: {
 				lw: {
-					where: 'Still inside the left circle, between the dots, facing the puck.',
+					where: 'Still in the middle between the faceoff dots, facing the puck.',
 					read: 'Watch the puck at the far point and the forward near the left dot. Their other D is open, and that is fine for now.',
 					why: 'Jumping to the far point early opens the [[slot]]. You can still get a stick in the lane if the [[d-to-d|D-to-D]] pass comes.'
 				},
@@ -304,7 +304,7 @@ const play: Play = {
 							{
 								text: 'Drop down to the front of the net to help LD',
 								correct: false,
-								why: 'LD owns the front. Going that low leaves nobody between the dots, and a pass to the high slot is open.'
+								why: 'LD owns the front. Going that low leaves nobody between the dots, and a pass to the [[high-slot|high slot]] is open.'
 							}
 						]
 					}
@@ -339,7 +339,7 @@ const play: Play = {
 			puck: { x: 12, y: 62 },
 			puckCarrier: 'rd',
 			arrows: [
-				{ kind: 'pass', from: 'rd', to: { x: 41, y: 80 }, via: { x: 22, y: 80 } },
+				{ kind: 'pass', from: 'rd', to: { x: 41, y: 80 }, via: { x: 18, y: 80 } },
 				{ kind: 'skate', from: 'c', to: { x: 40, y: 62 } }
 			],
 			roles: { rd: 'Puck carrier', ld: 'D-to-D option', c: 'Low support', rw: 'Strong wing', lw: 'Weak wing' },

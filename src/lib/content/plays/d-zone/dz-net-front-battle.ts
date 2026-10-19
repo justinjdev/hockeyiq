@@ -56,17 +56,17 @@ const play: Play = {
 				'The puck is in our left corner and LD is on it. Their forward is skating from the slot toward our crease to set up. RD goes to meet him before he gets there.',
 			positions: {
 				lw: { x: 46, y: 22 },
-				c: { x: 26, y: 27 },
+				c: { x: 19, y: 19 },
 				rw: { x: 32, y: 52 },
-				ld: { x: 20, y: 20 },
+				ld: { x: 13.5, y: 13.5 },
 				rd: { x: 17, y: 46 },
-				o1: { x: 16, y: 16 },
+				o1: { x: 10.5, y: 10.5 },
 				o2: { x: 27, y: 45 },
 				o3: { x: 38, y: 59 },
 				o4: { x: 70, y: 14 },
 				o5: { x: 70, y: 70 }
 			},
-			puck: { x: 14, y: 15 },
+			puck: { x: 9, y: 8.5 },
 			puckCarrier: 'o1',
 			arrows: [
 				{ kind: 'skate', from: 'o2', to: { x: 19, y: 44 } },
@@ -110,7 +110,7 @@ const play: Play = {
 			quiz: {
 				rd: {
 					drag: {
-						start: { x: 30, y: 52 },
+						start: { x: 30, y: 40 },
 						target: { kind: 'ellipse', cx: 19, cy: 45, rx: 5, ry: 4 },
 						correct:
 							'Yes. Just above the crease, on his net side, meeting him before he plants himself in front of the goalie.',

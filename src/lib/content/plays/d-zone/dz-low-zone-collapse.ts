@@ -12,7 +12,7 @@ const play: Play = {
 	id: 'dz-low-zone-collapse',
 	title: 'Low-zone collapse',
 	category: 'd-zone',
-	system: 'Low-zone collapse (box plus one)',
+	system: 'Low-zone collapse',
 	strength: '5v5',
 	summary:
 		'When the puck goes behind our net, all five of us [[collapse]] tight around the front: one D on each post, the center in the [[low-slot|low slot]], and both wingers just inside the faceoff circles. We give them the outside and the area behind the net, and take away the [[slot]].',
@@ -32,7 +32,7 @@ const play: Play = {
 	],
 	keyConcepts: [],
 	variations:
-		'Teams disagree on how tight to get. Some keep the wingers near the tops of the circles so they can reach the [[point|points]]; others drop them to the hash marks. Some teams send one D behind the net to pressure the carrier and let the center fill the post; others never chase behind the net. When the puck goes to the point, some teams stay collapsed and block shots, while others push the wingers out into the [[shooting-lane|shooting lanes]]. This play shows the common version: hold the posts, wingers step out to the point only on the puck side.',
+		'Teams disagree on how tight to get. Some keep the wingers near the tops of the circles so they can reach the [[point|points]]; others drop them to the [[hash-marks|hash marks]]. Some teams send one D behind the net to pressure the carrier and let the center fill the post; others never chase behind the net. When the puck goes to the point, some teams stay collapsed and block shots, while others push the wingers out into the [[shooting-lane|shooting lanes]]. This play shows the common version: hold the posts, wingers step out to the point only on the puck side.',
 	sources: [
 		{
 			title: 'Hockey Systems 101: Defensive Zone Strategies',
@@ -59,7 +59,7 @@ const play: Play = {
 				c: { x: 24, y: 60 },
 				rw: { x: 48, y: 62 },
 				ld: { x: 15.5, y: 46 },
-				rd: { x: 18, y: 64 },
+				rd: { x: 16, y: 70 },
 				o1: { x: 12, y: 66 },
 				o2: { x: 19, y: 49 },
 				o3: { x: 30, y: 28 },
@@ -78,7 +78,7 @@ const play: Play = {
 			roles: { rd: 'Strong-side D', ld: 'Net-front D', c: 'Low support', rw: 'Strong-side wing', lw: 'Weak-side wing' },
 			notes: {
 				lw: {
-					where: 'Inside the left circle, between the dots.',
+					where: 'In the middle between the faceoff dots, on the left side.',
 					read: 'Watch the puck heading behind the net. It may come out on your side.',
 					why: 'When the puck goes behind the net, the whole unit tightens. You are already close to your collapse spot.'
 				},
@@ -163,7 +163,7 @@ const play: Play = {
 				},
 				c: {
 					where: 'In the [[low-slot|low slot]], a few feet out from the crease, square to the net.',
-					read: 'Watch the carrier behind the net and the forward near you in front. Stick on the ice in the passing lane.',
+					read: 'Watch the carrier behind the net and the forward near you in front. Stick on the ice in the [[passing-lane|passing lane]].',
 					why: 'The pass from behind the net to the slot is the most dangerous play in hockey. You are there to kill it.'
 				},
 				rw: {
@@ -229,7 +229,7 @@ const play: Play = {
 				c: {
 					where: 'Sliding to the left side of the low slot.',
 					read: 'Watch the carrier and the forward in the middle. Stay between the puck and the net.',
-					why: 'The puck moved, so the low slot moved with it. You shade puck-side to support LD.'
+					why: 'The puck moved, so the low slot moved with it. You shade [[puck-side]] to support LD.'
 				},
 				rw: {
 					where: 'Inside the right circle, now on the [[weak-side|weak side]].',
@@ -237,7 +237,7 @@ const play: Play = {
 					why: 'As the weak-side winger you guard the middle. Your [[point]] is far from the puck now.'
 				},
 				ld: {
-					where: 'Just off the left post at the goal line, stepping into the carrier.',
+					where: 'Stepped up from the left post to the goal line, right in front of the carrier.',
 					read: 'Watch his chest. Make him go up the wall, not toward the net.',
 					why: 'Meeting him at the goal line keeps him on the outside. If he gets past you to the net, it is a point-blank chance.'
 				},
@@ -311,7 +311,7 @@ const play: Play = {
 					why: 'Point shots create rebounds in the low slot. You are there to get the second puck first.'
 				},
 				rw: {
-					where: 'Inside the right circle, between the forward in the high slot and the net.',
+					where: 'On the right side of the slot, between the forward in the [[high-slot|high slot]] and the net.',
 					read: 'Watch the forward in the middle and their other D. Do not leave the slot for the far point.',
 					why: 'A [[weak-side]] winger who jumps to the point too early opens the middle. Stay in until the puck goes across.'
 				},
@@ -369,7 +369,7 @@ const play: Play = {
 							{
 								text: 'Skate out to cover their open D at your point',
 								correct: false,
-								why: 'That leaves the forward in the high slot alone for a pass and a shot from the best spot on the ice.'
+								why: 'That leaves the forward in the [[high-slot|high slot]] alone for a pass and a shot from the best spot on the ice.'
 							}
 						]
 					}

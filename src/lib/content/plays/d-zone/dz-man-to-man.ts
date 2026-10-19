@@ -1,7 +1,7 @@
 import type { Play } from '../../types';
 
 const roles = {
-	rd: 'Covers their puck-side F',
+	rd: 'Covers their puck carrier',
 	ld: 'Covers their net-front F',
 	c: 'Covers their third F',
 	rw: 'Covers their right-point D',
@@ -85,7 +85,7 @@ const play: Play = {
 					why: 'In man-to-man the wingers usually take their D. If you skate past him to the slot, he is wide open at the point.'
 				},
 				c: {
-					where: 'Backchecking through the middle, on the inside of their trailing forward.',
+					where: '[[backcheck|Backchecking]] through the middle, on the inside of their trailing forward.',
 					read: 'Find the third forward, the one not carrying the puck and not driving the net. Get between him and our net.',
 					why: 'D take the two forwards who arrive first. The trailer is yours, and trailers score a lot of goals because nobody picks them up.'
 				},
@@ -147,14 +147,14 @@ const play: Play = {
 				c: { x: 31, y: 26 },
 				rw: { x: 66, y: 68 },
 				ld: { x: 15.5, y: 46 },
-				rd: { x: 20, y: 66 },
-				o1: { x: 16, y: 70 },
+				rd: { x: 14, y: 72 },
+				o1: { x: 11, y: 75 },
 				o2: { x: 19.5, y: 49 },
 				o3: { x: 34, y: 22 },
 				o4: { x: 72, y: 14 },
 				o5: { x: 72, y: 72 }
 			},
-			puck: { x: 14, y: 72 },
+			puck: { x: 9.5, y: 77.5 },
 			puckCarrier: 'o1',
 			arrows: [{ kind: 'pass', from: 'o1', to: { x: 70, y: 74 }, via: { x: 40, y: 82 } }],
 			roles,
@@ -206,7 +206,7 @@ const play: Play = {
 							'Your man is drifting to the left side by the dot. The puck is in the right corner and RD is battling for it. You...',
 						options: [
 							{
-								text: 'Stay on your man, goal-side, with your stick in the passing lane',
+								text: 'Stay on your man, goal-side, with your stick in the [[passing-lane|passing lane]]',
 								correct: true,
 								why: 'That is the whole system: you stay with him. A pass across to him becomes a contested puck, not an open back-door shot.'
 							},

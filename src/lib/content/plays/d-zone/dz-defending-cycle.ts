@@ -51,23 +51,23 @@ const play: Play = {
 				c: { x: 28, y: 61 },
 				rw: { x: 48, y: 62 },
 				ld: { x: 15.5, y: 46 },
-				rd: { x: 22, y: 68 },
-				o1: { x: 18, y: 73 },
+				rd: { x: 17, y: 74 },
+				o1: { x: 14, y: 78 },
 				o2: { x: 42, y: 77 },
 				o3: { x: 19, y: 49 },
 				o4: { x: 72, y: 14 },
 				o5: { x: 72, y: 72 }
 			},
-			puck: { x: 16, y: 74 },
+			puck: { x: 12.5, y: 79.5 },
 			puckCarrier: 'o1',
 			arrows: [
 				{ kind: 'skate', from: 'o1', to: { x: 33, y: 77 } },
-				{ kind: 'skate', from: 'o2', to: { x: 21, y: 71 } }
+				{ kind: 'skate', from: 'o2', to: { x: 18, y: 74 } }
 			],
 			roles: { rd: 'Strong-side D', ld: 'Net-front D', c: 'Low support', rw: 'Strong-side wing', lw: 'Weak-side wing' },
 			notes: {
 				lw: {
-					where: 'Inside the left circle, between the dots.',
+					where: 'In the middle between the faceoff dots, on the left side.',
 					read: 'Watch the puck on the far wall and their D at your [[point]].',
 					why: 'You guard the middle and the back door while the strong side handles the cycle.'
 				},
@@ -79,7 +79,7 @@ const play: Play = {
 				rw: {
 					where: 'Between their D at the right [[point]] and the slot, near the top of the right circle.',
 					read: 'Watch the forward coming down the wall and the D behind you. Do not follow him into the corner.',
-					why: 'Your job is the point and the half-wall. If you go low, the puck goes up to the point for a free shot.'
+					why: 'Your job is the point and the [[half-wall]]. If you go low, the puck goes up to the point for a free shot.'
 				},
 				ld: {
 					where: 'In front of the crease, on the net side of their [[net-front]] forward.',
@@ -113,7 +113,7 @@ const play: Play = {
 							{
 								text: 'Follow him down into the corner',
 								correct: false,
-								why: 'Now there are three of us in the corner and nobody on the point or the half-wall.'
+								why: 'Now there are three of us in the corner and nobody on the point or the [[half-wall]].'
 							},
 							{
 								text: 'Go to the front of the net',
@@ -133,30 +133,30 @@ const play: Play = {
 				c: { x: 36, y: 70 },
 				rw: { x: 50, y: 64 },
 				ld: { x: 15.5, y: 46 },
-				rd: { x: 22, y: 65 },
+				rd: { x: 22, y: 68 },
 				o1: { x: 34, y: 77 },
-				o2: { x: 20, y: 71 },
+				o2: { x: 18, y: 74 },
 				o3: { x: 19, y: 49 },
 				o4: { x: 72, y: 14 },
 				o5: { x: 72, y: 72 }
 			},
-			puck: { x: 17, y: 73 },
+			puck: { x: 16, y: 77 },
 			puckCarrier: 'o2',
 			arrows: [{ kind: 'skate', from: 'o2', to: { x: 5, y: 40 } }],
 			roles: { rd: 'Takes the low carrier', ld: 'Net-front D', c: 'Takes the high cycler', rw: 'Strong-side wing', lw: 'Weak-side wing' },
 			notes: {
 				lw: {
-					where: 'Still inside the left circle.',
+					where: 'Still in the middle between the faceoff dots.',
 					read: 'Watch the new carrier. He is turning toward the back of the net, which could bring the puck to your side.',
 					why: 'If the puck comes around, you become the [[strong-side]] winger. Know it before it happens.'
 				},
 				c: {
-					where: 'On the half-wall, on the inside of the forward who just cycled up.',
+					where: 'On the [[half-wall]], on the inside of the forward who just cycled up.',
 					read: 'Watch him and the puck. He wants to get open in the slot for a return pass.',
 					why: 'RD stays low, so the player who cycled up is yours. Inside position keeps him on the wall instead of in the slot.'
 				},
 				rw: {
-					where: 'Between their D at the right [[point]] and the half-wall.',
+					where: 'Between their D at the right [[point]] and the [[half-wall]].',
 					read: 'Watch the high forward on the wall and the D at the point. C has the forward, you have the point.',
 					why: 'With C on the wall, you can stay ready to take away the low-to-high pass to the point.'
 				},
@@ -206,9 +206,9 @@ const play: Play = {
 					drag: {
 						target: { kind: 'ellipse', cx: 36, cy: 70, rx: 7, ry: 5 },
 						correct:
-							'Yes. On the half-wall, inside the forward who cycled up, keeping him on the boards and out of the slot.',
+							'Yes. On the [[half-wall]], inside the forward who cycled up, keeping him on the boards and out of the slot.',
 						incorrect:
-							'When RD stays low, the forward cycling up the wall is yours. Get to the half-wall on his inside so he cannot cut into the slot.'
+							'When RD stays low, the forward cycling up the wall is yours. Get to the [[half-wall]] on his inside so he cannot cut into the slot.'
 					}
 				}
 			}
@@ -223,12 +223,12 @@ const play: Play = {
 				ld: { x: 13, y: 33 },
 				rd: { x: 15.5, y: 46 },
 				o1: { x: 32, y: 61 },
-				o2: { x: 5, y: 36 },
+				o2: { x: 6, y: 37 },
 				o3: { x: 19.5, y: 49 },
 				o4: { x: 72, y: 14 },
 				o5: { x: 72, y: 72 }
 			},
-			puck: { x: 4, y: 34 },
+			puck: { x: 4.5, y: 35 },
 			puckCarrier: 'o2',
 			arrows: [
 				{ kind: 'skate', from: 'o2', to: { x: 14, y: 24 } },
@@ -317,17 +317,17 @@ const play: Play = {
 				'LD pins the carrier on the boards at the goal line. The puck squirts loose, C swings over and grabs it, and LW gets to the wall as the outlet.',
 			positions: {
 				lw: { x: 44, y: 8 },
-				c: { x: 21, y: 29 },
+				c: { x: 19, y: 22 },
 				rw: { x: 34, y: 52 },
-				ld: { x: 16, y: 21 },
+				ld: { x: 14, y: 13 },
 				rd: { x: 15.5, y: 46 },
 				o1: { x: 30, y: 58 },
-				o2: { x: 13, y: 18 },
+				o2: { x: 11, y: 9 },
 				o3: { x: 19.5, y: 49 },
 				o4: { x: 70, y: 16 },
 				o5: { x: 72, y: 72 }
 			},
-			puck: { x: 20, y: 26 },
+			puck: { x: 17, y: 19 },
 			puckCarrier: 'c',
 			arrows: [{ kind: 'pass', from: 'c', to: { x: 42, y: 6 } }],
 			roles: { rd: 'Net-front D', ld: 'Pins the carrier', c: 'Low support', rw: 'Weak-side wing', lw: 'Strong-side wing' },

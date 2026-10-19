@@ -177,23 +177,23 @@ const play: Play = {
 		},
 		{
 			caption:
-				'A couple of seconds later their forward is carrying up the right boards toward our blue line. RD steps up to meet him with a tight [[gap]], RW covers the middle, LD drops back behind RD, and LW [[backcheck|backchecks]] on the inside.',
+				'A few seconds later their forward has carried up the right boards to just outside our blue line. RD steps up to meet him with a tight [[gap]], RW covers the middle, LD drops back behind RD, and LW [[backcheck|backchecks]] on the inside.',
 			positions: {
-				lw: { x: 130, y: 60 },
-				rw: { x: 94, y: 52 },
-				ld: { x: 82, y: 42 },
-				rd: { x: 98, y: 72 },
-				o1: { x: 140, y: 64 },
-				o2: { x: 150, y: 36 },
-				o3: { x: 108, y: 81 },
-				o4: { x: 112, y: 18 },
-				o5: { x: 116, y: 46 }
+				lw: { x: 110, y: 62 },
+				rw: { x: 84, y: 52 },
+				ld: { x: 72, y: 44 },
+				rd: { x: 81, y: 76 },
+				o1: { x: 118, y: 64 },
+				o2: { x: 135, y: 36 },
+				o3: { x: 84, y: 81 },
+				o4: { x: 92, y: 18 },
+				o5: { x: 96, y: 46 }
 			},
-			puck: { x: 106.5, y: 80.5 },
+			puck: { x: 82.5, y: 80.5 },
 			puckCarrier: 'o3',
 			arrows: [
-				{ kind: 'skate', from: 'rd', to: { x: 102, y: 75 } },
-				{ kind: 'pass', from: 'o3', to: { x: 14, y: 74 }, via: { x: 60, y: 85 } }
+				{ kind: 'skate', from: 'rd', to: { x: 82, y: 78 } },
+				{ kind: 'pass', from: 'o3', to: { x: 14, y: 74 }, via: { x: 50, y: 85 } }
 			],
 			roles: { lw: 'Backchecker', rw: 'Middle', ld: 'Cover', rd: 'Stand up' },
 			notes: {
@@ -205,7 +205,7 @@ const play: Play = {
 				rw: {
 					where: 'Middle of the ice outside our blue line, between their center and our zone.',
 					read: 'Watch their center. If the puck carrier tries to pass to the middle, your stick is in the lane.',
-					why: 'With the middle closed and RD on the wall, the carrier has no clean way in. A dump is his best choice.'
+					why: 'With the middle closed and RD on the wall, the carrier has no clean way in. A dump from his side of the red line is his best choice.'
 				},
 				ld: {
 					where: 'Dropping back to just inside our blue line, behind RD and toward the middle.',
@@ -250,7 +250,8 @@ const play: Play = {
 				},
 				rw: {
 					drag: {
-						target: { kind: 'ellipse', cx: 93, cy: 51, rx: 8, ry: 6 },
+						start: { x: 104, y: 38 },
+						target: { kind: 'ellipse', cx: 84, cy: 51, rx: 8, ry: 6 },
 						correct:
 							'Yes. In the middle just outside the blue line, between their center and our zone, stick in the middle lane.',
 						incorrect:
@@ -261,7 +262,7 @@ const play: Play = {
 		},
 		{
 			caption:
-				'He has to dump it in. A few seconds later LD, who was already back, gets to it first in our right corner and [[clear|clears]] it hard up the left boards before their forecheckers arrive.',
+				'He has to dump it in. A few seconds later LD, who was already back, gets to it first in our right corner and [[clear|clears]] it hard up the right boards before their forecheckers arrive.',
 			positions: {
 				lw: { x: 88, y: 58 },
 				rw: { x: 50, y: 52 },
@@ -284,7 +285,7 @@ const play: Play = {
 					why: 'After a clear the cycle starts over: they have to go back and break out again.'
 				},
 				rw: {
-					where: 'Back in the slot, between their forecheckers and the net.',
+					where: 'Back in the [[slot]], between their forecheckers and the net.',
 					read: 'Watch the puck and their center chasing. If the clear gets stopped, you are the help.',
 					why: 'Until the puck is out, a forward stays in the middle of our zone.'
 				},
@@ -324,7 +325,7 @@ const play: Play = {
 							{
 								text: 'Pass it up the middle to RW',
 								correct: false,
-								why: 'Their center is in the middle. A turnover there is a shot from the slot.'
+								why: 'Their center is in the middle. A turnover there is a shot from the [[slot]].'
 							}
 						]
 					}

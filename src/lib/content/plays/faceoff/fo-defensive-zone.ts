@@ -71,7 +71,7 @@ const play: Play = {
 	steps: [
 		{
 			caption:
-				'Faceoff at the right dot in our zone. C takes the draw. RW lines up on the boards-side [[hash-marks|hash marks]], LD on the inside hash, RD behind C toward the corner, and LW high in the slot. Plan: win it back to RD.',
+				'Faceoff at the right dot in our zone. C takes the draw. RW lines up on the boards-side [[hash-marks|hash marks]], LD on the inside hash, RD behind C toward the corner, and LW high in the [[slot]]. Plan: win it back to RD.',
 			phase: 'alignment',
 			positions: { ...alignment },
 			puck: { x: 31, y: 64.5 },
@@ -79,7 +79,7 @@ const play: Play = {
 			roles,
 			notes: {
 				lw: {
-					where: 'High in the slot, near the top of the circle on the inside, outside the circle line.',
+					where: 'High in the [[slot]], near the top of the circle on the inside, outside the circle line.',
 					read: 'Watch the puck at the drop and their D at the far point. On a win, you are the weak-side outlet.',
 					why: 'From here you are close to the middle if we lose it and only a few strides from getting open up the left side if we win it.'
 				},
@@ -139,9 +139,9 @@ const play: Play = {
 						start: { x: 60, y: 40 },
 						target: { kind: 'ellipse', cx: 44, cy: 51, rx: 7, ry: 6 },
 						correct:
-							'Yes. High in the slot just outside the circle: close to the middle if we lose, ready to get open if we win.',
+							'Yes. High in the [[slot]] just outside the circle: close to the middle if we lose, ready to get open if we win.',
 						incorrect:
-							'The weak-side winger lines up high in the slot, near the top of the circle on the inside. Out at the far point you leave the slot empty if we lose the draw.'
+							'The weak-side winger lines up high in the [[slot]], near the top of the circle on the inside. Out at the far point you leave the [[slot]] empty if we lose the draw.'
 					}
 				}
 			}
@@ -154,7 +154,7 @@ const play: Play = {
 				lw: { x: 44, y: 40 },
 				c: { x: 29, y: 61 },
 				rw: { x: 38, y: 81 },
-				ld: { x: 19, y: 47 },
+				ld: { x: 19, y: 40 },
 				rd: { x: 14, y: 71 },
 				o1: { x: 33, y: 60 },
 				o2: { x: 33, y: 73 },
@@ -168,7 +168,7 @@ const play: Play = {
 			roles,
 			notes: {
 				lw: {
-					where: 'Moving out of the slot toward the left side, above the left circle.',
+					where: 'Moving out of the [[slot]] toward the left side, above the left circle.',
 					read: 'Watch RD and the puck, and know where their far D is.',
 					why: 'If the wall gets jammed, RD or C needs a second option. You are it.'
 				},
@@ -257,7 +257,7 @@ const play: Play = {
 					why: 'A wide option keeps their far D honest so C has room in the middle.'
 				},
 				c: {
-					where: 'Swinging through the right side of the slot, toward the top of the circle, with speed.',
+					where: 'Swinging through the right side of the [[slot]], toward the top of the circle, with speed.',
 					read: 'Watch RW and their D coming down the wall. The space he leaves behind him is yours.',
 					why: 'You held their center long enough. Now you are the [[support]] that turns a win into a clean exit.'
 				},
@@ -295,9 +295,9 @@ const play: Play = {
 			roles,
 			notes: {
 				lw: {
-					where: 'High in the slot, near the top of the circle on the inside.',
-					read: 'Watch the puck. On a loss, stay in the middle first, then go out to their far point once the slot is covered.',
-					why: 'Collapse first, then go out. Jumping to the point early opens the slot, the worst place to give up.'
+					where: 'High in the [[slot]], near the top of the circle on the inside.',
+					read: 'Watch the puck. On a loss, stay in the middle first, then go out to their far point once the [[slot]] is covered.',
+					why: 'Collapse first, then go out. Jumping to the point early opens the [[slot]], the worst place to give up.'
 				},
 				c: {
 					where: 'On the dot, facing their center.',
@@ -377,7 +377,7 @@ const play: Play = {
 		},
 		{
 			caption:
-				'Their center wins it back to their D at the right point. RW goes out into his shooting lane, C stays with their center, our D pick up their wingers, and LW holds the slot.',
+				'Their center wins it back to their D at the right point. RW goes out into his shooting lane, C stays with their center, our D pick up their wingers, and LW holds the [[slot]].',
 			phase: 'loss',
 			positions: {
 				lw: { x: 42, y: 48 },
@@ -400,14 +400,14 @@ const play: Play = {
 			roles,
 			notes: {
 				lw: {
-					where: 'In the high slot, between their far D and the net.',
-					read: 'Watch the puck carrier and their far D. If they go D-to-D, you go out as the puck travels.',
-					why: 'Holding the slot first means a quick pass to the middle never gets through. Then you can go out.'
+					where: 'In the [[high-slot|high [[slot]]]], between their far D and the net.',
+					read: 'Watch the puck carrier and their far D. If they go [[d-to-d|D-to-D]], you go out as the puck travels.',
+					why: 'Holding the [[slot]] first means a quick pass to the middle never gets through. Then you can go out.'
 				},
 				c: {
-					where: 'Beside their center on his net side, in the slot.',
+					where: 'Beside their center on his net side, in the [[slot]].',
 					read: 'Keep your stick and body between him and the net. Do not turn to chase the puck.',
-					why: 'Their center in the slot is more dangerous than the puck at the point.'
+					why: 'Their center in the [[slot]] is more dangerous than the puck at the point.'
 				},
 				rw: {
 					where: 'Closing on their right point, square to him, in his shooting lane.',
@@ -435,7 +435,7 @@ const play: Play = {
 		},
 		{
 			caption:
-				'They pass across to the other point. With the slot covered, LW steps out into that shooter\'s lane. Everyone else keeps his player.',
+				'They pass across to the other point. With the [[slot]] covered, LW steps out into that shooter\'s lane. Everyone else keeps his player.',
 			phase: 'loss',
 			positions: {
 				lw: { x: 58, y: 34 },
@@ -460,14 +460,14 @@ const play: Play = {
 					why: 'You held the middle until the pass was made, then closed on him as it travelled. That is "collapse, then go out".'
 				},
 				c: {
-					where: 'Still with their center in the slot, on his net side.',
+					where: 'Still with their center in the [[slot]], on his net side.',
 					read: 'Keep him in front of you and know where the puck is.',
-					why: 'You never left him, so the pass across did not open the slot.'
+					why: 'You never left him, so the pass across did not open the [[slot]].'
 				},
 				rw: {
 					where: 'Dropping back from their right point toward the top of the circle.',
 					read: 'Watch the puck and your point man. If it comes back to him, you go out again.',
-					why: 'Halfway between your point and the slot keeps you close to both.'
+					why: 'Halfway between your point and the [[slot]] keeps you close to both.'
 				},
 				ld: {
 					where: 'In front of the net, inside their winger.',
@@ -491,17 +491,17 @@ const play: Play = {
 				lw: {
 					decision: {
 						prompt:
-							'We lost the draw. You held the slot, and now they pass D-to-D to the point on your side. You...',
+							'We lost the draw. You held the [[slot]], and now they pass [[d-to-d|D-to-D]] to the point on your side. You...',
 						options: [
 							{
 								text: 'Close on him as the pass travels and get in his shooting lane',
 								correct: true,
-								why: 'The slot is covered by C and the D, so now you go out. Closing while the puck travels takes his time away.'
+								why: 'The [[slot]] is covered by C and the D, so now you go out. Closing while the puck travels takes his time away.'
 							},
 							{
-								text: 'Stay in the slot',
+								text: 'Stay in the [[slot]]',
 								correct: false,
-								why: 'Holding the slot was right first, but now he has a free shot with nobody in his lane.'
+								why: 'Holding the [[slot]] was right first, but now he has a free shot with nobody in his lane.'
 							},
 							{
 								text: 'Go cover their center',

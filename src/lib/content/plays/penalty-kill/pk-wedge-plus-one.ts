@@ -38,7 +38,7 @@ const play: Play = {
 		{
 			title: 'Penalty Kill Forecheck Explained (IHM Academy Lesson #3)',
 			publisher: 'IceHockeyMan (Coach Mark Lehtonen)',
-			url: 'https://icehockeyman.com/tag/wedge-1/'
+			url: 'https://icehockeyman.com/2025/10/27/ihm-academy-lesson-3-by-coach-mark-lehtonen/'
 		}
 	],
 	steps: [
@@ -66,13 +66,13 @@ const play: Play = {
 			notes: {
 				lw: {
 					where: 'Closing on the left point in a straight line from the middle, a few strides away.',
-					read: 'Is he set and looking up, or still handling the puck? Come from the middle so his easiest move is along the boards, not into the slot.',
+					read: 'Is he set and looking up, or still handling the puck? Come from the middle so his easiest move is along the boards, not into the [[slot]].',
 					why: 'Pressure from the inside takes away his shot and the pass to the middle. The best he can do is pass across, which costs them time.'
 				},
 				rw: {
 					where: 'Top of the wedge, in the [[high-slot|high slot]] between the two points.',
 					read: 'Watch the puck and the right point. If the puck goes across to him, you are now the closest player.',
-					why: 'The top of the wedge protects the slot and is the next +1 when the puck moves to the other side.'
+					why: 'The top of the wedge protects the [[slot]] and is the next +1 when the puck moves to the other side.'
 				},
 				ld: {
 					where: 'Left low corner of the wedge, just off the left post in front of the crease.',
@@ -103,14 +103,14 @@ const play: Play = {
 								why: 'He is not set yet, so this is the time to force. Coming from the middle pushes him to the boards and takes away the shot.'
 							},
 							{
-								text: 'Contain: stay in the high slot and let him come to you',
+								text: 'Contain: stay in the [[high-slot|high [[slot]]]] and let him come to you',
 								correct: false,
 								why: 'Containing is right when he has control and options. Here he is still settling it, and in a wedge +1 the closest player is the pressure.'
 							},
 							{
 								text: 'Go at him from the boards side',
 								correct: false,
-								why: 'That opens the middle. He steps inside you and has a clear look at the net or the slot.'
+								why: 'That opens the middle. He steps inside you and has a clear look at the net or the [[slot]].'
 							}
 						]
 					}
@@ -151,12 +151,12 @@ const play: Play = {
 			roles: { lw: 'Wedge top', rw: '+1 (pressure)', ld: 'Wedge low', rd: 'Wedge low' },
 			notes: {
 				lw: {
-					where: 'Dropping from the left point back into the high slot, the top of the wedge.',
+					where: 'Dropping from the left point back into the [[high-slot|high [[slot]]]], the top of the wedge.',
 					read: 'Watch RW go and the puck. Fill the middle he just left.',
-					why: 'The +1 job passes from player to player. When it leaves you, you go straight back to the wedge so the slot is never empty.'
+					why: 'The +1 job passes from player to player. When it leaves you, you go straight back to the wedge so the [[slot]] is never empty.'
 				},
 				rw: {
-					where: 'Coming out of the high slot at the right point, from the middle.',
+					where: 'Coming out of the [[high-slot|high [[slot]]]] at the right point, from the middle.',
 					read: 'Watch his stick. Take away the shot and the pass to the middle; let him have the pass down the wall.',
 					why: 'You were the top of the wedge and closest to the new puck. In a wedge +1, the closest player always becomes the pressure.'
 				},
@@ -189,14 +189,14 @@ const play: Play = {
 								why: 'The closest player takes the puck. LW is far away now; you are not.'
 							},
 							{
-								text: 'Stay in the high slot and wait for LW to get across',
+								text: 'Stay in the [[high-slot|high [[slot]]]] and wait for LW to get across',
 								correct: false,
 								why: 'LW would need to skate the width of the zone. The point gets a free shot in the meantime.'
 							},
 							{
 								text: 'Drop to the front of the net',
 								correct: false,
-								why: 'The two D already cover the net. Dropping leaves the high slot and the point both open.'
+								why: 'The two D already cover the net. Dropping leaves the [[high-slot|high [[slot]]]] and the point both open.'
 							}
 						]
 					}
@@ -205,7 +205,7 @@ const play: Play = {
 		},
 		{
 			caption:
-				'Under pressure, the right point moves it down to the [[half-wall]]. RW follows it down from the inside. LW slides toward the puck in the high slot; RD stays between the goal-line player and the net.',
+				'Under pressure, the right point moves it down to the [[half-wall]]. RW follows it down from the inside. LW slides toward the puck in the [[high-slot|high [[slot]]]]; RD stays between the goal-line player and the net.',
 			positions: {
 				lw: { x: 46, y: 50 },
 				rw: { x: 46, y: 75 },
@@ -226,13 +226,13 @@ const play: Play = {
 			roles: { lw: 'Wedge top', rw: '+1 (pressure)', ld: 'Wedge low', rd: 'Wedge low' },
 			notes: {
 				lw: {
-					where: 'Top of the wedge, shifted toward the puck side of the high slot.',
+					where: 'Top of the wedge, shifted toward the puck side of the [[high-slot|high [[slot]]]].',
 					read: 'Watch the half-wall player and the right point. You shade the pass back up to the point.',
 					why: 'RW is low on the wall now, so the pass back to the point is the one he cannot take away. You can.'
 				},
 				rw: {
 					where: 'On the half-wall player, on his inside, a stick length away.',
-					read: 'Keep your stick in the lane to the slot. His easy pass now is down to the goal line.',
+					read: 'Keep your stick in the lane to the [[slot]]. His easy pass now is down to the goal line.',
 					why: 'Following the puck from the point to the wall keeps him under pressure; he never gets to set up.'
 				},
 				ld: {
@@ -241,7 +241,7 @@ const play: Play = {
 					why: 'The wedge exists to keep the area right in front of the goalie closed while the +1 hunts.'
 				},
 				rd: {
-					where: 'Low right of the slot, between the goal-line player and the net.',
+					where: 'Low right of the [[slot]], between the goal-line player and the net.',
 					read: 'Watch the half-wall player\'s stick. If the puck goes down to the goal line, it is below the [[hash-marks|hash marks]]: your puck.',
 					why: 'Being in position early lets you jump the goal-line player as the puck arrives.'
 				}
@@ -273,14 +273,14 @@ const play: Play = {
 			roles: { lw: 'Wedge top', rw: 'Wedge', ld: 'Wedge low', rd: '+1 (pressure)' },
 			notes: {
 				lw: {
-					where: 'Top of the wedge in the high slot.',
+					where: 'Top of the wedge in the [[high-slot|high [[slot]]]].',
 					read: 'Watch the puck and both points. If RD loses the battle, you are the next layer.',
 					why: 'One player stays high in the middle no matter who is pressuring.'
 				},
 				rw: {
 					where: 'Down the right boards near the bottom of the circle, back to the boards, open to RD.',
 					read: 'Watch RD\'s battle. Be the outlet up the wall if he wins it, and the next check on the half-wall player if he does not.',
-					why: 'Dropping a little lower gives RD a short pass, and you still block the half-wall player\'s path back to the slot.'
+					why: 'Dropping a little lower gives RD a short pass, and you still block the half-wall player\'s path back to the [[slot]].'
 				},
 				ld: {
 					where: 'Alone in front of the net, inside their net-front player.',
@@ -290,7 +290,7 @@ const play: Play = {
 				rd: {
 					where: 'In the right corner on the goal-line player\'s inside, stick on the puck.',
 					read: 'He turned his back to you to take the pass. That is your trigger: arrive with the puck, stick on it, body between him and the net.',
-					why: 'A player facing the boards cannot pass to the slot. Forcing now wins the puck; waiting lets him turn and face the play.'
+					why: 'A player facing the boards cannot pass to the [[slot]]. Forcing now wins the puck; waiting lets him turn and face the play.'
 				}
 			},
 			reads: {
@@ -308,7 +308,7 @@ const play: Play = {
 							{
 								text: 'Force him: arrive with the puck, stick on it, and stay on his inside',
 								correct: true,
-								why: 'Below the hash marks it is a D\'s puck, and a player facing the boards is the trigger to force. He cannot see the slot.'
+								why: 'Below the hash marks it is a D\'s puck, and a player facing the boards is the trigger to force. He cannot see the [[slot]].'
 							},
 							{
 								text: 'Contain: stay at the post and wait for him to make a move',
@@ -348,7 +348,7 @@ const play: Play = {
 			roles: { lw: 'Wedge top', rw: '+1 (pressure)', ld: 'Wedge low', rd: 'Wedge low' },
 			notes: {
 				lw: {
-					where: 'Leaving the high slot and heading up ice through the middle.',
+					where: 'Leaving the [[high-slot|high [[slot]]]] and heading up ice through the middle.',
 					read: 'Watch the chip. If RW gets to it past the point, you are his partner on a two-on-one going the other way.',
 					why: 'The wedge +1 is built to create turnovers that turn into short-handed chances.'
 				},

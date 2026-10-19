@@ -75,12 +75,12 @@ const play: Play = {
 					why: 'In the [[umbrella]] the top player runs everything. Being right in front of him makes every pass and shot from up there harder.'
 				},
 				rw: {
-					where: 'Right side of the diamond, near the top of the right circle, between the right flank and the slot.',
+					where: 'Right side of the diamond, near the top of the right circle, between the right flank and the [[slot]].',
 					read: 'Watch the puck at the top and the right flank. If the puck goes to him, you are the one who goes.',
-					why: 'The side players take the flanks. Sitting inside them keeps the [[seam]] to the slot closed and lets you reach them fast.'
+					why: 'The side players take the flanks. Sitting inside them keeps the [[seam]] to the [[slot]] closed and lets you reach them fast.'
 				},
 				ld: {
-					where: 'Left side of the diamond, near the top of the left circle, between the left flank and the slot.',
+					where: 'Left side of the diamond, near the top of the left circle, between the left flank and the [[slot]].',
 					read: 'Watch the puck at the top and the left flank. Know where he is before the puck moves.',
 					why: 'Same job as RW on your side. If the puck goes to your flank, you pressure; if it goes the other way, you become the weak side.'
 				},
@@ -137,7 +137,7 @@ const play: Play = {
 		},
 		{
 			caption:
-				'The top passes to the right flank on the [[half-wall]]. RW goes at him. LW slides down toward the puck, and LD sags into the slot to guard the [[back-door|back door]].',
+				'The top passes to the right flank on the [[half-wall]]. RW goes at him. LW slides down toward the puck, and LD sags into the [[slot]] to guard the [[back-door|back door]].',
 			phase: 'puck-on-half-wall',
 			positions: {
 				lw: { x: 58, y: 52 },
@@ -165,11 +165,11 @@ const play: Play = {
 				},
 				rw: {
 					where: 'On the half-wall player, on his inside, a stick length away.',
-					read: 'Watch his stick and the puck. Your stick goes in the lane to the slot so his only easy pass is back up.',
+					read: 'Watch his stick and the puck. Your stick goes in the lane to the [[slot]] so his only easy pass is back up.',
 					why: 'Pressure from the side of the diamond is fast because you start close to him. Coming from the inside keeps him on the boards.'
 				},
 				ld: {
-					where: 'Sagging from the left side into the slot, a few strides off the left post.',
+					where: 'Sagging from the left side into the [[slot]], a few strides off the left post.',
 					read: 'Watch the far flank, not just the puck. Keep your stick in the lane across the ice to him.',
 					why: 'The diamond\'s weak spot is the pass across to the far flank or the far post for a [[one-timer]]. You are the only one who can take it away.'
 				},
@@ -192,9 +192,9 @@ const play: Play = {
 							'The puck goes from the top to the right flank on the half-wall. You are the right side of the diamond. You...',
 						options: [
 							{
-								text: 'Go at him from the inside with your stick in the lane to the slot',
+								text: 'Go at him from the inside with your stick in the lane to the [[slot]]',
 								correct: true,
-								why: 'You are closest and start almost on top of him. Inside pressure keeps him on the boards and away from the slot.'
+								why: 'You are closest and start almost on top of him. Inside pressure keeps him on the boards and away from the [[slot]].'
 							},
 							{
 								text: 'Stay put and let LW come down from the top',
@@ -215,14 +215,14 @@ const play: Play = {
 							'The puck is on the right half-wall, far from you. Their left flank is wide open across the ice. Where do you go?',
 						options: [
 							{
-								text: 'Sag into the slot, off the left post, stick in the lane to the far flank',
+								text: 'Sag into the [[slot]], off the left post, stick in the lane to the far flank',
 								correct: true,
 								why: 'You protect the [[back-door|back door]] and the [[seam]] pass across. If the pass goes to him, you are close enough to block it.'
 							},
 							{
 								text: 'Stay out on the left flank',
 								correct: false,
-								why: 'He is not the danger while the puck is on the far wall. The slot is, and you just left it empty.'
+								why: 'He is not the danger while the puck is on the far wall. The [[slot]] is, and you just left it empty.'
 							},
 							{
 								text: 'Go across to help RW on the half-wall',
@@ -286,7 +286,7 @@ const play: Play = {
 					why: 'This is what the diamond is built for: one player on top means the quarterback never has time. A shot that hits you never reaches the net.'
 				},
 				rw: {
-					where: 'Back at the right side of the diamond, between the flank and the slot.',
+					where: 'Back at the right side of the diamond, between the flank and the [[slot]].',
 					read: 'Watch the top player and your flank. If he passes back down to the flank, you go again.',
 					why: 'Resetting fast is how the diamond survives a power play that keeps moving the puck.'
 				},
@@ -382,6 +382,7 @@ const play: Play = {
 			quiz: {
 				rd: {
 					drag: {
+						start: { x: 34, y: 56 },
 						target: { kind: 'ellipse', cx: 21, cy: 44, rx: 6, ry: 5 },
 						correct: 'Yes. The low player stays in front of the net until the puck is out of the zone.',
 						incorrect:

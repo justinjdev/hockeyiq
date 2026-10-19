@@ -130,9 +130,9 @@ const play: Play = {
 							'We win the draw back to LD. Their boards-side winger turns to get out to LD. You...',
 						options: [
 							{
-								text: 'Hold your ground in his path to LD without pushing or hooking, then head for the net',
+								text: 'Hold your ground in his path to LD without pushing, hooking or moving into him, then head for the net',
 								correct: true,
-								why: 'Standing your ground in his way is legal and buys LD the half-second he needs. Pushing or hooking him is a penalty.'
+								why: 'Standing your ground in his way is legal as long as you got there first and do not move into him, and it buys LD the half-second he needs. Pushing, hooking or stepping into him is interference.'
 							},
 							{
 								text: 'Skate to the net right away',
@@ -174,8 +174,8 @@ const play: Play = {
 			roles,
 			notes: {
 				lw: {
-					where: 'Between their boards winger and LD, a stride off the hash marks.',
-					read: 'Watch their winger. Stay square in his path; do not reach or push.',
+					where: 'Between their boards winger and LD, a stride off the hash marks, where you got to first.',
+					read: 'Watch their winger. Stay square where you are; do not reach, push or step into him. If he goes around you, let him.',
 					why: 'Every step he has to take around you is time LD has to shoot.'
 				},
 				c: {
@@ -241,13 +241,13 @@ const play: Play = {
 		},
 		{
 			caption:
-				'The shot gets through and the rebound kicks out to the side of the net. RW and C are there first; LW comes to the net once the puck is clear. Both D hold the blue line.',
+				'The shot gets through and the rebound kicks out to the side of the net. RW and C are there first; LW comes to the net once the puck is clear. LD backs up to the blue line and RD stays high in the middle.',
 			phase: 'win',
 			positions: {
 				lw: { x: 170, y: 18 },
 				c: { x: 176, y: 32 },
 				rw: { x: 181, y: 40 },
-				ld: { x: 150, y: 20 },
+				ld: { x: 132, y: 18 },
 				rd: { x: 132, y: 42 },
 				o1: { x: 174, y: 26 },
 				o2: { x: 164, y: 12 },
@@ -322,8 +322,8 @@ const play: Play = {
 				},
 				ld: {
 					where: 'At the top of the circle behind C.',
-					read: 'On a loss, watch the boards. A rim up the wall is their way out.',
-					why: 'You are the first player who can keep a rim in the zone.'
+					read: 'On a loss, watch the boards. A [[rim]] up the wall is their way out.',
+					why: 'You are the first player who can keep a [[rim]] in the zone.'
 				},
 				rd: {
 					where: 'High in the middle, just inside their blue line.',
@@ -365,7 +365,7 @@ const play: Play = {
 		},
 		{
 			caption:
-				'Their center wins it back to their D. LW goes straight at him, C stays with their center, and RW takes away the pass across. Under pressure, their D rims it hard up the boards.',
+				'Their center wins it back to their D. LW goes straight at him, C stays with their center, and RW takes away the pass across. Under pressure, their D [[rim|rims]] it hard up the boards.',
 			phase: 'loss',
 			positions: {
 				lw: { x: 178, y: 20 },
@@ -390,7 +390,7 @@ const play: Play = {
 				lw: {
 					where: 'Closing on their D in the corner, from the middle side.',
 					read: 'Watch the puck on his stick. Get your stick on the puck and take away the middle.',
-					why: 'He has to move it fast and blind. A rushed rim is far easier for LD to keep in than a clean pass.'
+					why: 'He has to move it fast and blind. A rushed [[rim]] is far easier for LD to keep in than a clean pass.'
 				},
 				c: {
 					where: 'Beside their center, on his inside.',
@@ -404,12 +404,12 @@ const play: Play = {
 				},
 				ld: {
 					where: 'Near the top of the circle on the left side, a few strides off the boards.',
-					read: 'Watch their D. If he rims it up your wall, read how hard it is coming and whether you can get there first.',
-					why: 'The rim is coming your way. Seeing it early is what lets you keep it in.'
+					read: 'Watch their D. If he [[rim|rims]] it up your wall, read how hard it is coming and whether you can get there first.',
+					why: 'The [[rim]] is coming your way. Seeing it early is what lets you keep it in.'
 				},
 				rd: {
 					where: 'High in the middle.',
-					read: 'Watch the rim and LD. If LD goes to the wall, slide over behind him.',
+					read: 'Watch the [[rim]] and LD. If LD goes to the wall, slide over behind him.',
 					why: 'When one D steps down, the other covers the point behind him.'
 				}
 			},
@@ -448,7 +448,7 @@ const play: Play = {
 		},
 		{
 			caption:
-				'LD reads the rim, steps down to the boards and stops it before their winger gets there. RD slides over to cover the left point behind him. We keep the puck in the zone.',
+				'LD reads the [[rim]], steps down to the boards and stops it before their winger gets there. RD slides over to cover the left point behind him. We keep the puck in the zone.',
 			phase: 'loss',
 			positions: {
 				lw: { x: 178, y: 18 },
@@ -474,7 +474,7 @@ const play: Play = {
 				},
 				c: {
 					where: 'With their center near the top of the circle.',
-					read: 'Watch the puck and their center. Get open for LD or RD in the slot.',
+					read: 'Watch the puck and their center. Get open for LD or RD in the [[slot]].',
 					why: 'Once we have it back, you go from checker to option.'
 				},
 				rw: {
@@ -504,7 +504,7 @@ const play: Play = {
 				ld: {
 					decision: {
 						prompt:
-							'Their D rims it hard up your boards. You can get to the wall a stride before their winger, and RD is sliding over behind you. You...',
+							'Their D [[rim|rims]] it hard up your boards. You can get to the wall a stride before their winger, and RD is sliding over behind you. You...',
 						options: [
 							{
 								text: 'Step down to the boards and stop it to keep it in the zone',

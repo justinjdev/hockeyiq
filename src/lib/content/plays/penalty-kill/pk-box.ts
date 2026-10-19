@@ -90,7 +90,7 @@ const play: Play = {
 					why: 'Shots from the point are not the danger. Rebounds and [[tip|tips]] in front are. You own the front of the net.'
 				},
 				rd: {
-					where: 'Bottom-right corner of the box, at the right side of the slot, between their goal-line player and the net.',
+					where: 'Bottom-right corner of the box, at the right side of the [[slot]], between their goal-line player and the net.',
 					read: 'Watch the puck and their player on the goal line. Stay where you can reach a pass to him or a pass across the crease.',
 					why: 'You are the low player on the puck side. A pass down low or across the crease is the most dangerous pass they have.'
 				}
@@ -163,12 +163,12 @@ const play: Play = {
 				lw: {
 					where: 'Sliding down and across into the [[high-slot|high slot]], the middle of the ice just above the tops of the circles.',
 					read: 'Watch the puck on the half-wall and the open man in the middle. Keep the left point in the corner of your eye in case it swings across.',
-					why: 'When RW leaves to pressure, the middle is empty. You fill it so a pass to the slot never gets there.'
+					why: 'When RW leaves to pressure, the middle is empty. You fill it so a pass to the [[slot]] never gets there.'
 				},
 				rw: {
 					where: 'On the half-wall player, on his inside (the net side), a stick length away.',
 					read: 'Watch his stick and the puck, not his eyes. Your stick goes in the lane to the middle so his only easy pass is back up the boards.',
-					why: 'Pressure from the inside pushes him to the boards and takes away the pass to the slot. A pass back to the point is far less dangerous.'
+					why: 'Pressure from the inside pushes him to the boards and takes away the pass to the [[slot]]. A pass back to the point is far less dangerous.'
 				},
 				ld: {
 					where: 'In front of the net, on the inside of their net-front player, between him and the goalie\'s left side.',
@@ -176,7 +176,7 @@ const play: Play = {
 					why: 'A pass from the half-wall to the front of the net is a [[tip]] or a tap-in. Taking away his stick takes away the chance.'
 				},
 				rd: {
-					where: 'Low on the right side of the slot, between the goal-line player and the net.',
+					where: 'Low on the right side of the [[slot]], between the goal-line player and the net.',
 					read: 'Watch the puck and the goal-line player. If the puck goes down to him, it is your puck: below the hash marks belongs to the D.',
 					why: 'Staying between him and the net keeps the low pass from becoming a shot from the side of the crease.'
 				}
@@ -196,10 +196,10 @@ const play: Play = {
 							{
 								text: 'You do, from the inside, stick in the lane to the middle',
 								correct: true,
-								why: 'Above the hash marks it is a forward\'s puck. You are closest, and coming from the inside forces him toward the boards and away from the slot.'
+								why: 'Above the hash marks it is a forward\'s puck. You are closest, and coming from the inside forces him toward the boards and away from the [[slot]].'
 							},
 							{
-								text: 'RD steps up from the slot to take him',
+								text: 'RD steps up from the [[slot]] to take him',
 								correct: false,
 								why: 'That pulls a D away from the net and leaves their goal-line player alone beside the crease. The D only goes when the puck is below the hash marks.'
 							},
@@ -302,12 +302,12 @@ const play: Play = {
 							'The puck goes back to the right point. Their left point is open across from you. Where do you go?',
 						options: [
 							{
-								text: 'Back to the top-left of the box, ready to close on the left point if they go D-to-D',
+								text: 'Back to the top-left of the box, ready to close on the left point if they go [[d-to-d|D-to-D]]',
 								correct: true,
 								why: 'You keep the middle closed and you can reach the left point while the pass is travelling.'
 							},
 							{
-								text: 'Stay in the high slot in the middle',
+								text: 'Stay in the [[high-slot|high [[slot]]]] in the middle',
 								correct: false,
 								why: 'That was right when the puck was on the half-wall. With the puck back up top, the left point gets a free one-timer.'
 							},
@@ -333,7 +333,7 @@ const play: Play = {
 				o1: { x: 68, y: 30 },
 				o2: { x: 66, y: 58 },
 				o3: { x: 40, y: 70 },
-				o4: { x: 24, y: 64 },
+				o4: { x: 16, y: 68 },
 				o5: { x: 17, y: 46 }
 			},
 			puck: { x: 10, y: 74.5 },
@@ -342,7 +342,7 @@ const play: Play = {
 			roles,
 			notes: {
 				lw: {
-					where: 'Middle of the ice near the top of the slot, turning to follow the puck up ice.',
+					where: 'Middle of the ice near the top of the [[slot]], turning to follow the puck up ice.',
 					read: 'Watch the clear. If it gets out, look at the bench: a long clear is often the time to change.',
 					why: 'Killing a penalty is tiring. A clean clear plus a fresh unit is worth more than chasing the puck down the ice.'
 				},
@@ -354,7 +354,7 @@ const play: Play = {
 				ld: {
 					where: 'In front of the net, holding the front until the puck is gone.',
 					read: 'Watch the net-front player and the puck. Do not leave the front until the puck is out of the zone.',
-					why: 'If the clear fails and you have already left, they have an empty slot in front of an open net.'
+					why: 'If the clear fails and you have already left, they have an empty [[slot]] in front of an open net.'
 				},
 				rd: {
 					where: 'In the right corner with the puck, near the boards.',

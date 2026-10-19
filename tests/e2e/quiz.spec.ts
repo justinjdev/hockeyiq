@@ -4,7 +4,7 @@ import bo from '../../src/lib/content/plays/breakout/bo-standard';
 import { listQuizItems, quizKey } from '../../src/lib/quiz/quizItems';
 import { shuffledOrder } from '../../src/lib/quiz/shuffle';
 import { plainText } from '../../src/lib/text/richText';
-import { regionCenter } from '../../src/lib/quiz/regions';
+import { pointInRegion, regionCenter } from '../../src/lib/quiz/regions';
 
 const rwItems = listQuizItems(bo, 'rw');
 
@@ -93,4 +93,16 @@ test('quiz works with localStorage unavailable and logs no errors', async ({ pag
 
 	await expect(page.getByText(/Question 2 of|Final score/)).toBeVisible();
 	expect(errors).toEqual([]);
+});
+
+test('Check without moving grades the starting spot', async ({ page }) => {
+	await open(page, '/play/bo-standard/quiz?as=rw');
+	const drag = rwItems.find((i) => i.kind === 'drag')!;
+	for (const item of rwItems.slice(0, rwItems.indexOf(drag))) await answerRw(page, item.kind, item.step);
+
+	const def = bo.steps[drag.step].quiz!.rw!.drag!;
+	const start = def.start ?? bo.steps[drag.step - 1].positions.rw;
+	expect(pointInRegion(start, def.target)).toBe(false);
+	await page.getByRole('button', { name: 'Check' }).click();
+	await expect(page.getByRole('status')).toContainText('Not quite');
 });

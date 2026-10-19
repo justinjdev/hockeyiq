@@ -24,9 +24,10 @@
 	let ok = $state<boolean | null>(null);
 	const checked = $derived(ok !== null);
 
+	// Some questions start the slot inside the target already; Check without moving grades the start.
 	function check() {
-		if (!dropped || checked) return;
-		ok = pointInRegion(dropped, def.target);
+		if (checked) return;
+		ok = pointInRegion(dropped ?? play.steps[step].positions[slot], def.target);
 		onResult(ok);
 	}
 </script>
@@ -50,7 +51,7 @@
 		<p class="hint">Drag with a finger or mouse, or focus the player and use the arrow keys.</p>
 
 		{#if ok === null}
-			<button type="button" class="btn primary" disabled={!dropped} onclick={check}>Check</button>
+			<button type="button" class="btn primary" onclick={check}>Check</button>
 		{:else}
 			<div class="verdict" class:ok role="status">
 				<h3>{ok ? 'In position' : 'Not quite'}</h3>
@@ -128,10 +129,6 @@
 	.btn.primary {
 		background: var(--goal-light);
 		color: #111;
-	}
-	.btn:disabled {
-		opacity: 0.45;
-		cursor: not-allowed;
 	}
 	.btn:focus-visible {
 		outline: 2px solid var(--text);

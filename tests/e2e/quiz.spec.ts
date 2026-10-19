@@ -130,3 +130,15 @@ test('arrow keys nudge the dragged player 1 ft, Shift+arrow 5 ft', async ({ page
 	await page.keyboard.press('Shift+ArrowRight');
 	await expect.poll(x).toBeCloseTo(x0 + 6, 5);
 });
+
+test('Back after leaving the quiz restores the picked position', async ({ page }) => {
+	await open(page, '/play/bo-standard/quiz?as=rw');
+	await expect(page).toHaveURL(/as=rw/);
+
+	await page.getByRole('link', { name: bo.title }).click();
+	await expect(page).toHaveURL(/\/play\/bo-standard\?/);
+	await page.goBack();
+
+	await expect(page).toHaveURL(/quiz\?as=rw/);
+	await expect(page.getByRole('button', { name: 'RW', exact: true })).toHaveAttribute('aria-pressed', 'true');
+});

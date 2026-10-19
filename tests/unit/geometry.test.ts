@@ -27,7 +27,9 @@ describe('clampToRink', () => {
 	it('lands a square-corner point on the corner arc', () => {
 		const p = clampToRink({ x: 0, y: 0 });
 		expect(isOnIce(p)).toBe(true);
-		expect(Math.hypot(p.x - 28, p.y - 28)).toBeLessThanOrEqual(28.01);
+		expect(Math.hypot(p.x - 28, p.y - 28)).toBeCloseTo(28, 6);
+		expect(p.x).toBeCloseTo(28 - 28 / Math.SQRT2, 6);
+		expect(p.y).toBeCloseTo(28 - 28 / Math.SQRT2, 6);
 	});
 	it('leaves on-ice points unchanged', () => {
 		expect(clampToRink({ x: 50, y: 20 })).toEqual({ x: 50, y: 20 });
@@ -35,6 +37,9 @@ describe('clampToRink', () => {
 	it('handles the far corner', () => {
 		const p = clampToRink({ x: 200, y: 85 });
 		expect(isOnIce(p)).toBe(true);
+		expect(Math.hypot(p.x - 172, p.y - 57)).toBeCloseTo(28, 6);
+		expect(p.x).toBeCloseTo(172 + 28 / Math.SQRT2, 6);
+		expect(p.y).toBeCloseTo(57 + 28 / Math.SQRT2, 6);
 	});
 });
 

@@ -52,14 +52,13 @@
 	const motion = new Tween(
 		untrack(() => target),
 		{
-			duration: () => (prefersReducedMotion.current || editable ? 0 : DURATION),
 			easing: cubicOut,
 			interpolate: (a: Frame, b: Frame) => (t: number) => lerpFrame(a, b, t)
 		}
 	);
 	$effect.pre(() => {
 		const t = target;
-		if (t !== untrack(() => motion.target)) motion.set(t);
+		if (t !== untrack(() => motion.target)) motion.set(t, { duration: prefersReducedMotion.current || editable ? 0 : DURATION });
 	});
 	const frame = $derived(motion.current);
 	const settled = $derived(motion.current === motion.target);

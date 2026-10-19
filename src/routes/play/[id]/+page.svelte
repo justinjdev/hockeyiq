@@ -34,7 +34,7 @@
 	$effect(() => {
 		const p = play;
 		untrack(() => {
-			({ step, slot, flip } = parseStudyParams(p, new URLSearchParams(page.url.search)));
+			({ step, slot, flip } = parseStudyParams(p, new URLSearchParams(location.search)));
 			progress = loadProgress();
 			ready = true;
 		});

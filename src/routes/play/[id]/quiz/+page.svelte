@@ -46,7 +46,7 @@
 	$effect(() => {
 		const p = play;
 		untrack(() => {
-			const params = new URLSearchParams(page.url.search);
+			const params = new URLSearchParams(location.search);
 			const slot = params.has('as') && params.get('as') !== ALL ? parseStudyParams(p, params).slot : ALL;
 			reset(listQuizItems(p, slot).length > 0 ? slot : ALL);
 			ready = true;

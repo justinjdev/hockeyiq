@@ -12,7 +12,7 @@ import type {
 	Term,
 	Vec
 } from './types';
-import { termRefs } from '../text/richText';
+import { parseRichText, termRefs } from '../text/richText';
 import { isOnIce, sampleCurve } from '../rink/geometry';
 
 export type Ctx = {
@@ -44,22 +44,14 @@ function checkArrowGeometry(a: Arrow, from: Vec | undefined, where: string, issu
 const resolveFrom = (a: Arrow, posOf: (id: string) => Vec | undefined): Vec | undefined =>
 	typeof a.from === 'string' ? posOf(a.from) : a.from;
 
-/** True when a term ref opens inside another (`[[a [[b]]]]`) or a ref has a stray bracket (`[[[`, `]]]`). */
-function hasNestedTermRef(text: string): boolean {
-	if (text.includes('[[[') || text.includes(']]]')) return true;
-	for (let i = text.indexOf('[['); i !== -1; ) {
-		const close = text.indexOf(']]', i + 2);
-		if (close === -1) return false;
-		const next = text.indexOf('[[', i + 2);
-		if (next !== -1 && next < close) return true;
-		i = text.indexOf('[[', close + 2);
-	}
-	return false;
+/** Any bracket left outside a well-formed ref (unclosed, nested, empty, stray) renders literally. */
+function hasMalformedTermRef(text: string): boolean {
+	return parseRichText(text).some((seg) => seg.kind === 'text' && /[[\]]/.test(seg.text));
 }
 
 function checkTerms(text: string | undefined, where: string, ctx: Ctx, issues: Issue[]) {
 	if (!text) return;
-	if (hasNestedTermRef(text)) issues.push({ where, message: 'nested or malformed [[term]] reference' });
+	if (hasMalformedTermRef(text)) issues.push({ where, message: 'nested or malformed [[term]] reference' });
 	for (const id of termRefs(text)) {
 		if (!ctx.termIds.has(id)) issues.push({ where, message: `unknown glossary term [[${id}]]` });
 	}
@@ -240,6 +232,9 @@ function checkDiagram(d: Diagram, where: string, issues: Issue[]) {
 	}
 	if (d.puck && !isOnIce(d.puck)) issues.push({ where, message: 'diagram puck is off the ice' });
 	const ids = new Set(d.players.map((pl) => pl.id));
+	for (const id of duplicates(d.players.map((pl) => pl.id))) {
+		issues.push({ where, message: `duplicate diagram player id ${id}` });
+	}
 	d.arrows.forEach((a, ai) => {
 		const w = `${where}/arrow:${ai}`;
 		if (typeof a.from === 'string' && !ids.has(a.from)) {
@@ -249,7 +244,9 @@ function checkDiagram(d: Diagram, where: string, issues: Issue[]) {
 		checkArrowGeometry(a, from, w, issues);
 	});
 	for (const r of d.reads ?? []) {
-		if (typeof r.at !== 'string' && !isOnIce(r.at)) {
+		if (typeof r.at === 'string') {
+			if (!ids.has(r.at)) issues.push({ where, message: `diagram read at unknown id ${r.at}` });
+		} else if (!isOnIce(r.at)) {
 			issues.push({ where, message: 'diagram read position is off the ice' });
 		}
 	}
@@ -329,6 +326,11 @@ export function validateLibrary(lib: {
 	for (const p of lib.plays) issues.push(...validatePlay(p, ctx));
 	for (const l of lib.lessons) issues.push(...validateLesson(l, ctx));
 	for (const c of lib.comparisons) issues.push(...validateComparison(c, ctx));
-	for (const t of lib.glossary) checkTerms(t.definition, `term:${t.id}`, ctx, issues);
+	for (const t of lib.glossary) {
+		// Definitions are printed as plain text (Term.svelte, glossary page), so markup is rejected.
+		if (t.definition.includes('[[') || t.definition.includes(']]')) {
+			issues.push({ where: `term:${t.id}`, message: 'glossary definitions must be plain text (no [[term]] markup)' });
+		}
+	}
 	return issues;
 }

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { validateComparison, validateLesson, validatePlay } from '../../src/lib/content/validate';
+import { validateComparison, validateLesson, validateLibrary, validatePlay } from '../../src/lib/content/validate';
 import type { Diagram } from '../../src/lib/content/types';
 import { makeCtx, validLesson, validPlay } from './fixtures';
 
@@ -143,7 +143,12 @@ describe('rich text refs', () => {
 	it.each([
 		'A [[gap|tight [[gap]]]] here.',
 		'A [[gap]]] here.',
-		'A [[[gap]] here.'
+		'A [[[gap]] here.',
+		'A [[gap [[support]] lane]] x',
+		'A [[x|]] here.',
+		'A [[foo] bar]] here.',
+		'A [[foo here.',
+		'A [[gap]]b]] here.'
 	])('flags nested or malformed term refs: %s', (text) => {
 		const p = validPlay();
 		p.summary = text;
@@ -180,6 +185,44 @@ describe('validateLesson diagrams', () => {
 
 	it('flags an unknown player id in from', () => {
 		expect(withDiagram(diagram('zz', { x: -5, y: 62 })).map((i) => i.message).join('\n')).toContain('unknown id zz');
+	});
+});
+
+describe('validateLesson diagram reads and ids', () => {
+	const base = (): Diagram => ({
+		players: [
+			{ id: 'a', team: 'us', label: 'D', pos: { x: 15, y: 55 } },
+			{ id: 'b', team: 'us', label: 'W', pos: { x: 15, y: 70 } }
+		],
+		arrows: [],
+		caption: 'Read.'
+	});
+	const messages = (d: Diagram) => {
+		const l = validLesson();
+		l.sections[0].diagram = d;
+		return validateLesson(l, ctx()).map((i) => i.message);
+	};
+
+	it('flags a read that points at an unknown player id', () => {
+		const d = base();
+		d.reads = [{ at: 'x33' }];
+		expect(messages(d)).toContain('diagram read at unknown id x33');
+		d.reads = [{ at: 'a' }];
+		expect(messages(d)).toEqual([]);
+	});
+
+	it('flags duplicate player ids', () => {
+		const d = base();
+		d.players[1].id = 'a';
+		expect(messages(d)).toContain('duplicate diagram player id a');
+	});
+});
+
+describe('validateLibrary glossary', () => {
+	it('rejects term markup in definitions, which render as plain text', () => {
+		const lib = { plays: [], lessons: [], comparisons: [], glossary: [{ id: 'x', term: 'X', definition: 'See [[x]].' }] };
+		const issues = validateLibrary(lib as unknown as Parameters<typeof validateLibrary>[0]);
+		expect(issues.map((i) => i.message)).toContain('glossary definitions must be plain text (no [[term]] markup)');
 	});
 });
 

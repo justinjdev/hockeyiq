@@ -87,8 +87,10 @@ describe('lintPlay', () => {
 		it('allows a shot ending at the net mouth but not one through the net', () => {
 			const p = validPlay();
 			p.steps[0].positions.lw = { x: 160, y: 42 };
-			p.steps[0].arrows = [{ kind: 'shot', from: 'lw', to: { x: 189, y: 43 } }];
+			p.steps[0].arrows = [{ kind: 'shot', from: 'lw', to: { x: 190, y: 43 } }];
 			expect(has(p, 'net:')).toBe(false);
+			p.steps[0].arrows = [{ kind: 'shot', from: 'lw', to: { x: 191, y: 43 } }];
+			expect(has(p, 'net: shot passes through a net')).toBe(true);
 			p.steps[0].arrows = [{ kind: 'shot', from: 'lw', to: { x: 196, y: 43 } }];
 			expect(has(p, 'net: shot passes through a net')).toBe(true);
 		});

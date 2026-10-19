@@ -34,13 +34,12 @@ test('rapid arrow keys settle on the last step with matching positions', async (
 	await expect(page.getByTestId('step-label')).toHaveText(`1/${bo.steps.length}`);
 
 	for (let i = 0; i < bo.steps.length + 1; i++) await page.keyboard.press('ArrowRight');
-	await page.waitForTimeout(700);
 
 	await expect(page.getByTestId('step-label')).toHaveText(`${bo.steps.length}/${bo.steps.length}`);
 	const want = bo.steps[bo.steps.length - 1].positions.rw;
-	const got = translate(await page.locator('[data-slot="rw"]').getAttribute('transform'));
-	expect(got?.x).toBeCloseTo(want.x, 1);
-	expect(got?.y).toBeCloseTo(want.y, 1);
+	const rw = page.locator('[data-slot="rw"]');
+	await expect.poll(async () => translate(await rw.getAttribute('transform'))?.x).toBeCloseTo(want.x, 1);
+	await expect.poll(async () => translate(await rw.getAttribute('transform'))?.y).toBeCloseTo(want.y, 1);
 });
 
 test('client-side navigation to a play with fewer steps does not crash', async ({ page }) => {
@@ -62,4 +61,19 @@ test('client-side navigation to a play with fewer steps does not crash', async (
 	await expect(page).toHaveURL(/dz-net-front-battle/);
 	await expect(page.getByTestId('step-label')).toHaveText(/^1\/3$/);
 	expect(errors).toEqual([]);
+});
+
+test('Back after leaving restores the study step and position', async ({ page }) => {
+	await open(page, '/play/bo-standard?as=rw&step=1');
+	await page.getByRole('button', { name: 'Next step' }).click();
+	await page.getByRole('button', { name: 'Next step' }).click();
+	await expect(page).toHaveURL(/step=3/);
+
+	await page.getByRole('link', { name: 'Quiz me' }).click();
+	await expect(page).toHaveURL(/\/quiz/);
+	await page.goBack();
+
+	await expect(page.getByTestId('step-label')).toHaveText(`3/${bo.steps.length}`);
+	await expect(page.getByRole('button', { name: 'RW', exact: true })).toHaveAttribute('aria-pressed', 'true');
+	await expect(page).toHaveURL(/as=rw&step=3/);
 });

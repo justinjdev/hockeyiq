@@ -21,6 +21,10 @@
 		reveal?: { region: Region; ok: boolean };
 		/** Quiz only: hide the step's arrows and reads (they depict the answer). */
 		hideHints?: boolean;
+		/** Dev editor: every player, opponent and the puck can be dragged (id 'puck' for the puck). */
+		editable?: boolean;
+		/** Editable only: receives each moved item's clamped point, in unflipped rink coords. */
+		onMove?: (id: string, p: Vec) => void;
 	};
 
 	let {
@@ -32,10 +36,13 @@
 		onSelect,
 		onDrop,
 		reveal,
-		hideHints = false
+		hideHints = false,
+		editable = false,
+		onMove
 	}: Props = $props();
 
 	const DURATION = 600;
+	const PUCK = 'puck';
 	const uid = $props.id();
 	const headId = `${uid}-head`;
 
@@ -45,7 +52,7 @@
 	const motion = new Tween(
 		untrack(() => target),
 		{
-			duration: () => (prefersReducedMotion.current ? 0 : DURATION),
+			duration: () => (prefersReducedMotion.current || editable ? 0 : DURATION),
 			easing: cubicOut,
 			interpolate: (a: Frame, b: Frame) => (t: number) => lerpFrame(a, b, t)
 		}
@@ -60,18 +67,26 @@
 	// Drag (quiz): where the user put `dragSlot`, in unflipped rink coords. Keyed so a
 	// new step, play or drag slot starts from the frame position again.
 	let svg: SVGSVGElement | undefined = $state();
-	let drag = $state<{ key: string; pos: Vec } | null>(null);
-	let dragging = false;
+	let drag = $state<{ key: string; id: string; pos: Vec } | null>(null);
+	let dragging: string | null = null;
 	const dragKey = $derived(`${play.id}/${step}/${dragSlot ?? ''}`);
-	const dragPos = $derived(drag && drag.key === dragKey ? drag.pos : null);
-	const setDragPos = (pos: Vec) => (drag = { key: dragKey, pos });
+	const dragged = $derived(drag && drag.key === dragKey ? drag : null);
+	const setDragPos = (id: string, pos: Vec) => {
+		drag = { key: dragKey, id, pos };
+		if (editable) onMove?.(id, pos);
+	};
+	const canDrag = (id: string) => !locked && (editable || id === dragSlot);
 
 	const view = (p: Vec): Vec => (flip ? flipY(p) : p);
 	const posOf = (id: string): Vec =>
-		id === dragSlot && dragPos ? dragPos : (frame.positions[id] ?? { x: 0, y: 0 });
+		dragged && dragged.id === id
+			? dragged.pos
+			: id === PUCK
+				? frame.puck
+				: (frame.positions[id] ?? { x: 0, y: 0 });
 	const at = (ref: Vec | string): Vec => (typeof ref === 'string' ? posOf(ref) : ref);
 
-	const puck = $derived(view(frame.puck));
+	const puck = $derived(view(posOf(PUCK)));
 	const current = $derived(play.steps[step]);
 	const roles = $derived(current.roles ?? {});
 	// An unanswered drag question hides the slot's reads and role tag; they would give the spot away.
@@ -111,23 +126,23 @@
 	}
 
 	function onPointerDown(e: PointerEvent, id: string) {
-		if (id !== dragSlot || locked) return;
-		dragging = true;
+		if (!canDrag(id)) return;
+		dragging = id;
 		(e.currentTarget as Element).setPointerCapture(e.pointerId);
 		const p = toRink(e);
-		if (p) setDragPos(p);
+		if (p) setDragPos(id, p);
 	}
 
 	function onPointerMove(e: PointerEvent) {
 		if (!dragging) return;
 		const p = toRink(e);
-		if (p) setDragPos(p);
+		if (p) setDragPos(dragging, p);
 	}
 
 	function onPointerUp() {
 		if (!dragging) return;
-		dragging = false;
-		if (dragPos) onDrop?.(dragPos);
+		dragging = null;
+		if (!editable && dragged) onDrop?.(dragged.pos);
 	}
 
 	const KEY_STEP: Record<string, Vec> = {
@@ -144,14 +159,14 @@
 			return;
 		}
 		const d = KEY_STEP[e.key];
-		if (!d || id !== dragSlot || locked) return;
+		if (!d || !canDrag(id)) return;
 		e.preventDefault();
 		const p = posOf(id);
 		// Arrow keys move on screen, so up/down invert when the rink is flipped.
 		const dy = flip ? -d.y : d.y;
 		const next = clampToRink({ x: p.x + d.x, y: p.y + dy });
-		setDragPos(next);
-		onDrop?.(next);
+		setDragPos(id, next);
+		if (!editable) onDrop?.(next);
 	}
 
 	const tagWidth = (text: string) => text.length * 1.25 + 2.4;
@@ -224,8 +239,25 @@
 
 	<g class="opponents">
 		{#each play.opponents as o (o.id)}
-			{@const p = view(frame.positions[o.id] ?? { x: 0, y: 0 })}
-			<g class="opponent" transform={`translate(${p.x} ${p.y})`} data-opponent={o.id}>
+			{@const p = view(posOf(o.id))}
+			<!-- svelte-ignore a11y_no_noninteractive_tabindex: focusable only when editable (role is set then) -->
+			<g
+				class="opponent"
+				class:draggable={editable}
+				transform={`translate(${p.x} ${p.y})`}
+				data-opponent={o.id}
+				role={editable ? 'button' : undefined}
+				tabindex={editable ? 0 : undefined}
+				aria-label={editable ? `Opponent ${o.label ?? o.id}` : undefined}
+				onkeydown={editable ? (e) => onKeyDown(e, o.id) : undefined}
+				onpointerdown={editable ? (e) => onPointerDown(e, o.id) : undefined}
+				onpointermove={editable ? onPointerMove : undefined}
+				onpointerup={editable ? onPointerUp : undefined}
+				onpointercancel={editable ? onPointerUp : undefined}
+			>
+				{#if editable}
+					<circle class="hit" r="3" />
+				{/if}
 				<path d="M -1.8 -1.8 L 1.8 1.8 M -1.8 1.8 L 1.8 -1.8" />
 				{#if o.label}
 					<text x="2.4" y="-2">{o.label}</text>
@@ -242,7 +274,7 @@
 			<g
 				class="player"
 				class:selected={isSel}
-				class:draggable={s.id === dragSlot && !locked}
+				class:draggable={canDrag(s.id)}
 				transform={`translate(${p.x} ${p.y})`}
 				role="button"
 				tabindex="0"
@@ -272,6 +304,23 @@
 	</g>
 
 	<circle class="puck" cx={puck.x} cy={puck.y} r="1" />
+	{#if editable}
+		<g
+			class="puck-handle draggable"
+			transform={`translate(${puck.x} ${puck.y})`}
+			role="button"
+			tabindex="0"
+			aria-label="Puck"
+			data-puck
+			onkeydown={(e) => onKeyDown(e, PUCK)}
+			onpointerdown={(e) => onPointerDown(e, PUCK)}
+			onpointermove={onPointerMove}
+			onpointerup={onPointerUp}
+			onpointercancel={onPointerUp}
+		>
+			<circle class="hit" r="3" />
+		</g>
+	{/if}
 </svg>
 
 <style>
@@ -346,6 +395,20 @@
 	.player.draggable {
 		cursor: grab;
 		touch-action: none;
+	}
+	.hit {
+		fill: transparent;
+	}
+	.opponent.draggable,
+	.puck-handle {
+		cursor: grab;
+		touch-action: none;
+		outline: none;
+	}
+	.opponent.draggable:focus-visible .hit,
+	.puck-handle:focus-visible .hit {
+		stroke: var(--goal-light);
+		stroke-width: 0.5;
 	}
 	.body {
 		fill: var(--us);

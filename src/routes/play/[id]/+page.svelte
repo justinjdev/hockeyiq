@@ -23,7 +23,10 @@
 	let progress = $state<Progress>({});
 	let ready = false;
 
-	const current = $derived(play.steps[step]);
+	// Clamped: when the component is reused for a play with fewer steps, it renders once with the
+	// old step before the effect below resets it.
+	const shown = $derived(Math.min(step, play.steps.length - 1));
+	const current = $derived(play.steps[shown]);
 	const mastered = $derived(new Set(play.slots.filter((s) => isMastered(play, s.id, progress)).map((s) => s.id)));
 
 	// Re-runs when the component is reused for a different play, so the previous play's
@@ -59,8 +62,8 @@
 
 	<div class="layout">
 		<section class="stage">
-			<PlayCanvas {play} {step} selected={slot} {flip} onSelect={(id) => (slot = id)} />
-			<Scrubber {step} total={play.steps.length} onStep={(s) => (step = s)} />
+			<PlayCanvas {play} step={shown} selected={slot} {flip} onSelect={(id) => (slot = id)} />
+			<Scrubber step={shown} total={play.steps.length} onStep={(s) => (step = s)} />
 			<p class="caption"><RichText text={current.caption} /></p>
 			<p class="legend">Tap any of your players to switch perspective. Arrow keys step through the play.</p>
 		</section>

@@ -42,3 +42,24 @@ test('rapid arrow keys settle on the last step with matching positions', async (
 	expect(got?.x).toBeCloseTo(want.x, 1);
 	expect(got?.y).toBeCloseTo(want.y, 1);
 });
+
+test('client-side navigation to a play with fewer steps does not crash', async ({ page }) => {
+	const errors: string[] = [];
+	page.on('pageerror', (e) => errors.push(e.message));
+	await open(page, `/play/bo-standard?as=rw&step=${bo.steps.length}`);
+	await expect(page.getByTestId('step-label')).toHaveText(`${bo.steps.length}/${bo.steps.length}`);
+
+	// A same-route link reuses the page component, so the old step briefly meets the new play.
+	await page.evaluate(() => {
+		const a = document.createElement('a');
+		a.href = 'dz-net-front-battle';
+		a.textContent = 'next play';
+		a.id = 'reuse-link';
+		document.body.append(a);
+	});
+	await page.locator('#reuse-link').click();
+
+	await expect(page).toHaveURL(/dz-net-front-battle/);
+	await expect(page.getByTestId('step-label')).toHaveText(/^1\/3$/);
+	expect(errors).toEqual([]);
+});

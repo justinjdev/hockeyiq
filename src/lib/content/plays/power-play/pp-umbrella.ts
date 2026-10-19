@@ -9,7 +9,7 @@ const play: Play = {
 	system: 'Umbrella (3 high, 2 low)',
 	strength: '5v4',
 	summary:
-		'A [[power-play]] setup with three players high and two low. One player runs it from the middle of the blue line, two [[flank|flanks]] sit wide near the tops of the circles, and two forwards live in front of the net. The puck moves side to side up top until a shooter gets a clear [[shooting-lane]], and the two low forwards [[screen]], [[tip]] and clean up rebounds.',
+		'A [[power-play]] setup with three players high and two low. One player runs it from the middle of the blue line, two [[flank|flanks]] sit wide a few strides inside the blue line, and two forwards live in front of the net. The puck moves side to side up top until a shooter gets a clear [[shooting-lane]], and the two low forwards [[screen]], [[tip]] and clean up rebounds.',
 	slots: [
 		{ id: 'lw', home: 'LW' },
 		{ id: 'c', home: 'C' },
@@ -80,7 +80,7 @@ const play: Play = {
 					why: 'The umbrella shoots from far out. Those shots only score if the goalie cannot see them or they get [[tip|tipped]].'
 				},
 				rw: {
-					where: 'Low on the right side of the [[slot]], beside the right post, a step off the crease.',
+					where: 'Low on the right side of the [[slot]], a couple of strides out from the right post.',
 					read: 'Watch the puck up top and their D in front of you. Keep your stick on the ice for a [[tip]] or a loose puck.',
 					why: 'Two forwards at the net means two chances at every rebound. You also keep their D busy so he cannot step out to block shots.'
 				},
@@ -132,8 +132,8 @@ const play: Play = {
 					drag: {
 						start: { x: 162, y: 62 },
 						target: { kind: 'ellipse', cx: 179, cy: 51, rx: 8, ry: 6 },
-						correct: 'Yes. Low beside the right post you can [[tip]] shots and get to rebounds, and you tie up their D.',
-						incorrect: 'In the umbrella both low forwards live at the net. Set up just off the right post, a step outside the crease.'
+						correct: 'Yes. Low on the right side, a couple of strides off the post, you can [[tip]] shots and get to rebounds, and you tie up their D.',
+						incorrect: 'In the umbrella both low forwards live at the net. Set up low on the right side of the slot, a couple of strides out from the right post.'
 					}
 				}
 			}
@@ -141,7 +141,7 @@ const play: Play = {
 		{
 			caption:
 				'LD moves it to LW. Their high forward on that side comes out at LW, and the box slides left.',
-			phase: 'move-puck',
+			phase: 'setup',
 			positions: {
 				lw: { x: 140, y: 14 },
 				c: { x: 182, y: 38 },
@@ -169,7 +169,7 @@ const play: Play = {
 					why: 'A [[screen]] only works if it is in the shooting line. When the puck moves, the line moves.'
 				},
 				rw: {
-					where: 'Low on the right side, beside the post.',
+					where: 'Low on the right side of the slot, a couple of strides off the post.',
 					read: 'Their D on your side is drifting toward the middle. Keep your stick down and watch the puck.',
 					why: 'If the puck comes back to RD on your side, you are the one in front for the [[tip]].'
 				},
@@ -303,7 +303,7 @@ const play: Play = {
 		},
 		{
 			caption:
-				'RD steps toward the net and shoots. C is in the goalie\'s eyes, RW heads for the right post, and their forward is too late to block it.',
+				'RD steps toward the net and shoots. C is in the goalie\'s eyes, RW heads for the front of the crease, and their forward is too late to block it.',
 			phase: 'shot-lane',
 			positions: {
 				lw: { x: 146, y: 15 },
@@ -335,7 +335,7 @@ const play: Play = {
 					why: 'A goalie who cannot see a shot from 45 feet cannot stop it. You are the reason this shot is dangerous.'
 				},
 				rw: {
-					where: 'Moving from the right post toward the front of the crease.',
+					where: 'Moving from the right side of the slot toward the front of the crease.',
 					read: 'Watch the puck off the goalie. Get your stick to the ice before the rebound comes.',
 					why: 'Most power play goals off point shots are tips and rebounds. Arrive as the puck arrives.'
 				},

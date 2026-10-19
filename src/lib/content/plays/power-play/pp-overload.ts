@@ -71,7 +71,7 @@ const play: Play = {
 					why: 'You are the [[screen]] for every shot and the target for a quick pass from C below the goal line.'
 				},
 				c: {
-					where: 'Low on the right side, near the goal line, a few feet off the boards.',
+					where: 'Low on the right side, near the goal line, about 10 feet off the end boards.',
 					read: 'Watch RW and their D who is guarding you. If he steps toward the wall, you are open for a pass.',
 					why: 'You are the bottom of the triangle. Being low pulls one of their D out of the front of the net.'
 				},

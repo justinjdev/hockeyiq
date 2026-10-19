@@ -70,7 +70,7 @@ const play: Play = {
 					why: 'From the dot you can shoot, pass to the bumper, or go down low. Out wide you also pull their box apart.'
 				},
 				c: {
-					where: 'In the middle of their box, between the tops of the circles, in the high slot.',
+					where: 'In the middle of their box, between the tops of the circles, in the [[high-slot|high slot]].',
 					read: 'Keep your head moving: know where all four of them are. Find the gap between their two high forwards.',
 					why: 'A box has a hole in the middle, and you stand in it. They cannot cover you without leaving someone else.'
 				},
@@ -124,7 +124,7 @@ const play: Play = {
 					drag: {
 						start: { x: 142, y: 42 },
 						target: { kind: 'ellipse', cx: 157, cy: 43, rx: 8, ry: 6 },
-						correct: 'Yes. In the high slot, in the middle of their box, you stand in the hole they cannot cover without leaving someone else.',
+						correct: 'Yes. In the [[high-slot|high slot]], in the middle of their box, you stand in the hole they cannot cover without leaving someone else.',
 						incorrect: 'The bumper sits in the middle of their box, between the tops of the circles. Too high and you are just another point; too low and you are in their D\'s lap.'
 					}
 				}

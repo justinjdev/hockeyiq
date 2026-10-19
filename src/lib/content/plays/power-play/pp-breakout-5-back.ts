@@ -9,7 +9,7 @@ const play: Play = {
 	system: '5-back swing breakout',
 	strength: '5v4',
 	summary:
-		'All five players come back into our end, then leave together. LD waits behind the net with the puck until the three forwards are curling up ice with speed, then skates out and passes to whoever their first forechecker leaves open, in stride. Five players moving at once give one forechecker too many options to take away.',
+		'All five players come back into our end, then leave together. LD waits behind the net with the puck until the three forwards are curling up ice with speed, then skates out and passes to whoever their first [[forecheck|forechecker]] leaves open, in stride. Five players moving at once give one forechecker too many options to take away.',
 	slots: [
 		{ id: 'lw', home: 'LW' },
 		{ id: 'c', home: 'C' },
@@ -25,7 +25,7 @@ const play: Play = {
 	],
 	keyConcepts: [],
 	variations:
-		'Some teams call this the five-man swing. The carrier is usually the unit\'s best puck-moving D, but it can be a forward. If their forechecker takes away the wall, the pass goes to the middle forward; if he takes the middle, it goes up the wall; if he sits back, the carrier skates it up himself. Against a hard forecheck many teams switch to a [[drop-pass]] breakout instead, or use a [[d-to-d|D-to-D]] pass to change the angle. Now and then a lane opens straight up the middle for a [[stretch-pass]], but that works once or twice a game before the other team adjusts.',
+		'Some teams call this the five-man swing. The carrier is usually the unit\'s best puck-moving D, but it can be a forward. If their [[forecheck|forechecker]] takes away the wall, the pass goes to the middle forward; if he takes the middle, it goes up the wall; if he sits back, the carrier skates it up himself. Against a hard forecheck many teams switch to a [[drop-pass]] [[breakout]] instead, or use a [[d-to-d|D-to-D]] pass to change the angle. Now and then a lane opens straight up the middle for a [[stretch-pass]], but that works once or twice a game before the other team adjusts.',
 	sources: [
 		{
 			title: "Watching Rocky Thompson's PP Breakouts with an NHL Coach",
@@ -41,20 +41,20 @@ const play: Play = {
 	steps: [
 		{
 			caption:
-				'LD has the puck behind our net. All three forwards and RD are back in our end. Their forechecker waits at the top of our zone, and the other three wait near the red line.',
+				'LD has the puck behind our net. All three forwards and RD are back in our end. Their [[forecheck|forechecker]] waits at the top of our zone, and the other three wait near the red line.',
 			phase: 'set',
 			positions: {
 				lw: { x: 24, y: 22 },
 				c: { x: 28, y: 40 },
 				rw: { x: 26, y: 64 },
-				ld: { x: 6, y: 44 },
-				rd: { x: 14, y: 58 },
+				ld: { x: 3, y: 44 },
+				rd: { x: 13, y: 50 },
 				o1: { x: 58, y: 42 },
 				o2: { x: 102, y: 16 },
 				o3: { x: 98, y: 42 },
 				o4: { x: 102, y: 68 }
 			},
-			puck: { x: 7.5, y: 42 },
+			puck: { x: 4.5, y: 43 },
 			puckCarrier: 'ld',
 			arrows: [
 				{ kind: 'skate', from: 'lw', to: { x: 42, y: 7 } },
@@ -70,8 +70,8 @@ const play: Play = {
 				},
 				c: {
 					where: 'In the slot in front of our net.',
-					read: 'Watch LD and their forechecker. You will swing up through the middle, a little to the right.',
-					why: 'The middle swing is the hardest one for the forechecker to cover while he also watches LD.'
+					read: 'Watch LD and their [[forecheck|forechecker]]. You will swing up through the middle, a little to the right.',
+					why: 'The middle swing is the hardest one for the [[forecheck|forechecker]] to cover while he also watches LD.'
 				},
 				rw: {
 					where: 'Low in the right circle.',
@@ -80,13 +80,13 @@ const play: Play = {
 				},
 				ld: {
 					where: 'Behind our net with the puck, standing still.',
-					read: 'Check that all four teammates are back and set. Look at their forechecker: is he coming in, or waiting?',
+					read: 'Check that all four teammates are back and set. Look at their [[forecheck|forechecker]]: is he coming in, or waiting?',
 					why: 'The swing works because everyone leaves together. If you go before they are ready, you are alone.'
 				},
 				rd: {
 					where: 'Beside the right post.',
-					read: 'Watch LD and their forechecker. Call out if he comes in on LD.',
-					why: 'You are LD\'s safety and the [[d-to-d|D-to-D]] option if the forechecker comes hard.'
+					read: 'Watch LD and their [[forecheck|forechecker]]. Call out if he comes in on LD.',
+					why: 'You are LD\'s safety and the [[d-to-d|D-to-D]] option if the [[forecheck|forechecker]] comes hard.'
 				}
 			},
 			reads: {
@@ -99,17 +99,17 @@ const play: Play = {
 			quiz: {
 				ld: {
 					decision: {
-						prompt: 'You have the puck behind our net to start the 5-back breakout. Your three forwards are still standing low in our end. You...',
+						prompt: 'You have the puck behind our net to start the 5-back [[breakout]]. Your three forwards are still standing low in our end. You...',
 						options: [
 							{
 								text: 'Wait until all three are curling up ice with speed, then go',
 								correct: true,
-								why: 'The whole idea is five players moving at once. Their forechecker cannot cover three skating lanes and you.'
+								why: 'The whole idea is five players moving at once. Their [[forecheck|forechecker]] cannot cover three skating lanes and you.'
 							},
 							{
-								text: 'Skate it out right away before the forechecker comes',
+								text: 'Skate it out right away before the [[forecheck|forechecker]] comes',
 								correct: false,
-								why: 'You would be alone against their forechecker with your forwards still standing still. On the power play you have time to wait.'
+								why: 'You would be alone against their [[forecheck|forechecker]] with your forwards still standing still. On the power play you have time to wait.'
 							},
 							{
 								text: 'Fire it up to the red line',
@@ -123,7 +123,7 @@ const play: Play = {
 		},
 		{
 			caption:
-				'Everyone goes together. LD steps out on the left side, the three forwards curl up ice, and RD follows on the right. Their forechecker comes at LD.',
+				'Everyone goes together. LD steps out on the left side, the three forwards curl up ice, and RD follows on the right. Their [[forecheck|forechecker]] comes at LD.',
 			phase: 'swing',
 			positions: {
 				lw: { x: 44, y: 5 },
@@ -153,8 +153,8 @@ const play: Play = {
 				},
 				c: {
 					where: 'Swinging up through the middle, just right of center.',
-					read: 'Watch LD and their forechecker. If the forechecker stays wide, the middle is yours.',
-					why: 'A pass to the middle forward with speed is the most dangerous breakout, so the forechecker has to respect it.'
+					read: 'Watch LD and their [[forecheck|forechecker]]. If the forechecker stays wide, the middle is yours.',
+					why: 'A pass to the middle forward with speed is the most dangerous [[breakout]], so the [[forecheck|forechecker]] has to respect it.'
 				},
 				rw: {
 					where: 'Curling up the right boards.',
@@ -163,13 +163,13 @@ const play: Play = {
 				},
 				ld: {
 					where: 'Stepping out from behind the net on the left side with the puck.',
-					read: 'Their forechecker is coming at you from the middle. Which lane is he taking away, and which is he leaving?',
+					read: 'Their [[forecheck|forechecker]] is coming at you from the middle. Which lane is he taking away, and which is he leaving?',
 					why: 'He can only take away one lane. Your job is to see which one he picks and use another.'
 				},
 				rd: {
 					where: 'Moving up the right side behind RW.',
-					read: 'Watch LD. If the forechecker gets to him, you are the pass across.',
-					why: 'A D-to-D option makes the forechecker think twice about going all-in on LD.'
+					read: 'Watch LD. If the [[forecheck|forechecker]] gets to him, you are the pass across.',
+					why: 'A D-to-D option makes the [[forecheck|forechecker]] think twice about going all-in on LD.'
 				}
 			},
 			reads: {
@@ -183,7 +183,7 @@ const play: Play = {
 				c: {
 					drag: {
 						target: { kind: 'ellipse', cx: 42, cy: 50, rx: 9, ry: 6 },
-						correct: 'Yes. Swinging up through the middle, a little to the right, you are a passing lane the forechecker cannot cover while he chases LD.',
+						correct: 'Yes. Swinging up through the middle, a little to the right, you are a passing lane the [[forecheck|forechecker]] cannot cover while he chases LD.',
 						incorrect: 'The middle forward swings up through the center of our zone, a little to the far side of LD, with speed.'
 					}
 				},
@@ -194,7 +194,7 @@ const play: Play = {
 							{
 								text: 'Follow up the right side a few strides behind, as LD\'s pass across',
 								correct: true,
-								why: 'You give LD a [[d-to-d|D-to-D]] option if the forechecker gets close, and you stay the deepest player.'
+								why: 'You give LD a [[d-to-d|D-to-D]] option if the [[forecheck|forechecker]] gets close, and you stay the deepest player.'
 							},
 							{
 								text: 'Stay planted in front of our net',
@@ -213,7 +213,7 @@ const play: Play = {
 		},
 		{
 			caption:
-				'Their forechecker cuts across from the middle at LD and takes away the pass to C. That leaves LW open up the left boards.',
+				'Their [[forecheck|forechecker]] cuts across from the middle at LD and takes away the pass to C. That leaves LW open up the left boards.',
 			phase: 'pass',
 			positions: {
 				lw: { x: 60, y: 5 },
@@ -234,20 +234,20 @@ const play: Play = {
 				lw: {
 					where: 'On the left boards near our blue line, skating up ice, back to the boards and open to LD.',
 					read: 'Nobody is near you. Show LD your stick and expect the pass.',
-					why: 'Their forechecker chose the middle, so the wall is the open lane.'
+					why: 'Their [[forecheck|forechecker]] chose the middle, so the wall is the open lane.'
 				},
 				c: {
 					where: 'In the middle near our blue line, with speed.',
-					read: 'The forechecker is in the lane between you and LD. Keep skating so you are ready for a pass from LW next.',
+					read: 'The [[forecheck|forechecker]] is in the lane between you and LD. Keep skating so you are ready for a pass from LW next.',
 					why: 'Even when you do not get the first pass, your speed through the middle keeps their D backing up.'
 				},
 				rw: {
 					where: 'On the right boards near our blue line.',
 					read: 'Watch the puck go up the left side. Keep your width and your speed.',
-					why: 'The attack needs a wide option on the far side when the puck reaches the neutral zone.'
+					why: 'The attack needs a wide option on the far side when the puck reaches the [[neutral-zone|neutral zone]].'
 				},
 				ld: {
-					where: 'In the left circle with the puck, skating up ice, with the forechecker closing from the middle.',
+					where: 'In the left circle with the puck, skating up ice, with the [[forecheck|forechecker]] closing from the middle.',
 					read: 'He is right in the lane to C. The lane up the wall to LW is clear. Pass it to LW in stride.',
 					why: 'Hit the lane he left open. A pass into his stick here is a scoring chance against.'
 				},
@@ -267,17 +267,17 @@ const play: Play = {
 			quiz: {
 				ld: {
 					decision: {
-						prompt: 'Their forechecker cuts across from the middle at you and sits in the lane to C. LW is open on the left boards. You...',
+						prompt: 'Their [[forecheck|forechecker]] cuts across from the middle at you and sits in the lane to C. LW is open on the left boards. You...',
 						options: [
 							{
 								text: 'Pass up the wall to LW in stride',
 								correct: true,
-								why: 'He took the middle, so the wall is open. LW gets it moving, already past the forechecker.'
+								why: 'He took the middle, so the wall is open. LW gets it moving, already past the [[forecheck|forechecker]].'
 							},
 							{
 								text: 'Force the pass to C in the middle',
 								correct: false,
-								why: 'The forechecker is right in that lane. A turnover in the middle of our zone is a scoring chance against.'
+								why: 'The [[forecheck|forechecker]] is right in that lane. A turnover in the middle of our zone is a scoring chance against.'
 							},
 							{
 								text: 'Go back behind the net and start again',
@@ -290,7 +290,7 @@ const play: Play = {
 				lw: {
 					drag: {
 						target: { kind: 'ellipse', cx: 60, cy: 6, rx: 9, ry: 5 },
-						correct: 'Yes. Up the left boards near our blue line, you are past the forechecker and moving with speed when the pass arrives.',
+						correct: 'Yes. Up the left boards near our blue line, you are past the [[forecheck|forechecker]] and moving with speed when the pass arrives.',
 						incorrect: 'The left forward curls up the left boards and takes the pass near our blue line, back to the boards and open to LD.'
 					}
 				}
@@ -298,14 +298,14 @@ const play: Play = {
 		},
 		{
 			caption:
-				'A couple of seconds later LW carries it into the neutral zone. C and RW come with speed, LD and RD trail, and all five attack their blue line together.',
+				'A couple of seconds later LW carries it into the [[neutral-zone|neutral zone]]. C and RW come with speed, LD and RD trail, and all five attack their blue line together.',
 			phase: 'attack',
 			positions: {
 				lw: { x: 92, y: 5 },
 				c: { x: 90, y: 40 },
 				rw: { x: 92, y: 76 },
 				ld: { x: 62, y: 26 },
-				rd: { x: 64, y: 56 },
+				rd: { x: 56, y: 56 },
 				o1: { x: 60, y: 32 },
 				o2: { x: 116, y: 20 },
 				o3: { x: 114, y: 42 },
@@ -321,7 +321,7 @@ const play: Play = {
 			roles,
 			notes: {
 				lw: {
-					where: 'Carrying the puck up the left boards past the red line.',
+					where: 'Carrying the puck up the left boards, approaching the red line.',
 					read: 'Head up: their D on your side is waiting at the line. C is coming through the middle with speed.',
 					why: 'You can carry it in, or pass to C if their D steps up at you. Either way you have support.'
 				},
@@ -342,7 +342,7 @@ const play: Play = {
 				},
 				rd: {
 					where: 'Trailing on the right side, the last player back.',
-					read: 'Watch the puck and their forechecker skating back.',
+					read: 'Watch the puck and their [[forecheck|forechecker]] skating back.',
 					why: 'If the puck turns over at their blue line, you are the one between them and our net.'
 				}
 			},
@@ -366,7 +366,7 @@ const play: Play = {
 							{
 								text: 'Skate full speed into their zone ahead of the puck',
 								correct: false,
-								why: 'You cross their blue line before the puck: [[offside]], and the breakout is wasted.'
+								why: 'You cross their blue line before the puck: [[offside]], and the [[breakout]] is wasted.'
 							},
 							{
 								text: 'Cut across to the left to help LW',

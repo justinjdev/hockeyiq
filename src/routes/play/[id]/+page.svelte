@@ -98,13 +98,13 @@
 					<h3>Key concepts</h3>
 					<ul class="concepts">
 						{#each play.keyConcepts as id}
-							<li><a href={`/learn/${id}`}>{getLesson(id)?.title ?? id}</a></li>
+							<li><a href={resolve('/learn/[id]', { id })}>{getLesson(id)?.title ?? id}</a></li>
 						{/each}
 					</ul>
 				{/if}
 
 				<div class="actions">
-					<a class="btn primary" href={`/play/${play.id}/quiz?as=${slot}`}>Quiz me</a>
+					<a class="btn primary" href="{resolve('/play/[id]/quiz', { id: play.id })}?as={slot}">Quiz me</a>
 					<button type="button" class="btn" aria-pressed={flip} onclick={() => (flip = !flip)}>
 						Flip rink
 					</button>

@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { untrack } from 'svelte';
 	import { page } from '$app/state';
+	import { resolve } from '$app/paths';
 	import DragQuiz from '#lib/quiz/DragQuiz.svelte';
 	import DecisionQuiz from '#lib/quiz/DecisionQuiz.svelte';
 	import { listQuizItems, type QuizItem } from '#lib/quiz/quizItems.ts';
@@ -80,7 +81,7 @@
 
 <main>
 	<nav class="crumbs" aria-label="Breadcrumb">
-		<a href={`/play/${play.id}?as=${studySlot}`}>{play.title}</a>
+		<a href="{resolve('/play/[id]', { id: play.id })}?as={studySlot}">{play.title}</a>
 		<span aria-hidden="true">/</span>
 		<span>Quiz</span>
 	</nav>
@@ -109,7 +110,7 @@
 				</p>
 			{/if}
 			<div class="actions">
-				<a class="btn primary" href={`/play/${play.id}?as=${studySlot}`}>Study this play</a>
+				<a class="btn primary" href="{resolve('/play/[id]', { id: play.id })}?as={studySlot}">Study this play</a>
 				<button type="button" class="btn" onclick={() => reset(picked)}>Retry</button>
 			</div>
 		</section>

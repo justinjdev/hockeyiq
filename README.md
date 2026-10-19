@@ -1,56 +1,22 @@
-# sv
+# Hockey IQ
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+A static SvelteKit app for learning hockey positioning: step-through plays on a rink diagram, a quiz mode, lessons, and a glossary. No backend, no accounts; progress lives in `localStorage`.
 
-## Creating a project
+## Commands
 
-If you're seeing this, you've probably already done this step. Congrats!
+| Command | What it does |
+| --- | --- |
+| `npm run dev` | Dev server (includes the dev-only play editor) |
+| `npm run check` | Type and Svelte checks |
+| `npm run test:unit -- --run` | Unit tests |
+| `npm run test:e2e` | Playwright suite against a production build |
+| `npm run test:e2e:base` | Same suite built and served under `/hockeyiq`, catching base-path breakage |
+| `npm run build` | Static build into `build/` |
 
-```sh
-# create a new project
-npx sv create my-app
-```
+## Deploying to GitHub Pages
 
-To recreate this project with the same configuration:
+`.github/workflows/deploy.yml` builds with `BASE_PATH=/hockeyiq` and deploys on every push to `main` (or manually via workflow dispatch). In the repository settings, set Pages source to "GitHub Actions". `BASE_PATH` is empty by default, so local dev and tests serve from `/`. Internal links must go through `resolve()` from `$app/paths`.
 
-```sh
-# recreate this project
-npx sv@1.1.1 create --template minimal --types ts --add vitest="usages:unit" playwright="demo:no" --no-install app
-```
+## License
 
-## Adding features
-
-Add features to your project with `sv add`:
-
-```sh
-npx sv add
-```
-
-For example, to add Tailwind CSS:
-
-```sh
-npx sv add tailwindcss
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```sh
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```sh
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+MIT, see [LICENSE](LICENSE).

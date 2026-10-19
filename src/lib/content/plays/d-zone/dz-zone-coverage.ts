@@ -67,7 +67,7 @@ const play: Play = {
 				o4: { x: 112, y: 22 },
 				o5: { x: 110, y: 64 }
 			},
-			puck: { x: 74, y: 75 },
+			puck: { x: 70, y: 75 },
 			puckCarrier: 'o1',
 			arrows: [
 				{ kind: 'skate', from: 'o1', to: { x: 30, y: 74 } },
@@ -140,7 +140,7 @@ const play: Play = {
 		},
 		{
 			caption:
-				'The puck is in our right corner. RD and C squeeze the carrier, LD holds the [[net-front]], RW sits between the [[point]] and the slot, and LW sags into the middle.',
+				'A few seconds later the puck is in our right corner. RD and C squeeze the carrier, LD holds the [[net-front]], RW sits between the [[point]] and the slot, and LW sags into the middle.',
 			phase: 'puck-low',
 			positions: {
 				lw: { x: 40, y: 36 },

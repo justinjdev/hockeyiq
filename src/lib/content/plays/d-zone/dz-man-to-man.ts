@@ -67,7 +67,7 @@ const play: Play = {
 				o4: { x: 112, y: 22 },
 				o5: { x: 110, y: 64 }
 			},
-			puck: { x: 74, y: 75 },
+			puck: { x: 70, y: 75 },
 			puckCarrier: 'o1',
 			arrows: [
 				{ kind: 'skate', from: 'o1', to: { x: 30, y: 74 } },
@@ -140,7 +140,7 @@ const play: Play = {
 		},
 		{
 			caption:
-				'The puck is in our right corner. Everyone is stuck to his man: RD on the carrier, LD on the [[net-front]] forward, C on the third forward, the wingers on the [[point|points]].',
+				'A few seconds later the puck is in our right corner. Everyone is stuck to his man: RD on the carrier, LD on the [[net-front]] forward, C on the third forward, the wingers on the [[point|points]].',
 			phase: 'puck-low',
 			positions: {
 				lw: { x: 66, y: 18 },

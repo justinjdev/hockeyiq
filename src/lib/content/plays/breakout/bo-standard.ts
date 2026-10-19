@@ -29,15 +29,15 @@ const play: Play = {
 		'Coaches run this differently. Some want the center to swing low on the strong side every time; others let whichever forward is closest take the low spot. Against a hard [[forecheck]] on the wall, the D often [[reverse|reverses]] the puck to his partner instead of going up the boards. Some teams send the weak-side winger across the middle (a "slash") instead of staying wide. If nothing is open when the puck reaches the winger, the fallback is to "eat it": pin the puck on the boards and wait for help rather than throw it into the middle.',
 	sources: [
 		{
+			title: 'Breakouts',
+			publisher: 'Learn Ice Hockey (James Bloom)',
+			url: 'https://learn-ice-hockey.com/systems/breakouts/'
+		},
+		{
 			title: "'You have to process so much': The job starts on the wall for NHL wingers",
 			publisher: 'theScore',
 			url: 'https://www.thescore.com/nhl/news/2912350'
 		},
-		{
-			title: 'Hockey Breakout Options – Part 1',
-			publisher: 'The Coaches Site',
-			url: 'https://members.thecoachessite.com/v/1510'
-		}
 	],
 	steps: [
 		{
@@ -53,8 +53,8 @@ const play: Play = {
 				o1: { x: 32, y: 66 },
 				o2: { x: 60, y: 30 },
 				o3: { x: 82, y: 46 },
-				o4: { x: 122, y: 26 },
-				o5: { x: 122, y: 60 }
+				o4: { x: 82, y: 24 },
+				o5: { x: 80, y: 64 }
 			},
 			puck: { x: 8, y: 64 },
 			arrows: [
@@ -81,7 +81,7 @@ const play: Play = {
 					why: 'The first pass usually comes up your wall. You need to be on the boards before the puck is, not arriving after it.'
 				},
 				ld: {
-					where: 'Heading to the front of your net, then sliding toward the left post.',
+					where: 'Heading to the front of your net, then sliding to the left side of it, a step above the goal line.',
 					read: 'Watch RD and their [[f2|F2]]. Talk to RD: tell him how much time he has ("time" or "man on").',
 					why: 'The D who does not get the puck is the outlet for a [[d-to-d|D-to-D]] pass and the safety in front of the net if it goes wrong.'
 				},
@@ -125,7 +125,7 @@ const play: Play = {
 						prompt: 'RD is going back for a dumped puck in the right corner. What do you do?',
 						options: [
 							{
-								text: 'Go to the front of the net, slide toward the left post, and talk to RD',
+								text: 'Go to the front of the net, slide to the left side of it, and talk to RD',
 								correct: true,
 								why: 'You give RD a [[d-to-d|D-to-D]] option, tell him what pressure is coming, and you are still the safety in front.'
 							},
@@ -157,14 +157,14 @@ const play: Play = {
 				o1: { x: 13.5, y: 63.5 },
 				o2: { x: 35.5, y: 29.5 },
 				o3: { x: 67.5, y: 47.5 },
-				o4: { x: 119.5, y: 25.5 },
-				o5: { x: 119.5, y: 59.5 }
+				o4: { x: 82, y: 24 },
+				o5: { x: 80, y: 64 }
 			},
 			puck: { x: 7.5, y: 59 },
 			puckCarrier: 'rd',
 			arrows: [
 				{ kind: 'pass', from: 'rd', to: { x: 38, y: 80 }, via: { x: 14, y: 78 } },
-				{ kind: 'skate', from: 'c', to: { x: 42, y: 58 } }
+				{ kind: 'skate', from: 'c', to: { x: 42, y: 60 } }
 			],
 			roles,
 			notes: {
@@ -175,23 +175,23 @@ const play: Play = {
 				},
 				c: {
 					where: 'Low in the middle in front of the net, starting a curl toward the right side.',
-					read: 'Read where RD is looking. If he is going up the right wall, swing underneath RW so you arrive inside him, about 15 to 20 feet off the boards.',
+					read: 'Read where RD is looking. If he is going up the right wall, swing underneath RW so you arrive inside him, just inside the faceoff dot, about 25 feet off the boards.',
 					why: 'A low swing gives RD a short pass and gives RW someone to bump to. RD, RW and you form the [[triangle]] on the strong side.'
 				},
 				rw: {
 					where: 'On the right boards between the faceoff dot and the top of the right circle, back to the boards, stick on the ice.',
-					read: 'Look over your inside shoulder at RD and the puck, then check up ice for their D on your side. Know who is coming at you before the puck arrives.',
+					read: 'Look over your inside shoulder at RD and the puck, then check up ice for their D holding the blue line on your side. Know who is coming at you before the puck arrives.',
 					why: 'From here RD can reach you along the boards. Standing on the wall with your stick down gives him a clear target.'
 				},
 				ld: {
-					where: 'Near the left post, a few feet out from the goal line.',
-					read: 'Watch their [[f2|F2]]. If F2 is sitting in the lane between you and RD, the [[d-to-d|D-to-D]] is not on, so tell RD "up!" to send it up the wall.',
-					why: 'RD has F1 in his face and cannot see everything. You are his eyes, and the last player back if the pass gets picked off.'
+					where: 'On the left side of the net, a step above the goal line and about 15 feet out toward the left boards.',
+					read: 'Watch their [[f2|F2]]. He is sitting just above you, ready to jump you the moment RD [[reverse|reverses]] the puck your way. With F2 that close the [[d-to-d|D-to-D]] is not on, so tell RD "up!" to send it up the wall.',
+					why: 'RD has F1 coming at him and cannot see the whole ice. You can, so you make the call, and you are the last player back if the pass gets picked off.'
 				},
 				rd: {
 					where: 'Behind the net on the right side, with the puck.',
-					read: '[[f1|F1]] is closing from your right post and F2 sits in the lane toward LD. The [[reverse]] is covered, so the open outlet is RW on the wall.',
-					why: 'The net shields you from F1 for a second. Use that second to move the puck, not to stickhandle.'
+					read: '[[f1|F1]] is coming at you from the corner side, right in the line between you and RW, so a flat pass would hit him. F2 is sitting just above LD, ready to jump him on a [[reverse]]. Go around F1: [[rim]] it hard along the boards to RW.',
+					why: 'A puck rimmed hard along the boards travels faster than F1 can turn and chase it. Holding it to stickhandle just lets him close on you.'
 				}
 			},
 			reads: {
@@ -217,17 +217,17 @@ const play: Play = {
 				rd: {
 					decision: {
 						prompt:
-							'You have the puck behind the net. [[f1|F1]] is closing from your right post and [[f2|F2]] sits in the lane toward LD. You...',
+							'You have the puck behind the net. [[f1|F1]] is coming from the corner side, right in your passing lane to RW, and [[f2|F2]] is sitting just above LD. You...',
 						options: [
 							{
 								text: '[[rim|Rim]] it hard up the right boards to RW',
 								correct: true,
-								why: 'The wall is the open side. A hard rim along the boards goes around F1 and reaches RW at the top of the circle.'
+								why: 'F1 is in the direct lane, so a flat pass hits him. A hard rim along the boards goes around him and reaches RW at the top of the circle.'
 							},
 							{
 								text: 'Pass it [[d-to-d|D-to-D]] to LD',
 								correct: false,
-								why: 'F2 is sitting in that lane. A pick-off there is right in front of your own net.'
+								why: 'F2 is sitting right above LD and jumps him the moment the puck arrives. A turnover there is right in front of your own net.'
 							},
 							{
 								text: 'Carry it out in front of the net',
@@ -286,25 +286,25 @@ const play: Play = {
 		},
 		{
 			caption:
-				'RD [[rim|rims]] it hard up the right boards to RW. Their D on that side jumps down the wall to [[pinch]] on RW.',
+				'RD [[rim|rims]] it hard up the right boards to RW. Their D on that side leaves the blue line and jumps down the wall to [[pinch]] on RW.',
 			phase: 'first-pass',
 			positions: {
 				lw: { x: 62, y: 9 },
-				c: { x: 42, y: 58 },
+				c: { x: 42, y: 60 },
 				rw: { x: 39, y: 79.5 },
 				ld: { x: 16, y: 36 },
 				rd: { x: 12, y: 54 },
 				o1: { x: 24, y: 72 },
 				o2: { x: 42, y: 38 },
 				o3: { x: 68, y: 44 },
-				o4: { x: 112, y: 30 },
+				o4: { x: 86, y: 28 },
 				o5: { x: 60, y: 76 }
 			},
 			puck: { x: 40, y: 81.5 },
 			puckCarrier: 'rw',
 			arrows: [
 				{ kind: 'pass', from: 'rw', to: { x: 76, y: 80 }, via: { x: 58, y: 84 } },
-				{ kind: 'skate', from: 'c', to: { x: 80, y: 70 } }
+				{ kind: 'skate', from: 'c', to: { x: 84, y: 70 } }
 			],
 			roles,
 			notes: {
@@ -314,7 +314,7 @@ const play: Play = {
 					why: 'Stretching up ice pushes their other D back and opens room in the middle for C.'
 				},
 				c: {
-					where: 'Curling with speed toward the right side, inside RW, about 20 feet off the boards.',
+					where: 'Curling with speed toward the right side, inside RW and the faceoff dot, about 25 feet off the boards.',
 					read: 'Watch the puck on RW\'s stick and their D jumping down the wall. When that D comes down, the ice behind him is yours: skate into it.',
 					why: 'Arriving with speed means you take a [[chip]] or a bump in stride and go, instead of waiting for it standing still.'
 				},
@@ -388,7 +388,7 @@ const play: Play = {
 				o1: { x: 34, y: 72 },
 				o2: { x: 56, y: 42 },
 				o3: { x: 96, y: 50 },
-				o4: { x: 124, y: 30 },
+				o4: { x: 106, y: 30 },
 				o5: { x: 64, y: 74 }
 			},
 			puck: { x: 86.5, y: 71 },

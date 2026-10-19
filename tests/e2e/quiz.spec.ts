@@ -115,3 +115,18 @@ test('picking a position chip updates ?as=', async ({ page }) => {
 	await chips.getByRole('button', { name: 'All positions' }).click();
 	await expect(page).toHaveURL(/[?&]as=all(&|$)/);
 });
+
+test('arrow keys nudge the dragged player 1 ft, Shift+arrow 5 ft', async ({ page }) => {
+	await open(page, '/play/bo-standard/quiz?as=rw');
+	const drag = rwItems.find((i) => i.kind === 'drag')!;
+	for (const item of rwItems.slice(0, rwItems.indexOf(drag))) await answerRw(page, item.kind, item.step);
+
+	const rw = page.locator('[data-slot="rw"]');
+	const x = async () => Number(/translate\(\s*([-\d.]+)/.exec((await rw.getAttribute('transform')) ?? '')?.[1]);
+	await rw.focus();
+	const x0 = await x();
+	await page.keyboard.press('ArrowRight');
+	await expect.poll(x).toBeCloseTo(x0 + 1, 5);
+	await page.keyboard.press('Shift+ArrowRight');
+	await expect.poll(x).toBeCloseTo(x0 + 6, 5);
+});

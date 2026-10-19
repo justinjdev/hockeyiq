@@ -162,9 +162,10 @@
 		if (!d || !canDrag(id)) return;
 		e.preventDefault();
 		const p = posOf(id);
-		// Arrow keys move on screen, so up/down invert when the rink is flipped.
+		// One foot per press, five with Shift. Arrow keys move on screen, so up/down invert when flipped.
+		const k = e.shiftKey ? 5 : 1;
 		const dy = flip ? -d.y : d.y;
-		const next = clampToRink({ x: p.x + d.x, y: p.y + dy });
+		const next = clampToRink({ x: p.x + d.x * k, y: p.y + dy * k });
 		setDragPos(id, next);
 		if (!editable) onDrop?.(next);
 	}

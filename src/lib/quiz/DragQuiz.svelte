@@ -48,7 +48,7 @@
 
 	<aside class="panel">
 		<h2>Drag your {home} to where you should be.</h2>
-		<p class="hint">Drag with a finger or mouse, or focus the player and use the arrow keys.</p>
+		<p class="hint">Drag with a finger or mouse, or focus the player and use the arrow keys (hold Shift for bigger steps).</p>
 
 		{#if ok === null}
 			<button type="button" class="btn primary" onclick={check}>Check</button>

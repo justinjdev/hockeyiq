@@ -9,7 +9,7 @@
 	import NotesPanel from '#lib/play/NotesPanel.svelte';
 	import RichText from '#lib/text/RichText.svelte';
 	import { parseStudyParams } from '#lib/play/params.ts';
-	import { CATEGORY_LABELS, getLesson } from '#lib/content/registry.ts';
+	import { CATEGORY_LABELS } from '#lib/content/categories.ts';
 	import { isMastered, loadProgress, type Progress } from '#lib/quiz/progress.ts';
 	import type { PageProps } from './$types';
 
@@ -100,8 +100,8 @@
 				{#if play.keyConcepts.length}
 					<h3>Key concepts</h3>
 					<ul class="concepts">
-						{#each play.keyConcepts as id}
-							<li><a href={resolve('/learn/[id]', { id })}>{getLesson(id)?.title ?? id}</a></li>
+						{#each data.concepts as c (c.id)}
+							<li><a href={resolve('/learn/[id]', { id: c.id })}>{c.title}</a></li>
 						{/each}
 					</ul>
 				{/if}

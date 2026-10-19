@@ -1,30 +1,29 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { resolve } from '$app/paths';
-	import {
-		CATEGORY_LABELS,
-		comparisons,
-		getPlay,
-		lessons,
-		plays,
-		playsByCategory
-	} from '#lib/content/registry.ts';
-	import { isMastered, loadProgress, type Progress } from '#lib/quiz/progress.ts';
+	import { CATEGORIES, CATEGORY_LABELS } from '#lib/content/categories.ts';
+	import type { PlayMeta } from '#lib/content/meta.ts';
+	import { allCorrect, loadProgress, type Progress } from '#lib/quiz/progress.ts';
 	import { plainText } from '#lib/text/richText.ts';
-	import type { PlayCategory } from '#lib/content/types.ts';
+	import type { PageProps } from './$types';
+
+	let { data }: PageProps = $props();
+	const { lessons, comparisons } = $derived(data);
 
 	let progress = $state<Progress>({});
 	onMount(() => {
 		progress = loadProgress();
 	});
 
-	const categories = (Object.keys(CATEGORY_LABELS) as PlayCategory[]).map((id) => {
-		const list = playsByCategory(id);
-		return { id, label: CATEGORY_LABELS[id], count: list.length, plays: list };
-	});
-	const masteredCount = (list: typeof plays) =>
-		list.reduce((n, p) => n + p.slots.filter((s) => isMastered(p, s.id, progress)).length, 0);
-	const slotCount = (list: typeof plays) => list.reduce((n, p) => n + p.slots.length, 0);
+	const categories = $derived(
+		CATEGORIES.map((id) => {
+			const list = data.plays.filter((p) => p.category === id);
+			return { id, label: CATEGORY_LABELS[id], count: list.length, plays: list };
+		})
+	);
+	const masteredCount = (list: PlayMeta[]) =>
+		list.reduce((n, p) => n + p.slots.filter((s) => allCorrect(p.quizKeys[s.id] ?? [], progress)).length, 0);
+	const slotCount = (list: PlayMeta[]) => list.reduce((n, p) => n + p.slots.length, 0);
 </script>
 
 <svelte:head>
@@ -83,7 +82,7 @@
 				{#each comparisons as c (c.id)}
 					<li>
 						<a href={resolve('/compare/[id]', { id: c.id })}>
-							<span class="t">{getPlay(c.a)?.title ?? c.a} vs {getPlay(c.b)?.title ?? c.b}</span>
+							<span class="t">{c.aTitle} vs {c.bTitle}</span>
 							<span class="s">{plainText(c.summary)}</span>
 						</a>
 					</li>

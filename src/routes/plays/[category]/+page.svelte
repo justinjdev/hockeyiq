@@ -2,7 +2,7 @@
 	import { onMount } from 'svelte';
 	import { resolve } from '$app/paths';
 	import { plainText } from '#lib/text/richText.ts';
-	import { isMastered, loadProgress, type Progress } from '#lib/quiz/progress.ts';
+	import { allCorrect, loadProgress, type Progress } from '#lib/quiz/progress.ts';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
@@ -25,7 +25,7 @@
 	{:else}
 		<ul>
 			{#each data.plays as p, i (p.id)}
-				{@const done = p.slots.filter((s) => isMastered(p, s.id, progress)).length}
+				{@const done = p.slots.filter((s) => allCorrect(p.quizKeys[s.id] ?? [], progress)).length}
 				<li style:--i={i}>
 					<a href={resolve('/play/[id]', { id: p.id })}>
 						<span class="head">

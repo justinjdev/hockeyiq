@@ -41,7 +41,11 @@ export function recordResult(
 	}
 }
 
+/** True when every key is answered correctly (and there is at least one). */
+export function allCorrect(keys: string[], progress: Progress): boolean {
+	return keys.length > 0 && keys.every((k) => progress[k]?.correct === true);
+}
+
 export function isMastered(play: Play, slot: string, progress: Progress): boolean {
-	const items = listQuizItems(play, slot);
-	return items.length > 0 && items.every((i) => progress[quizKey(i)]?.correct === true);
+	return allCorrect(listQuizItems(play, slot).map(quizKey), progress);
 }

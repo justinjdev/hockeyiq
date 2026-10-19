@@ -4,8 +4,7 @@
 	import favicon from '#lib/assets/favicon.svg';
 	import { page } from '$app/state';
 	import { resolve } from '$app/paths';
-	import { CATEGORY_LABELS } from '#lib/content/registry.ts';
-	import type { PlayCategory } from '#lib/content/types.ts';
+	import { CATEGORIES, CATEGORY_LABELS } from '#lib/content/categories.ts';
 	import type { LayoutProps } from './$types';
 
 	let { children }: LayoutProps = $props();
@@ -15,7 +14,6 @@
 		document.documentElement.dataset.hydrated = '';
 	});
 
-	const categories = Object.keys(CATEGORY_LABELS) as PlayCategory[];
 	const section = $derived(page.route.id?.split('/')[1] ?? '');
 	const onPlayPage = $derived(section === 'play' || section === 'plays');
 	const activeCategory = $derived(page.params.category);
@@ -36,7 +34,7 @@
 	</div>
 	{#if onPlayPage}
 		<nav class="chips" aria-label="Play categories">
-			{#each categories as c (c)}
+			{#each CATEGORIES as c (c)}
 				<a
 					href={resolve('/plays/[category]', { category: c })}
 					aria-current={activeCategory === c ? 'page' : undefined}>{CATEGORY_LABELS[c]}</a

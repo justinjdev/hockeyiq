@@ -1,10 +1,10 @@
 import { error } from '@sveltejs/kit';
 import { comparisons, getComparison, getPlay } from '#lib/content/registry.ts';
-import type { EntryGenerator, PageLoad } from './$types';
+import type { EntryGenerator, PageServerLoad } from './$types';
 
 export const entries: EntryGenerator = () => comparisons.map((c) => ({ id: c.id }));
 
-export const load: PageLoad = ({ params }) => {
+export const load: PageServerLoad = ({ params }) => {
 	const comparison = getComparison(params.id);
 	const a = comparison && getPlay(comparison.a);
 	const b = comparison && getPlay(comparison.b);

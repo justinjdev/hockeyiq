@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { untrack } from 'svelte';
 	import { page } from '$app/state';
-	import { replaceState } from '$app/navigation';
+	import { goto } from '$app/navigation';
 	import { resolve } from '$app/paths';
 	import PlayCanvas from '#lib/play/PlayCanvas.svelte';
 	import Scrubber from '#lib/play/Scrubber.svelte';
@@ -41,7 +41,7 @@
 		const params = new URLSearchParams({ as: slot, step: String(step + 1) });
 		if (flip) params.set('flip', '1');
 		if (!ready) return;
-		replaceState(`?${params}`, {});
+		void goto(`?${params}`, { replace: true, shallow: true, state: {} });
 	});
 </script>
 

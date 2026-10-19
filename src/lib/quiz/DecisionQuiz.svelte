@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { tick } from 'svelte';
 	import type { DecisionQuizDef, Play } from '#lib/content/types.ts';
 	import PlayCanvas from '#lib/play/PlayCanvas.svelte';
 	import { parseRichText } from '#lib/text/richText.ts';
@@ -17,6 +18,7 @@
 	let { play, step, slot, def, last, onResult, onNext }: Props = $props();
 
 	let chosen = $state<number | null>(null);
+	let nextButton: HTMLButtonElement | undefined = $state();
 
 	// Option buttons can't contain Term buttons, so jargon is plain until the answer is revealed.
 	const plain = (s: string) =>
@@ -28,18 +30,20 @@
 		if (chosen !== null) return;
 		chosen = i;
 		onResult(def.options[i].correct);
+		// The clicked option button is replaced, so focus would fall to <body>; park it on Next.
+		void tick().then(() => nextButton?.focus());
 	}
 </script>
 
 <div class="layout">
 	<section class="stage">
-		<PlayCanvas {play} {step} selected={slot} />
+		<PlayCanvas {play} {step} selected={slot} hideHints={chosen === null} />
 	</section>
 
 	<aside class="panel">
 		<h2><RichText text={def.prompt} /></h2>
 
-		<ul class="options">
+		<ul class="options" aria-live="polite">
 			{#each def.options as opt, i (i)}
 				<li>
 					{#if chosen === null}
@@ -59,7 +63,7 @@
 		</ul>
 
 		{#if chosen !== null}
-			<button type="button" class="btn primary" onclick={onNext}>{last ? 'See score' : 'Next'}</button>
+			<button type="button" class="btn primary" bind:this={nextButton} onclick={onNext}>{last ? 'See score' : 'Next'}</button>
 		{/if}
 	</aside>
 </div>

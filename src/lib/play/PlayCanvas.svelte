@@ -19,6 +19,8 @@
 		/** Receives the dropped point, clamped to the ice, in unflipped rink coords. */
 		onDrop?: (p: Vec) => void;
 		reveal?: { region: Region; ok: boolean };
+		/** Quiz only: hide the step's arrows and reads (they depict the answer). */
+		hideHints?: boolean;
 	};
 
 	let {
@@ -29,7 +31,8 @@
 		dragSlot,
 		onSelect,
 		onDrop,
-		reveal
+		reveal,
+		hideHints = false
 	}: Props = $props();
 
 	const DURATION = 600;
@@ -71,8 +74,13 @@
 	const puck = $derived(view(frame.puck));
 	const current = $derived(play.steps[step]);
 	const roles = $derived(current.roles ?? {});
-	const showArrows = $derived(settled && !dragSlot);
-	const selectedReads = $derived(settled ? (current.reads?.[selected] ?? []) : []);
+	// An unanswered drag question hides the slot's reads and role tag; they would give the spot away.
+	const answering = $derived(!!dragSlot && !reveal);
+	const locked = $derived(!!reveal);
+	const showArrows = $derived(settled && !dragSlot && !hideHints);
+	const selectedReads = $derived(
+		settled && !answering && !hideHints ? (current.reads?.[selected] ?? []) : []
+	);
 
 	const PLAYER_R = 3.4;
 
@@ -103,7 +111,7 @@
 	}
 
 	function onPointerDown(e: PointerEvent, id: string) {
-		if (id !== dragSlot) return;
+		if (id !== dragSlot || locked) return;
 		dragging = true;
 		(e.currentTarget as Element).setPointerCapture(e.pointerId);
 		const p = toRink(e);
@@ -136,7 +144,7 @@
 			return;
 		}
 		const d = KEY_STEP[e.key];
-		if (!d || id !== dragSlot) return;
+		if (!d || id !== dragSlot || locked) return;
 		e.preventDefault();
 		const p = posOf(id);
 		// Arrow keys move on screen, so up/down invert when the rink is flipped.
@@ -230,11 +238,11 @@
 		{#each play.slots as s (s.id)}
 			{@const p = view(posOf(s.id))}
 			{@const isSel = s.id === selected}
-			{@const role = roles[s.id]}
+			{@const role = answering && s.id === dragSlot ? undefined : roles[s.id]}
 			<g
 				class="player"
 				class:selected={isSel}
-				class:draggable={s.id === dragSlot}
+				class:draggable={s.id === dragSlot && !locked}
 				transform={`translate(${p.x} ${p.y})`}
 				role="button"
 				tabindex="0"

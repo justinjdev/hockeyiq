@@ -52,7 +52,7 @@
 		type="button"
 		aria-describedby={open && entry ? `${uid}-def` : undefined}
 		aria-expanded={open}
-		onclick={() => (pinned = !pinned)}
+		onclick={() => (open ? close() : (pinned = true))}
 		onfocus={(e) => (focused = e.currentTarget.matches(':focus-visible'))}
 		onblur={close}
 		onkeydown={(e) => {

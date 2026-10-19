@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
-import { validateComparison, validatePlay } from '../../src/lib/content/validate';
-import { makeCtx, validPlay } from './fixtures';
+import { validateComparison, validateLesson, validatePlay } from '../../src/lib/content/validate';
+import type { Diagram } from '../../src/lib/content/types';
+import { makeCtx, validLesson, validPlay } from './fixtures';
 
 const ctx = () => makeCtx();
 
@@ -93,6 +94,50 @@ describe('validatePlay', () => {
 		const issues = validatePlay(p, ctx());
 		expect(issues.some((i) => i.where.includes('arrow:0') && i.message.includes('curve leaves the ice'))).toBe(true);
 	});});
+
+describe('rich text refs', () => {
+	it.each([
+		'A [[gap|tight [[gap]]]] here.',
+		'A [[gap]]] here.',
+		'A [[[gap]] here.'
+	])('flags nested or malformed term refs: %s', (text) => {
+		const p = validPlay();
+		p.summary = text;
+		expect(validatePlay(p, ctx()).map((i) => i.message)).toContain('nested or malformed [[term]] reference');
+	});
+
+	it('accepts adjacent refs', () => {
+		const p = validPlay();
+		p.summary = 'Hold the [[gap]] and [[support|support]] the [[breakout]].';
+		expect(validatePlay(p, ctx())).toEqual([]);
+	});
+});
+
+describe('validateLesson diagrams', () => {
+	const diagram = (from: string, via: { x: number; y: number }): Diagram => ({
+		players: [
+			{ id: 'a', team: 'us', label: 'D', pos: { x: 15, y: 55 } },
+			{ id: 'b', team: 'us', label: 'W', pos: { x: 15, y: 70 } }
+		],
+		arrows: [{ kind: 'pass', from, to: { x: 15, y: 70 }, via }],
+		caption: 'Pass.'
+	});
+	const withDiagram = (d: Diagram) => {
+		const l = validLesson();
+		l.sections[0].diagram = d;
+		return validateLesson(l, ctx());
+	};
+
+	it('resolves a player id in from and samples the curve from that player', () => {
+		expect(withDiagram(diagram('a', { x: -5, y: 62 }))).toEqual([]);
+		const bulging = withDiagram(diagram('a', { x: -40, y: 62 })).map((i) => i.message);
+		expect(bulging).toContain('arrow curve leaves the ice');
+	});
+
+	it('flags an unknown player id in from', () => {
+		expect(withDiagram(diagram('zz', { x: -5, y: 62 })).map((i) => i.message).join('\n')).toContain('unknown id zz');
+	});
+});
 
 describe('validateComparison', () => {
 	it('flags mismatched phase lists', () => {

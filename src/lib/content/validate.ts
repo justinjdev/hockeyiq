@@ -44,8 +44,22 @@ function checkArrowGeometry(a: Arrow, from: Vec | undefined, where: string, issu
 const resolveFrom = (a: Arrow, posOf: (id: string) => Vec | undefined): Vec | undefined =>
 	typeof a.from === 'string' ? posOf(a.from) : a.from;
 
+/** True when a term ref opens inside another (`[[a [[b]]]]`) or a ref has a stray bracket (`[[[`, `]]]`). */
+function hasNestedTermRef(text: string): boolean {
+	if (text.includes('[[[') || text.includes(']]]')) return true;
+	for (let i = text.indexOf('[['); i !== -1; ) {
+		const close = text.indexOf(']]', i + 2);
+		if (close === -1) return false;
+		const next = text.indexOf('[[', i + 2);
+		if (next !== -1 && next < close) return true;
+		i = text.indexOf('[[', close + 2);
+	}
+	return false;
+}
+
 function checkTerms(text: string | undefined, where: string, ctx: Ctx, issues: Issue[]) {
 	if (!text) return;
+	if (hasNestedTermRef(text)) issues.push({ where, message: 'nested or malformed [[term]] reference' });
 	for (const id of termRefs(text)) {
 		if (!ctx.termIds.has(id)) issues.push({ where, message: `unknown glossary term [[${id}]]` });
 	}

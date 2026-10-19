@@ -5,7 +5,7 @@
 	import { pointInRegion } from './regions.ts';
 
 	type Props = {
-		/** The play with `slot` already placed at its starting point for this question. */
+		/** The play framed for this question (see framePlayForItem): `slot` sits at its drag start. */
 		play: Play;
 		step: number;
 		slot: string;

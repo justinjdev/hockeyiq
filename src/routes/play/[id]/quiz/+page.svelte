@@ -5,9 +5,9 @@
 	import DragQuiz from '#lib/quiz/DragQuiz.svelte';
 	import DecisionQuiz from '#lib/quiz/DecisionQuiz.svelte';
 	import { listQuizItems, type QuizItem } from '#lib/quiz/quizItems.ts';
+	import { framePlayForItem } from '#lib/quiz/frame.ts';
 	import { isMastered, loadProgress, recordResult, type Progress } from '#lib/quiz/progress.ts';
 	import { parseStudyParams } from '#lib/play/params.ts';
-	import type { Play } from '#lib/content/types.ts';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
@@ -23,6 +23,8 @@
 	const pickable = $derived(play.slots.filter((s) => listQuizItems(play, s.id).length > 0));
 	const items = $derived(listQuizItems(play, picked === ALL ? undefined : picked));
 	const item = $derived<QuizItem | undefined>(items[index]);
+	// Slots with a drag question still to come at this step can't be shown at their answer.
+	const framed = $derived(framePlayForItem(play, items, index));
 	const done = $derived(items.length > 0 && index >= items.length);
 	const score = $derived(results.filter(Boolean).length);
 	const homeOf = (id: string) => play.slots.find((s) => s.id === id)?.home ?? id;
@@ -47,19 +49,6 @@
 			reset(listQuizItems(p, slot).length > 0 ? slot : ALL);
 		});
 	});
-
-	/** The play as the question starts: the quizzed slot at `drag.start`, else its previous step's spot. */
-	function startingPlay(p: Play, i: QuizItem): Play {
-		const quiz = p.steps[i.step].quiz?.[i.slot]?.drag;
-		const from = p.steps[Math.max(i.step - 1, 0)].positions[i.slot];
-		const pos = quiz?.start ?? from;
-		return {
-			...p,
-			steps: p.steps.map((s, n) =>
-				n === i.step ? { ...s, positions: { ...s.positions, [i.slot]: pos } } : s
-			)
-		};
-	}
 
 	function onResult(correct: boolean) {
 		if (!item) return;
@@ -122,7 +111,7 @@
 			{@const def = play.steps[item.step].quiz?.[item.slot]}
 			{#if item.kind === 'drag' && def?.drag}
 				<DragQuiz
-					play={startingPlay(play, item)}
+					play={framed}
 					step={item.step}
 					slot={item.slot}
 					def={def.drag}
@@ -132,7 +121,7 @@
 				/>
 			{:else if item.kind === 'decision' && def?.decision}
 				<DecisionQuiz
-					{play}
+					play={framed}
 					step={item.step}
 					slot={item.slot}
 					def={def.decision}

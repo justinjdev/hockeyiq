@@ -8,6 +8,7 @@
 	import { shuffledOrder } from './shuffle.ts';
 
 	type Props = {
+		/** The play framed for this question (see framePlayForItem): pending drag answers are hidden. */
 		play: Play;
 		step: number;
 		slot: string;

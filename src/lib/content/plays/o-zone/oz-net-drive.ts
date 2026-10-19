@@ -142,7 +142,7 @@ const play: Play = {
 				rw: { x: 160, y: 77 },
 				ld: { x: 127, y: 34 },
 				rd: { x: 128, y: 60 },
-				o1: { x: 162, y: 71 },
+				o1: { x: 156, y: 72 },
 				o2: { x: 180, y: 42 },
 				o3: { x: 150, y: 50 },
 				o4: { x: 150, y: 28 },
@@ -163,8 +163,8 @@ const play: Play = {
 					why: 'A shot to the far pad kicks the rebound to the far side. If you arrive late, the goalie or their D gets it first.'
 				},
 				c: {
-					where: 'At the top of the crease area, a stride out, in front of their D.',
-					read: 'Feel their D behind you and watch RW. Stop in front instead of skating through the crease.',
+					where: 'Driving at the crease, with their D backing in ahead of you.',
+					read: 'Watch RW and their D backing up in front of you. Stop a stride outside the crease instead of skating through it.',
 					why: 'You are the [[screen]] and the rebound in front. Skating into the crease can take away the goal, so stop just outside it.'
 				},
 				rw: {
@@ -296,7 +296,7 @@ const play: Play = {
 							{
 								text: 'Pass across the crease to LW',
 								correct: false,
-								why: 'Their D and C are both in that lane. A pass through the crease is usually blocked, and the shot does the same job with less risk.'
+								why: 'The pass has to go through the crease, past our C and the goalie\'s stick. One touch and it is gone; the shot does the same job with less risk.'
 							}
 						]
 					}

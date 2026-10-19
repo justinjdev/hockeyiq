@@ -33,7 +33,7 @@ const play: Play = {
 	],
 	keyConcepts: [],
 	variations:
-		'The pass into the slot is the main option, but the carrier always has others: a [[wraparound]] if the goalie is slow to seal his post, a walkout where he carries the puck out in front himself, or a [[reverse]] or [[rim]] back to the corner to restart the [[cycle]]. If the slot is covered, a common fallback is a give-and-go with the winger on the side (RW here), who returns it or finds the open D for a [[one-timer]]. Which player steps into the slot varies: some teams use a forward from the [[high-slot|high slot]] instead of a D, and many coaches only let the D step down when a partner or forward covers the line behind him.',
+		'The pass into the slot is the main option, but the carrier always has others: a [[wraparound]] if the goalie is slow to seal his post, carrying the puck out in front himself, or a [[reverse]] or [[rim]] back to the corner to restart the [[cycle]]. If the slot is covered, a common fallback is a quick pass to the winger on the side (RW here), who returns it to the carrier or finds the open D for a [[one-timer]]. Which player steps into the slot varies: some teams use a forward from the [[high-slot|high slot]] instead of a D, and many coaches only let the D step down when a partner or forward covers the line behind him.',
 	sources: [
 		{
 			title: 'Working your offense from behind the net',
@@ -302,7 +302,7 @@ const play: Play = {
 				rd: {
 					where: 'In the slot, a few strides above the faceoff dots, stick on the ice and facing C.',
 					read: 'Watch the puck coming from C. Set your feet and your stick for a [[one-timer]].',
-					why: 'Shooting off the pass gives the goalie no time to get across from the right post, where the fake pulled him.'
+					why: 'The goalie is hugging the left post to stop C\'s [[wraparound]]. Shooting off the pass gives him no time to push out and square up to you.'
 				}
 			},
 			reads: {
@@ -321,12 +321,12 @@ const play: Play = {
 							{
 								text: 'Pass out to RD in the slot',
 								correct: true,
-								why: 'He is open in the most dangerous spot on the ice, and the goalie is still leaning to the other post.'
+								why: 'He is open in the most dangerous spot on the ice, and the goalie is hugging the left post to stop your wraparound, so he has to push out and across to face RD.'
 							},
 							{
 								text: 'Try to tuck it in on the left side',
 								correct: false,
-								why: 'The goalie only has to slide a few feet to seal the post. A pass to an open man in the slot is a much better chance.'
+								why: 'The goalie is already hugging that post to stop exactly this. A pass to an open man in the slot is a much better chance.'
 							},
 							{
 								text: 'Reverse it back behind the net',
@@ -349,7 +349,7 @@ const play: Play = {
 		},
 		{
 			caption:
-				'RD one-times it from the slot through LW\'s [[screen]]. LW looks for a [[tip]], C comes out front from the left post, RW crashes the right post, and LD holds the line.',
+				'RD takes a [[one-timer]] from the slot through LW\'s [[screen]]. LW looks for a [[tip]], C comes out front from the left post, RW crashes the right post, and LD holds the line.',
 			positions: {
 				lw: { x: 180, y: 45 },
 				c: { x: 186, y: 35 },

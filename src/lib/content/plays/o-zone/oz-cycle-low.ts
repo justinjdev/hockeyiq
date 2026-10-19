@@ -82,7 +82,7 @@ const play: Play = {
 			puckCarrier: 'rw',
 			arrows: [
 				{ kind: 'skate', from: 'rw', to: { x: 163, y: 81 } },
-				{ kind: 'skate', from: 'c', to: { x: 181, y: 79.5 } }
+				{ kind: 'skate', from: 'c', to: { x: 175, y: 80.5 } }
 			],
 			roles: before,
 			notes: {
@@ -125,7 +125,7 @@ const play: Play = {
 				'RW carries up the wall with their D on his inside hip. Instead of forcing it, he leaves the puck back down the boards for C. Then the rotation starts: RW cuts to the net and LW drops low to become the new support.',
 			positions: {
 				lw: { x: 181, y: 41 },
-				c: { x: 181, y: 79.5 },
+				c: { x: 175, y: 80.5 },
 				rw: { x: 162, y: 81 },
 				ld: { x: 132, y: 36 },
 				rd: { x: 130, y: 73 },
@@ -138,7 +138,7 @@ const play: Play = {
 			puck: { x: 163.5, y: 82.5 },
 			puckCarrier: 'rw',
 			arrows: [
-				{ kind: 'pass', from: 'rw', to: { x: 180, y: 80.5 } },
+				{ kind: 'pass', from: 'rw', to: { x: 174.5, y: 81 } },
 				{ kind: 'skate', from: 'rw', to: { x: 180, y: 46 }, via: { x: 168, y: 62 } },
 				{ kind: 'skate', from: 'lw', to: { x: 186, y: 70 }, via: { x: 190, y: 56 } }
 			],
@@ -394,7 +394,7 @@ const play: Play = {
 				rd: {
 					where: 'Just inside the blue line on the right side.',
 					read: 'Watch the shot and their winger in front of you. If the puck comes up your wall, stop it at the line.',
-					why: 'You stay high so a blocked shot or long rebound is not an odd-man rush against you.'
+					why: 'You stay high so a blocked shot or long rebound does not turn into a two-on-one the other way.'
 				}
 			},
 			reads: {

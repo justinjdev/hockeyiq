@@ -94,7 +94,7 @@ const play: Play = {
 				rd: {
 					where: 'Inside the blue line, right of the middle.',
 					read: 'Watch the puck and their weak-side winger in front of you.',
-					why: 'With the puck on the left, you are the [[weak-side-d|weak-side D]]: the D-to-D option and the safety up top.'
+					why: 'With the puck on the left, you are the [[weak-side-d|weak-side D]]: the [[d-to-d|D-to-D]] option and the safety up top.'
 				}
 			},
 			reads: {
@@ -135,13 +135,13 @@ const play: Play = {
 		},
 		{
 			caption:
-				'LW moves the puck [[low-to-high|low to high]], up to LD at the [[point]]. RW stays at the net, C pops out to the [[high-slot|high slot]], and RD slides toward the middle of the line.',
+				'LW moves the puck [[low-to-high|low to high]], up to LD at the [[point]]. RW stays at the net. As the pass goes up, C pops out to the [[high-slot|high slot]], and RD slides toward the middle of the line.',
 			positions: {
 				lw: { x: 168, y: 4 },
 				c: { x: 157, y: 46 },
 				rw: { x: 181, y: 42 },
 				ld: { x: 131, y: 13 },
-				rd: { x: 131, y: 50 },
+				rd: { x: 131, y: 47 },
 				o1: { x: 172, y: 10 },
 				o2: { x: 185, y: 46 },
 				o3: { x: 175, y: 31 },
@@ -152,14 +152,14 @@ const play: Play = {
 			puckCarrier: 'lw',
 			arrows: [
 				{ kind: 'pass', from: 'lw', to: { x: 132, y: 12 } },
-				{ kind: 'skate', from: 'rd', to: { x: 132, y: 54 } },
+				{ kind: 'skate', from: 'rd', to: { x: 132, y: 44 } },
 				{ kind: 'skate', from: 'lw', to: { x: 168, y: 20 } }
 			],
 			roles,
 			notes: {
 				lw: {
 					where: 'On the left wall, level with the faceoff dot, passing up the boards.',
-					read: 'Make sure the lane up the wall is clear of their winger\'s stick. Then follow your pass toward the hash marks.',
+					read: 'Make sure the lane up the wall is clear of their winger\'s stick. Then follow your pass toward the [[hash-marks|hash marks]].',
 					why: 'After the pass, you are the low support and a rebound threat on the left side. Standing on the wall watching takes you out of it.'
 				},
 				c: {
@@ -212,7 +212,7 @@ const play: Play = {
 							{
 								text: 'Stay out wide on the right boards',
 								correct: false,
-								why: 'Too far away. A D-to-D pass across the whole line is slow and easy to pick off.'
+								why: 'Too far away. A [[d-to-d|D-to-D]] pass across the whole line is slow and easy to pick off.'
 							},
 							{
 								text: 'Sneak down the right side toward the net',
@@ -245,7 +245,7 @@ const play: Play = {
 			roles,
 			notes: {
 				lw: {
-					where: 'Near the left faceoff dot, below the hash marks.',
+					where: 'Near the left faceoff dot, below the [[hash-marks|hash marks]].',
 					read: 'Watch the puck on LD\'s stick and the goalie. A save off the left pad comes out to your side.',
 					why: 'You are the rebound threat on the left. The goalie can control a point shot; the second chance is harder for him.'
 				},

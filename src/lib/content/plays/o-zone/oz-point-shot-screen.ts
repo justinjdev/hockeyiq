@@ -43,11 +43,6 @@ const play: Play = {
 			title: '2 v 2 Net Presence',
 			publisher: 'Minnesota Hockey / Coach Them',
 			url: 'https://www.minnesotahockey.org/news_article/show/1329326'
-		},
-		{
-			title: 'Speed Through the Neutral Zone',
-			publisher: 'Ontario Minor Hockey Association (OMHA)',
-			url: 'https://www.omha.net/news_article/show/282908'
 		}
 	],
 	steps: [
@@ -57,7 +52,7 @@ const play: Play = {
 			positions: {
 				lw: { x: 180, y: 43 },
 				c: { x: 172, y: 26 },
-				rw: { x: 164, y: 68 },
+				rw: { x: 171, y: 68 },
 				ld: { x: 131, y: 36 },
 				rd: { x: 129, y: 81 },
 				o1: { x: 178, y: 21 },
@@ -82,14 +77,14 @@ const play: Play = {
 					why: 'A point shot from the right side often leaves rebounds on the far (left) side. That rebound is yours.'
 				},
 				rw: {
-					where: 'Low on the right side, below the hash marks.',
+					where: 'Low on the right side, below the [[hash-marks|hash marks]].',
 					read: 'Watch RD and their C in the slot. Get ready to head for the right post.',
 					why: 'You cover the rebounds on the near side. Stay out of RD\'s shooting lane on the way.'
 				},
 				ld: {
 					where: 'Inside the blue line, left of the middle.',
 					read: 'Watch RD stop the rim and their weak-side winger in front of you.',
-					why: 'If RD cannot control it, you are the next player to keep it in. If he can, you are his D-to-D option.'
+					why: 'If RD cannot control it, you are the next player to keep it in. If he can, you are his [[d-to-d|D-to-D]] option.'
 				},
 				rd: {
 					where: 'On the right boards at the blue line, stopping the rim with your stick and skates.',
@@ -203,7 +198,7 @@ const play: Play = {
 							{
 								text: 'Widen out to the left, staying inside the line as a pass option',
 								correct: true,
-								why: 'You give him room to walk and a D-to-D pass if the lane closes, and you still cover the left side.'
+								why: 'You give him room to walk and a [[d-to-d|D-to-D]] pass if the lane closes, and you still cover the left side.'
 							},
 							{
 								text: 'Move to the middle to be close to him',
@@ -281,7 +276,7 @@ const play: Play = {
 				rd: {
 					decision: {
 						prompt:
-							'You have walked to the middle of the line and the lane is open. LW is in front of the goalie, C and RW are heading to the posts. You...',
+							'You have walked toward the middle of the line and the lane is open. LW is in front of the goalie, C and RW are heading to the posts. You...',
 						options: [
 							{
 								text: 'Shoot low and on net, through LW',

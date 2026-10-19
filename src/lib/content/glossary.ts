@@ -264,11 +264,21 @@ export const glossary: Term[] = [
 	{
 		id: "dump-in",
 		term: "Dump-in",
-		definition: "Shooting the puck deep into the other team's end, usually into a corner, instead of carrying it in."
+		definition: "Shooting the puck deep into the other team's end, usually into a corner, so your forwards can chase it down."
 	},
 	{
 		id: "crease",
 		term: "Crease",
 		definition: "The painted half-circle right in front of the goal. It belongs to the goalie."
+	},
+	{
+		id: "angling",
+		term: "Angling",
+		definition: "Skating at the puck carrier from the inside so he can only go one way, usually toward the boards and away from the middle."
+	},
+	{
+		id: "left-wing-lock",
+		term: "Left wing lock",
+		definition: "A 2-3 forecheck where the left winger drops back to the blue line and plays like a third defenseman while two forwards pressure."
 	},
 ];

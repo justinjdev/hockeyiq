@@ -24,6 +24,9 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
+      - run: npx svelte-kit sync
+      - run: npx svelte-check --tsconfig ./tsconfig.json
+      - run: npx vitest --run
       - run: npm run build
         env:
           BASE_PATH: /hockeyiq

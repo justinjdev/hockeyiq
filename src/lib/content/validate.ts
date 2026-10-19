@@ -65,12 +65,22 @@ function checkTerms(text: string | undefined, where: string, ctx: Ctx, issues: I
 	}
 }
 
+/** The ellipse sampled at 16 points around its boundary, or the polygon's vertices. */
+function regionOutline(r: Region): Vec[] {
+	if (r.kind === 'polygon') return r.points;
+	return Array.from({ length: 16 }, (_, i) => {
+		const t = (i / 16) * 2 * Math.PI;
+		return { x: r.cx + r.rx * Math.cos(t), y: r.cy + r.ry * Math.sin(t) };
+	});
+}
+
 function checkRegion(r: Region, where: string, issues: Issue[]) {
 	if (r.kind === 'ellipse') {
 		if (!(r.rx > 0 && r.ry > 0)) issues.push({ where, message: 'ellipse rx and ry must be > 0' });
 	} else if (r.points.length < 3) {
 		issues.push({ where, message: 'polygon needs at least 3 points' });
 	}
+	if (!regionOutline(r).every(isOnIce)) issues.push({ where, message: 'drag quiz target is off the ice' });
 }
 
 function checkQuiz(

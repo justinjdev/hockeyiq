@@ -93,7 +93,44 @@ describe('validatePlay', () => {
 		p.steps[0].arrows = [{ kind: 'pass', from: 'rd', to: { x: 15, y: 70 }, via: { x: -40, y: 62 } }];
 		const issues = validatePlay(p, ctx());
 		expect(issues.some((i) => i.where.includes('arrow:0') && i.message.includes('curve leaves the ice'))).toBe(true);
-	});});
+	});
+
+	it('flags a drag target ellipse that reaches off the ice', () => {
+		const p = validPlay();
+		// Centered on the ice near the bottom boards, but ry pokes past y = 85.
+		p.steps[1].quiz!.rw.drag!.target = { kind: 'ellipse', cx: 100, cy: 82, rx: 6, ry: 5 };
+		const issues = validatePlay(p, ctx());
+		expect(issues.map((i) => i.message)).toContain('drag quiz target is off the ice');
+	});
+
+	it('flags a drag target ellipse that crosses a rounded corner', () => {
+		const p = validPlay();
+		// Inside the bounding box but past the corner arc.
+		p.steps[1].quiz!.rw.drag!.target = { kind: 'ellipse', cx: 9, cy: 76, rx: 5, ry: 5 };
+		const issues = validatePlay(p, ctx());
+		expect(issues.map((i) => i.message)).toContain('drag quiz target is off the ice');
+	});
+
+	it('flags a drag target polygon with a vertex off the ice', () => {
+		const p = validPlay();
+		p.steps[1].quiz!.rw.drag!.target = {
+			kind: 'polygon',
+			points: [
+				{ x: 90, y: 70 },
+				{ x: 110, y: 70 },
+				{ x: 110, y: 90 }
+			]
+		};
+		const issues = validatePlay(p, ctx());
+		expect(issues.map((i) => i.message)).toContain('drag quiz target is off the ice');
+	});
+
+	it('accepts a drag target that touches nothing off the ice', () => {
+		const p = validPlay();
+		p.steps[1].quiz!.rw.drag!.target = { kind: 'ellipse', cx: 100, cy: 78, rx: 6, ry: 6 };
+		expect(validatePlay(p, ctx())).toEqual([]);
+	});
+});
 
 describe('rich text refs', () => {
 	it.each([

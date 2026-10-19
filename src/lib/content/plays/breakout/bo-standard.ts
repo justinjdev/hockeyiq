@@ -207,7 +207,7 @@ const play: Play = {
 			quiz: {
 				rw: {
 					drag: {
-						target: { kind: 'ellipse', cx: 38, cy: 80.5, rx: 9, ry: 5 },
+						target: { kind: 'ellipse', cx: 38, cy: 80, rx: 9, ry: 4.5 },
 						correct:
 							'Yes. On the right boards between the dot and the top of the circle, RD can reach you along the wall and you have room to make a play.',
 						incorrect:

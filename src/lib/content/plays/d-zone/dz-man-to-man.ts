@@ -102,7 +102,7 @@ const play: Play = {
 				rd: {
 					where: 'Backing up on the right side, holding a tight [[gap]] on the puck carrier.',
 					read: 'Watch the carrier\'s chest, not the puck. He is going wide down your wall toward the corner.',
-					why: 'Steering him wide keeps him out of the [[slot]]. Once he is in the corner you can angle him into the boards and stay on his net side.'
+					why: 'Steering him wide keeps him out of the [[slot]]. Once he is in the corner you can angle him toward the boards and stay on his net side.'
 				}
 			},
 			reads: {

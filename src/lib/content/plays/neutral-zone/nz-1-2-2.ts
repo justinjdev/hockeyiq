@@ -359,7 +359,7 @@ const play: Play = {
 					why: 'You were the one who forced the chip. Get back to be RD\'s [[d-to-d|D-to-D]] option.'
 				},
 				rd: {
-					where: 'Racing back along the left boards toward the puck, next to our left circle.',
+					where: 'Racing back across the top of our left circle toward the puck on the left boards.',
 					read: '[[shoulder-check|Shoulder check]] before you get there: where are their forecheckers, and where are your outlets?',
 					why: 'Because you were already the safety in the middle, you beat everyone to the dump-in with time to make a play.'
 				}

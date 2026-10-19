@@ -426,7 +426,7 @@ const play: Play = {
 							{
 								text: 'Rim it up the boards to RD at the point',
 								correct: false,
-								why: 'Safe, but you just got past your checker in a scoring area. Use the point when the middle is closed.'
+								why: 'Safe, but you just got past your defender in a scoring area. Use the point when the middle is closed.'
 							}
 						]
 					}

@@ -32,7 +32,7 @@ const play: Play = {
 	],
 	keyConcepts: [],
 	variations:
-		'Teams disagree on how tight to get. Some keep the wingers near the tops of the circles so they can reach the [[point|points]]; others drop them to the [[hash-marks|hash marks]]. Some teams send one D behind the net to pressure the carrier and let the center fill the post; others never chase behind the net. When the puck goes to the point, some teams stay collapsed and block shots, while others push the wingers out into the [[shooting-lane|shooting lanes]]. This play shows the common version: hold the posts, wingers step out to the point only on the puck side.',
+		'Teams disagree on how tight to get. Some keep the wingers near the tops of the circles so they can reach the [[point|points]]; others drop them to the [[hash-marks|hash marks]]. Some teams send one D behind the net to pressure the carrier and let the center fill the post; others never chase behind the net. When the puck goes to the point, some teams stay collapsed and block shots, while others push the wingers out into the [[shooting-lane|shooting lanes]]. This play shows the common version: hold the posts, wingers step out to the point only on the [[puck-side|puck side]].',
 	sources: [
 		{
 			title: 'Hockey Systems 101: Defensive Zone Strategies',

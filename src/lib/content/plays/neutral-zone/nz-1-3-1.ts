@@ -238,7 +238,7 @@ const play: Play = {
 			positions: {
 				lw: { x: 104, y: 40 },
 				c: { x: 134, y: 66 },
-				rw: { x: 117, y: 75 },
+				rw: { x: 117, y: 79 },
 				ld: { x: 84, y: 46 },
 				rd: { x: 106, y: 64 },
 				o1: { x: 146, y: 64 },
@@ -250,7 +250,7 @@ const play: Play = {
 			puck: { x: 121, y: 80.5 },
 			puckCarrier: 'o5',
 			arrows: [
-				{ kind: 'skate', from: 'rw', to: { x: 120, y: 78 } },
+				{ kind: 'skate', from: 'rw', to: { x: 119.5, y: 80 } },
 				{ kind: 'skate', from: 'c', to: { x: 126, y: 74 } }
 			],
 			roles,
@@ -339,19 +339,19 @@ const play: Play = {
 		},
 		{
 			caption:
-				'RW angles their winger into the boards, gets his stick on the puck, and it squirts loose to RD. We have it in the [[neutral-zone|neutral zone]] with their forwards caught going the wrong way, so we go right back at them.',
+				'RW angles their winger to the boards, gets his stick on the puck, and it squirts loose to RD. We have it in the [[neutral-zone|neutral zone]] with their forwards caught going the wrong way, so we go right back at them.',
 			phase: 'outcome',
 			positions: {
 				lw: { x: 108, y: 38 },
 				c: { x: 122, y: 58 },
-				rw: { x: 116, y: 76 },
+				rw: { x: 115, y: 80 },
 				ld: { x: 88, y: 46 },
 				rd: { x: 106, y: 68 },
 				o1: { x: 140, y: 62 },
 				o2: { x: 150, y: 40 },
 				o3: { x: 118, y: 14 },
 				o4: { x: 122, y: 50 },
-				o5: { x: 112, y: 80 }
+				o5: { x: 112, y: 82 }
 			},
 			puck: { x: 104.5, y: 67 },
 			puckCarrier: 'rd',

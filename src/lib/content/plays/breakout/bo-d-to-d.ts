@@ -27,7 +27,7 @@ const play: Play = {
 	],
 	keyConcepts: [],
 	variations:
-		'The pass goes behind your own net, either direct or banked off the end boards. It never goes through the [[slot]]. Some teams switch sides higher, D to D above the circles, once the puck is already out of the corner. Teams use different words for the call ("over", "D to D", "partner"); agree on one before the game. Note that this play switches which winger is the [[strong-side]] one: RW starts on the puck side but the puck leaves up LW\'s wall. Coaches disagree on exactly where the wall winger sets up: this app uses the spot between the faceoff dot and the top of the circle, while some teach a lower spot between the [[hash-marks|hash marks]] and the goal line. The [[d-to-d|D-to-D]] has become less common in the NHL because two-man forechecks send a second player at the partner, so read [[f2|F2]] before you call it.',
+		'The pass goes behind your own net, either direct or banked off the end boards. It never goes through the [[slot]]. Some teams switch sides higher, D to D above the circles, once the puck is already out of the corner. Teams use different words for the call ("over", "D to D", "partner"); agree on one before the game. Note that this play switches which winger is the [[strong-side]] one: RW starts on the puck side but the puck leaves up LW\'s wall. Coaches disagree on exactly where the wall winger sets up: this app uses the spot between the faceoff dot and the top of the circle, while some teach a lower spot between the [[hash-marks|hash marks]] and the goal line. The [[d-to-d|D-to-D]] has become less common in the NHL because two-man [[forecheck|forechecks]] send a second player at the partner, so read [[f2|F2]] before you call it.',
 	sources: [
 		{
 			title: 'Breakouts',

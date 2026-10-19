@@ -182,7 +182,7 @@ const play: Play = {
 				rd: {
 					where: 'In the right corner, pinning the carrier against the boards from the net side.',
 					read: 'Watch his chest and hands. Is he trying to turn up the wall or go behind the net?',
-					why: 'The corner is your area. Angle him into the boards, keep your stick on the puck, and let C come in for the loose puck.'
+					why: 'The corner is your area. Angle him toward the boards, keep your stick on the puck, and let C come in for the loose puck.'
 				}
 			},
 			reads: {

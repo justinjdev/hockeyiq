@@ -260,7 +260,7 @@ const play: Play = {
 			notes: {
 				lw: {
 					where: 'Jumping down the left boards from the blue line.',
-					read: 'The puck is going up your wall to their winger. Close on him fast, angle him into the boards and get your stick on the puck.',
+					read: 'The puck is going up your wall to their winger. Close on him fast, angle him toward the boards and get your stick on the puck.',
 					why: 'This is the moment the lock is built for. C is behind him and LD covers your spot.'
 				},
 				c: {

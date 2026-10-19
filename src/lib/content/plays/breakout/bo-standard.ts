@@ -59,7 +59,7 @@ const play: Play = {
 			puck: { x: 8, y: 64 },
 			arrows: [
 				{ kind: 'skate', from: 'rd', to: { x: 7, y: 57 } },
-				{ kind: 'skate', from: 'rw', to: { x: 38, y: 79 } },
+				{ kind: 'skate', from: 'rw', to: { x: 38, y: 81.5 } },
 				{ kind: 'skate', from: 'c', to: { x: 26, y: 42 } },
 				{ kind: 'skate', from: 'ld', to: { x: 16, y: 26 } }
 			],
@@ -149,9 +149,9 @@ const play: Play = {
 				'RD gets the puck behind the net. RW sets up on the wall, C swings low, and LW holds the far side ready to go.',
 			phase: 'support',
 			positions: {
-				lw: { x: 40, y: 6 },
+				lw: { x: 40, y: 3.5 },
 				c: { x: 26, y: 42 },
-				rw: { x: 38, y: 79 },
+				rw: { x: 38, y: 81.5 },
 				ld: { x: 16, y: 26 },
 				rd: { x: 6, y: 57 },
 				o1: { x: 13.5, y: 63.5 },
@@ -163,7 +163,7 @@ const play: Play = {
 			puck: { x: 7.5, y: 59 },
 			puckCarrier: 'rd',
 			arrows: [
-				{ kind: 'pass', from: 'rd', to: { x: 38, y: 80 }, via: { x: 14, y: 78 } },
+				{ kind: 'pass', from: 'rd', to: { x: 38, y: 82 }, via: { x: 14, y: 80 } },
 				{ kind: 'skate', from: 'c', to: { x: 42, y: 60 } }
 			],
 			roles,
@@ -207,7 +207,7 @@ const play: Play = {
 			quiz: {
 				rw: {
 					drag: {
-						target: { kind: 'ellipse', cx: 38, cy: 78.5, rx: 9, ry: 5 },
+						target: { kind: 'ellipse', cx: 38, cy: 80.5, rx: 9, ry: 5 },
 						correct:
 							'Yes. On the right boards between the dot and the top of the circle, RD can reach you along the wall and you have room to make a play.',
 						incorrect:
@@ -291,7 +291,7 @@ const play: Play = {
 			positions: {
 				lw: { x: 62, y: 9 },
 				c: { x: 42, y: 60 },
-				rw: { x: 39, y: 79.5 },
+				rw: { x: 39, y: 81.5 },
 				ld: { x: 16, y: 36 },
 				rd: { x: 12, y: 54 },
 				o1: { x: 24, y: 72 },
@@ -300,7 +300,7 @@ const play: Play = {
 				o4: { x: 86, y: 28 },
 				o5: { x: 60, y: 76 }
 			},
-			puck: { x: 40, y: 81.5 },
+			puck: { x: 40.5, y: 83 },
 			puckCarrier: 'rw',
 			arrows: [
 				{ kind: 'pass', from: 'rw', to: { x: 76, y: 80 }, via: { x: 58, y: 84 } },
@@ -330,7 +330,7 @@ const play: Play = {
 				},
 				rd: {
 					where: 'Stepping out from behind the net to the right post.',
-					read: 'Watch RW. If he gets hit and the puck squirts loose, you are close enough to [[support]] down low.',
+					read: 'Watch RW. If their D pins him and the puck squirts loose, you are close enough to [[support]] down low.',
 					why: 'From the post you are a safe option back down the wall and you are ready to follow the play up ice.'
 				}
 			},
@@ -353,7 +353,7 @@ const play: Play = {
 							{
 								text: '[[chip|Chip]] it off the boards past their D for C to skate onto',
 								correct: true,
-								why: 'Their D left his spot to [[pinch]], so the ice behind him is empty and C is arriving with speed. One soft chip past the D beats both checkers.'
+								why: 'Their D left his spot to [[pinch]], so the ice behind him is empty and C is arriving with speed. One soft chip past the D beats both of them.'
 							},
 							{
 								text: 'Fire a pass across the ice to LW',
@@ -377,7 +377,7 @@ const play: Play = {
 		},
 		{
 			caption:
-				'RW [[chip|chips]] it past the pinching D, C picks it up in stride, and the unit exits. If their D had stayed back, RW would bump it to C instead.',
+				'A moment later, RW [[chip|chips]] it past the pinching D, C picks it up in stride, and the unit exits. If their D had stayed back, RW would bump it to C instead.',
 			phase: 'exit',
 			positions: {
 				lw: { x: 104, y: 12 },
@@ -395,7 +395,7 @@ const play: Play = {
 			puckCarrier: 'c',
 			arrows: [
 				{ kind: 'skate', from: 'c', to: { x: 124, y: 62 } },
-				{ kind: 'skate', from: 'lw', to: { x: 138, y: 14 } },
+				{ kind: 'skate', from: 'lw', to: { x: 122, y: 14 } },
 				{ kind: 'skate', from: 'rw', to: { x: 96, y: 80 } }
 			],
 			roles,

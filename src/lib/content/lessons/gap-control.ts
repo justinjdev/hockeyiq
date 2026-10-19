@@ -38,7 +38,7 @@ const lesson: Lesson = {
 		},
 		{
 			heading: 'Inside-out: give him the boards, not the middle',
-			body: 'Line yourself up a little toward the middle of the ice from the puck carrier, so the straight line from him to your net goes through you. That leaves him only the outside lane along the boards, which is the worst place to shoot from. Keep your stick on the ice out in front of you to take away the pass into the middle. When he commits wide, close the gap and keep angling him into the boards: stick on the puck, your body between him and the net.',
+			body: 'Line yourself up a little toward the middle of the ice from the puck carrier, so the straight line from him to your net goes through you. That leaves him only the outside lane along the boards, which is the worst place to shoot from. Keep your stick on the ice out in front of you to take away the pass into the middle. When he commits wide, close the gap and keep angling him toward the boards: stick on the puck, your body between him and the net.',
 			diagram: {
 				players: [
 					{ id: 'rd', team: 'us', label: 'RD', pos: { x: 64, y: 62 }, highlight: true },

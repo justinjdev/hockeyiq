@@ -12,7 +12,7 @@ const lesson: Lesson = {
 		},
 		{
 			heading: 'F1: pressure the puck',
-			body: 'F1 goes straight at the puck carrier to take away time. The key is the angle: come at him from the inside (the middle of the ice) so he can only go toward the boards. You are not trying to win a race to the puck at full speed and miss; you are steering him. Keep your stick on the ice in the lane he wants to pass through.',
+			body: 'F1 goes straight at the puck carrier to take away time. The key is the angle: come at him on a curve that takes away one option, so he can only go where you want him to. On the wall or in the corner, that means coming from the inside (the middle of the ice) so he can only go up the boards. When he is behind the net, as in the picture, it means swinging around the side of the net his partner is on, which takes away the [[reverse]] and leaves him only the boards. You are not trying to win a race to the puck at full speed and miss; you are steering him. Keep your stick on the ice in the lane he wants to pass through.',
 			diagram: {
 				players: [
 					{ id: 'c', team: 'us', label: 'F1', pos: { x: 178, y: 40 }, highlight: true },

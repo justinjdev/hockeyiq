@@ -208,7 +208,7 @@ const play: Play = {
 							{
 								text: 'Skate into F1 to slow him down',
 								correct: false,
-								why: 'Stepping into a player without the puck is interference. Hold your spot instead.'
+								why: 'Stepping into a player without the puck is interference. Stay out of his lane instead.'
 							}
 						]
 					}
@@ -287,7 +287,7 @@ const play: Play = {
 				},
 				ld: {
 					where: 'In front of the net, sliding a little to the left.',
-					read: 'Watch [[f1|F1]], who is coming back around the net. Stay between him and the [[slot]].',
+					read: 'Watch [[f1|F1]], who is coming back around the net. Keep the puck side of the net covered.',
 					why: 'Until the puck is out of the zone, one D stays home.'
 				},
 				rd: {

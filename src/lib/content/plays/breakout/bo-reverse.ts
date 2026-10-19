@@ -146,7 +146,7 @@ const play: Play = {
 			puck: { x: 5.5, y: 29.5 },
 			puckCarrier: 'rd',
 			arrows: [
-				{ kind: 'pass', from: 'rd', to: { x: 9, y: 58 }, via: { x: 0, y: 46 } },
+				{ kind: 'pass', from: 'rd', to: { x: 9, y: 58 }, via: { x: -4, y: 46 } },
 				{ kind: 'skate', from: 'c', to: { x: 26, y: 52 } }
 			],
 			roles,

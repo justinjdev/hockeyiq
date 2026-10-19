@@ -4,9 +4,9 @@ import { glossary } from '../../src/lib/content/glossary';
 import { validateLibrary } from '../../src/lib/content/validate';
 
 describe('content library', () => {
-	it('has the full library: 35 plays, 7 lessons, 6 comparisons', () => {
+	it('has the full library: 35 plays, 8 lessons, 6 comparisons', () => {
 		expect(plays.length).toBe(35);
-		expect(lessons.length).toBe(7);
+		expect(lessons.length).toBe(8);
 		expect(comparisons.length).toBe(6);
 	});
 

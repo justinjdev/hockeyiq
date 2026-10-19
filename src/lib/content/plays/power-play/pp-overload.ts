@@ -286,6 +286,13 @@ const play: Play = {
 							}
 						]
 					}
+				},
+				c: {
+					drag: {
+						target: { kind: 'ellipse', cx: 185, cy: 54, rx: 8, ry: 5 },
+						correct: 'Yes. When LD shoots from the far side, you leave the corner for the right post, where the rebound is going.',
+						incorrect: 'On a shot from the far point, the low player leaves the corner and goes to the right post. Rebounds from that shot come out on your side of the crease.'
+					}
 				}
 			}
 		},
@@ -343,10 +350,25 @@ const play: Play = {
 			},
 			quiz: {
 				c: {
-					drag: {
-						target: { kind: 'ellipse', cx: 184, cy: 52, rx: 8, ry: 6 },
-						correct: 'Yes. When LD shoots from the far side, you leave the corner for the right post, where the rebound is going.',
-						incorrect: 'On a shot from the far point, the low player leaves the corner and goes to the right post. Rebounds from that shot come out on your side of the crease.'
+					decision: {
+						prompt: 'The rebound pops out to the right side of the crease, a stick length from you. The goalie is still down from the first shot. You...',
+						options: [
+							{
+								text: 'Shoot it right away at the open side, or slide it across to LW',
+								correct: true,
+								why: 'The goalie is out of position for a second or two. A quick shot or pass beats him before he gets back across.'
+							},
+							{
+								text: 'Pull it back and settle it before you shoot',
+								correct: false,
+								why: 'By the time it is settled the goalie is set and their D has a stick on it. Rebounds are for shooting fast.'
+							},
+							{
+								text: 'Pass it back out to LD at the point to set up again',
+								correct: false,
+								why: 'A loose puck beside the crease is the best chance this power play will get. Do not give it away.'
+							}
+						]
 					}
 				}
 			}

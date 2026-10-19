@@ -22,7 +22,7 @@ const play: Play = {
 		{ id: 'o4', label: 'D' },
 		{ id: 'o5', label: 'D' }
 	],
-	keyConcepts: [],
+	keyConcepts: ['offside-tag-up'],
 	variations:
 		'Not every league plays tag-up. USA Hockey uses delayed (tag-up) offside at Youth 15 Only and Girls 16U and older, but younger levels and some adult rec leagues still blow the whistle the moment anyone is offside; ask your league. Leagues also differ on what happens if the puck is shot at the net during a delayed offside, so do not shoot on goal until the arm is down. If the linesman thinks a team went offside on purpose, the faceoff can move all the way back to that team\'s own end. Remember it is the skates that count, not your stick: one skate touching the line keeps you onside, and a skate touching the line is also enough to tag up. Under NHL and IIHF rules every offside player has to be back at the line at the same instant; some referees in rec leagues are looser about this, but do not count on it.',
 	sources: [

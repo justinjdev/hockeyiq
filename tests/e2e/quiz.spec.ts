@@ -1,7 +1,8 @@
 import { open } from './helpers';
 import { expect, test, type Page } from '@playwright/test';
 import bo from '../../src/lib/content/plays/breakout/bo-standard';
-import { listQuizItems } from '../../src/lib/quiz/quizItems';
+import { listQuizItems, quizKey } from '../../src/lib/quiz/quizItems';
+import { shuffledOrder } from '../../src/lib/quiz/shuffle';
 import { plainText } from '../../src/lib/text/richText';
 import { regionCenter } from '../../src/lib/quiz/regions';
 
@@ -30,6 +31,8 @@ async function answerRw(page: Page, kind: 'drag' | 'decision', step: number) {
 		await expect(page.getByRole('status')).toContainText('In position');
 	} else {
 		const def = bo.steps[step].quiz!.rw!.decision!;
+		const order = shuffledOrder(def.options.length, quizKey({ playId: bo.id, step, slot: 'rw', kind }));
+		await expect(page.locator('button.opt')).toHaveText(order.map((i) => plainText(def.options[i].text)));
 		const good = def.options.findIndex((o) => o.correct);
 		await page.getByRole('button', { name: plainText(def.options[good].text) }).click();
 		const done = page.locator('.opt.done');

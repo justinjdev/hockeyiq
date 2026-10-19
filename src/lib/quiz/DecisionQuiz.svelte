@@ -4,6 +4,8 @@
 	import PlayCanvas from '#lib/play/PlayCanvas.svelte';
 	import { plainText } from '#lib/text/richText.ts';
 	import RichText from '#lib/text/RichText.svelte';
+	import { quizKey } from './quizItems.ts';
+	import { shuffledOrder } from './shuffle.ts';
 
 	type Props = {
 		play: Play;
@@ -17,6 +19,12 @@
 
 	let { play, step, slot, def, last, onResult, onNext }: Props = $props();
 
+	// Authored order always lists the right answer first; show a stable per-question shuffle.
+	const order = $derived(
+		shuffledOrder(def.options.length, quizKey({ playId: play.id, step, slot, kind: 'decision' }))
+	);
+
+	/** Index into `def.options` (authored order), not the displayed position. */
 	let chosen = $state<number | null>(null);
 	let nextButton: HTMLButtonElement | undefined = $state();
 
@@ -39,7 +47,8 @@
 		<h2><RichText text={def.prompt} /></h2>
 
 		<ul class="options" aria-live="polite">
-			{#each def.options as opt, i (i)}
+			{#each order as i (i)}
+				{@const opt = def.options[i]}
 				<li>
 					{#if chosen === null}
 						<button type="button" class="opt" onclick={() => choose(i)}>{plainText(opt.text)}</button>

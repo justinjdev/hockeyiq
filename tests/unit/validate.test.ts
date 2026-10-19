@@ -72,7 +72,13 @@ describe('validatePlay', () => {
 		expect(msgs).toContain('https');
 		expect(msgs).toContain('missing');
 	});
-});
+
+	it('flags an arrow target off the ice', () => {
+		const p = validPlay();
+		p.steps[0].arrows = [{ kind: 'pass', from: 'rd', to: { x: 1, y: 1 } }];
+		const issues = validatePlay(p, ctx());
+		expect(issues.some((i) => i.where.includes('arrow:0') && i.message.includes('off the ice'))).toBe(true);
+	});});
 
 describe('validateComparison', () => {
 	it('flags mismatched phase lists', () => {

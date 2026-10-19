@@ -1,0 +1,55 @@
+:root {
+	--arena: #0d1319;
+	--panel: #15202b;
+	--panel-2: #1e2a36;
+	--ice: #eef4f8;
+	--goal-light: #f5b82e;
+	--us: #2b6cb0;
+	--them: #e04848;
+	--line-red: #c8323c;
+	--line-blue: #2f63c6;
+	--text: #dde6ee;
+	--muted: #8fa1b3;
+	--boards: #5b6b7b;
+	--font-display: 'Teko', 'Arial Narrow', sans-serif;
+	--font-body: 'Atkinson Hyperlegible', system-ui, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html {
+	background: var(--arena);
+}
+
+body {
+	margin: 0;
+	min-height: 100vh;
+	color: var(--text);
+	font-family: var(--font-body);
+	line-height: 1.5;
+	background:
+		radial-gradient(ellipse 60% 40% at 20% -5%, rgb(245 184 46 / 0.14), transparent 70%),
+		radial-gradient(ellipse 60% 40% at 80% -5%, rgb(245 184 46 / 0.1), transparent 70%),
+		var(--arena);
+	background-attachment: fixed;
+	overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4 {
+	font-family: var(--font-display);
+	font-weight: 600;
+	letter-spacing: 0.02em;
+	line-height: 1.1;
+	margin: 0;
+}
+
+a {
+	color: var(--goal-light);
+}

@@ -1,5 +1,7 @@
 import type {
+	Arrow,
 	Comparison,
+	Diagram,
 	Issue,
 	Lesson,
 	Play,
@@ -11,6 +13,7 @@ import type {
 	Vec
 } from './types';
 import { termRefs } from '../text/richText';
+import { isOnIce } from '../rink/geometry';
 
 export type Ctx = {
 	playIds: Set<string>;
@@ -22,14 +25,17 @@ export type Ctx = {
 const SLOT_COUNT: Record<Strength, number> = { '5v5': 5, '5v4': 5, '4v5': 4 };
 const OPPONENT_COUNT: Record<Strength, number> = { '5v5': 5, '5v4': 4, '4v5': 5 };
 
-// Task 2 replaces this with isOnIce.
-const inBounds = (v: Vec) => v.x >= 0 && v.x <= 200 && v.y >= 0 && v.y <= 85;
-
 function duplicates(ids: string[]): string[] {
 	const seen = new Set<string>();
 	const dupes = new Set<string>();
 	for (const id of ids) (seen.has(id) ? dupes : seen).add(id);
 	return [...dupes];
+}
+
+function checkArrowGeometry(a: Arrow, where: string, issues: Issue[]) {
+	if (typeof a.from !== 'string' && !isOnIce(a.from)) issues.push({ where, message: 'arrow from is off the ice' });
+	if (!isOnIce(a.to)) issues.push({ where, message: 'arrow to is off the ice' });
+	if (a.via && !isOnIce(a.via)) issues.push({ where, message: 'arrow via is off the ice' });
 }
 
 function checkTerms(text: string | undefined, where: string, ctx: Ctx, issues: Issue[]) {
@@ -59,7 +65,7 @@ function checkQuiz(
 		if (stepIndex === 0 && !drag.start) {
 			issues.push({ where, message: 'drag quiz on step 0 requires a start position' });
 		}
-		if (drag.start && !inBounds(drag.start)) {
+		if (drag.start && !isOnIce(drag.start)) {
 			issues.push({ where, message: 'drag quiz start is off the ice' });
 		}
 		checkRegion(drag.target, where, issues);
@@ -92,9 +98,9 @@ function checkStep(p: Play, s: Step, i: number, ctx: Ctx, issues: Issue[]) {
 	}
 	for (const [id, pos] of Object.entries(s.positions)) {
 		if (!known.has(id)) issues.push({ where: `${base}/pos:${id}`, message: `position for unknown id ${id}` });
-		else if (!inBounds(pos)) issues.push({ where: `${base}/pos:${id}`, message: `position of ${id} is off the ice` });
+		else if (!isOnIce(pos)) issues.push({ where: `${base}/pos:${id}`, message: `position of ${id} is off the ice` });
 	}
-	if (!inBounds(s.puck)) issues.push({ where: `${base}/puck`, message: 'puck is off the ice' });
+	if (!isOnIce(s.puck)) issues.push({ where: `${base}/puck`, message: 'puck is off the ice' });
 	if (s.puckCarrier !== undefined && !known.has(s.puckCarrier)) {
 		issues.push({ where: base, message: `puckCarrier ${s.puckCarrier} is not a known id` });
 	}
@@ -102,11 +108,14 @@ function checkStep(p: Play, s: Step, i: number, ctx: Ctx, issues: Issue[]) {
 		if (typeof a.from === 'string' && !known.has(a.from)) {
 			issues.push({ where: `${base}/arrow:${ai}`, message: `arrow from unknown id ${a.from}` });
 		}
+		checkArrowGeometry(a, `${base}/arrow:${ai}`, issues);
 	});
 	for (const [owner, reads] of Object.entries(s.reads ?? {})) {
 		for (const r of reads) {
 			if (typeof r.at === 'string' && !known.has(r.at)) {
 				issues.push({ where: `${base}/reads:${owner}`, message: `read at unknown id ${r.at}` });
+			} else if (typeof r.at !== 'string' && !isOnIce(r.at)) {
+				issues.push({ where: `${base}/reads:${owner}`, message: 'read position is off the ice' });
 			}
 		}
 	}
@@ -191,6 +200,26 @@ export function validatePlay(p: Play, ctx: Ctx): Issue[] {
 	return issues;
 }
 
+function checkDiagram(d: Diagram, where: string, issues: Issue[]) {
+	for (const pl of d.players) {
+		if (!isOnIce(pl.pos)) issues.push({ where, message: `diagram player ${pl.id} is off the ice` });
+	}
+	if (d.puck && !isOnIce(d.puck)) issues.push({ where, message: 'diagram puck is off the ice' });
+	const ids = new Set(d.players.map((pl) => pl.id));
+	d.arrows.forEach((a, ai) => {
+		const w = `${where}/arrow:${ai}`;
+		if (typeof a.from === 'string' && !ids.has(a.from)) {
+			issues.push({ where: w, message: `arrow from unknown id ${a.from}` });
+		}
+		checkArrowGeometry(a, w, issues);
+	});
+	for (const r of d.reads ?? []) {
+		if (typeof r.at !== 'string' && !isOnIce(r.at)) {
+			issues.push({ where, message: 'diagram read position is off the ice' });
+		}
+	}
+}
+
 export function validateLesson(l: Lesson, ctx: Ctx): Issue[] {
 	const issues: Issue[] = [];
 	const base = `lesson:${l.id}`;
@@ -202,6 +231,7 @@ export function validateLesson(l: Lesson, ctx: Ctx): Issue[] {
 		const where = `${base}/section:${i}`;
 		checkTerms(sec.body, where, ctx, issues);
 		checkTerms(sec.diagram?.caption, where, ctx, issues);
+		if (sec.diagram) checkDiagram(sec.diagram, where, issues);
 	});
 	return issues;
 }

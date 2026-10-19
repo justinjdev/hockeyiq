@@ -33,5 +33,16 @@ export const comparisons: Comparison[] = [
 			a: 'When your team skates well and is in shape, against opponents who do not move the puck or switch positions much. It is also the simpler rule to follow when a line has not practiced together: "find your man, stay on his net side."',
 			b: 'When your team cannot win foot races against faster or more skilled opponents, or against teams that cycle and switch positions a lot. It saves legs and keeps shots to the outside, but only works if everyone calls out switches.'
 		}
+	},
+	{
+		id: 'bo-standard-vs-bo-reverse',
+		a: 'bo-standard',
+		b: 'bo-reverse',
+		summary:
+			'Both start the same way: a dump into the right corner and RD going back. The difference is where [[f1|F1]] comes from. In the standard [[breakout]], RD moves the puck up the same side he picked it up on. In the reverse, F1 chases him behind the net, so RD sends it back the way he came, and LD starts the breakout from the corner RD just left.',
+		whenToUse: {
+			a: 'Use the standard breakout when the D gets to the puck with a little time and the wall on his side is open, or when F1 is in the direct lane and a hard [[rim]] can go around him. It is the default: everyone knows where to be.',
+			b: 'Use the reverse when F1 is chasing the puck carrier hard behind the net and [[f2|F2]] is waiting on the far side for a [[wheel]]. The D who does not have the puck calls it, because the carrier cannot see the space behind him.'
+		}
 	}
 ];

@@ -24,7 +24,7 @@ const play: Play = {
 		{ id: 'o4', label: 'D' },
 		{ id: 'o5', label: 'D' }
 	],
-	keyConcepts: [],
+	keyConcepts: ['passing-lanes', 'shoulder-checks'],
 	variations:
 		'This is not a good default in most amateur hockey: the pass is long, and a pick-off leaves your winger 60 to 80 feet out of the play. Use it when their forwards have all committed deep and a lane is open; against a team that sits back (a 1-3-1 or a passive 1-2-2), stay with the short breakouts. Some teams send the center up the middle early instead of a winger. Older rule sets had a two-line pass rule that made a pass from your own zone past the red line illegal; the NHL dropped it in 2005, but check your league. Offside still applies at their blue line: keep a skate on or behind the line until the puck crosses, and check your league\'s rule on where a skate counts.',
 	sources: [

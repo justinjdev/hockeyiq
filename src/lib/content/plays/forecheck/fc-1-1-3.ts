@@ -24,7 +24,7 @@ const play: Play = {
 		{ id: 'o4', label: 'C' },
 		{ id: 'o5', label: 'W' }
 	],
-	keyConcepts: [],
+	keyConcepts: ['f1-f2-f3', 'passing-lanes'],
 	variations:
 		'Teams use it most when protecting a lead or against teams that break out fast. Some coaches have the three across the line stand still and wait; others let the D [[pinch]] on wall plays because there are three players back. In some versions the F3 and both D sit back at the red line, which makes it closer to a neutral-zone trap. A [[left-wing-lock|left wing lock]] with staggered forecheckers looks almost the same, but there the third player back is always the left winger.',
 	sources: [

@@ -24,7 +24,7 @@ const play: Play = {
 		{ id: 'o4', label: 'D' },
 		{ id: 'o5', label: 'D' }
 	],
-	keyConcepts: [],
+	keyConcepts: ['shoulder-checks', 'strong-weak-side', 'triangles-support', 'f1-f2-f3'],
 	variations:
 		'Coaches run this differently. Some want the center to swing low on the strong side every time; others let whichever forward is closest take the low spot. Against a hard [[forecheck]] on the wall, the D often [[reverse|reverses]] the puck to his partner instead of going up the boards. Some teams send the weak-side winger across the middle (a "slash") instead of staying wide. If nothing is open when the puck reaches the winger, the fallback is to "eat it": pin the puck on the boards and wait for help rather than throw it into the middle.',
 	sources: [

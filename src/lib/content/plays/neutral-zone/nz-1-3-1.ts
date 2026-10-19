@@ -31,7 +31,7 @@ const play: Play = {
 		{ id: 'o4', label: 'C' },
 		{ id: 'o5', label: 'W' }
 	],
-	keyConcepts: [],
+	keyConcepts: ['passing-lanes', 'strong-weak-side'],
 	variations:
 		'Who stands where in the line of three differs by team. Here the wingers take the walls and RD plays the middle; some teams put the center in the middle and send a winger up as [[f1|F1]], and some use the left D instead of the right. Some coaches run a passive version that just clogs the middle and waits (often called the [[trap]]); others, as shown here, have the wall winger attack the first pass to force a turnover. The more aggressive it is, the more it relies on [[f1|F1]] not getting beaten: if F1 overcommits, the puck goes past him and the one deep D faces an [[odd-man-rush|odd-man rush]].',
 	sources: [

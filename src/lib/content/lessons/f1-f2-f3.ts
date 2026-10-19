@@ -71,7 +71,7 @@ const lesson: Lesson = {
 			body: 'Roles change as the puck moves. If their D [[reverse|reverses]] the puck to the other corner, the forward closest to it becomes the new F1, the old F1 recovers as support, and someone still has to be high. The rule that never changes: two forwards can go in, but the third stays above the puck. Talk: "I\'m high" tells your linemates the middle is covered and they can go.'
 		}
 	],
-	examplePlays: ['bo-standard']
+	examplePlays: ['fc-1-2-2', 'fc-2-1-2', 'fc-2-3', 'bo-standard']
 };
 
 export default lesson;

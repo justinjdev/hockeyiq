@@ -68,7 +68,7 @@ const lesson: Lesson = {
 			body: 'Every time the puck crosses the middle (a [[d-to-d|D-to-D]] pass, a [[reverse]] behind the net, a carrier cutting across) the strong side and weak side swap, and so do the jobs. The winger who was guarding the high slot is suddenly the one who has to get out to the point. Watch the puck cross the middle and change jobs at that moment, not two seconds later.'
 		}
 	],
-	examplePlays: ['bo-standard']
+	examplePlays: ['bo-standard', 'dz-zone-coverage', 'nz-1-2-2', 'oz-cycle-low']
 };
 
 export default lesson;

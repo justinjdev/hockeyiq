@@ -24,7 +24,7 @@ const play: Play = {
 		{ id: 'o4', label: 'C' },
 		{ id: 'o5', label: 'W' }
 	],
-	keyConcepts: [],
+	keyConcepts: ['f1-f2-f3', 'strong-weak-side'],
 	variations:
 		'F1 is whoever gets there first, not always the RW; the other two forwards fill F2 and F3 by side. Some coaches set F2 and F3 lower (near the faceoff dots) to pressure more, others push them back toward the blue line so the system works more like a neutral-zone trap. Some teams let the strong-side D [[pinch]] on every [[rim]] up the wall; more cautious teams only pinch when F3 is already covering the middle. A common variation has F1 take away the [[d-to-d|D-to-D]] pass behind the net instead of angling to the wall, which pushes the play to the other side.',
 	sources: [

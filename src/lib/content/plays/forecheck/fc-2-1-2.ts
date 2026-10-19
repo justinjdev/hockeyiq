@@ -24,7 +24,7 @@ const play: Play = {
 		{ id: 'o4', label: 'C' },
 		{ id: 'o5', label: 'W' }
 	],
-	keyConcepts: [],
+	keyConcepts: ['f1-f2-f3', 'passing-lanes'],
 	variations:
 		'The roles go to whoever gets there first and second, not to fixed positions. In the "spread" version F1 and F2 come at the puck from opposite sides of the net; in the "stack" version F2 follows F1 down the same side and reads off his pressure. Some teams also let the D [[pinch]] hard on any [[rim]] up the wall, with F3 dropping back to cover the D\'s spot at the blue line. Coaches disagree on how high F3 should sit: around the tops of the circles is most common, but some put him at the hash marks to add pressure.',
 	sources: [

@@ -24,7 +24,7 @@ const play: Play = {
 		{ id: 'o4', label: 'D' },
 		{ id: 'o5', label: 'D' }
 	],
-	keyConcepts: [],
+	keyConcepts: ['shoulder-checks', 'triangles-support', 'f1-f2-f3'],
 	variations:
 		'The reverse is the backup plan when a [[wheel]] gets chased: the D has to sell the [[wheel]] so F1 commits, then send it back. Some teams reverse to the low center instead of the partner D, which works well against a hard 2-1-2 [[forecheck]]. The call usually comes from the D without the puck ("reverse!"), because the puck carrier is facing the wrong way and cannot see the space behind him. Coaches disagree on exactly where the wall winger sets up: this app uses the spot from the standard breakout, between the faceoff dot and the top of the circle, while some coaches teach a lower spot between the [[hash-marks|hash marks]] and the goal line. A [[forecheck|forechecker]] who stays on the D\'s inside shoulder and steers instead of chasing takes the reverse away; then the D should look up the wall or [[rim]] it.',
 	sources: [

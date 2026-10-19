@@ -24,7 +24,7 @@ const play: Play = {
 		{ id: 'o4', label: 'D' },
 		{ id: 'o5', label: 'D' }
 	],
-	keyConcepts: [],
+	keyConcepts: ['shoulder-checks', 'f1-f2-f3'],
 	variations:
 		'The partner D usually calls it ("[[wheel]]!"). Some coaches teach him to stand at the front of the net so F1 cannot cut across; standing still there is allowed under NHL rules, but USA Hockey penalizes it as a protective screen, Hockey Canada and CARHA rules give no right to stand there and penalize impeding a player without the puck, and stepping into the [[forecheck|forechecker]]\'s path is interference everywhere. In rec hockey, get to the net front early as the safety, but do not park in the [[forecheck|forechecker]]\'s lane on purpose. The [[wheel]] is risky against a 2-1-2 [[forecheck]] that keeps a second [[forecheck|forechecker]] on the far side: if he is there, call a [[reverse]] instead. Coaches disagree on exactly where the wall winger sets up: this app uses the spot between the faceoff dot and the top of the circle, while some teach a lower spot between the [[hash-marks|hash marks]] and the goal line. Off a won faceoff in your own end, teams also run a set [[wheel]]: the center draws it back to the D, who [[wheel|wheels]] while the far winger releases up the wall.',
 	sources: [

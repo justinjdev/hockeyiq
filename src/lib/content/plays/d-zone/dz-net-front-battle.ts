@@ -30,7 +30,7 @@ const play: Play = {
 		{ id: 'o4', label: 'D' },
 		{ id: 'o5', label: 'D' }
 	],
-	keyConcepts: [],
+	keyConcepts: ['net-front'],
 	variations:
 		'There are two ways to defend the net front. Boxing out (shown here) means getting between the forward and the goalie and controlling his stick; it is common in [[man-to-man]] and for bigger D. Fronting means standing between the forward and the puck to block the pass or shot; smaller D and penalty killers use it more because it avoids a wrestling match. If the forward already owns the spot and you cannot move him, coaches usually say front him rather than push him into your own goalie. Which D takes the net front also varies: usually the D away from the puck, but partners should call it.',
 	sources: [

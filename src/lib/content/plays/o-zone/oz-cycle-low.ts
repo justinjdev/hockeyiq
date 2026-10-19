@@ -37,7 +37,7 @@ const play: Play = {
 		{ id: 'o4', label: 'W' },
 		{ id: 'o5', label: 'W' }
 	],
-	keyConcepts: [],
+	keyConcepts: ['triangles-support', 'strong-weak-side', 'net-front'],
 	variations:
 		'This is the version where the three spots are carrier, low support and net front, and the net-front player drops low to replace the support man. Many coaches keep the third forward high in the slot instead (one forward below the puck, one level with it, one above it), so there is always a safety between the puck and your blue line; the rotation works the same way. The carrier can also start the rotation behind the net instead of up the wall, and the other two read his choice and follow. A "low switch" has the two low forwards cross paths below the dots to drag a defender with them while the third forward pops into open ice on the [[weak-side|weak side]]. Some teams use a five-man rotation where a D comes down the wall and a forward covers his spot at the [[point]]. Whatever the version, the cycle is a setup, not the goal: it should end in a shot from the slot, a pass to the middle, a [[low-to-high|low-to-high]] play, or a drive to the net.',
 	sources: [

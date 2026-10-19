@@ -24,7 +24,7 @@ const play: Play = {
 		{ id: 'o4', label: 'C' },
 		{ id: 'o5', label: 'W' }
 	],
-	keyConcepts: [],
+	keyConcepts: ['f1-f2-f3', 'passing-lanes'],
 	variations:
 		'The best-known version is the Detroit Red Wings\' [[left-wing-lock|left wing lock]] from the late 1990s: C and RW forecheck, LW locks the left lane, LD takes the middle, RD the right lane. Some teams let either winger be the third D, whichever is on the weak side, and teams differ on whether RD may [[pinch]] on the right wall. In another version the third forward plays the middle and lets the puck-side D pinch instead. When the two low forwards stagger, one deep and one higher, the shape looks like a 1-1-3 even though the jobs stay the same.',
 	sources: [

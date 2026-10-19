@@ -30,7 +30,7 @@ const play: Play = {
 		{ id: 'o4', label: 'D' },
 		{ id: 'o5', label: 'D' }
 	],
-	keyConcepts: [],
+	keyConcepts: ['gap-control', 'net-front'],
 	variations:
 		'Pure man-to-man is rare at high levels now; most teams play a hybrid. A common one is man-to-man when the puck is high (at the points) and [[zone-coverage|zone]] with a tight [[collapse]] when the puck is low. Some teams have the three low players (both D and the center) mark men while the wingers play the [[slot]] instead of the points, or the reverse. Who takes whom also varies: some coaches let the first forward back take the nearest forward, not the center specifically. If you lose your man, the usual rule is to get to the slot first, then find him.',
 	sources: [

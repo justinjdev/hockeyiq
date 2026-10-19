@@ -31,7 +31,7 @@ const play: Play = {
 		{ id: 'o4', label: 'C' },
 		{ id: 'o5', label: 'W' }
 	],
-	keyConcepts: [],
+	keyConcepts: ['strong-weak-side', 'gap-control'],
 	variations:
 		'There are several flavors. In a "retreating" 1-2-2 everybody backs up together and gives up the first pass, which keeps it simple for rec teams. In a more aggressive version the two wingers sit higher, near their blue line, and jump the first pass up the wall. Some coaches have the strong-side winger attack the wall receiver and the D stay home; others (as shown here) have the winger take the middle away and the strong-side D step up on the wall. Who plays [[f1|F1]] also varies: many teams use the center, others send whichever forward is first back. Some coaches call the 1-2-2 a [[trap]]; others save that word for a more passive setup.',
 	sources: [

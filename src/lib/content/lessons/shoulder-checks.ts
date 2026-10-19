@@ -66,7 +66,7 @@ const lesson: Lesson = {
 			body: 'In rec hockey most players never look, which is why the same mistakes happen every shift. Start small: every time you skate back for a puck, turn your head both ways before you touch it. Every time you are on the wall in your own end, glance up the boards before the pass. Help your teammates too: call "time" when they are free and "man on" when someone is coming. After a few weeks the look happens without thinking.'
 		}
 	],
-	examplePlays: ['bo-standard']
+	examplePlays: ['bo-standard', 'bo-d-to-d', 'bo-reverse', 'bo-wheel']
 };
 
 export default lesson;

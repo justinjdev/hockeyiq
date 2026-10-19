@@ -31,7 +31,7 @@ const play: Play = {
 		{ id: 'o4', label: 'W' },
 		{ id: 'o5', label: 'W' }
 	],
-	keyConcepts: [],
+	keyConcepts: ['net-front'],
 	variations:
 		'The pass into the slot is the main option, but the carrier always has others: a [[wraparound]] if the goalie is slow to seal his post, carrying the puck out in front himself, or a [[reverse]] or [[rim]] back to the corner to restart the [[cycle]]. If the slot is covered, a common fallback is a quick pass to the winger on the side (RW here), who returns it to the carrier or finds the open D for a [[one-timer]]. Which player steps into the slot varies: some teams use a forward from the [[high-slot|high slot]] instead of a D, and many coaches only let the D step down when a partner or forward covers the line behind him.',
 	sources: [

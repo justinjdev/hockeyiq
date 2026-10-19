@@ -30,7 +30,7 @@ const play: Play = {
 		{ id: 'o4', label: 'W' },
 		{ id: 'o5', label: 'W' }
 	],
-	keyConcepts: [],
+	keyConcepts: ['net-front'],
 	variations:
 		'The same idea works off the rush (shown here) or after winning a puck below the dots in the zone. If the carrier cannot get outside his defender, the common options are to pull up and pass to a trailing player in the [[high-slot|high slot]], or to take it to the corner and start a [[cycle]]. Some coaches want the middle driver to go to the near post and the weak-side winger to the far post; others send the middle driver to the far post. If the middle drive draws both D, the carrier can slide the puck across to him instead of shooting. A shot to the far pad is the common default because the rebound comes out to the far-post player.',
 	sources: [

@@ -22,7 +22,7 @@ const play: Play = {
 		{ id: 'o4', label: 'D' },
 		{ id: 'o5', label: 'D' }
 	],
-	keyConcepts: [],
+	keyConcepts: ['passing-lanes'],
 	variations:
 		'Teams regroup in different shapes. Some just go back to one D and straight up again ("one-touch regroup"); others always move it D-to-D to switch sides. Some coaches want the forwards to swing in a set pattern (wingers stretch, center curls low), others let all three curl and read. If the D-to-D pass is covered, the D can skate it himself (a "D carry") or bump it to the center swinging low. When nothing is open after the regroup, a good [[dump-in]] to the far corner is still better than a turnover at their blue line.',
 	sources: [

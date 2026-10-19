@@ -62,7 +62,7 @@ const lesson: Lesson = {
 			body: 'Close the gap hard when the puck carrier looks down at the puck, fumbles it, turns his back, or when a teammate is [[backcheck|backchecking]] right behind him. Hold your gap and protect the middle when you are outnumbered (an [[odd-man-rush|odd-man rush]]): stepping up and missing there leaves a shooter alone on your goalie. If you do get beaten, turn and skate to the net front; a teammate covering for you is better than chasing from behind.'
 		}
 	],
-	examplePlays: []
+	examplePlays: ['dz-man-to-man', 'nz-1-2-2', 'dz-zone-coverage']
 };
 
 export default lesson;

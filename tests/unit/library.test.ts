@@ -11,4 +11,20 @@ describe('content library', () => {
 	it('passes validation', () => {
 		expect(validateLibrary({ plays, lessons, comparisons, glossary })).toEqual([]);
 	});
+
+	it('links every lesson from at least two plays', () => {
+		for (const l of lessons) {
+			const linked = plays.filter((p) => p.keyConcepts.includes(l.id)).map((p) => p.id);
+			expect(linked.length, l.id).toBeGreaterThanOrEqual(2);
+		}
+	});
+
+	it('gives every lesson at least two example plays that link back to it', () => {
+		for (const l of lessons) {
+			expect(l.examplePlays.length, l.id).toBeGreaterThanOrEqual(2);
+			for (const id of l.examplePlays) {
+				expect(plays.find((p) => p.id === id)?.keyConcepts, `${l.id} -> ${id}`).toContain(l.id);
+			}
+		}
+	});
 });

@@ -30,7 +30,7 @@ const play: Play = {
 		{ id: 'o4', label: 'W' },
 		{ id: 'o5', label: 'W' }
 	],
-	keyConcepts: [],
+	keyConcepts: ['net-front', 'passing-lanes'],
 	variations:
 		'Some teams put two forwards in front (one high screen near the top of the crease area, one low screen closer to the goalie) and keep the third forward high as a safety. Some coaches want a hard slapshot; most now prefer a quick, low wrist or snap shot that gets through and can be [[tip|tipped]], because a big windup is easy to block. If the lane never opens, the D can fake the shot and pass [[d-to-d|D-to-D]] or move the puck back down low. Screening rules differ slightly between rule books, but standing outside the crease without contacting the goalie is legal in USA Hockey, Hockey Canada and NHL play.',
 	sources: [

@@ -30,7 +30,7 @@ const play: Play = {
 		{ id: 'o4', label: 'W' },
 		{ id: 'o5', label: 'W' }
 	],
-	keyConcepts: [],
+	keyConcepts: ['passing-lanes', 'net-front'],
 	variations:
 		'The pass up can be direct, or banked off the boards when a defender is in the direct lane. Some teams have the D shoot right away; others want him to walk the line first, or fake the shot and pass [[d-to-d|D-to-D]] for a [[one-timer]] from the other point. Which forward goes to the net and which supports high depends on who is closest; the rule is that someone is always in front before the shot. If there is nobody in front, a point shot is usually just a giveaway: hold it, or move it back down low.',
 	sources: [

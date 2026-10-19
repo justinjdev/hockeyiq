@@ -22,7 +22,7 @@ const play: Play = {
 		{ id: 'o4', label: 'D' },
 		{ id: 'o5', label: 'D' }
 	],
-	keyConcepts: [],
+	keyConcepts: ['strong-weak-side', 'net-front'],
 	variations:
 		'Teams handle the cycle two ways. In the more common one, shown here, the D stays low and the forwards handle anyone who cycles up high, so the D are never pulled up the wall. In stricter [[man-to-man]] systems the D follows his man up the wall and the center fills in down low. Coaches also differ on behind-the-net plays: some want the D who started the battle to follow the puck all the way around, while most want the other D to take it from his post. Whatever the rule, the switch is called out loud ("switch," "yours," "I got him"), and the player taking over gets there before the other one leaves.',
 	sources: [

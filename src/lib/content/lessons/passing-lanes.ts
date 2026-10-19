@@ -68,7 +68,7 @@ const lesson: Lesson = {
 			body: 'A pass into a closed lane is a turnover in the worst spot. If nothing is open, protect the puck, carry it to buy a second, [[chip]] it to space, or [[rim]] it to an area your teammates can reach. Then reset so your [[triangle]] has a lane again.'
 		}
 	],
-	examplePlays: []
+	examplePlays: ['fc-2-3', 'oz-low-to-high', 'nz-regroup', 'dz-low-zone-collapse']
 };
 
 export default lesson;

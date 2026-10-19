@@ -30,7 +30,7 @@ const play: Play = {
 		{ id: 'o4', label: 'D' },
 		{ id: 'o5', label: 'D' }
 	],
-	keyConcepts: [],
+	keyConcepts: ['strong-weak-side', 'gap-control', 'passing-lanes'],
 	variations:
 		'Zone systems differ mostly in how far the wingers sag. In the most common version the wingers sit near the tops of the circles and the center is the extra player chasing the puck. In tighter versions the [[weak-side]] winger drops all the way to the [[low-slot|low slot]]. Some coaches send whichever forward is first back down low instead of always the center. Many teams play zone when the puck is low and switch to [[man-to-man]] on the points when it goes high. Every version depends on talking: call "switch" or "yours" every time an attacker moves from one area to the next.',
 	sources: [

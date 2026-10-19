@@ -1,6 +1,7 @@
 import type { Play } from '../../types';
 
-const roles = { rd: 'D1', ld: 'D2', rw: 'Weak wing', lw: 'Strong wing' };
+const rolesBefore = { rd: 'D1', ld: 'D2', rw: 'Strong wing', lw: 'Weak wing' };
+const rolesAfter = { rd: 'D1', ld: 'D2', lw: 'Strong wing', rw: 'Weak wing' };
 
 const play: Play = {
 	id: 'bo-d-to-d',
@@ -9,7 +10,7 @@ const play: Play = {
 	system: 'D-to-D (over)',
 	strength: '5v5',
 	summary:
-		'When their forecheck floods the puck side, the D with the puck passes behind the net to his partner, who calls "Over!" from the far post. The puck switches sides faster than the forecheck can, and the breakout goes up the other wall.',
+		'When their [[forecheck]] floods the puck side, the D with the puck passes behind the net to his partner, who calls "Over!" from the far post. The puck switches sides faster than the [[forecheck]] can, and the breakout goes up the other wall.',
 	slots: [
 		{ id: 'lw', home: 'LW' },
 		{ id: 'c', home: 'C' },
@@ -63,16 +64,16 @@ const play: Play = {
 			},
 			puck: { x: 8, y: 64 },
 			arrows: [
-				{ kind: 'skate', from: 'rd', to: { x: 6, y: 57 } },
+				{ kind: 'skate', from: 'rd', to: { x: 9, y: 62 } },
 				{ kind: 'skate', from: 'c', to: { x: 24, y: 46 } },
 				{ kind: 'skate', from: 'rw', to: { x: 38, y: 81.5 } },
 				{ kind: 'skate', from: 'lw', to: { x: 40, y: 3.5 } }
 			],
-			roles,
+			roles: rolesBefore,
 			notes: {
 				lw: {
 					where: 'Coming back down the left side toward the left boards near the top of the circle.',
-					read: 'Watch the puck and the forecheckers. If two of them go to the right side, the puck may come around to you.',
+					read: 'Watch the puck and the [[forecheck|forecheckers]]. If two of them go to the right side, the puck may come around to you.',
 					why: 'The D-to-D only works if somebody is waiting on the far wall to take the next pass.'
 				},
 				c: {
@@ -88,7 +89,7 @@ const play: Play = {
 				ld: {
 					where: 'In front of the net, a little to the left.',
 					read: 'Watch F1 and F2. If both of them go to RD\'s side, the left side behind the net is empty. That is your spot.',
-					why: 'You see the whole forecheck and RD does not. You decide whether the puck should come over.'
+					why: 'You see the whole [[forecheck]] and RD does not. You decide whether the puck should come over.'
 				},
 				rd: {
 					where: 'Skating back to the puck in the right corner.',
@@ -115,7 +116,7 @@ const play: Play = {
 							{
 								text: 'Hold the front of the net, read F1 and F2, and get ready to slide behind the left post and call "Over!"',
 								correct: true,
-								why: 'Two forecheckers on one side leaves your side empty. You are the D who sees it, so you get open there and make the call.'
+								why: 'Two [[forecheck|forecheckers]] on one side leaves your side empty. You are the D who sees it, so you get open there and make the call.'
 							},
 							{
 								text: 'Follow RD into the corner to help him',
@@ -154,7 +155,7 @@ const play: Play = {
 				{ kind: 'pass', from: 'rd', to: { x: 6, y: 33 } },
 				{ kind: 'skate', from: 'c', to: { x: 24, y: 30 } }
 			],
-			roles,
+			roles: rolesBefore,
 			notes: {
 				lw: {
 					where: 'On the left boards near the top of the left circle, back to the boards, open to the ice.',
@@ -173,13 +174,13 @@ const play: Play = {
 				},
 				ld: {
 					where: 'Behind the net just off the left post, in the open space.',
-					read: 'Both forecheckers are on RD\'s side and nobody is near you. Call "Over!" loud, stick on the ice.',
+					read: 'Both [[forecheck|forecheckers]] are on RD\'s side and nobody is near you. Call "Over!" loud, stick on the ice.',
 					why: 'RD is facing the boards with F1 on him. He needs your voice to know the far side is open.'
 				},
 				rd: {
 					where: 'Behind the net on the right side with the puck and F1 closing.',
 					read: 'F1 is on you, F2 is parked next to RW, and LD is open behind the left post. Pass it over right away, behind the net.',
-					why: 'A quick pass switches sides faster than the forecheck can. Skate toward LD first and you drag F1 over with you.'
+					why: 'A quick pass switches sides faster than the [[forecheck]] can. Do not carry it toward LD; that brings F1 with it.'
 				}
 			},
 			reads: {
@@ -202,7 +203,7 @@ const play: Play = {
 							{
 								text: 'Pass it right away behind the net to LD',
 								correct: true,
-								why: 'Both forecheckers are on your side. A quick pass switches the play to the open side before they can follow.'
+								why: 'Both [[forecheck|forecheckers]] are on your side. A quick pass switches the play to the open side before they can follow.'
 							},
 							{
 								text: 'Force it up the right wall to RW',
@@ -265,7 +266,7 @@ const play: Play = {
 				{ kind: 'skate', from: 'c', to: { x: 42, y: 22 } },
 				{ kind: 'skate', from: 'rd', to: { x: 16, y: 44 } }
 			],
-			roles,
+			roles: rolesAfter,
 			notes: {
 				lw: {
 					where: 'On the left boards between the faceoff dot and the top of the circle, back to the boards, stick on the ice.',
@@ -363,7 +364,7 @@ const play: Play = {
 				{ kind: 'skate', from: 'lw', to: { x: 96, y: 8 } },
 				{ kind: 'skate', from: 'rw', to: { x: 120, y: 68 } }
 			],
-			roles,
+			roles: rolesAfter,
 			notes: {
 				lw: {
 					where: 'Off the wall after the bump, skating up the left side.',

@@ -26,7 +26,7 @@ const play: Play = {
 	],
 	keyConcepts: [],
 	variations:
-		'The reverse is the backup plan when a [[wheel]] gets chased: the D has to sell the wheel so F1 commits, then send it back. Some teams reverse to the low center instead of the partner D, which works well against a hard 2-1-2 [[forecheck]]. The call usually comes from the D without the puck ("reverse!"), because the puck carrier is facing the wrong way and cannot see the space behind him. Coaches disagree on exactly where the wall winger sets up: this app uses the spot from the standard breakout, between the faceoff dot and the top of the circle, while some coaches teach a lower spot between the [[hash-marks|hash marks]] and the goal line. A forechecker who stays on the D\'s inside shoulder and steers instead of chasing takes the reverse away; then the D should look up the wall or [[rim]] it.',
+		'The reverse is the backup plan when a [[wheel]] gets chased: the D has to sell the [[wheel]] so F1 commits, then send it back. Some teams reverse to the low center instead of the partner D, which works well against a hard 2-1-2 [[forecheck]]. The call usually comes from the D without the puck ("reverse!"), because the puck carrier is facing the wrong way and cannot see the space behind him. Coaches disagree on exactly where the wall winger sets up: this app uses the spot from the standard breakout, between the faceoff dot and the top of the circle, while some coaches teach a lower spot between the [[hash-marks|hash marks]] and the goal line. A [[forecheck|forechecker]] who stays on the D\'s inside shoulder and steers instead of chasing takes the reverse away; then the D should look up the wall or [[rim]] it.',
 	sources: [
 		{
 			title: 'Breakouts',
@@ -146,20 +146,20 @@ const play: Play = {
 			puck: { x: 5.5, y: 29.5 },
 			puckCarrier: 'rd',
 			arrows: [
-				{ kind: 'pass', from: 'rd', to: { x: 10, y: 57 }, via: { x: 0.5, y: 47 } },
+				{ kind: 'pass', from: 'rd', to: { x: 9, y: 58 }, via: { x: 0, y: 46 } },
 				{ kind: 'skate', from: 'c', to: { x: 26, y: 52 } }
 			],
 			roles,
 			notes: {
 				lw: {
 					where: 'On the left boards near the top of the left circle, back to the boards, stick on the ice.',
-					read: 'Watch RD coming around the net and [[f2|F2]] waiting on your side. If F2 is sitting there, a wheel to you runs right into him.',
+					read: 'Watch RD coming around the net and [[f2|F2]] waiting on your side. If F2 is sitting there, a [[wheel]] to you runs right into him.',
 					why: 'Staying on the wall keeps F2 honest and keeps you an option if RD does come all the way around.'
 				},
 				c: {
-					where: 'Low on the left side of the slot, moving with RD.',
-					read: 'Watch RD\'s hands and listen for LD\'s call. The moment the puck goes back the other way, cut back across the low slot to the right side.',
-					why: 'Moving with RD keeps you close if he keeps the wheel. Cutting back puts you under the puck again for LD.'
+					where: 'Low on the left side of the [[slot]], moving with RD.',
+					read: 'Watch RD\'s hands and listen for LD\'s call. The moment the puck goes back the other way, cut back across the [[low-slot|low slot]] to the right side.',
+					why: 'Moving with RD keeps you close if he keeps the [[wheel]]. Cutting back puts you under the puck again for LD.'
 				},
 				rw: {
 					where: 'Holding on the right boards between the dot and the top of the circle, back to the boards, open to the ice.',
@@ -174,7 +174,7 @@ const play: Play = {
 				rd: {
 					where: 'Behind the net heading for the left side, with F1 on your hip.',
 					read: 'F1 is right on your tail and [[f2|F2]] is waiting on the left side. LD is calling "reverse". Bank it hard off the end boards back toward the right corner, behind F1.',
-					why: 'Going the other way beats a forechecker with momentum. Keep wheeling and you skate into F2 with F1 still on you.'
+					why: 'Going the other way beats a [[forecheck|forechecker]] with momentum. Keep [[wheel|wheeling]] and you skate into F2 with F1 still on you.'
 				}
 			},
 			reads: {
@@ -199,9 +199,9 @@ const play: Play = {
 								why: 'F1 is going the wrong way and cannot turn in time. The puck goes behind him to LD in open ice.'
 							},
 							{
-								text: 'Keep wheeling up the left side',
+								text: 'Keep [[wheel|wheeling]] up the left side',
 								correct: false,
-								why: 'F2 is waiting there and F1 is still on you. You get squeezed between two forecheckers below the circle.'
+								why: 'F2 is waiting there and F1 is still on you. You get squeezed between two [[forecheck|forecheckers]] below the circle.'
 							},
 							{
 								text: 'Pass up the left wall to LW',
@@ -217,7 +217,7 @@ const play: Play = {
 						correct:
 							'Yes. Low in the right corner, just off the post. RD can bank it back to you there, and F1 has just skated out of that space.',
 						incorrect:
-							'For a reverse, the partner D slides into the corner the puck carrier just left: low, just off the right post. Stay out of the slot and away from the far side where F2 is.'
+							'For a reverse, the partner D slides into the corner the puck carrier just left: low, just off the right post. Stay out of the [[slot]] and away from the far side where F2 is.'
 					}
 				},
 				rw: {
@@ -275,7 +275,7 @@ const play: Play = {
 					why: 'Getting up ice on your side gives the play width and pushes their D back, which opens the middle for C.'
 				},
 				c: {
-					where: 'Cutting back across the low slot toward the right side, under the puck.',
+					where: 'Cutting back across the [[low-slot|low slot]] toward the right side, under the puck.',
 					read: 'Watch LD with the puck and RW on the wall. Curl so you arrive inside RW, about 25 feet off the boards, moving up ice.',
 					why: 'LD, RW and you form the [[triangle]] on the right side. RW needs someone to bump it to.'
 				},
@@ -325,9 +325,9 @@ const play: Play = {
 								why: 'That sends it back toward F1 and F2. You just beat them; do not give them a second chance.'
 							},
 							{
-								text: 'Carry it out through the slot',
+								text: 'Carry it out through the [[slot]]',
 								correct: false,
-								why: 'The slot is where a turnover hurts most. With RW open on the wall, there is no reason to skate through the middle.'
+								why: 'The [[slot]] is where a turnover hurts most. With RW open on the wall, there is no reason to skate through the middle.'
 							}
 						]
 					}

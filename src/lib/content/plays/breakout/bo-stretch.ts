@@ -9,7 +9,7 @@ const play: Play = {
 	system: 'Stretch pass (flying winger)',
 	strength: '5v5',
 	summary:
-		'When all three of their forwards dive deep and their D step up, the [[weak-side]] winger slips out early and the D leads him with a long [[stretch-pass|stretch pass]] in the space behind their forecheck. Completed, it is close to a breakaway. Picked off, it is a rush the other way, so it is a read, not a habit.',
+		'When all three of their forwards dive deep and their D step up, the [[weak-side]] winger slips out early and the D leads him with a long [[stretch-pass|stretch pass]] in the space behind their [[forecheck]]. Completed, it is close to a breakaway. Picked off, it is a rush the other way, so it is a read, not a habit.',
 	slots: [
 		{ id: 'lw', home: 'LW' },
 		{ id: 'c', home: 'C' },
@@ -26,7 +26,7 @@ const play: Play = {
 	],
 	keyConcepts: [],
 	variations:
-		'This is not a good default in most amateur hockey: the pass is long, and a pick-off leaves your winger 60 to 80 feet out of the play. Use it when their forwards have all committed deep and a lane is open; against a team that sits back (a 1-3-1 or a passive 1-2-2), stay with the short breakouts. Some teams send the center up the middle early instead of a winger. Older rule sets had a two-line pass rule that made a pass from your own zone past the red line illegal; the NHL dropped it in 2005, but check your league. Offside still applies at their blue line: under USA Hockey and Hockey Canada rules a skate in the air over the line counts as offside, so keep a blade on the ice or stay behind the puck.',
+		'This is not a good default in most amateur hockey: the pass is long, and a pick-off leaves your winger 60 to 80 feet out of the play. Use it when their forwards have all committed deep and a lane is open; against a team that sits back (a 1-3-1 or a passive 1-2-2), stay with the short breakouts. Some teams send the center up the middle early instead of a winger. Older rule sets had a two-line pass rule that made a pass from your own zone past the red line illegal; the NHL dropped it in 2005, but check your league. Offside still applies at their blue line: keep a skate on or behind the line until the puck crosses, and check your league\'s rule on where a skate counts.',
 	sources: [
 		{
 			title: 'Breakouts',
@@ -63,7 +63,7 @@ const play: Play = {
 			},
 			puck: { x: 8, y: 21 },
 			arrows: [
-				{ kind: 'skate', from: 'ld', to: { x: 9, y: 31 }, via: { x: 10, y: 24 } },
+				{ kind: 'skate', from: 'ld', to: { x: 10, y: 23 } },
 				{ kind: 'skate', from: 'rw', to: { x: 98, y: 72 } },
 				{ kind: 'skate', from: 'lw', to: { x: 38, y: 3.5 } }
 			],
@@ -91,7 +91,7 @@ const play: Play = {
 				},
 				rd: {
 					where: 'Heading to the front of the net, sliding to the right side of it.',
-					read: 'Watch [[f3|F3]] diving into the slot. Tell LD what is open: "time", "man on", or "stretch".',
+					read: 'Watch [[f3|F3]] diving into the [[slot]]. Tell LD what is open: "time", "man on", or "stretch".',
 					why: 'You see the whole ice. LD is facing the boards.'
 				}
 			},
@@ -119,7 +119,7 @@ const play: Play = {
 							{
 								text: 'Come back low to help in the corner',
 								correct: false,
-								why: 'That makes four of you deep in your own end and takes away the long option their forecheck just gave you.'
+								why: 'That makes four of you deep in your own end and takes away the long option their [[forecheck]] just gave you.'
 							},
 							{
 								text: 'Stop at your own blue line and wait',
@@ -141,12 +141,12 @@ const play: Play = {
 							{
 								text: 'Follow LD into the corner',
 								correct: false,
-								why: 'Two D in one corner leaves the slot empty with three of their forwards diving in.'
+								why: 'Two D in one corner leaves the [[slot]] empty with three of their forwards diving in.'
 							},
 							{
 								text: 'Join RW and leave the zone early',
 								correct: false,
-								why: 'Only one player leaves early. If both of you go, the puck is behind three forecheckers with nobody back.'
+								why: 'Only one player leaves early. If both of you go, the puck is behind three [[forecheck|forecheckers]] with nobody back.'
 							}
 						]
 					}
@@ -155,7 +155,7 @@ const play: Play = {
 		},
 		{
 			caption:
-				'LD picks it up beside the left post. [[f1|F1]] is closing, [[f2|F2]] is sitting on LW on the wall, and [[f3|F3]] is in front of the net. RW is skating into open ice behind their D. LD looks up and leads him with a long pass.',
+				'A couple of seconds later, LD has picked it up and come out beside the left post. [[f1|F1]] is closing, [[f2|F2]] is sitting on LW on the wall, and [[f3|F3]] is in front of the net. RW is skating into open ice behind their D. LD looks up and leads him with a long pass.',
 			phase: 'look-up',
 			positions: {
 				lw: { x: 38, y: 3.5 },
@@ -183,7 +183,7 @@ const play: Play = {
 					why: 'Staying on the wall holds F2 there. If he leaves you, LD gets the short pass back.'
 				},
 				c: {
-					where: 'Low on the right side of the slot, below the puck.',
+					where: 'Low on the right side of the [[slot]], below the puck.',
 					read: 'Watch LD\'s eyes. If he looks long, get ready to sprint up ice behind the pass.',
 					why: 'RW will be alone up ice. You are the first player who can get there to [[support]] him.'
 				},
@@ -298,7 +298,7 @@ const play: Play = {
 					why: 'D who stay deep leave a gap between them and the forwards.'
 				},
 				rd: {
-					where: 'On the right side of the slot.',
+					where: 'On the right side of the [[slot]].',
 					read: 'Watch [[f3|F3]]. You are the last one back until the play is well up ice.',
 					why: 'If RW loses it, their forwards come back the other way and you are the first defender.'
 				}
@@ -340,58 +340,59 @@ const play: Play = {
 		},
 		{
 			caption:
-				'A couple of seconds later: RW carried it over their blue line with speed, and C arrives as the trailer. Their D are scrambling back, and their forecheck is still in our end.',
+				'A couple of seconds later: RW has carried it over their blue line ahead of both their D, who are chasing from behind and from the side. C and LW are sprinting up through the [[neutral-zone|neutral zone]] to join, and their [[forecheck]] is still in our end.',
 			phase: 'attack',
 			positions: {
-				lw: { x: 110, y: 12 },
-				c: { x: 126, y: 44 },
+				lw: { x: 96, y: 12 },
+				c: { x: 102, y: 46 },
 				rw: { x: 150, y: 56 },
-				ld: { x: 60, y: 30 },
-				rd: { x: 62, y: 52 },
-				o1: { x: 44, y: 30 },
-				o2: { x: 60, y: 14 },
+				ld: { x: 70, y: 30 },
+				rd: { x: 72, y: 52 },
+				o1: { x: 46, y: 30 },
+				o2: { x: 56, y: 14 },
 				o3: { x: 54, y: 44 },
-				o4: { x: 162, y: 36 },
-				o5: { x: 142, y: 66 }
+				o4: { x: 140, y: 40 },
+				o5: { x: 138, y: 66 }
 			},
 			puck: { x: 151.5, y: 57.5 },
 			puckCarrier: 'rw',
 			arrows: [
-				{ kind: 'skate', from: 'rw', to: { x: 168, y: 52 } },
-				{ kind: 'skate', from: 'c', to: { x: 154, y: 42 } }
+				{ kind: 'skate', from: 'rw', to: { x: 172, y: 50 } },
+				{ kind: 'skate', from: 'c', to: { x: 124, y: 46 } },
+				{ kind: 'skate', from: 'lw', to: { x: 122, y: 14 } }
 			],
 			roles,
 			notes: {
 				lw: {
-					where: 'Coming up the left side near their blue line.',
-					read: 'Watch the puck and the far D. Drive toward the far post once you are onside.',
-					why: 'A third player arriving at the net turns one shot into a rebound chance.'
+					where: 'Crossing the red line on the left side, skating hard.',
+					read: 'Watch RW and their D. The puck is already in their zone, so you can follow it in: drive hard to the far post.',
+					why: 'If the goalie leaves a rebound, a second wave arriving at the net can score it.'
 				},
 				c: {
-					where: 'Crossing their blue line in the middle, a few strides behind RW.',
-					read: 'Watch RW and the D in front of him. Stay a little behind the puck so he can drop it or pass across to you.',
-					why: 'A trailer behind the puck is hard for the D to cover and is always onside.'
+					where: 'Just past the red line in the middle, sprinting to catch up.',
+					read: 'Watch RW and their two D. Get to their blue line as fast as you can and head for the middle of the ice.',
+					why: 'RW is alone. If their D stop him, you are the trailer who can take a drop pass or a rebound.'
 				},
 				rw: {
-					where: 'Inside their zone on the right side with the puck.',
-					read: 'Watch the D in front of you and C trailing. Shoot, or pass across if the D commits to you.',
-					why: 'The stretch got you here with numbers. Make the D choose.'
+					where: 'Inside their zone on the right side with the puck, both D behind you.',
+					read: 'Their D are chasing, not in front of you. Look at the goalie and take the puck to a shooting spot in the [[slot]].',
+					why: 'This is what the stretch pass was for: you are close to a breakaway. Do not slow down to wait for help.'
 				},
 				ld: {
-					where: 'Following up to the red line on the left side.',
-					read: 'Watch [[f1|F1]] and [[f2|F2]] coming back. Be ready to hold the blue line if the puck comes out.',
-					why: 'Following up keeps you connected and lets you keep the puck in.'
+					where: 'Following the play up to your blue line on the left side.',
+					read: 'Watch [[f1|F1]] and [[f2|F2]] coming back up ice behind the play.',
+					why: 'Following up keeps you connected to the forwards, and you stay between their forwards and your net.'
 				},
 				rd: {
-					where: 'Following up to the red line on the right side.',
+					where: 'Following the play up to your blue line on the right side.',
 					read: 'Watch [[f3|F3]]. You are the deepest player if the puck turns over.',
 					why: 'One of you has to be the last one back.'
 				}
 			},
 			reads: {
 				rw: [
-					{ at: 'o4', label: 'Their D' },
-					{ at: 'c' }
+					{ at: { x: 189, y: 42.5 }, label: 'Goalie' },
+					{ at: 'o4', label: 'Their D' }
 				],
 				c: [{ at: 'rw' }],
 				lw: [{ at: 'o4', label: 'Their D' }],

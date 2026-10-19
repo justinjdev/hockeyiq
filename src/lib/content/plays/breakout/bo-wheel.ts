@@ -26,7 +26,7 @@ const play: Play = {
 	],
 	keyConcepts: [],
 	variations:
-		'The partner D usually calls it ("wheel!"). Some coaches teach him to stand at the front of the net so F1 cannot cut across; standing still there is legal under NHL and IIHF rules, but USA Hockey calls it interference, and stepping into the forechecker\'s path is interference everywhere. In rec hockey, just get to the net front early and hold your spot. The wheel is risky against a 2-1-2 [[forecheck]] that keeps a second forechecker on the far side: if he is there, call a [[reverse]] instead. Coaches disagree on exactly where the wall winger sets up: this app uses the spot between the faceoff dot and the top of the circle, while some teach a lower spot between the [[hash-marks|hash marks]] and the goal line. Off a won faceoff in your own end, teams also run a set wheel: the center draws it back to the D, who wheels while the far winger releases up the wall.',
+		'The partner D usually calls it ("[[wheel]]!"). Some coaches teach him to stand at the front of the net so F1 cannot cut across; standing still there is allowed under NHL rules, but USA Hockey penalizes it as a protective screen, Hockey Canada and CARHA rules give no right to stand there and penalize impeding a player without the puck, and stepping into the [[forecheck|forechecker]]\'s path is interference everywhere. In rec hockey, get to the net front early as the safety, but do not park in the [[forecheck|forechecker]]\'s lane on purpose. The [[wheel]] is risky against a 2-1-2 [[forecheck]] that keeps a second [[forecheck|forechecker]] on the far side: if he is there, call a [[reverse]] instead. Coaches disagree on exactly where the wall winger sets up: this app uses the spot between the faceoff dot and the top of the circle, while some teach a lower spot between the [[hash-marks|hash marks]] and the goal line. Off a won faceoff in your own end, teams also run a set [[wheel]]: the center draws it back to the D, who [[wheel|wheels]] while the far winger releases up the wall.',
 	sources: [
 		{
 			title: 'Breakouts',
@@ -67,7 +67,7 @@ const play: Play = {
 				lw: {
 					where: 'Heading to the left boards near the top of the left circle.',
 					read: 'Watch RD and [[f1|F1]]. If RD gets there clean with F1 coming from the right, he will likely bring it to your side.',
-					why: 'A wheel needs a target on the far wall. Get there early and be ready.'
+					why: 'A [[wheel]] needs a target on the far wall. Get there early and be ready.'
 				},
 				c: {
 					where: 'Low in the middle, just above the crease.',
@@ -81,8 +81,8 @@ const play: Play = {
 				},
 				ld: {
 					where: 'Heading to the front of the net.',
-					read: 'Watch [[f1|F1]] and [[f2|F2]]. F1 is coming from the right and F2 is hanging back in the middle. Nobody is on the left side. Call "Wheel!"',
-					why: 'You can see the whole forecheck; RD is facing the boards. Your call tells him which way is open.'
+					read: 'Watch [[f1|F1]] and [[f2|F2]]. F1 is coming from the right and F2 is hanging back in the middle. Nobody is on the left side. Call "[[wheel|Wheel]]!"',
+					why: 'You can see the whole [[forecheck]]; RD is facing the boards. Your call tells him which way is open.'
 				},
 				rd: {
 					where: 'Racing back to the puck behind the net.',
@@ -104,7 +104,7 @@ const play: Play = {
 				rd: {
 					decision: {
 						prompt:
-							'You will get to the puck behind the net well before [[f1|F1]], who is coming from the right. Their other forwards are hanging back. LD calls "Wheel!" You...',
+							'You will get to the puck behind the net well before [[f1|F1]], who is coming from the right. Their other forwards are hanging back. LD calls "[[wheel|Wheel]]!" You...',
 						options: [
 							{
 								text: 'Pick it up in stride and skate it around the net to the left side',
@@ -114,7 +114,7 @@ const play: Play = {
 							{
 								text: 'Stop behind the net and wait for help',
 								correct: false,
-								why: 'Stopping throws away the step you had. F1 arrives and the forecheck sets up.'
+								why: 'Stopping throws away the step you had. F1 arrives and the [[forecheck]] sets up.'
 							},
 							{
 								text: '[[rim|Rim]] it hard up the right wall',
@@ -128,7 +128,7 @@ const play: Play = {
 		},
 		{
 			caption:
-				'RD picks it up and wheels around the net to the left side, staying tight to it. F1 has to go around the net to chase. LD holds the front of the net, LW waits on the left wall, and C curls low on the left.',
+				'RD picks it up and [[wheel|wheels]] around the net to the left side, staying tight to it. F1 has to go around the net to chase. LD holds the front of the net, LW waits on the left wall, and C curls low on the left.',
 			phase: 'wheel',
 			positions: {
 				lw: { x: 38, y: 3.5 },
@@ -157,7 +157,7 @@ const play: Play = {
 					why: 'You are RD\'s main target. Being set on the wall before he comes out lets him move it without slowing down.'
 				},
 				c: {
-					where: 'Low on the left side of the slot, curling toward the left.',
+					where: 'Low on the left side of the [[slot]], curling toward the left.',
 					read: 'Watch RD. Stay below him and inside LW so you are a short pass if [[f2|F2]] steps up.',
 					why: 'RD, LW and you make the [[triangle]] on the left side. Without you, RD only has one option.'
 				},
@@ -168,8 +168,8 @@ const play: Play = {
 				},
 				ld: {
 					where: 'Holding the front of the net, a little to the right.',
-					read: 'Watch [[f1|F1]]. If he tries to cut across in front of the net, you are already there. Do not step into his path.',
-					why: 'You are the safety if the wheel goes wrong. Stepping into F1 on purpose is interference.'
+					read: 'Watch [[f1|F1]] and the puck. Be in front of the net as the safety, but stay out of F1\'s skating lane: do not step into his path or park there to screen him.',
+					why: 'You are the safety if the [[wheel]] goes wrong. Screening or stepping into a player without the puck is a penalty in most rec rulebooks.'
 				},
 				rd: {
 					where: 'Coming around the left side of the net with the puck, tight to the net.',
@@ -193,12 +193,12 @@ const play: Play = {
 			quiz: {
 				ld: {
 					decision: {
-						prompt: 'RD is wheeling around the net to the left side. [[f1|F1]] is chasing from the right. You...',
+						prompt: 'RD is [[wheel|wheeling]] around the net to the left side. [[f1|F1]] is chasing from the right. You...',
 						options: [
 							{
-								text: 'Hold your spot in front of the net without stepping into F1\'s path',
+								text: 'Be in front of the net as the safety, staying out of F1\'s path',
 								correct: true,
-								why: 'You are the safety if the wheel goes wrong, and being there early makes F1 go the long way around.'
+								why: 'You are the safety if the [[wheel]] goes wrong. Staying out of F1\'s lane keeps you from taking an interference or screening penalty.'
 							},
 							{
 								text: 'Follow RD up the left side',
@@ -217,14 +217,14 @@ const play: Play = {
 					drag: {
 						target: { kind: 'ellipse', cx: 38, cy: 5, rx: 9, ry: 5 },
 						correct:
-							'Yes. On the left boards between the dot and the top of the circle, back to the boards. RD comes out of the wheel right into your passing range.',
+							'Yes. On the left boards between the dot and the top of the circle, back to the boards. RD comes out of the [[wheel]] right into your passing range.',
 						incorrect:
-							'When the D wheels to your side, set up on the boards between the faceoff dot and the top of the circle. Too low and you are in his way; too high and the pass is long.'
+							'When the D [[wheel|wheels]] to your side, set up on the boards between the faceoff dot and the top of the circle. Too low and you are in his way; too high and the pass is long.'
 					}
 				},
 				rw: {
 					decision: {
-						prompt: 'RD picks up the puck and wheels around the net to the left side, away from you. You...',
+						prompt: 'RD picks up the puck and [[wheel|wheels]] around the net to the left side, away from you. You...',
 						options: [
 							{
 								text: 'Push up ice on the right side as the weak-side option',
@@ -287,11 +287,11 @@ const play: Play = {
 				},
 				ld: {
 					where: 'In front of the net, sliding a little to the left.',
-					read: 'Watch [[f1|F1]], who is coming back around the net. Stay between him and the slot.',
+					read: 'Watch [[f1|F1]], who is coming back around the net. Stay between him and the [[slot]].',
 					why: 'Until the puck is out of the zone, one D stays home.'
 				},
 				rd: {
-					where: 'Coming out the left side near the hash marks with the puck.',
+					where: 'Coming out the left side near the [[hash-marks|hash marks]] with the puck.',
 					read: 'F2 is stepping up at you. LW is open on the wall above you and C is inside him.',
 					why: 'Moving the puck before F2 arrives beats him with a pass instead of a one-on-one battle you might lose.'
 				}
@@ -310,7 +310,7 @@ const play: Play = {
 				rd: {
 					decision: {
 						prompt:
-							'You come out of the wheel on the left side. [[f2|F2]] is stepping up toward you. LW is open on the wall and C is inside him. You...',
+							'You come out of the [[wheel]] on the left side. [[f2|F2]] is stepping up toward you. LW is open on the wall and C is inside him. You...',
 						options: [
 							{
 								text: 'Pass it up the wall to LW before F2 gets to you',
@@ -320,7 +320,7 @@ const play: Play = {
 							{
 								text: 'Try to beat F2 one-on-one',
 								correct: false,
-								why: 'Lose that battle near the hash marks and it is a chance against. You have an open teammate; use him.'
+								why: 'Lose that battle near the [[hash-marks|hash marks]] and it is a chance against. You have an open teammate; use him.'
 							},
 							{
 								text: 'Pass across the middle of the zone to RW',
@@ -332,7 +332,7 @@ const play: Play = {
 				},
 				c: {
 					decision: {
-						prompt: 'RD is coming out of the wheel on the left side and F2 is stepping up at him. Where do you go?',
+						prompt: 'RD is coming out of the [[wheel]] on the left side and F2 is stepping up at him. Where do you go?',
 						options: [
 							{
 								text: 'Stay inside LW and move into the space behind F2',

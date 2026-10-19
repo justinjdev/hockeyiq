@@ -1,5 +1,26 @@
-.superpowers/
-node_modules/
-build/
-.svelte-kit/
+
+!.env.example
+!.env.test
+# Env
+# OS
+# Output
+# Playwright
+# Vite
 .DS_Store
+.env
+.env.*
+.netlify
+.output
+.superpowers/
+.svelte-kit/
+.vercel
+.wrangler
+/.svelte-kit
+/build
+Thumbs.db
+build/
+node_modules
+node_modules/
+test-results
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*

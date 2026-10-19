@@ -400,7 +400,7 @@ const play: Play = {
 			roles,
 			notes: {
 				lw: {
-					where: 'In the [[high-slot|high [[slot]]]], between their far D and the net.',
+					where: 'In the [[high-slot|high slot]], between their far D and the net.',
 					read: 'Watch the puck carrier and their far D. If they go [[d-to-d|D-to-D]], you go out as the puck travels.',
 					why: 'Holding the [[slot]] first means a quick pass to the middle never gets through. Then you can go out.'
 				},

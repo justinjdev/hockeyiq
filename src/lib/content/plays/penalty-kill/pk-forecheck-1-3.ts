@@ -205,7 +205,7 @@ const play: Play = {
 				rw: {
 					where: 'Middle of the ice outside our blue line, between their center and our zone.',
 					read: 'Watch their center. If the puck carrier tries to pass to the middle, your stick is in the lane.',
-					why: 'With the middle closed and RD on the wall, the carrier has no clean way in. A dump from his side of the red line is his best choice.'
+					why: 'With the middle closed and RD on the wall, the carrier has no clean way in. Dumping it in from the neutral zone, before he reaches our blue line, is his best choice.'
 				},
 				ld: {
 					where: 'Dropping back to just inside our blue line, behind RD and toward the middle.',

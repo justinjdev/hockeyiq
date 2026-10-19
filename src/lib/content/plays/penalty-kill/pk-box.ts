@@ -307,7 +307,7 @@ const play: Play = {
 								why: 'You keep the middle closed and you can reach the left point while the pass is travelling.'
 							},
 							{
-								text: 'Stay in the [[high-slot|high [[slot]]]] in the middle',
+								text: 'Stay in the [[high-slot|high slot]] in the middle',
 								correct: false,
 								why: 'That was right when the puck was on the half-wall. With the puck back up top, the left point gets a free one-timer.'
 							},

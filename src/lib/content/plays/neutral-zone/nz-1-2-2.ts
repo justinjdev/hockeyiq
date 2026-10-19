@@ -354,7 +354,7 @@ const play: Play = {
 					why: 'A dump-in is only a win for us if we come out with the puck. You are the [[weak-side|weak-side]] option.'
 				},
 				ld: {
-					where: 'Along the left boards near the red line, where you rubbed him out.',
+					where: 'Along the left boards near the red line, where you steered him to the boards.',
 					read: 'Watch the puck and RD. Turn back quickly once the puck is past you.',
 					why: 'You were the one who forced the chip. Get back to be RD\'s [[d-to-d|D-to-D]] option.'
 				},

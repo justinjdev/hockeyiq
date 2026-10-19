@@ -23,7 +23,7 @@ const play: Play = {
 		{ id: 'o3', label: 'D' },
 		{ id: 'o4', label: 'D' }
 	],
-	keyConcepts: [],
+	keyConcepts: ['passing-lanes'],
 	variations:
 		'Some teams call this the five-man swing. The carrier is usually the unit\'s best puck-moving D, but it can be a forward. If their [[forecheck|forechecker]] takes away the wall, the pass goes to the middle forward; if he takes the middle, it goes up the wall; if he sits back, the carrier skates it up himself. Against a hard forecheck many teams switch to a [[drop-pass]] [[breakout]] instead, or use a [[d-to-d|D-to-D]] pass to change the angle. Now and then a lane opens straight up the middle for a [[stretch-pass]], but that works once or twice a game before the other team adjusts.',
 	sources: [
@@ -192,9 +192,9 @@ const play: Play = {
 						prompt: 'LD steps out on the left and the three forwards are curling up ice. You are RD. You...',
 						options: [
 							{
-								text: 'Follow up the right side a few strides behind, as LD\'s pass across',
+								text: 'Follow up the right side a few strides behind, ready for a pass across from LD',
 								correct: true,
-								why: 'You give LD a [[d-to-d|D-to-D]] option if the [[forecheck|forechecker]] gets close, and you stay the deepest player.'
+								why: 'You give LD a [[d-to-d|D-to-D]] option if the [[forecheck|forechecker]] gets close, and you stay behind the forwards as the safety.'
 							},
 							{
 								text: 'Stay planted in front of our net',
@@ -254,7 +254,7 @@ const play: Play = {
 				rd: {
 					where: 'Following up the right side.',
 					read: 'Watch the pass. Once it is out, follow the play up ice as the trailer.',
-					why: 'The five of you attack together, but someone has to be last back. That is you.'
+					why: 'The five of you attack together, but one D has to trail the play. LD is carrying the puck, so once he moves it, that job is yours.'
 				}
 			},
 			reads: {

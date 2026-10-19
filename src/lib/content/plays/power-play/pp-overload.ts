@@ -29,7 +29,7 @@ const play: Play = {
 		{ id: 'o3', label: 'D' },
 		{ id: 'o4', label: 'D' }
 	],
-	keyConcepts: [],
+	keyConcepts: ['triangles-support', 'strong-weak-side', 'net-front'],
 	variations:
 		'This is the classic version with two D on the points. Some coaches run the overload with one D: the second D spot becomes a forward in the high [[slot]] or on the far side, which turns it into something close to a 1-3-1. Players in the triangle can switch spots as they move the puck, as long as every spot stays filled; the job belongs to the spot, not the player. Many coaches want the half-wall player on his off-hand side (a left shot on the right wall) so he can face the middle with the puck on his forehand. The overload works on either side; teams usually set it up on the side of their best passer.',
 	sources: [
@@ -71,7 +71,7 @@ const play: Play = {
 					why: 'You are the [[screen]] for every shot and the target for a quick pass from C below the goal line.'
 				},
 				c: {
-					where: 'Low on the right side, near the goal line, about 10 feet off the end boards.',
+					where: 'Low on the right side, near the goal line, about 10 feet off the corner boards.',
 					read: 'Watch RW and their D who is guarding you. If he steps toward the wall, you are open for a pass.',
 					why: 'You are the bottom of the triangle. Being low pulls one of their D out of the front of the net.'
 				},

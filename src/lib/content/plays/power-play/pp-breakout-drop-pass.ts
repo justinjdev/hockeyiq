@@ -23,7 +23,7 @@ const play: Play = {
 		{ id: 'o3', label: 'D' },
 		{ id: 'o4', label: 'D' }
 	],
-	keyConcepts: [],
+	keyConcepts: ['triangles-support'],
 	variations:
 		'The penalty kill here sends one [[forecheck|forechecker]] and waits with three across near their own blue line (a 1-3). Teams run many versions of the drop: a "two-man drop" where two forwards curl behind the carrier and he picks one; a drop to a forward who then passes ahead instead of carrying; or a swing where the carrier shows the drop but passes ahead into a forward\'s stride instead. Coaches agree on the timing: drop it late, once the forechecker has committed to the carrier, and keep the play inside the faceoff dots as long as possible. Drop too early and the forechecker just turns onto the new carrier or picks off the pass. If their pressure is early and hard, drop early; if they wait at their blue line, carry it farther before dropping.',
 	sources: [
@@ -73,7 +73,7 @@ const play: Play = {
 					why: 'Going early puts you too far ahead. You want to hit their blue line at speed at the same time as the puck.'
 				},
 				c: {
-					where: 'Low in front of our net, just right of LD\'s path, feet moving.',
+					where: 'Low on the right side, between our net and the right circle, feet moving, ready to curl in behind LD.',
 					read: 'Watch LD. When he goes, you go, a few strides behind him on his right.',
 					why: 'You are the drop man. You need to be behind the puck so you can take the [[drop-pass]] with speed.'
 				},
@@ -208,7 +208,7 @@ const play: Play = {
 				c: { x: 44, y: 44 },
 				rw: { x: 96, y: 80 },
 				ld: { x: 56, y: 36 },
-				rd: { x: 44, y: 62 },
+				rd: { x: 40, y: 62 },
 				o1: { x: 64, y: 38 },
 				o2: { x: 114, y: 18 },
 				o3: { x: 110, y: 42 },
@@ -244,7 +244,7 @@ const play: Play = {
 					why: 'The [[forecheck|forechecker]] committed to you. Dropping it now gets the puck to a player he is not facing.'
 				},
 				rd: {
-					where: 'Trailing on the right side, near our blue line.',
+					where: 'Trailing on the right side, near the top of our right circle.',
 					read: 'Watch the drop. If C misses it, the puck is in your area.',
 					why: 'You are the last player back and the backup if the drop goes wrong.'
 				}

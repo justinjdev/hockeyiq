@@ -291,4 +291,24 @@ export const glossary: Term[] = [
 		term: "Delayed offside",
 		definition: "The linesman raises an arm instead of blowing the whistle when the puck enters the zone with an attacker already in it. Play goes on as long as the attackers clear the zone without touching the puck."
 	},
+	{
+		id: "low-to-high",
+		term: "Low to high",
+		definition: "Moving the puck from low in the offensive zone (the corners, the wall below the dots, behind the net) up to a defenseman at the point."
+	},
+	{
+		id: "walk-the-line",
+		term: "Walk the line",
+		definition: "A defenseman at the point carrying the puck sideways along the blue line to get away from a defender and open a shooting lane."
+	},
+	{
+		id: "wraparound",
+		term: "Wraparound",
+		definition: "Carrying the puck from behind the net around the post and trying to stuff it in before the goalie can get across."
+	},
+	{
+		id: "far-post",
+		term: "Far post",
+		definition: "The goal post on the side away from the puck. Rebounds and cross-crease passes often end up there."
+	}
 ];

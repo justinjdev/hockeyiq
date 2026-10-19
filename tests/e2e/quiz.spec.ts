@@ -106,3 +106,12 @@ test('Check without moving grades the starting spot', async ({ page }) => {
 	await page.getByRole('button', { name: 'Check' }).click();
 	await expect(page.getByRole('status')).toContainText('Not quite');
 });
+
+test('picking a position chip updates ?as=', async ({ page }) => {
+	await open(page, '/play/bo-standard/quiz?as=rw');
+	const chips = page.getByRole('group', { name: 'Quiz position' });
+	await chips.getByRole('button', { name: 'LW', exact: true }).click();
+	await expect(page).toHaveURL(/[?&]as=lw(&|$)/);
+	await chips.getByRole('button', { name: 'All positions' }).click();
+	await expect(page).toHaveURL(/[?&]as=all(&|$)/);
+});

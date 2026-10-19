@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { untrack } from 'svelte';
 	import { page } from '$app/state';
+	import { goto } from '$app/navigation';
 	import { resolve } from '$app/paths';
 	import DragQuiz from '#lib/quiz/DragQuiz.svelte';
 	import DecisionQuiz from '#lib/quiz/DecisionQuiz.svelte';
@@ -19,6 +20,7 @@
 	let results = $state<boolean[]>([]);
 	let attempt = $state(0);
 	let progress = $state<Progress>({});
+	let ready = false;
 
 	const pickable = $derived(play.slots.filter((s) => listQuizItems(play, s.id).length > 0));
 	const items = $derived(listQuizItems(play, picked === ALL ? undefined : picked));
@@ -47,7 +49,14 @@
 			const params = new URLSearchParams(page.url.search);
 			const slot = params.has('as') && params.get('as') !== ALL ? parseStudyParams(p, params).slot : ALL;
 			reset(listQuizItems(p, slot).length > 0 ? slot : ALL);
+			ready = true;
 		});
+	});
+
+	$effect(() => {
+		const params = new URLSearchParams({ as: picked });
+		if (!ready) return;
+		void goto(`?${params}`, { replace: true, shallow: true, state: {} });
 	});
 
 	function onResult(correct: boolean) {

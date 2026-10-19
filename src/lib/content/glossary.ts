@@ -246,4 +246,24 @@ export const glossary: Term[] = [
 		term: "Puck-side",
 		definition: "The side of the ice where the puck currently is, the same as the strong side."
 	},
+	{
+		id: "penalty-kill",
+		term: "Penalty kill",
+		definition: "Playing a player short while a teammate serves a penalty. The goal is to protect the net and get the puck out until the penalty ends."
+	},
+	{
+		id: "clear",
+		term: "Clear",
+		definition: "Shooting or chipping the puck out of your own zone, usually as far down the ice as you can, to relieve pressure."
+	},
+	{
+		id: "tie-up",
+		term: "Tie up",
+		definition: "On a faceoff, taking the other center's stick or getting your body between him and the puck so a teammate can get it."
+	},
+	{
+		id: "back-door",
+		term: "Back door",
+		definition: "The far side of the net, away from the puck. A pass there gives a shooter a wide-open net."
+	},
 ];

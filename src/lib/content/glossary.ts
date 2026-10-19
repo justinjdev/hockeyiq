@@ -246,4 +246,24 @@ export const glossary: Term[] = [
 		term: "Puck-side",
 		definition: "The side of the ice where the puck currently is, the same as the strong side."
 	},
+	{
+		id: "dump-in",
+		term: "Dump-in",
+		definition: "Shooting the puck deep into the other team's end, usually into a corner, so your forwards can chase it down."
+	},
+	{
+		id: "angling",
+		term: "Angling",
+		definition: "Skating at the puck carrier from the inside so he can only go one way, usually toward the boards and away from the middle."
+	},
+	{
+		id: "odd-man-rush",
+		term: "Odd-man rush",
+		definition: "An attack where the puck-carrying team has more players than the defenders back, like a 2-on-1 or 3-on-2."
+	},
+	{
+		id: "left-wing-lock",
+		term: "Left wing lock",
+		definition: "A 2-3 forecheck where the left winger drops back to the blue line and plays like a third defenseman while two forwards pressure."
+	},
 ];

@@ -7,7 +7,12 @@ export const PASS_LANE_FT = 3;
 export const RECEIVER_FT = 4;
 export const STEP_JUMP_FT = 45;
 export const SPACING_FT = 2.5;
-export const TIME_CUE = /seconds? later|a moment later|as the|while the|by the time/i;
+export const TIME_CUE =
+	/\b(seconds? later|a moment later|as the (puck|pass|play)|while the (puck|pass)|by the time)\b/i;
+/** Clearance around a net that a skate route must keep. */
+export const NET_MARGIN_FT = 1.5;
+/** A shot ending this close to a goal line, between the posts, is aimed at the net mouth. */
+const NET_MOUTH_FT = 1.5;
 export const NETS = [
 	{ x0: 7, x1: 11, y0: 39.5, y1: 45.5 },
 	{ x0: 189, x1: 193, y0: 39.5, y1: 45.5 }
@@ -15,7 +20,12 @@ export const NETS = [
 const [OUR_BLUE, THEIR_BLUE] = RINK.blueLineX;
 
 const dist = (a: Vec, b: Vec) => Math.hypot(a.x - b.x, a.y - b.y);
-const inNet = (p: Vec) => NETS.some((n) => p.x > n.x0 && p.x < n.x1 && p.y > n.y0 && p.y < n.y1);
+const inNet = (p: Vec, m = 0) =>
+	NETS.some((n) => p.x > n.x0 - m && p.x < n.x1 + m && p.y > n.y0 - m && p.y < n.y1 + m);
+const atNetMouth = (p: Vec) =>
+	RINK.goalLineX.some((gx) => Math.abs(p.x - gx) <= NET_MOUTH_FT) &&
+	p.y >= NETS[0].y0 - NET_MOUTH_FT &&
+	p.y <= NETS[0].y1 + NET_MOUTH_FT;
 const isGoalie = (label?: string) => !!label && /^g(oalie)?$/i.test(label);
 
 function nearest(ids: string[], s: Step, p: Vec, within: number): string | undefined {
@@ -32,9 +42,11 @@ function checkPassLane(play: Play, s: Step, a: Arrow, from: Vec, where: string, 
 	const ours = play.slots.map((x) => x.id);
 	const theirs = play.opponents.map((x) => x.id);
 	const all = [...ours, ...theirs];
-	const passer = typeof a.from === 'string' ? a.from : nearest(all, s, from, RECEIVER_FT);
-	const defenders = passer && theirs.includes(passer) ? ours : theirs;
-	const receiver = nearest(all, s, a.to, RECEIVER_FT);
+	const passer =
+		a.from === 'puck' ? s.puckCarrier : typeof a.from === 'string' ? a.from : nearest(all, s, from, RECEIVER_FT);
+	const theyPass = passer !== undefined && theirs.includes(passer);
+	const defenders = theyPass ? ours : theirs;
+	const receiver = nearest(theyPass ? theirs : ours, s, a.to, RECEIVER_FT);
 	const curve = sampleCurve(from, a.to, a.via);
 	for (const id of defenders) {
 		if (id === passer || id === receiver) continue;
@@ -63,8 +75,12 @@ function checkStep(play: Play, s: Step, i: number, issues: Issue[]) {
 		const where = `${base}/arrow:${ai}`;
 		const from = typeof a.from === 'string' ? (a.from === 'puck' ? s.puck : s.positions[a.from]) : a.from;
 		if (!from) return;
-		if (a.kind === 'skate' && sampleCurve(from, a.to, a.via).some(inNet)) {
-			issues.push({ where, message: 'net: skate route passes through a net' });
+		const curve = sampleCurve(from, a.to, a.via);
+		if (a.kind === 'skate' && curve.some((p) => inNet(p, NET_MARGIN_FT))) {
+			issues.push({ where, message: 'net: skate route passes through or too close to a net' });
+		}
+		if (a.kind !== 'skate' && !(a.kind === 'shot' && atNetMouth(a.to)) && curve.some((p) => inNet(p))) {
+			issues.push({ where, message: `net: ${a.kind} passes through a net` });
 		}
 		if (a.kind === 'pass' && !a.contested) checkPassLane(play, s, a, from, where, issues);
 	});
@@ -73,6 +89,19 @@ function checkStep(play: Play, s: Step, i: number, issues: Issue[]) {
 	// them carries the puck; otherwise we are.
 	const theyAttack = s.puckCarrier !== undefined && theirs.includes(s.puckCarrier);
 	if (!s.allowOffside) {
+		// Skate routes of the attacking team's non-carriers must not end offside either.
+		s.arrows.forEach((a, ai) => {
+			if (a.kind !== 'skate' || typeof a.from !== 'string' || a.from === s.puckCarrier) return;
+			const offside = theyAttack
+				? theirs.includes(a.from) && s.puck.x >= OUR_BLUE && a.to.x < OUR_BLUE
+				: ours.includes(a.from) && s.puck.x <= THEIR_BLUE && a.to.x > THEIR_BLUE;
+			if (offside) {
+				issues.push({
+					where: `${base}/arrow:${ai}`,
+					message: `offside: ${a.from} skates to x=${a.to.x}, past the blue line before the puck (x=${s.puck.x})`
+				});
+			}
+		});
 		if (!theyAttack && s.puck.x <= THEIR_BLUE) {
 			for (const id of ours) {
 				const p = s.positions[id];

@@ -35,10 +35,21 @@ describe('lintPlay', () => {
 			expect(has(p, 'pass lane: o1')).toBe(true);
 		});
 
-		it('ignores the receiver even when it is an opponent', () => {
+		it('takes the receiver only from the passer\'s team', () => {
 			const p = validPlay();
+			// A pass ending on an opponent is an interception, not a reception.
 			p.steps[0].arrows[0].to = { x: 60, y: 30 };
-			expect(has(p, 'pass lane: o2')).toBe(false);
+			expect(has(p, 'pass lane: o2')).toBe(true);
+		});
+
+		it('resolves a pass from the puck via the puck carrier', () => {
+			const p = validPlay();
+			p.steps[0].puckCarrier = 'o2';
+			p.steps[0].puck = { x: 60, y: 30 };
+			p.steps[0].arrows = [{ kind: 'pass', from: 'puck', to: { x: 60, y: 60 } }];
+			p.steps[0].positions.c = { x: 61, y: 45 };
+			expect(has(p, 'pass lane: c')).toBe(true);
+			expect(has(p, 'pass lane: o3')).toBe(false);
 		});
 
 		it('checks our players for an opponent pass', () => {
@@ -59,13 +70,36 @@ describe('lintPlay', () => {
 			expect(has(p, 'net: puck is inside a net')).toBe(true);
 		});
 
+		it('flags a skate route that brushes the net inside the margin', () => {
+			const p = validPlay();
+			p.steps[0].positions.ld = { x: 4, y: 37 };
+			p.steps[0].arrows = [{ kind: 'skate', from: 'ld', to: { x: 16, y: 38.5 } }];
+			expect(has(p, 'skate route passes through or too close')).toBe(true);
+		});
+
+		it('flags a pass through a net', () => {
+			const p = validPlay();
+			p.steps[0].arrows = [{ kind: 'pass', from: 'ld', to: { x: 5, y: 55 }, contested: true }];
+			p.steps[0].positions.ld = { x: 12, y: 30 };
+			expect(has(p, 'net: pass passes through a net')).toBe(true);
+		});
+
+		it('allows a shot ending at the net mouth but not one through the net', () => {
+			const p = validPlay();
+			p.steps[0].positions.lw = { x: 160, y: 42 };
+			p.steps[0].arrows = [{ kind: 'shot', from: 'lw', to: { x: 189, y: 43 } }];
+			expect(has(p, 'net:')).toBe(false);
+			p.steps[0].arrows = [{ kind: 'shot', from: 'lw', to: { x: 196, y: 43 } }];
+			expect(has(p, 'net: shot passes through a net')).toBe(true);
+		});
+
 		it('flags a skate route through a net but not one around it', () => {
 			const p = validPlay();
 			p.steps[0].positions.ld = { x: 4, y: 30 };
 			p.steps[0].arrows = [{ kind: 'skate', from: 'ld', to: { x: 14, y: 55 } }];
-			expect(has(p, 'skate route passes through a net')).toBe(true);
-			p.steps[0].arrows[0].via = { x: 0, y: 46 };
-			expect(has(p, 'skate route passes through a net')).toBe(false);
+			expect(has(p, 'skate route passes through')).toBe(true);
+			p.steps[0].arrows[0].via = { x: -3, y: 50 };
+			expect(has(p, 'skate route passes through')).toBe(false);
 		});
 	});
 
@@ -75,6 +109,25 @@ describe('lintPlay', () => {
 			p.steps[0].puck = { x: 120, y: 40 };
 			p.steps[0].positions.lw = { x: 130, y: 10 };
 			expect(has(p, 'offside: lw')).toBe(true);
+		});
+
+		it('flags a non-carrier skate route ending past the blue line before the puck', () => {
+			const p = validPlay();
+			p.steps[0].puck = { x: 110, y: 40 };
+			p.steps[0].positions.lw = { x: 115, y: 10 };
+			p.steps[0].arrows = [{ kind: 'skate', from: 'lw', to: { x: 135, y: 10 } }];
+			expect(has(p, 'offside: lw skates to')).toBe(true);
+			p.steps[0].arrows[0].to = { x: 123, y: 10 };
+			expect(has(p, 'offside')).toBe(false);
+		});
+
+		it('does not flag the carrier skating the puck over the line', () => {
+			const p = validPlay();
+			p.steps[0].puck = { x: 116, y: 10 };
+			p.steps[0].puckCarrier = 'lw';
+			p.steps[0].positions.lw = { x: 115, y: 10 };
+			p.steps[0].arrows = [{ kind: 'skate', from: 'lw', to: { x: 135, y: 10 } }];
+			expect(has(p, 'offside')).toBe(false);
 		});
 
 		it('honours allowOffside', () => {
@@ -112,6 +165,15 @@ describe('lintPlay', () => {
 			const p = validPlay();
 			p.steps[1].positions.c = { x: 75, y: 40 };
 			expect(has(p, 'step jump: c')).toBe(true);
+		});
+
+		it('does not treat incidental phrases as time cues', () => {
+			for (const caption of ['RD has the puck behind the net.', 'LD acts as the outlet.', 'Read the play and react.']) {
+				const p = validPlay();
+				p.steps[1].positions.c = { x: 75, y: 40 };
+				p.steps[1].caption = caption;
+				expect(has(p, 'step jump: c'), caption).toBe(true);
+			}
 		});
 
 		it('accepts the move when the caption has a time cue', () => {

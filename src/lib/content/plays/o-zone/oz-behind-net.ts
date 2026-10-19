@@ -147,7 +147,7 @@ const play: Play = {
 			puck: { x: 197, y: 52.5 },
 			puckCarrier: 'c',
 			arrows: [
-				{ kind: 'skate', from: 'c', to: { x: 190, y: 33 }, via: { x: 197, y: 42 } },
+				{ kind: 'skate', from: 'c', to: { x: 190, y: 33 }, via: { x: 199, y: 40 } },
 				{ kind: 'skate', from: 'rd', to: { x: 157, y: 47 } },
 				{ kind: 'skate', from: 'ld', to: { x: 133, y: 44 } }
 			],

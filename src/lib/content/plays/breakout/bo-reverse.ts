@@ -265,7 +265,7 @@ const play: Play = {
 			arrows: [
 				{ kind: 'pass', from: 'ld', to: { x: 38, y: 81.5 }, via: { x: 22, y: 76 } },
 				{ kind: 'skate', from: 'c', to: { x: 40, y: 62 } },
-				{ kind: 'skate', from: 'rd', to: { x: 14, y: 40 } }
+				{ kind: 'skate', from: 'rd', to: { x: 15, y: 36.5 } }
 			],
 			roles,
 			notes: {

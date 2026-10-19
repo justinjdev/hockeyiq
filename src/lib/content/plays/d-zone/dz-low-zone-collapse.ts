@@ -69,7 +69,7 @@ const play: Play = {
 			puck: { x: 10, y: 66 },
 			puckCarrier: 'o1',
 			arrows: [
-				{ kind: 'skate', from: 'o1', to: { x: 4, y: 42 } },
+				{ kind: 'skate', from: 'o1', to: { x: 4, y: 42 }, via: { x: 3, y: 56 } },
 				{ kind: 'skate', from: 'rd', to: { x: 12, y: 49 } },
 				{ kind: 'skate', from: 'c', to: { x: 21, y: 42 } },
 				{ kind: 'skate', from: 'rw', to: { x: 34, y: 55 } },
@@ -153,7 +153,7 @@ const play: Play = {
 			},
 			puck: { x: 3, y: 42 },
 			puckCarrier: 'o1',
-			arrows: [{ kind: 'skate', from: 'o1', to: { x: 12, y: 26 } }],
+			arrows: [{ kind: 'skate', from: 'o1', to: { x: 12, y: 26 }, via: { x: 3, y: 32 } }],
 			roles: collapseRoles,
 			notes: {
 				lw: {

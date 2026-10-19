@@ -328,8 +328,8 @@ const play: Play = {
 			puckCarrier: 'rw',
 			arrows: [
 				{ kind: 'skate', from: 'rw', to: { x: 140, y: 72 } },
-				{ kind: 'skate', from: 'c', to: { x: 140, y: 48 } },
-				{ kind: 'skate', from: 'lw', to: { x: 138, y: 18 } }
+				{ kind: 'skate', from: 'c', to: { x: 123, y: 48 } },
+				{ kind: 'skate', from: 'lw', to: { x: 123, y: 18 } }
 			],
 			roles: { rw: 'Puck carrier' },
 			notes: {

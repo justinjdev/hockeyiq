@@ -16,8 +16,17 @@ export type Source = { title: string; publisher: string; url?: string };
 export type Notes = { where: string; read: string; why: string };
 /** `at` as a string is a player id. */
 export type Read = { at: Vec | string; label?: string };
-/** `from` as a string is a player id. */
-export type Arrow = { kind: 'pass' | 'skate' | 'shot'; from: Vec | string; to: Vec; via?: Vec };
+/**
+ * `from` as a string is a player id. `via` is a quadratic Bezier control point, not a waypoint.
+ * `contested` marks a pass or shot deliberately drawn through traffic or into a blocked lane.
+ */
+export type Arrow = {
+	kind: 'pass' | 'skate' | 'shot';
+	from: Vec | string;
+	to: Vec;
+	via?: Vec;
+	contested?: boolean;
+};
 export type Region =
 	| { kind: 'ellipse'; cx: number; cy: number; rx: number; ry: number }
 	| { kind: 'polygon'; points: Vec[] };
@@ -38,6 +47,8 @@ export type Step = {
 	notes: Record<string, Notes>;
 	reads?: Record<string, Read[]>;
 	quiz?: Record<string, StepQuiz>;
+	/** Opts this step out of the offside lint (plays that teach offside or tag-ups). */
+	allowOffside?: boolean;
 };
 export type Play = {
 	id: string;

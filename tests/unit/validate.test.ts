@@ -78,6 +78,20 @@ describe('validatePlay', () => {
 		p.steps[0].arrows = [{ kind: 'pass', from: 'rd', to: { x: 1, y: 1 } }];
 		const issues = validatePlay(p, ctx());
 		expect(issues.some((i) => i.where.includes('arrow:0') && i.message.includes('off the ice'))).toBe(true);
+	});
+
+	it('accepts an off-ice via when the drawn curve stays on the ice', () => {
+		const p = validPlay();
+		// rd at (15, 55); control point past the end boards, curve min x stays > 0.
+		p.steps[0].arrows = [{ kind: 'pass', from: 'rd', to: { x: 15, y: 70 }, via: { x: -5, y: 62 } }];
+		expect(validatePlay(p, ctx()).filter((i) => i.where.includes('arrow:0'))).toEqual([]);
+	});
+
+	it('flags a curve that bulges off the ice', () => {
+		const p = validPlay();
+		p.steps[0].arrows = [{ kind: 'pass', from: 'rd', to: { x: 15, y: 70 }, via: { x: -40, y: 62 } }];
+		const issues = validatePlay(p, ctx());
+		expect(issues.some((i) => i.where.includes('arrow:0') && i.message.includes('curve leaves the ice'))).toBe(true);
 	});});
 
 describe('validateComparison', () => {

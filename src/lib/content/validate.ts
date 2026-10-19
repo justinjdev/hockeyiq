@@ -13,7 +13,7 @@ import type {
 	Vec
 } from './types';
 import { termRefs } from '../text/richText';
-import { isOnIce } from '../rink/geometry';
+import { isOnIce, sampleCurve } from '../rink/geometry';
 
 export type Ctx = {
 	playIds: Set<string>;
@@ -32,11 +32,17 @@ function duplicates(ids: string[]): string[] {
 	return [...dupes];
 }
 
-function checkArrowGeometry(a: Arrow, where: string, issues: Issue[]) {
+/** `via` is a Bezier control point and may sit off the ice; the drawn curve itself must not. */
+function checkArrowGeometry(a: Arrow, from: Vec | undefined, where: string, issues: Issue[]) {
 	if (typeof a.from !== 'string' && !isOnIce(a.from)) issues.push({ where, message: 'arrow from is off the ice' });
 	if (!isOnIce(a.to)) issues.push({ where, message: 'arrow to is off the ice' });
-	if (a.via && !isOnIce(a.via)) issues.push({ where, message: 'arrow via is off the ice' });
+	if (a.via && from && !sampleCurve(from, a.to, a.via).every(isOnIce)) {
+		issues.push({ where, message: 'arrow curve leaves the ice' });
+	}
 }
+
+const resolveFrom = (a: Arrow, posOf: (id: string) => Vec | undefined): Vec | undefined =>
+	typeof a.from === 'string' ? posOf(a.from) : a.from;
 
 function checkTerms(text: string | undefined, where: string, ctx: Ctx, issues: Issue[]) {
 	if (!text) return;
@@ -108,7 +114,8 @@ function checkStep(p: Play, s: Step, i: number, ctx: Ctx, issues: Issue[]) {
 		if (typeof a.from === 'string' && !known.has(a.from)) {
 			issues.push({ where: `${base}/arrow:${ai}`, message: `arrow from unknown id ${a.from}` });
 		}
-		checkArrowGeometry(a, `${base}/arrow:${ai}`, issues);
+		const from = resolveFrom(a, (id) => (id === 'puck' ? s.puck : s.positions[id]));
+		checkArrowGeometry(a, from, `${base}/arrow:${ai}`, issues);
 	});
 	for (const [owner, reads] of Object.entries(s.reads ?? {})) {
 		for (const r of reads) {
@@ -211,7 +218,8 @@ function checkDiagram(d: Diagram, where: string, issues: Issue[]) {
 		if (typeof a.from === 'string' && !ids.has(a.from)) {
 			issues.push({ where: w, message: `arrow from unknown id ${a.from}` });
 		}
-		checkArrowGeometry(a, w, issues);
+		const from = resolveFrom(a, (id) => d.players.find((pl) => pl.id === id)?.pos);
+		checkArrowGeometry(a, from, w, issues);
 	});
 	for (const r of d.reads ?? []) {
 		if (typeof r.at !== 'string' && !isOnIce(r.at)) {

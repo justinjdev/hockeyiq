@@ -51,7 +51,7 @@ const play: Play = {
 				c: { x: 28, y: 61 },
 				rw: { x: 48, y: 62 },
 				ld: { x: 15.5, y: 46 },
-				rd: { x: 17, y: 74 },
+				rd: { x: 12, y: 74.5 },
 				o1: { x: 14, y: 78 },
 				o2: { x: 42, y: 77 },
 				o3: { x: 19, y: 49 },
@@ -142,7 +142,7 @@ const play: Play = {
 			},
 			puck: { x: 16, y: 77 },
 			puckCarrier: 'o2',
-			arrows: [{ kind: 'skate', from: 'o2', to: { x: 5, y: 40 } }],
+			arrows: [{ kind: 'skate', from: 'o2', to: { x: 5, y: 40 }, via: { x: 4, y: 68 } }],
 			roles: { rd: 'Takes the low carrier', ld: 'Net-front D', c: 'Takes the high cycler', rw: 'Strong-side wing', lw: 'Weak-side wing' },
 			notes: {
 				lw: {

@@ -252,7 +252,7 @@ const play: Play = {
 			},
 			puck: { x: 191, y: 63 },
 			arrows: [
-				{ kind: 'pass', from: 'o1', to: { x: 195, y: 34 }, via: { x: 196, y: 52 } },
+				{ kind: 'pass', from: 'o1', to: { x: 195, y: 34 }, via: { x: 196, y: 52 }, contested: true },
 				{ kind: 'skate', from: 'c', to: { x: 194, y: 58 } }
 			],
 			roles,

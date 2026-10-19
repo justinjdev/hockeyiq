@@ -51,3 +51,18 @@ export function clampToRink(p: Vec): Vec {
 export function flipY(p: Vec): Vec {
 	return { x: p.x, y: RINK.height - p.y };
 }
+
+/** Points along the quadratic Bezier from `a` to `b` with control point `via` (a straight line without one). */
+export function sampleCurve(a: Vec, b: Vec, via?: Vec, n = 50): Vec[] {
+	const c = via ?? { x: (a.x + b.x) / 2, y: (a.y + b.y) / 2 };
+	const pts: Vec[] = [];
+	for (let i = 0; i <= n; i++) {
+		const t = i / n;
+		const u = 1 - t;
+		pts.push({
+			x: u * u * a.x + 2 * t * u * c.x + t * t * b.x,
+			y: u * u * a.y + 2 * t * u * c.y + t * t * b.y
+		});
+	}
+	return pts;
+}

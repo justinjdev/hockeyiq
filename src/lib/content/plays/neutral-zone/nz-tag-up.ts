@@ -57,6 +57,7 @@ const play: Play = {
 			caption:
 				'LW carries up the left side. RW got too far ahead and is already over their blue line. Their D on LW\'s side is standing up at the line.',
 			phase: 'carry',
+			allowOffside: true,
 			positions: {
 				lw: { x: 112, y: 14 },
 				c: { x: 116, y: 44 },
@@ -137,6 +138,7 @@ const play: Play = {
 			caption:
 				'LW [[dump-in|dumps it]] into the far corner. The puck crosses the line with RW still inside, so the linesman raises his arm: [[delayed-offside|delayed offside]].',
 			phase: 'dump',
+			allowOffside: true,
 			positions: {
 				lw: { x: 120, y: 14 },
 				c: { x: 120, y: 44 },

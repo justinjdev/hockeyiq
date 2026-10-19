@@ -55,5 +55,16 @@ export const comparisons: Comparison[] = [
 			a: 'Use the umbrella when you have good shooters up top and two forwards willing to stand at the net. It is safer, since three players are always high, but every shot comes from far out, so it lives on screens, tips and rebounds.',
 			b: 'Use the overload when you have a patient passer for the half-wall and want a simple setup everyone can learn fast. It creates short passes and quick reads close to the net, but the low player is too deep to shoot himself, and if the puck stops moving it turns into passing around the outside.'
 		}
+	},
+	{
+		id: 'pk-box-vs-pk-diamond',
+		a: 'pk-box',
+		b: 'pk-diamond',
+		summary:
+			'Both are four-player [[penalty-kill]] shapes in your own zone. The [[box]] puts two forwards high and two D low: it is simple, keeps two players in front of the net, and pushes shots to the outside, but it creates few turnovers and the high forwards are a long way from the [[point]]. The [[diamond]] puts one player on top, one on each side and one low: the top player can pressure the quarterback right away, but only one player is low, often against two attackers, and a pass across to the far side can beat it.',
+		whenToUse: {
+			a: 'Your default, especially against an [[overload]] or when your unit is still learning to kill penalties. Use it when you want two players in front of your goalie and fewer reads to make.',
+			b: 'Against an [[umbrella]] power play that runs everything through one player at the top, or when your killers are quick and talk well enough to rotate as the puck moves.'
+		}
 	}
 ];

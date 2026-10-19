@@ -325,5 +325,20 @@ export const glossary: Term[] = [
 		id: "drop-pass",
 		term: "Drop pass",
 		definition: "Leaving the puck behind you, or passing it straight back, for a teammate skating up behind you with speed."
+	},
+	{
+		id: "penalty-kill",
+		term: "Penalty kill",
+		definition: "Playing a player short while a teammate serves a penalty. The goal is to protect the net and get the puck out until the penalty ends."
+	},
+	{
+		id: "clear",
+		term: "Clear",
+		definition: "Shooting or chipping the puck out of your own zone, usually as far down the ice as you can, to relieve pressure."
+	},
+	{
+		id: "tie-up",
+		term: "Tie up",
+		definition: "On a faceoff, taking the other center's stick or getting your body between him and the puck so a teammate can get it."
 	}
 ];

@@ -263,13 +263,13 @@ const play: Play = {
 				},
 				c: {
 					where: 'Closing on their winger from the inside, a few feet off the right boards.',
-					read: 'Watch his hands and the puck. Get your stick in the lane to the middle and take his body toward the boards.',
+					read: 'Watch his hands and the puck. Get your stick in the lane to the middle and keep your body on his inside so he can only go along the boards.',
 					why: 'Coming from the inside means the only place he can go is along the boards, straight into RD.'
 				},
 				rw: {
 					where: 'Near the bottom of the right circle, turning back up the wall after the rim.',
 					read: 'Look at the puck on the wall and their D who just passed it. Follow the puck up the boards from below.',
-					why: 'If the winger tries to chip it back down, you are there. F1 does not stop after the first contact.'
+					why: 'If the winger tries to chip it back down, you are there. F1 keeps working after the first pass.'
 				},
 				ld: {
 					where: 'Inside the blue line, sliding toward the middle.',

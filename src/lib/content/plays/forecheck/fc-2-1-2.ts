@@ -9,7 +9,7 @@ const play: Play = {
 	system: '2-1-2',
 	strength: '5v5',
 	summary:
-		'An aggressive [[forecheck]]: two forwards go in deep, [[f1|F1]] to hit the puck carrier and [[f2|F2]] to take away his first pass and grab the loose puck, while [[f3|F3]] stays high in the slot and both D hold the blue line.',
+		'An aggressive [[forecheck]]: two forwards go in deep, [[f1|F1]] to pressure the puck carrier hard and [[f2|F2]] to take away his first pass and grab the loose puck, while [[f3|F3]] stays high in the slot and both D hold the blue line.',
 	slots: [
 		{ id: 'lw', home: 'LW' },
 		{ id: 'c', home: 'C' },
@@ -26,7 +26,7 @@ const play: Play = {
 	],
 	keyConcepts: [],
 	variations:
-		'The roles go to whoever gets there first and second, not to fixed positions. In the "spread" version F1 and F2 come at the puck from opposite sides of the net; in the "stack" version F2 follows F1 down the same side and reads off his hit. Some teams also let the D [[pinch]] hard on any rim up the wall, with F3 dropping back to cover the D\'s spot at the blue line. Coaches disagree on how high F3 should sit: around the tops of the circles is most common, but some put him at the hash marks to add pressure.',
+		'The roles go to whoever gets there first and second, not to fixed positions. In the "spread" version F1 and F2 come at the puck from opposite sides of the net; in the "stack" version F2 follows F1 down the same side and reads off his pressure. Some teams also let the D [[pinch]] hard on any rim up the wall, with F3 dropping back to cover the D\'s spot at the blue line. Coaches disagree on how high F3 should sit: around the tops of the circles is most common, but some put him at the hash marks to add pressure.',
 	sources: [
 		{
 			title: 'Explained: 2-1-2 Offensive Zone Forecheck',
@@ -81,12 +81,12 @@ const play: Play = {
 				c: {
 					where: 'Just inside their blue line on the right side, dumping into the right corner.',
 					read: 'Their D are backing up and RW is flying up the wall. Dump it to his corner, then follow the play in.',
-					why: 'In a 2-1-2 the second forward goes deep too. You are [[f2|F2]]: you will support RW\'s hit and pick up the loose puck.'
+					why: 'In a 2-1-2 the second forward goes deep too. You are [[f2|F2]]: you will support RW\'s pressure and pick up the loose puck.'
 				},
 				rw: {
 					where: 'Wide on the right side at their blue line, at full speed.',
 					read: 'The puck is going into your corner. Pick out their D who will go back for it and aim at him, not at the puck.',
-					why: 'As [[f1|F1]] your job is to get there fast and finish the check. If F1 is slow, the whole 2-1-2 fails.'
+					why: 'As [[f1|F1]] your job is to get there fast, stick on the puck, and take away his time. If F1 is slow, the whole 2-1-2 fails.'
 				},
 				ld: {
 					where: 'In the neutral zone left of the middle, following up.',
@@ -133,7 +133,7 @@ const play: Play = {
 		},
 		{
 			caption:
-				'Their D gets to the puck in the corner. RW ([[f1|F1]]) goes straight at him to finish the check. C ([[f2|F2]]) comes in low on the net side to cut off the pass behind the net. LW ([[f3|F3]]) sits in the high slot.',
+				'Their D gets to the puck in the corner. RW ([[f1|F1]]) closes on him fast with his stick on the puck. C ([[f2|F2]]) comes in low on the net side to cut off the pass behind the net. LW ([[f3|F3]]) sits in the high slot.',
 			phase: 'd-retrieves',
 			positions: {
 				lw: { x: 158, y: 44 },
@@ -163,12 +163,12 @@ const play: Play = {
 				c: {
 					where: 'Below the right faceoff dot, heading for the goal line beside the net.',
 					read: 'Watch their D and his partner behind the net. Skate into the lane between them so the [[reverse]] or [[d-to-d|D-to-D]] is gone.',
-					why: 'As [[f2|F2]] you take away his first pass. With that gone, RW\'s hit will knock the puck loose, and you are right there to pick it up.'
+					why: 'As [[f2|F2]] you take away his first pass. With that gone, RW\'s stick pressure will knock the puck loose, and you are right there to pick it up.'
 				},
 				rw: {
 					where: 'Coming hard at their D in the corner.',
-					read: 'Eyes on his chest, not the puck. He is facing the boards with his back to you.',
-					why: 'A good hit separates him from the puck. Even if he gets rid of it, he has to rush the pass.'
+					read: 'He is facing the boards with his back to you. Aim your stick at the puck and keep your body on his inside, toward the net.',
+					why: 'Stick on puck and no room to turn means he has no time. Even if he gets rid of it, he has to rush the pass.'
 				},
 				ld: {
 					where: 'Inside the blue line on the left side.',
@@ -186,7 +186,7 @@ const play: Play = {
 					{ at: 'o2', label: 'D-to-D' },
 					{ at: 'o1' }
 				],
-				rw: [{ at: 'o1', label: 'Finish the check' }],
+				rw: [{ at: 'o1', label: 'Pressure' }],
 				lw: [{ at: 'o4', label: 'Their C' }],
 				rd: [{ at: 'o3' }],
 				ld: [{ at: 'o5' }]
@@ -215,9 +215,9 @@ const play: Play = {
 						prompt: 'You are [[f1|F1]] in a 2-1-2 and their D is picking up the puck in the corner. You...',
 						options: [
 							{
-								text: 'Go straight at him and finish the check',
+								text: 'Close fast, stick on the puck, and pin him on the boards',
 								correct: true,
-								why: 'C is covering the pass behind the net, so you can be physical. Your hit knocks the puck loose for C.'
+								why: 'C is covering the pass behind the net, so you can go all in on the puck. Your stick and body position knock it loose for C.'
 							},
 							{
 								text: 'Stop at the top of the circle and wait',

@@ -9,7 +9,7 @@ const play: Play = {
 	system: '1-1-3',
 	strength: '5v5',
 	summary:
-		'A conservative [[forecheck]]: [[f1|F1]] steers the puck carrier instead of trying to hit him, [[f2|F2]] sits in the [[high-slot|high slot]] to read and pick off passes, and [[f3|F3]] lines up with both D across the blue line. It protects the middle and gives up very few [[odd-man-rush|odd-man rushes]].',
+		'A conservative [[forecheck]]: [[f1|F1]] steers the puck carrier instead of diving at him, [[f2|F2]] sits in the [[high-slot|high slot]] to read and pick off passes, and [[f3|F3]] lines up with both D across the blue line. It protects the middle and gives up very few [[odd-man-rush|odd-man rushes]].',
 	slots: [
 		{ id: 'lw', home: 'LW' },
 		{ id: 'c', home: 'C' },
@@ -211,7 +211,7 @@ const play: Play = {
 								why: 'In a 1-1-3 F1 directs the play. Under control you cannot be beaten, and F2 and the line read where he goes.'
 							},
 							{
-								text: 'Go in full speed and try to run him over',
+								text: 'Go in full speed and lunge at the puck',
 								correct: false,
 								why: 'With nobody right behind you, one sidestep and you are out of the play.'
 							},
@@ -227,7 +227,7 @@ const play: Play = {
 		},
 		{
 			caption:
-				'The D goes behind the net and tries to hit his center curling through the middle. C ([[f2|F2]]) reads it and steps into the [[passing-lane|passing lane]].',
+				'The D goes behind the net and tries to pass to his center curling through the middle. C ([[f2|F2]]) reads it and steps into the [[passing-lane|passing lane]].',
 			phase: 'first-pass',
 			positions: {
 				lw: { x: 130, y: 18 },

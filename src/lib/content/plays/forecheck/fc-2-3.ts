@@ -55,7 +55,7 @@ const play: Play = {
 				rw: { x: 126, y: 64 },
 				ld: { x: 110, y: 32 },
 				rd: { x: 110, y: 56 },
-				o1: { x: 150, y: 26 },
+				o1: { x: 152, y: 36 },
 				o2: { x: 152, y: 58 },
 				o3: { x: 112, y: 6 },
 				o4: { x: 106, y: 44 },
@@ -260,7 +260,7 @@ const play: Play = {
 			notes: {
 				lw: {
 					where: 'Jumping down the left boards from the blue line.',
-					read: 'The puck is going up your wall to their winger. Close on him fast and take his body.',
+					read: 'The puck is going up your wall to their winger. Close on him fast, angle him into the boards and get your stick on the puck.',
 					why: 'This is the moment the lock is built for. C is behind him and LD covers your spot.'
 				},
 				c: {
@@ -329,7 +329,7 @@ const play: Play = {
 				o1: { x: 176, y: 14 },
 				o2: { x: 186, y: 56 },
 				o3: { x: 152, y: 3 },
-				o4: { x: 168, y: 22 },
+				o4: { x: 172, y: 20 },
 				o5: { x: 154, y: 70 }
 			},
 			puck: { x: 159, y: 14 },

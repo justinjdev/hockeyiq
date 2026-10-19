@@ -29,6 +29,23 @@ describe('listQuizItems', () => {
 			'1/decision'
 		]);
 	});
+	it('orders all positions by step, then kind, then slot', () => {
+		const p = validPlay();
+		const decision = p.steps[1].quiz!.lw.decision;
+		p.steps[1].quiz!.rw.decision = decision;
+		p.steps[0].quiz = { rw: { decision } };
+		const order = listQuizItems(p).map((i) => `${i.step}/${i.kind}/${i.slot}`);
+		const rank = (k: string) => (k === 'drag' ? 0 : 1);
+		const sorted = [...order].sort((a, b) => {
+			const [sa, ka, la] = a.split('/');
+			const [sb, kb, lb] = b.split('/');
+			return +sa - +sb || rank(ka) - rank(kb) || la.localeCompare(lb);
+		});
+		expect(order).toEqual(sorted);
+		const step1 = order.filter((o) => o.startsWith('1/')).map((o) => o.split('/')[1]);
+		expect(step1).toEqual([...step1].sort((a, b) => rank(a) - rank(b)));
+		expect(order[0]).toBe('0/decision/rw');
+	});
 });
 
 describe('quizKey', () => {

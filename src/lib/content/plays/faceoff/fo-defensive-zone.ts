@@ -70,6 +70,7 @@ const play: Play = {
 	],
 	steps: [
 		{
+			id: 'alignment',
 			caption:
 				'Faceoff at the right dot in our zone. C takes the draw. RW lines up on the boards-side [[hash-marks|hash marks]], LD on the inside hash, RD behind C toward the corner, and LW high in the [[slot]]. Plan: win it back to RD.',
 			phase: 'alignment',
@@ -147,6 +148,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'win',
 			caption:
 				'C wins it back to RD. RW gets to the boards above him, LD goes to the front of the net, and LW starts to get open on the weak side. C stays with their center.',
 			phase: 'win',
@@ -227,6 +229,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'win-2',
 			caption:
 				'Their D comes down the wall at RW, so RW bumps it to C, who has released from their center and is swinging into open ice. We are out.',
 			phase: 'win',
@@ -286,6 +289,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'alignment-loss',
 			caption:
 				'Same faceoff again. This time watch the jobs if we LOSE the draw: find your player before the puck finds him.',
 			phase: 'alignment-loss',
@@ -376,6 +380,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'loss',
 			caption:
 				'Their center wins it back to their D at the right point. RW goes out into his shooting lane, C stays with their center, our D pick up their wingers, and LW holds the [[slot]].',
 			phase: 'loss',
@@ -434,6 +439,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'loss-2',
 			caption:
 				'They pass across to the other point. With the [[slot]] covered, LW steps out into that shooter\'s lane. Everyone else keeps his player.',
 			phase: 'loss',

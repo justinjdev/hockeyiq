@@ -46,6 +46,7 @@ const play: Play = {
 	],
 	steps: [
 		{
+			id: 'retrieve',
 			caption:
 				'They dump it into our right corner. RD gets there first, but their [[f1|F1]] is coming hard down the right wall right behind him, and [[f2|F2]] is sitting on the left side.',
 			phase: 'retrieve',
@@ -128,6 +129,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'support',
 			caption:
 				'RD carries it behind the net toward the left side, selling the [[wheel]]. F1 chases right on his tail. LD slides into the corner RD just left and calls "Reverse!"',
 			phase: 'support',
@@ -245,6 +247,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'first-pass',
 			caption:
 				'LD picks up the reverse in the right corner. F1 is stranded on the far side of the net. LD moves it right away up the right wall to RW.',
 			phase: 'first-pass',
@@ -367,6 +370,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'exit',
 			caption:
 				'A couple of seconds later: their D on the right side stayed back, so RW bumped it to C swinging through, and the unit exits up the right side. F1 and F2 are caught on the wrong side.',
 			phase: 'exit',

@@ -54,6 +54,7 @@ const play: Play = {
 	],
 	steps: [
 		{
+			id: 'carry',
 			caption:
 				'LW carries up the left side. RW got too far ahead and is already over their blue line. Their D on LW\'s side is standing up at the line.',
 			phase: 'carry',
@@ -135,6 +136,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'dump',
 			caption:
 				'LW [[dump-in|dumps it]] into the far corner. The puck crosses the line with RW still inside, so the linesman raises his arm: [[delayed-offside|delayed offside]].',
 			phase: 'dump',
@@ -242,6 +244,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'tag-up',
 			caption:
 				'RW skates back to the blue line and gets a skate on it. C and LW hold just outside. Their D goes back for the puck in the corner.',
 			phase: 'tag-up',
@@ -333,6 +336,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 're-enter',
 			caption:
 				'Everyone is out, the arm comes down, and we go back in on the [[forecheck]]. RW and C go in with speed while the D move up to hold their blue line.',
 			phase: 're-enter',

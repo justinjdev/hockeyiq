@@ -40,6 +40,7 @@ const play: Play = {
 	],
 	steps: [
 		{
+			id: 'set',
 			caption:
 				'LD has the puck behind our net. All three forwards and RD are back in our end. Their [[forecheck|forechecker]] waits at the top of our zone, and the other three wait near the red line.',
 			phase: 'set',
@@ -122,6 +123,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'swing',
 			caption:
 				'Everyone goes together. LD steps out on the left side, the three forwards curl up ice, and RD follows on the right. Their [[forecheck|forechecker]] comes at LD.',
 			phase: 'swing',
@@ -212,6 +214,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'pass',
 			caption:
 				'Their [[forecheck|forechecker]] cuts across from the middle at LD and takes away the pass to C. That leaves LW open up the left boards.',
 			phase: 'pass',
@@ -297,6 +300,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'attack',
 			caption:
 				'A couple of seconds later LW carries it into the [[neutral-zone|neutral zone]]. C and RW come with speed, LD and RD trail, and all five attack their blue line together.',
 			phase: 'attack',

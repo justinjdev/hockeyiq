@@ -52,6 +52,7 @@ const play: Play = {
 	],
 	steps: [
 		{
+			id: 'rw-carries-puck',
 			caption:
 				'RW carries the puck over the blue line wide on the right side with speed. C is a stride behind the puck in the middle lane, LW is on the left, and the D follow up the ice.',
 			positions: {
@@ -134,6 +135,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'rw-beats-d',
 			caption:
 				'A couple of seconds later, RW gets outside their D, keeping his body between the defender and the puck. C\'s drive has pushed their other D back to the crease. LW heads for the far post, and the D arrive at the blue line.',
 			positions: {
@@ -225,6 +227,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'rw-cuts-faceoff',
 			caption:
 				'RW cuts in to the faceoff dot and shoots low to the goalie\'s far pad. C is in front for a [[tip]] or a rebound, and LW arrives at the [[far-post|far post]] for anything kicked across.',
 			positions: {

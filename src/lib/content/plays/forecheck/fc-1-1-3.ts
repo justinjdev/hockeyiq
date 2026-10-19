@@ -41,6 +41,7 @@ const play: Play = {
 	],
 	steps: [
 		{
+			id: 'dump-in',
 			caption:
 				'C [[dump-in|dumps it in]] to the right corner. RW chases as [[f1|F1]], C stops in the [[high-slot|high slot]] as [[f2|F2]], and LW drops back to line up with the two D.',
 			phase: 'dump-in',
@@ -127,6 +128,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'd-retrieves',
 			caption:
 				'A couple of seconds later, their D gets the puck. RW ([[f1|F1]]) comes at him from the inside but does not dive in. C ([[f2|F2]]) reads from the [[high-slot|high slot]]. LW, LD and RD hold a line of three at the blue line.',
 			phase: 'd-retrieves',
@@ -226,6 +228,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'first-pass',
 			caption:
 				'The D goes behind the net and tries to pass to his center curling through the middle. C ([[f2|F2]]) reads it and steps into the [[passing-lane|passing lane]].',
 			phase: 'first-pass',
@@ -307,6 +310,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'outcome',
 			caption:
 				'C picks off the pass in the [[slot]] and shoots. RW heads for the net. The line of three never had to move.',
 			phase: 'outcome',

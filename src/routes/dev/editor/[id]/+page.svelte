@@ -26,7 +26,11 @@
 
 	function duplicate() {
 		const steps = [...draft.steps];
-		steps.splice(step + 1, 0, structuredClone(current));
+		// Step ids key saved progress, so the copy needs a fresh one.
+		const ids = new Set(steps.map((s) => s.id));
+		let id = `${current.id}-copy`;
+		for (let n = 2; ids.has(id); n++) id = `${current.id}-copy-${n}`;
+		steps.splice(step + 1, 0, { ...structuredClone(current), id });
 		draft = { ...draft, steps };
 		step += 1;
 	}

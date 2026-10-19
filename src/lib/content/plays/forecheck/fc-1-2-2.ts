@@ -41,6 +41,7 @@ const play: Play = {
 	],
 	steps: [
 		{
+			id: 'dump-in',
 			caption:
 				'C carries over their blue line with their D backing up, so he [[dump-in|dumps it in]] to the right corner. RW is the closest forward, so he becomes [[f1|F1]] and chases.',
 			phase: 'dump-in',
@@ -130,6 +131,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'd-retrieves',
 			caption:
 				'A couple of seconds later, their D picks the puck up in the corner. RW ([[f1|F1]]) comes at him from the inside to push him toward the boards. C ([[f2|F2]]) and LW ([[f3|F3]]) sit at the tops of the circles. Both D hold the blue line.',
 			phase: 'd-retrieves',
@@ -231,6 +233,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'first-pass',
 			caption:
 				'Squeezed by F1, their D [[rim|rims]] it up the right wall to his winger. C ([[f2|F2]]) closes from the inside and RD [[pinch|pinches]] down the wall. LW and LD slide to cover the middle.',
 			phase: 'first-pass',
@@ -341,6 +344,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'outcome',
 			caption:
 				'The winger is trapped between RD and C. C comes away with the puck and finds LW in the [[high-slot|high slot]]. RW heads to the net. If the puck had squeezed past, LD and LW were still back.',
 			phase: 'outcome',

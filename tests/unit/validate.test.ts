@@ -10,6 +10,52 @@ describe('validatePlay', () => {
 		expect(validatePlay(validPlay(), ctx())).toEqual([]);
 	});
 
+	it('requires a kebab-case step id', () => {
+		const p = validPlay();
+		p.steps[0].id = '';
+		p.steps[1].id = 'Bad Id';
+		const issues = validatePlay(p, ctx()).filter((i) => i.message.includes('step id'));
+		expect(issues.map((i) => i.where)).toEqual(['play:bo-standard/step:0', 'play:bo-standard/step:1']);
+	});
+
+	it('flags duplicate step ids within a play', () => {
+		const p = validPlay();
+		p.steps[1].id = p.steps[0].id;
+		expect(validatePlay(p, ctx()).map((i) => i.message)).toContain('duplicate step id setup');
+	});
+
+	it('flags reads keyed by a non-slot id', () => {
+		const p = validPlay();
+		p.steps[0].reads = { lW: [{ at: 'o1' }], o2: [{ at: 'o1' }], lw: [{ at: 'o1' }] };
+		const msgs = validatePlay(p, ctx()).map((i) => i.message);
+		expect(msgs).toEqual(['reads key lW is not a slot id', 'reads key o2 is not a slot id']);
+	});
+
+	it('flags roles keyed by a non-slot id, and empty roles', () => {
+		const p = validPlay();
+		p.steps[0].roles = { o2: 'F1', lw: ' ', c: 'F2' };
+		const msgs = validatePlay(p, ctx()).map((i) => i.message);
+		expect(msgs).toEqual(['roles key o2 is not a slot id', 'role for lw is empty']);
+	});
+
+	it("accepts arrows from the reserved 'puck' id", () => {
+		const p = validPlay();
+		p.steps[0].arrows = [{ kind: 'shot', from: 'puck', to: { x: 25, y: 40 } }];
+		expect(validatePlay(p, ctx())).toEqual([]);
+	});
+
+	it("rejects 'puck' as a slot or opponent id", () => {
+		const p = validPlay();
+		p.opponents[0].id = 'puck';
+		for (const s of p.steps) {
+			s.positions.puck = s.positions.o1;
+			delete s.positions.o1;
+		}
+		expect(validatePlay(p, ctx()).map((i) => i.message)).toEqual([
+			"'puck' is reserved and cannot be a slot or opponent id"
+		]);
+	});
+
 	it('flags a missing position', () => {
 		const p = validPlay();
 		delete p.steps[0].positions.lw;
@@ -227,6 +273,31 @@ describe('validateLibrary glossary', () => {
 });
 
 describe('validateComparison', () => {
+	const cmp = (a: string, b: string) => ({ id: 'cmp', a, b, summary: 's', whenToUse: { a: 'x', b: 'y' } });
+
+	it('flags plays with different strengths', () => {
+		const a = validPlay();
+		const b = { ...validPlay(), id: 'bo-other', strength: '5v4' as const };
+		const msgs = validateComparison(cmp(a.id, b.id), makeCtx([a, b])).map((i) => i.message);
+		expect(msgs).toEqual(['plays have different strengths (5v5 vs 5v4)']);
+	});
+
+	it('flags plays with different slot homes', () => {
+		const a = validPlay();
+		const b = validPlay();
+		b.id = 'bo-other';
+		b.slots = b.slots.map((s) => (s.home === 'LW' ? { ...s, home: 'C' } : s));
+		const msgs = validateComparison(cmp(a.id, b.id), makeCtx([a, b])).map((i) => i.message);
+		expect(msgs).toEqual(['plays have different slot homes ([C, LD, LW, RD, RW] vs [C, C, LD, RD, RW])']);
+	});
+
+	it('accepts the same homes listed in a different order', () => {
+		const a = validPlay();
+		const b = { ...validPlay(), id: 'bo-other' };
+		b.slots = [...b.slots].reverse();
+		expect(validateComparison(cmp(a.id, b.id), makeCtx([a, b]))).toEqual([]);
+	});
+
 	it('flags mismatched phase lists', () => {
 		const a = validPlay();
 		const b = { ...validPlay(), id: 'bo-other' };

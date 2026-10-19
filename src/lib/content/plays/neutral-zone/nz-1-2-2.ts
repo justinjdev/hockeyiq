@@ -48,6 +48,7 @@ const play: Play = {
 	],
 	steps: [
 		{
+			id: 'setup',
 			caption:
 				'Their D has the puck in their end. Instead of chasing, we set up in layers: C up top, the wingers across the [[neutral-zone|neutral zone]], both D near our blue line.',
 			phase: 'setup',
@@ -131,6 +132,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'steer',
 			caption:
 				'Their D carries up. C angles from the inside, stick on the ice in the middle, and pushes him toward the left boards. Now the left side is the [[strong-side|strong side]].',
 			phase: 'steer',
@@ -200,6 +202,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'pressure',
 			caption:
 				'Their D passes up the left wall. LW takes away the middle, C chases from behind, and LD steps up on the wall. RW and RD hold the middle.',
 			phase: 'pressure',
@@ -315,6 +318,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'outcome',
 			caption:
 				'Squeezed on the wall, their winger [[chip|chips]] the puck in deep. A couple of seconds later, RD is nearly there: he is first to it and our forwards turn back to [[support]] the [[breakout]].',
 			phase: 'outcome',

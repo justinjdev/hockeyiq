@@ -53,6 +53,7 @@ const play: Play = {
 	],
 	steps: [
 		{
+			id: 'setup',
 			caption:
 				'Their D has the puck in their end. We set up a 1-3-1: C up top, LW, RD and RW in a line across the [[neutral-zone|neutral zone]], and LD deep near our blue line.',
 			phase: 'setup',
@@ -136,6 +137,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'steer',
 			caption:
 				'Their D carries up the right side. C angles from the inside and pushes him toward the right boards. The line of three shifts with the puck: RW holds the wall, RD slides over, LW drops into the middle.',
 			phase: 'steer',
@@ -232,6 +234,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'pressure',
 			caption:
 				'He passes up the right wall. RW attacks the puck as it reaches their winger, C chases from behind, RD fills in behind RW, LW holds the middle, and LD stays deep.',
 			phase: 'pressure',
@@ -338,6 +341,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'outcome',
 			caption:
 				'RW angles their winger to the boards, gets his stick on the puck, and it squirts loose to RD. We have it in the [[neutral-zone|neutral zone]] with their forwards caught going the wrong way, so we go right back at them.',
 			phase: 'outcome',

@@ -46,6 +46,7 @@ const play: Play = {
 	],
 	steps: [
 		{
+			id: 'retrieve',
 			caption:
 				'They dump it into our left corner and all three of their forwards dive in after it. LD will get there first. RW reads it and slips out early up the right side.',
 			phase: 'retrieve',
@@ -154,6 +155,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'look-up',
 			caption:
 				'A couple of seconds later, LD has picked it up and come out beside the left post. [[f1|F1]] is closing, [[f2|F2]] is sitting on LW on the wall, and [[f3|F3]] is in front of the net. RW is skating into open ice behind their D. LD looks up and leads him with a long pass.',
 			phase: 'look-up',
@@ -253,6 +255,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'stretch',
 			caption:
 				'RW catches it in stride near the red line, behind their D. Their D turn to chase. C sprints up the middle to support, and LW pushes up the left side.',
 			phase: 'stretch',
@@ -339,6 +342,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'attack',
 			caption:
 				'A couple of seconds later: RW has carried it over their blue line ahead of both their D, who are chasing from behind and from the side. C and LW are sprinting up through the [[neutral-zone|neutral zone]] to join, and their [[forecheck]] is still in our end.',
 			phase: 'attack',

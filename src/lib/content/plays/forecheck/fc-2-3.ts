@@ -46,6 +46,7 @@ const play: Play = {
 	],
 	steps: [
 		{
+			id: 'dump-in',
 			caption:
 				'C [[dump-in|dumps it in]] to the left corner. C and RW go in to forecheck. LW does not chase: he drops back to the left side of the blue line, next to the two D.',
 			phase: 'dump-in',
@@ -133,6 +134,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'd-retrieves',
 			caption:
 				'A couple of seconds later, their D gets the puck in the left corner. C ([[f1|F1]]) comes from the inside and pushes him up the left boards. RW ([[f2|F2]]) takes away the pass behind the net. LW, LD and RD form a wall across the blue line.',
 			phase: 'd-retrieves',
@@ -233,6 +235,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'first-pass',
 			caption:
 				'Their D [[rim|rims]] it up the left wall. LW [[pinch|pinches]] down on the winger, LD slides over to the left, and RD moves to the middle. C turns up the wall behind the winger.',
 			phase: 'first-pass',
@@ -317,6 +320,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'outcome',
 			caption:
 				'LW pins the winger on the boards and C picks up the loose puck. RW is open in the [[slot]]. LD and RD are still across the blue line if anything goes wrong.',
 			phase: 'outcome',

@@ -31,7 +31,7 @@ async function answerRw(page: Page, kind: 'drag' | 'decision', step: number) {
 		await expect(page.getByRole('status')).toContainText('In position');
 	} else {
 		const def = bo.steps[step].quiz!.rw!.decision!;
-		const order = shuffledOrder(def.options.length, quizKey({ playId: bo.id, step, slot: 'rw', kind }));
+		const order = shuffledOrder(def.options.length, quizKey({ playId: bo.id, stepId: bo.steps[step].id, slot: 'rw', kind }));
 		await expect(page.locator('button.opt')).toHaveText(order.map((i) => plainText(def.options[i].text)));
 		const good = def.options.findIndex((o) => o.correct);
 		await page.getByRole('button', { name: plainText(def.options[good].text) }).click();
@@ -140,5 +140,6 @@ test('Back after leaving the quiz restores the picked position', async ({ page }
 	await page.goBack();
 
 	await expect(page).toHaveURL(/quiz\?as=rw/);
-	await expect(page.getByRole('button', { name: 'RW', exact: true })).toHaveAttribute('aria-pressed', 'true');
+	const chips = page.getByRole('group', { name: 'Quiz position' });
+	await expect(chips.getByRole('button', { name: 'RW', exact: true })).toHaveAttribute('aria-pressed', 'true');
 });

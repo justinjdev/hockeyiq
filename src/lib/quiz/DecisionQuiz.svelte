@@ -22,7 +22,7 @@
 
 	// Authored order always lists the right answer first; show a stable per-question shuffle.
 	const order = $derived(
-		shuffledOrder(def.options.length, quizKey({ playId: play.id, step, slot, kind: 'decision' }))
+		shuffledOrder(def.options.length, quizKey({ playId: play.id, stepId: play.steps[step].id, slot, kind: 'decision' }))
 	);
 
 	/** Index into `def.options` (authored order), not the displayed position. */

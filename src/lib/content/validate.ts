@@ -12,6 +12,7 @@ import type {
 	Term,
 	Vec
 } from './types';
+import { PUCK_ID } from './types';
 import { parseRichText, termRefs } from '../text/richText';
 import { isOnIce, sampleCurve } from '../rink/geometry';
 
@@ -24,6 +25,8 @@ export type Ctx = {
 
 const SLOT_COUNT: Record<Strength, number> = { '5v5': 5, '5v4': 5, '4v5': 4 };
 const OPPONENT_COUNT: Record<Strength, number> = { '5v5': 5, '5v4': 4, '4v5': 5 };
+
+const STEP_ID = /^[a-z0-9]+(-[a-z0-9]+)*$/;
 
 function duplicates(ids: string[]): string[] {
 	const seen = new Set<string>();
@@ -127,13 +130,16 @@ function checkStep(p: Play, s: Step, i: number, ctx: Ctx, issues: Issue[]) {
 		issues.push({ where: base, message: `puckCarrier ${s.puckCarrier} is not a known id` });
 	}
 	s.arrows.forEach((a, ai) => {
-		if (typeof a.from === 'string' && !known.has(a.from)) {
+		if (typeof a.from === 'string' && a.from !== PUCK_ID && !known.has(a.from)) {
 			issues.push({ where: `${base}/arrow:${ai}`, message: `arrow from unknown id ${a.from}` });
 		}
-		const from = resolveFrom(a, (id) => (id === 'puck' ? s.puck : s.positions[id]));
+		const from = resolveFrom(a, (id) => (id === PUCK_ID ? s.puck : s.positions[id]));
 		checkArrowGeometry(a, from, `${base}/arrow:${ai}`, issues);
 	});
 	for (const [owner, reads] of Object.entries(s.reads ?? {})) {
+		if (!slotIds.includes(owner)) {
+			issues.push({ where: `${base}/reads:${owner}`, message: `reads key ${owner} is not a slot id` });
+		}
 		for (const r of reads) {
 			if (typeof r.at === 'string' && !known.has(r.at)) {
 				issues.push({ where: `${base}/reads:${owner}`, message: `read at unknown id ${r.at}` });
@@ -141,6 +147,13 @@ function checkStep(p: Play, s: Step, i: number, ctx: Ctx, issues: Issue[]) {
 				issues.push({ where: `${base}/reads:${owner}`, message: 'read position is off the ice' });
 			}
 		}
+	}
+
+	for (const [id, role] of Object.entries(s.roles ?? {})) {
+		if (!slotIds.includes(id)) {
+			issues.push({ where: `${base}/roles:${id}`, message: `roles key ${id} is not a slot id` });
+		}
+		if (!role?.trim()) issues.push({ where: `${base}/roles:${id}`, message: `role for ${id} is empty` });
 	}
 
 	for (const id of slotIds) {
@@ -175,6 +188,17 @@ export function validatePlay(p: Play, ctx: Ctx): Issue[] {
 	const oppIds = p.opponents.map((o) => o.id);
 	for (const id of duplicates([...slotIds, ...oppIds])) {
 		issues.push({ where: base, message: `duplicate slot/opponent id ${id}` });
+	}
+	if ([...slotIds, ...oppIds].includes(PUCK_ID)) {
+		issues.push({ where: base, message: `'${PUCK_ID}' is reserved and cannot be a slot or opponent id` });
+	}
+	p.steps.forEach((s, i) => {
+		if (typeof s.id !== 'string' || !STEP_ID.test(s.id)) {
+			issues.push({ where: `${base}/step:${i}`, message: 'step id must be a non-empty kebab-case slug' });
+		}
+	});
+	for (const id of duplicates(p.steps.map((s) => s.id))) {
+		issues.push({ where: base, message: `duplicate step id ${id}` });
 	}
 	for (const home of duplicates(p.slots.map((s) => s.home))) {
 		issues.push({ where: base, message: `duplicate home label ${home}` });
@@ -291,6 +315,14 @@ export function validateComparison(c: Comparison, ctx: Ctx): Issue[] {
 		p.steps.forEach((s, i) => {
 			if (!s.phase) issues.push({ where: `${base}/play:${p.id}/step:${i}`, message: 'step has no phase' });
 		});
+	}
+	// The compare view pairs players across the two plays by home position.
+	if (a.strength !== b.strength) {
+		issues.push({ where: base, message: `plays have different strengths (${a.strength} vs ${b.strength})` });
+	}
+	const homes = (p: Play) => p.slots.map((s) => s.home).sort().join(', ');
+	if (homes(a) !== homes(b)) {
+		issues.push({ where: base, message: `plays have different slot homes ([${homes(a)}] vs [${homes(b)}])` });
 	}
 	const pa = phases(a);
 	const pb = phases(b);

@@ -1,5 +1,6 @@
 import type { Arrow, Issue, Play, Step, Vec } from './types';
 import { RINK, sampleCurve } from '../rink/geometry';
+import { PUCK_ID } from './types';
 
 /** Content-accuracy rules beyond structural validation. Pure: no registry access. */
 
@@ -43,7 +44,7 @@ function checkPassLane(play: Play, s: Step, a: Arrow, from: Vec, where: string, 
 	const theirs = play.opponents.map((x) => x.id);
 	const all = [...ours, ...theirs];
 	const passer =
-		a.from === 'puck' ? s.puckCarrier : typeof a.from === 'string' ? a.from : nearest(all, s, from, RECEIVER_FT);
+		a.from === PUCK_ID ? s.puckCarrier : typeof a.from === 'string' ? a.from : nearest(all, s, from, RECEIVER_FT);
 	const theyPass = passer !== undefined && theirs.includes(passer);
 	const defenders = theyPass ? ours : theirs;
 	const receiver = nearest(theyPass ? theirs : ours, s, a.to, RECEIVER_FT);
@@ -73,7 +74,7 @@ function checkStep(play: Play, s: Step, i: number, issues: Issue[]) {
 
 	s.arrows.forEach((a, ai) => {
 		const where = `${base}/arrow:${ai}`;
-		const from = typeof a.from === 'string' ? (a.from === 'puck' ? s.puck : s.positions[a.from]) : a.from;
+		const from = typeof a.from === 'string' ? (a.from === PUCK_ID ? s.puck : s.positions[a.from]) : a.from;
 		if (!from) return;
 		const curve = sampleCurve(from, a.to, a.via);
 		if (a.kind === 'skate' && curve.some((p) => inNet(p, NET_MARGIN_FT))) {

@@ -47,6 +47,7 @@ const play: Play = {
 	],
 	steps: [
 		{
+			id: 'retrieve',
 			caption:
 				'They dump it into our right corner. RD goes back for it. Their [[f1|F1]] chases him, and [[f2|F2]] follows down the same side instead of staying in the middle.',
 			phase: 'retrieve',
@@ -134,6 +135,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'over',
 			caption:
 				'RD picks it up behind the net. F1 is on him and F2 is parked on the right wall next to RW, so the up pass is closed. LD slides behind the left post and calls "Over!"',
 			phase: 'over',
@@ -244,6 +246,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'up-the-wall',
 			caption:
 				'LD takes the pass behind the left post. F1 and F2 have to cross behind the net to follow, so LD has time. He passes up the left wall to LW while C swings underneath.',
 			phase: 'up-the-wall',
@@ -342,6 +345,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'exit',
 			caption:
 				'A couple of seconds later: their D on the left side stayed back, so LW bumped it to C swinging inside him, and C carries it out with speed. F1 and F2 are still on the wrong side.',
 			phase: 'exit',

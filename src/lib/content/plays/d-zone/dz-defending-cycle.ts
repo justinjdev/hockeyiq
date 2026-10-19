@@ -44,6 +44,7 @@ const play: Play = {
 	],
 	steps: [
 		{
+			id: 'forward-has-puck',
 			caption:
 				'Their forward has the puck low on our right wall. RD pressures him, C supports, and their second forward is coming down the wall behind him to start a [[cycle]].',
 			positions: {
@@ -126,6 +127,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'cycle-carrier-skates',
 			caption:
 				'The cycle: their carrier skates up the wall and leaves the puck behind for the forward coming down. RD stays low and takes the new carrier; C picks up the one going up the wall.',
 			positions: {
@@ -214,6 +216,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'new-carrier-takes',
 			caption:
 				'The new carrier takes the puck behind our net toward the left side. LD slides to his post to meet him, RD peels off to the front of the net, and C drops back into the slot.',
 			positions: {
@@ -313,6 +316,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'ld-pins-carrier',
 			caption:
 				'LD pins the carrier on the boards at the goal line. The puck squirts loose, C swings over and grabs it, and LW gets to the wall as the outlet.',
 			positions: {

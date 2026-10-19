@@ -9,7 +9,7 @@
 
 	let progress = $state<Progress>({});
 	onMount(() => {
-		progress = loadProgress();
+		progress = loadProgress(data.stepIds);
 	});
 </script>
 

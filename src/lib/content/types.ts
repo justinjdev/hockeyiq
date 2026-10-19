@@ -16,13 +16,15 @@ export type Source = { title: string; publisher: string; url?: string };
 export type Notes = { where: string; read: string; why: string };
 /** `at` as a string is a player id. */
 export type Read = { at: Vec | string; label?: string };
+/** Reserved player-like id for the puck: an arrow `from: 'puck'` starts at the step's puck. No slot or opponent may use it. */
+export const PUCK_ID = 'puck';
 /**
- * `from` as a string is a player id. `via` is a quadratic Bezier control point, not a waypoint.
+ * `from` as a string is a slot or opponent id, or `'puck'` (PUCK_ID) in a play step. `via` is a quadratic Bezier control point, not a waypoint.
  * `contested` marks a pass or shot deliberately drawn through traffic or into a blocked lane.
  */
 export type Arrow = {
 	kind: 'pass' | 'skate' | 'shot';
-	from: Vec | string;
+	from: Vec | typeof PUCK_ID | string;
 	to: Vec;
 	via?: Vec;
 	contested?: boolean;
@@ -37,14 +39,21 @@ export type DecisionQuizDef = {
 };
 export type StepQuiz = { drag?: DragQuizDef; decision?: DecisionQuizDef };
 export type Step = {
+	/**
+	 * Stable kebab-case id, unique within the play. Progress keys and quiz shuffles are keyed on it,
+	 * so never change or reuse it once published; new or inserted steps need new ids.
+	 */
+	id: string;
 	caption: string;
 	phase?: string;
 	positions: Record<string, Vec>;
 	puck: Vec;
 	puckCarrier?: string;
 	arrows: Arrow[];
+	/** Keyed by slot id. */
 	roles?: Record<string, string>;
 	notes: Record<string, Notes>;
+	/** Keyed by the slot id of the player making the read. */
 	reads?: Record<string, Read[]>;
 	quiz?: Record<string, StepQuiz>;
 	/** Opts this step out of the offside lint (plays that teach offside or tag-ups). */

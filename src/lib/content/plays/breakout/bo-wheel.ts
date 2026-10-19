@@ -41,6 +41,7 @@ const play: Play = {
 	],
 	steps: [
 		{
+			id: 'retrieve',
 			caption:
 				'They [[rim]] it around and it stops behind our net, a little to the right. RD will get there well before their [[f1|F1]], who is coming from the right side. Their other forwards are hanging back.',
 			phase: 'retrieve',
@@ -127,6 +128,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'wheel',
 			caption:
 				'RD picks it up and [[wheel|wheels]] around the net to the left side, staying tight to it. F1 has to go around the net to chase. LD holds the front of the net, LW waits on the left wall, and C curls low on the left.',
 			phase: 'wheel',
@@ -247,6 +249,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'outlet',
 			caption:
 				'RD comes out the left side with speed. Their [[f2|F2]] steps up toward him, so RD moves it up the wall to LW before F2 can close.',
 			phase: 'outlet',
@@ -355,6 +358,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'exit',
 			caption:
 				'A couple of seconds later: their D held the blue line, so LW skated it out himself with C beside him in the middle and RW wide on the right. RD follows up the play.',
 			phase: 'exit',

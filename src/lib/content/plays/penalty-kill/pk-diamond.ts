@@ -50,6 +50,7 @@ const play: Play = {
 	],
 	steps: [
 		{
+			id: 'setup',
 			caption:
 				'They set up an [[umbrella]]: one player at the top, two flanks near the walls, two low. We set a [[diamond]]: LW on top, LD and RW on the sides, RD low.',
 			phase: 'setup',
@@ -136,6 +137,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'puck-on-half-wall',
 			caption:
 				'The top passes to the right flank on the [[half-wall]]. RW goes at him. LW slides down toward the puck, and LD sags into the [[slot]] to guard the [[back-door|back door]].',
 			phase: 'puck-on-half-wall',
@@ -258,6 +260,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'puck-at-point',
 			caption:
 				'The flank passes back up top. LW, the top of the diamond, is already close and attacks him, staying in his [[shooting-lane|shooting lane]]. RW and LD get back to the sides.',
 			phase: 'puck-at-point',
@@ -333,6 +336,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'clear',
 			caption:
 				'The shot hits LW\'s stick and bounces past the top player. LW chases it out of the zone and [[clear|clears]] it down the ice. RD and LD hold the front until it is gone.',
 			phase: 'clear',

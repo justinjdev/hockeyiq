@@ -43,6 +43,7 @@ const play: Play = {
 	],
 	steps: [
 		{
+			id: 'left-point-gets',
 			caption:
 				'Their left point gets the puck. LW is closest, so he is the +1 and goes straight at him. RW, LD and RD hold the [[wedge]], a triangle in front of the net.',
 			positions: {
@@ -128,6 +129,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'passes-across-right',
 			caption:
 				'He passes across to the right point. Now RW is closest, so RW becomes the +1 and goes. LW drops back into the top of the wedge.',
 			positions: {
@@ -204,6 +206,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'under-pressure-right',
 			caption:
 				'Under pressure, the right point moves it down to the [[half-wall]]. RW follows it down from the inside. LW slides toward the puck in the [[high-slot|high slot]]; RD stays between the goal-line player and the net.',
 			positions: {
@@ -254,6 +257,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'pass-goes-down',
 			caption:
 				'The pass goes down to the goal line and he has to turn to the boards to take it. RD forces him, gets his stick on the puck, and pushes it up the wall to RW.',
 			positions: {
@@ -326,6 +330,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'rw-chips-off',
 			caption:
 				'RW [[chip|chips]] it off the boards past their right point and out of the zone. The [[penalty-kill]] gets a [[clear]], and maybe a short-handed rush if RW beats the point to it.',
 			positions: {

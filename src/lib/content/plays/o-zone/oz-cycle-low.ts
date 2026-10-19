@@ -64,6 +64,7 @@ const play: Play = {
 	],
 	steps: [
 		{
+			id: 'rw-wins-puck',
 			caption:
 				'RW wins the puck in the right corner. Our three forwards form a [[triangle]]: RW with the puck, C low behind him, LW at the [[net-front|net front]]. Their D is on RW from the inside and their C guards the low slot.',
 			positions: {
@@ -121,6 +122,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'rw-carries-wall',
 			caption:
 				'RW carries up the wall with their D on his inside hip. Instead of forcing it, he leaves the puck back down the boards for C. Then the rotation starts: RW cuts to the net and LW drops low to become the new support.',
 			positions: {
@@ -252,6 +254,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'triangle-rotates',
 			caption:
 				'A couple of seconds later, the [[triangle]] has rotated one spot. C is now the carrier (F1) going up the wall, LW is the low support (F2) behind him, and RW is the net-front man (F3). Same shape, new players, and the defenders had to switch who they cover.',
 			positions: {
@@ -352,6 +355,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'd-lunges-c',
 			caption:
 				'Their D lunges at C on the wall and overskates. C cuts back off the wall toward the middle and shoots from the top of the right circle, with RW [[screen|screening]]. LW steps to the right post for a rebound, and both D hold the line.',
 			positions: {

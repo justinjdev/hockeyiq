@@ -41,6 +41,7 @@ const play: Play = {
 	],
 	steps: [
 		{
+			id: 'retrieve',
 			caption:
 				'They dump the puck into our right corner. RD races back to get it while their [[f1|F1]] chases.',
 			phase: 'retrieve',
@@ -145,6 +146,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'support',
 			caption:
 				'RD gets the puck behind the net. RW sets up on the wall, C swings low, and LW holds the far side ready to go.',
 			phase: 'support',
@@ -285,6 +287,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'first-pass',
 			caption:
 				'RD [[rim|rims]] it hard up the right boards to RW. Their D on that side leaves the blue line and jumps down the wall to [[pinch]] on RW.',
 			phase: 'first-pass',
@@ -376,6 +379,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'exit',
 			caption:
 				'A moment later, RW [[chip|chips]] it past the pinching D, C picks it up in stride, and the unit exits. If their D had stayed back, RW would bump it to C instead.',
 			phase: 'exit',

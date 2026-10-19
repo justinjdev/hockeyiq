@@ -50,6 +50,7 @@ const play: Play = {
 	],
 	steps: [
 		{
+			id: 'setup',
 			caption:
 				'We have the puck set up in their zone. LD runs it from the middle of the blue line, LW and RD are wide on the [[flank|flanks]], and C and RW are in front. Their four set up in a [[box]].',
 			phase: 'setup',
@@ -139,6 +140,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'setup-2',
 			caption:
 				'LD moves it to LW. Their high forward on that side comes out at LW, and the box slides left.',
 			phase: 'setup',
@@ -217,6 +219,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'move-puck',
 			caption:
 				'The puck is back with LD. Their middle forward jumps out at him, and now nobody is near RD on the right flank.',
 			phase: 'move-puck',
@@ -302,6 +305,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'shot-lane',
 			caption:
 				'RD steps toward the net and shoots. C is in the goalie\'s eyes, RW heads for the front of the crease, and their forward is too late to block it.',
 			phase: 'shot-lane',
@@ -405,6 +409,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'rebound',
 			caption:
 				'The goalie stops it and the rebound sits in front. C and RW go for it; LD, LW and RD hold the top so the puck stays in.',
 			phase: 'rebound',

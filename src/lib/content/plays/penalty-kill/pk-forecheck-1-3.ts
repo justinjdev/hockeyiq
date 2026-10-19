@@ -43,6 +43,7 @@ const play: Play = {
 	],
 	steps: [
 		{
+			id: 'd-has-puck',
 			caption:
 				'Their D has the puck behind their own net to start the power play [[breakout]]. LW is our one forechecker. RW, LD and RD line up across the ice just outside our blue line.',
 			positions: {
@@ -115,6 +116,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'lw-comes-middle',
 			caption:
 				'LW comes from the middle and angles the D up the boards on our right side. The three across shift toward the puck while his forward sets up on the wall.',
 			positions: {
@@ -176,6 +178,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'rd-steps-up',
 			caption:
 				'A few seconds later their forward has carried up the right boards to just outside our blue line. RD steps up to meet him with a tight [[gap]], RW covers the middle, LD drops back behind RD, and LW [[backcheck|backchecks]] on the inside.',
 			positions: {
@@ -261,6 +264,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'ld-retrieves',
 			caption:
 				'He has to dump it in. A few seconds later LD, who was already back, gets to it first in our right corner and [[clear|clears]] it hard up the right boards before their forecheckers arrive.',
 			positions: {

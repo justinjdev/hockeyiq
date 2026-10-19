@@ -60,6 +60,7 @@ const play: Play = {
 	],
 	steps: [
 		{
+			id: 'alignment',
 			caption:
 				'Faceoff at the left dot in their zone. C takes the draw. LW is on the boards-side [[hash-marks|hash marks]], RW on the inside hash, LD at the top of the circle behind C, and RD high in the middle as the safety. Plan: win it back to LD for a shot.',
 			phase: 'alignment',
@@ -150,6 +151,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'win',
 			caption:
 				'C wins it back to LD. LW stays in their winger\'s path, RW goes to the front of the net, and LD shoots low through the traffic.',
 			phase: 'win',
@@ -240,6 +242,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'win-2',
 			caption:
 				'The shot gets through and the rebound kicks out to the side of the net. RW and C are there first; LW comes to the net once the puck is clear. LD backs up to the blue line and RD stays high in the middle.',
 			phase: 'win',
@@ -297,6 +300,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'alignment-loss',
 			caption:
 				'Same faceoff again. This time watch the jobs if we LOSE the draw.',
 			phase: 'alignment-loss',
@@ -364,6 +368,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'loss',
 			caption:
 				'Their center wins it back to their D. LW goes straight at him, C stays with their center, and RW takes away the pass across. Under pressure, their D [[rim|rims]] it hard up the boards.',
 			phase: 'loss',
@@ -447,6 +452,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'loss-2',
 			caption:
 				'LD reads the [[rim]], steps down to the boards and stops it before their winger gets there. RD slides over to cover the left point behind him. We keep the puck in the zone.',
 			phase: 'loss',

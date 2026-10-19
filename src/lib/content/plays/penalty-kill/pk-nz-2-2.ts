@@ -38,6 +38,7 @@ const play: Play = {
 	],
 	steps: [
 		{
+			id: 'd-carries-puck',
 			caption:
 				'Their D carries the puck up from his end to start the power play rush. LW and RW skate side by side between the red line and their blue line. LD and RD wait near our blue line.',
 			positions: {
@@ -114,6 +115,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'has-nothing-through',
 			caption:
 				'He has nothing through the middle, so he passes wide to his forward on the right boards. LW and RW keep the middle closed.',
 			positions: {
@@ -161,6 +163,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'forward-carries-right',
 			caption:
 				'Their forward carries up the right boards toward our blue line. RD steps up to meet him, RW comes back on his inside, LW takes their center in the middle, and LD slides over behind RD.',
 			positions: {
@@ -268,6 +271,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'rd-gets-stick',
 			caption:
 				'RD gets his stick on the puck and pins the carrier on the boards. RW picks up the loose puck and [[clear|clears]] it hard down the ice into their end.',
 			positions: {

@@ -2,8 +2,10 @@
 	import { untrack } from 'svelte';
 	import { Tween, prefersReducedMotion } from 'svelte/motion';
 	import { cubicOut } from 'svelte/easing';
-	import type { Arrow, Play, Region, Vec } from '../content/types';
+	import { PUCK_ID, type Play, type Region, type Vec } from '../content/types';
 	import Rink from '../rink/Rink.svelte';
+	import Annotations from '../rink/Annotations.svelte';
+	import { PLAYER_R } from '../rink/arrows';
 	import { regionCenter } from '#lib/quiz/regions.ts';
 	import { clampToRink, flipY } from '../rink/geometry';
 	import { frameAt, lerpFrame, type Frame } from './interpolate';
@@ -42,9 +44,6 @@
 	}: Props = $props();
 
 	const DURATION = 600;
-	const PUCK = 'puck';
-	const uid = $props.id();
-	const headId = `${uid}-head`;
 
 	// Tweening whole frames means a step change mid-tween starts from the in-between
 	// frame on screen (Tween interpolates from its current value), so motion never jumps.
@@ -80,12 +79,12 @@
 	const posOf = (id: string): Vec =>
 		dragged && dragged.id === id
 			? dragged.pos
-			: id === PUCK
+			: id === PUCK_ID
 				? frame.puck
 				: (frame.positions[id] ?? { x: 0, y: 0 });
 	const at = (ref: Vec | string): Vec => (typeof ref === 'string' ? posOf(ref) : ref);
 
-	const puck = $derived(view(posOf(PUCK)));
+	const puck = $derived(view(posOf(PUCK_ID)));
 	const current = $derived(play.steps[step]);
 	const roles = $derived(current.roles ?? {});
 	// An unanswered drag question hides the slot's reads and role tag; they would give the spot away.
@@ -96,26 +95,7 @@
 		settled && !answering && !hideHints ? (current.reads?.[selected] ?? []) : []
 	);
 
-	const PLAYER_R = 3.4;
-
-	/** Pulls an arrow's tip back when it lands on one of our players, so the head stays visible. */
-	function tipOf(a: Arrow): Vec {
-		const hit = play.slots.some((s) => Math.hypot(posOf(s.id).x - a.to.x, posOf(s.id).y - a.to.y) < PLAYER_R);
-		if (!hit) return a.to;
-		const back = a.via ?? at(a.from);
-		const len = Math.hypot(a.to.x - back.x, a.to.y - back.y);
-		if (len <= PLAYER_R + 1) return a.to;
-		const k = (PLAYER_R + 1) / len;
-		return { x: a.to.x - (a.to.x - back.x) * k, y: a.to.y - (a.to.y - back.y) * k };
-	}
-
-	function arrowPath(a: Arrow): string {
-		const f = view(at(a.from));
-		const t = view(tipOf(a));
-		if (!a.via) return `M ${f.x} ${f.y} L ${t.x} ${t.y}`;
-		const v = view(a.via);
-		return `M ${f.x} ${f.y} Q ${v.x} ${v.y} ${t.x} ${t.y}`;
-	}
+	const obstacles = $derived([...play.slots, ...play.opponents].map((x) => posOf(x.id)));
 
 	function toRink(e: PointerEvent): Vec | null {
 		const m = svg?.getScreenCTM();
@@ -179,21 +159,6 @@
 	role="group"
 	aria-label={`${play.title}, step ${step + 1} of ${play.steps.length}`}
 >
-	<defs>
-		<marker
-			id={headId}
-			viewBox="0 0 10 10"
-			refX="8"
-			refY="5"
-			markerUnits="userSpaceOnUse"
-			markerWidth="3"
-			markerHeight="3"
-			orient="auto"
-		>
-			<path d="M 0 0 L 10 5 L 0 10 z" class="head" />
-		</marker>
-	</defs>
-
 	<Rink />
 
 	{#if reveal}
@@ -215,27 +180,14 @@
 		</g>
 	{/if}
 
-	{#if showArrows}
-		<g class="arrows">
-			{#each current.arrows as a, i (i)}
-				<path class="arrow {a.kind}" d={arrowPath(a)} marker-end={`url(#${headId})`} />
-			{/each}
-		</g>
-	{/if}
-
-	{#if selectedReads.length}
-		{@const me = view(posOf(selected))}
-		<g class="reads">
-			{#each selectedReads as r, i (i)}
-				{@const t = view(at(r.at))}
-				<line class="read-line" x1={me.x} y1={me.y} x2={t.x} y2={t.y} />
-				<circle class="read-ring" cx={t.x} cy={t.y} r="5" />
-				{#if r.label}
-					<text class="read-label" x={t.x} y={t.y - 6}>{r.label}</text>
-				{/if}
-			{/each}
-		</g>
-	{/if}
+	<Annotations
+		arrows={showArrows ? current.arrows : []}
+		reads={selectedReads}
+		reader={posOf(selected)}
+		resolve={at}
+		{obstacles}
+		{view}
+	/>
 
 	<g class="opponents">
 		{#each play.opponents as o (o.id)}
@@ -312,8 +264,8 @@
 			tabindex="0"
 			aria-label="Puck"
 			data-puck
-			onkeydown={(e) => onKeyDown(e, PUCK)}
-			onpointerdown={(e) => onPointerDown(e, PUCK)}
+			onkeydown={(e) => onKeyDown(e, PUCK_ID)}
+			onpointerdown={(e) => onPointerDown(e, PUCK_ID)}
 			onpointermove={onPointerMove}
 			onpointerup={onPointerUp}
 			onpointercancel={onPointerUp}
@@ -331,49 +283,12 @@
 		user-select: none;
 		-webkit-user-select: none;
 	}
-	.head {
-		fill: var(--panel);
-	}
-	.arrow {
-		fill: none;
-		stroke: var(--panel);
-		stroke-width: 0.6;
-		stroke-linecap: round;
-	}
-	.arrow.pass {
-		stroke-dasharray: 1.6 1.2;
-	}
-	.arrow.shot {
-		stroke-width: 1;
-	}
-	.read-line {
-		stroke: var(--goal-light);
-		stroke-width: 0.5;
-		stroke-dasharray: 0.3 1;
-		stroke-linecap: round;
-	}
-	.read-ring {
-		fill: color-mix(in srgb, var(--goal-light) 12%, transparent);
-		stroke: var(--goal-light);
-		stroke-width: 0.6;
-		stroke-dasharray: 0.3 1;
-		stroke-linecap: round;
-	}
-	.read-label,
 	.opponent text,
 	.home,
 	.role text {
 		font-family: var(--font-display);
 		text-anchor: middle;
 		pointer-events: none;
-	}
-	.read-label {
-		font-size: 3px;
-		font-weight: 600;
-		fill: var(--arena);
-		stroke: var(--ice);
-		stroke-width: 0.8;
-		paint-order: stroke;
 	}
 	.opponent path {
 		stroke: var(--them);

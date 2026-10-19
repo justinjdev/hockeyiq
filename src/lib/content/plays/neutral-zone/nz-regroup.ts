@@ -34,6 +34,7 @@ const play: Play = {
 	],
 	steps: [
 		{
+			id: 'turn-back',
 			caption:
 				'C carries through the [[neutral-zone|neutral zone]], but their D are standing up at the blue line and their forwards are back in the lanes. Nothing is open ahead, so C turns and passes it back to LD.',
 			phase: 'turn-back',
@@ -121,6 +122,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'd-to-d',
 			caption:
 				'One of their forwards chases LD. LD moves it [[d-to-d|D-to-D]] to RD. All three of our forwards curl back toward the red line to build speed.',
 			phase: 'd-to-d',
@@ -215,6 +217,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'pass-with-speed',
 			caption:
 				'RD has it with time. RW turns up ice at full speed on the right side. RD passes to him in stride while C comes through the middle and LW stretches wide on the left.',
 			phase: 'pass-with-speed',
@@ -309,6 +312,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'attack',
 			caption:
 				'RW carries over the red line with speed. C drives the middle, LW stays wide, and their D now have to back up. The regroup turned a dead end into a rush.',
 			phase: 'attack',

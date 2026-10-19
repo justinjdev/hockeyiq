@@ -46,6 +46,7 @@ const play: Play = {
 	],
 	steps: [
 		{
+			id: 'setup',
 			caption:
 				'RW has the puck on the right [[half-wall]]. RD, RW and C make a [[triangle]] on the right side, LW is at the net, and LD waits on the far point. Their [[box]] has shifted toward the puck.',
 			phase: 'setup',
@@ -124,6 +125,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'move-puck',
 			caption:
 				'RW moves it up to RD. Their forward jumps out at RD, and their other forward slides over to help. Nobody is near LD now.',
 			phase: 'move-puck',
@@ -209,6 +211,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'shot-lane',
 			caption:
 				'LD shoots from the far point with LW in the goalie\'s eyes. C leaves the corner for the right post.',
 			phase: 'shot-lane',
@@ -297,6 +300,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'rebound',
 			caption:
 				'The rebound pops out to the right side of the crease. C arrives at the post, LW is still in front, and both D hold the line.',
 			phase: 'rebound',

@@ -5,7 +5,7 @@ import { validPlay } from './fixtures';
 describe('listQuizItems', () => {
 	it('lists the single drag item for rw', () => {
 		expect(listQuizItems(validPlay(), 'rw')).toEqual([
-			{ playId: 'bo-standard', step: 1, slot: 'rw', kind: 'drag' }
+			{ playId: 'bo-standard', step: 1, stepId: 'move', slot: 'rw', kind: 'drag' }
 		]);
 	});
 	it('lists every quiz entry when no slot is given', () => {
@@ -49,7 +49,13 @@ describe('listQuizItems', () => {
 });
 
 describe('quizKey', () => {
-	it('joins play, step, slot and kind', () => {
-		expect(quizKey({ playId: 'p', step: 2, slot: 'c', kind: 'drag' })).toBe('p/2/c/drag');
+	it('joins play, step id, slot and kind', () => {
+		expect(quizKey({ playId: 'p', stepId: 'cycle', slot: 'c', kind: 'drag' })).toBe('p/cycle/c/drag');
+	});
+	it('keeps a step key when a step is inserted before it', () => {
+		const p = validPlay();
+		const before = listQuizItems(p, 'rw').map(quizKey);
+		p.steps.splice(1, 0, { ...structuredClone(p.steps[0]), id: 'inserted' });
+		expect(listQuizItems(p, 'rw').map(quizKey)).toEqual(before);
 	});
 });

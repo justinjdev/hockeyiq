@@ -45,6 +45,7 @@ const play: Play = {
 	],
 	steps: [
 		{
+			id: 'set',
 			caption:
 				'The penalty killers fired the puck down. LD has it stopped behind our net. Their [[forecheck|forechecker]] waits near our blue line and the other three wait near theirs.',
 			phase: 'set',
@@ -134,6 +135,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'carry',
 			caption:
 				'LD carries it up the middle with C a few strides behind him. Their [[forecheck|forechecker]] starts to close on LD. LW and RW push up the boards.',
 			phase: 'carry',
@@ -200,6 +202,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'drop',
 			caption:
 				'Their [[forecheck|forechecker]] commits to LD between the top of our circles and our blue line. LD leaves the puck for C and keeps skating, taking the forechecker\'s attention with him.',
 			phase: 'drop',
@@ -282,6 +285,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'attack',
 			caption:
 				'A couple of seconds later C carries it through the [[neutral-zone|neutral zone]] with speed. LW and RW are wide, LD has driven up the left side, and their [[forecheck|forechecker]] is behind the play.',
 			phase: 'attack',

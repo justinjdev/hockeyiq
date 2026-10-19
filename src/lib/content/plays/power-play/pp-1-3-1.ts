@@ -45,6 +45,7 @@ const play: Play = {
 	],
 	steps: [
 		{
+			id: 'setup',
 			caption:
 				'LD has the puck at the point. LW and RD are the [[flank|flanks]] by the faceoff dots, C is the [[bumper]] in the middle of their [[box]], and RW is at the net.',
 			phase: 'setup',
@@ -131,6 +132,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'flank',
 			caption:
 				'RD gets it on the right flank. Their high forward on that side steps out at him, which opens a [[seam]] behind him to C.',
 			phase: 'flank',
@@ -209,6 +211,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'bumper',
 			caption:
 				'C gets it in the middle. Their box collapses toward him, and nobody is near LW on the far flank.',
 			phase: 'bumper',
@@ -298,6 +301,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'shot',
 			caption:
 				'LW one-times it from the left dot with RW screening. Their box is still shifted to the right, and their forward is too late to block it.',
 			phase: 'shot',

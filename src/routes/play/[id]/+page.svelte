@@ -35,7 +35,7 @@
 		const p = play;
 		untrack(() => {
 			({ step, slot, flip } = parseStudyParams(p, new URLSearchParams(location.search)));
-			progress = loadProgress();
+			progress = loadProgress(data.stepIds);
 			ready = true;
 		});
 	});

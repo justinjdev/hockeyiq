@@ -52,6 +52,7 @@ const play: Play = {
 	],
 	steps: [
 		{
+			id: 'lw-wins-puck',
 			caption:
 				'LW wins the puck on the left wall below the dots. Their D pressures him, their C and other D protect the net, and their winger on that side sags down off the [[point]] to help.',
 			positions: {
@@ -134,6 +135,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'lw-moves-puck',
 			caption:
 				'LW moves the puck [[low-to-high|low to high]], up to LD at the [[point]]. RW stays at the net. As the pass goes up, C pops out to the [[high-slot|high slot]], and RD slides toward the middle of the line.',
 			positions: {
@@ -225,6 +227,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'pass-reaches-ld',
 			caption:
 				'The pass reaches LD. Their winger rushes out at him, so LD [[walk-the-line|walks the line]] toward the middle, away from him, to open a [[shooting-lane|shooting lane]]. RW slides to stay between the puck and the goalie\'s eyes.',
 			positions: {
@@ -316,6 +319,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'ld-shoots-low',
 			caption:
 				'LD shoots low and on net through RW\'s [[screen]]. RW looks for a [[tip]], LW and C close on the net for rebounds, and RD holds the line as the safety.',
 			positions: {

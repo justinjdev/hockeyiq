@@ -52,6 +52,7 @@ const play: Play = {
 	],
 	steps: [
 		{
+			id: 'puck-left-corner',
 			caption:
 				'The puck is in our left corner and LD is on it. Their forward is skating from the slot toward our crease to set up. RD goes to meet him before he gets there.',
 			positions: {
@@ -144,6 +145,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'puck-goes-wall',
 			caption:
 				'The puck goes up the wall to their D at the left [[point]]. Their forward parks in front to [[screen]] our goalie. RD boxes him out: body between him and the goalie, stick on his stick.',
 			positions: {
@@ -243,6 +245,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'goalie-stops-shot',
 			caption:
 				'The goalie stops the shot and the rebound pops out to the side of the crease. RD keeps the forward\'s stick tied up, C wins the loose puck and moves it to the boards, not the middle.',
 			positions: {

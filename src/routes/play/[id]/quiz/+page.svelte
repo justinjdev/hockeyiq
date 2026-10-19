@@ -67,7 +67,7 @@
 
 	function next() {
 		index += 1;
-		if (index >= items.length) progress = loadProgress();
+		if (index >= items.length) progress = loadProgress(data.stepIds);
 	}
 
 	const studySlot = $derived(picked === ALL ? play.slots[0].id : picked);

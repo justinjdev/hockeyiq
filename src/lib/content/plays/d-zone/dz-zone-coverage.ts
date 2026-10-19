@@ -52,6 +52,7 @@ const play: Play = {
 	],
 	steps: [
 		{
+			id: 'entry',
 			caption:
 				'They carry the puck into our zone down our right side. Instead of picking up men, each of us skates to his area: RD to the puck, LD and C to the middle, the wingers to the inside of the [[point|points]].',
 			phase: 'entry',
@@ -139,6 +140,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'puck-low',
 			caption:
 				'A few seconds later the puck is in our right corner. RD and C squeeze the carrier, LD holds the [[net-front]], RW sits between the [[point]] and the slot, and LW sags into the middle.',
 			phase: 'puck-low',
@@ -228,6 +230,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'puck-to-point',
 			caption:
 				'They move the puck up the wall to their right D at the [[point]]. RW closes him out; LW stays inside the dots; C comes back up into the slot; RD holds the low wall.',
 			phase: 'puck-to-point',
@@ -321,6 +324,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'recover',
 			caption:
 				'Their point shot hits traffic and the rebound squirts into our right corner. RD wins it, and because we were tight to the net, our support is already close.',
 			phase: 'recover',

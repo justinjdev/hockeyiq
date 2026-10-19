@@ -47,6 +47,7 @@ const play: Play = {
 	],
 	steps: [
 		{
+			id: 'd-tries-clear',
 			caption:
 				'Their D tries to clear the puck with a hard [[rim]] up the right boards. RD steps up to the wall and stops it at the blue line, keeping it in. LW is at the net front, C is low on the left side, and RW is low on the right.',
 			positions: {
@@ -126,6 +127,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'rd-walks-line',
 			caption:
 				'RD [[walk-the-line|walks the line]] toward the middle to get away from their winger and open a [[shooting-lane|shooting lane]]. LW slides to stay in the goalie\'s line of sight. C and RW head for the posts, and LD widens out to the left.',
 			positions: {
@@ -216,6 +218,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'rd-shoots-low',
 			caption:
 				'RD shoots low and on net through LW\'s [[screen]]. LW gets his stick down for a [[tip]], C and RW get to the posts, and LD holds the line.',
 			positions: {
@@ -330,6 +333,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'rebound',
 			caption:
 				'A second later: the goalie makes the save, but he could not see the shot through LW and the rebound kicks out to the left post. C is there and shoots it right away. RD heads back to his spot on the line.',
 			positions: {

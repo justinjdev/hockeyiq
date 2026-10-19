@@ -48,6 +48,7 @@ const play: Play = {
 	],
 	steps: [
 		{
+			id: 'c-has-puck',
 			caption:
 				'C has the puck behind their net. From there he can see the whole zone, and their D does not want to chase him back there. LW is at the [[net-front|net front]], RW is low on the right side, and both D are on the line.',
 			positions: {
@@ -130,6 +131,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'c-fakes-toward',
 			caption:
 				'C fakes toward the right side as if coming out for a [[wraparound]]. Their D and C shift toward the right post. Then C cuts back behind the net to the left side. Their winger is watching the puck, so RD steps down off the line into the [[slot]], and LD slides over to cover the line.',
 			positions: {
@@ -260,6 +262,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'c-comes-out',
 			caption:
 				'C comes out on the left side of the net. The defenders are still leaning right, so he passes out into the [[slot]] to RD. LW holds the net front, keeping their D busy.',
 			positions: {
@@ -348,6 +351,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'rd-takes-one-timer',
 			caption:
 				'RD takes a [[one-timer]] from the slot through LW\'s [[screen]]. LW looks for a [[tip]], C comes out front from the left post, RW crashes the right post, and LD holds the line.',
 			positions: {

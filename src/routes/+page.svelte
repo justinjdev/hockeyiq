@@ -12,7 +12,7 @@
 
 	let progress = $state<Progress>({});
 	onMount(() => {
-		progress = loadProgress();
+		progress = loadProgress(data.stepIds);
 	});
 
 	const categories = $derived(

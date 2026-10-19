@@ -46,6 +46,7 @@ const play: Play = {
 	],
 	steps: [
 		{
+			id: 'dump-in',
 			caption:
 				'C [[dump-in|dumps it in]] to the right corner. RW has the most speed and goes first ([[f1|F1]]). C follows him in deep ([[f2|F2]]), and LW heads for the [[high-slot|high slot]] ([[f3|F3]]).',
 			phase: 'dump-in',
@@ -132,6 +133,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'd-retrieves',
 			caption:
 				'A couple of seconds later, their D gets to the puck in the corner. RW ([[f1|F1]]) closes on him fast with his stick on the puck. C ([[f2|F2]]) comes in low on the net side to cut off the pass behind the net. LW ([[f3|F3]]) sits in the [[high-slot|high slot]].',
 			phase: 'd-retrieves',
@@ -235,6 +237,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'first-pass',
 			caption:
 				'RW pins their D on the boards. The D tries to [[rim]] it behind the net to his partner ([[d-to-d|D-to-D]]), but C is sitting in that lane. LW holds the [[high-slot|high slot]]; RD is ready on the wall.',
 			phase: 'first-pass',
@@ -334,6 +337,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'outcome',
 			caption:
 				'C picks off the [[rim]] behind the net and walks to the side of the net. LW steps into the [[slot]] for a pass, and RW leaves the pin to go to the net. Their D never got the puck out.',
 			phase: 'outcome',

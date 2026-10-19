@@ -52,6 +52,7 @@ const play: Play = {
 	],
 	steps: [
 		{
+			id: 'forward-has-puck',
 			caption:
 				'Their forward has the puck in our right corner and starts to carry it behind our net. RD has been pressing him; now RD has to decide whether to chase.',
 			positions: {
@@ -137,6 +138,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'puck-behind-net',
 			caption:
 				'The puck is behind our net. We [[collapse]]: a D on each post facing the puck, C in the low slot, and the wingers just inside the circles.',
 			positions: {
@@ -202,6 +204,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'comes-out-left',
 			caption:
 				'He comes out on our left side. LD steps up to meet him at the goal line, C slides toward that side, and RD takes over the front of the net.',
 			positions: {
@@ -281,6 +284,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'moves-puck-wall',
 			caption:
 				'He moves the puck up the wall to their left D at the [[point]]. LW steps out into the [[shooting-lane]]; everyone else stays collapsed with sticks in the lanes.',
 			positions: {

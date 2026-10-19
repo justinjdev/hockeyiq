@@ -55,6 +55,7 @@ const play: Play = {
 	],
 	steps: [
 		{
+			id: 'setup',
 			caption:
 				'They set up in our end with five against our four. The puck is at their right [[point]]. We sit in a tight [[box]]: LW and RW high, LD and RD low.',
 			phase: 'setup',
@@ -138,6 +139,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'puck-on-half-wall',
 			caption:
 				'The point passes down to the [[half-wall]]. The puck is above the [[hash-marks|hash marks]], so RW pressures from the inside. The rest of the box shifts toward the puck.',
 			phase: 'puck-on-half-wall',
@@ -223,6 +225,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'puck-at-point',
 			caption:
 				'The half-wall passes back up to the point. RW gets back up into the [[shooting-lane|shooting lane]], LW returns to cover the other point, and the point man shoots into RW.',
 			phase: 'puck-at-point',
@@ -322,6 +325,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'clear',
 			caption:
 				'The shot hits RW and bounces into the right corner. RD gets there first and [[clear|clears]] it hard along the boards and out of the zone.',
 			phase: 'clear',

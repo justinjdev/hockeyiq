@@ -37,6 +37,7 @@ export function validPlay(): Play {
 		variations: 'Against a hard [[forecheck]], use a [[reverse]].',
 		sources: [{ title: 'Hockey Canada Skills Manual', publisher: 'Hockey Canada' }],
 		steps: [0, 1].map((i) => ({
+			id: i === 0 ? 'setup' : 'move',
 			caption: `Step ${i + 1}: [[support]] the puck carrier.`,
 			phase: i === 0 ? 'setup' : 'move',
 			positions: {

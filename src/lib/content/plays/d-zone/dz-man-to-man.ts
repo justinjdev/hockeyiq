@@ -52,6 +52,7 @@ const play: Play = {
 	],
 	steps: [
 		{
+			id: 'entry',
 			caption:
 				'They carry the puck into our zone down our right side. Each of us picks up a man: the D and C take their three forwards, the wingers take their two D.',
 			phase: 'entry',
@@ -139,6 +140,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'puck-low',
 			caption:
 				'A few seconds later the puck is in our right corner. Everyone is stuck to his man: RD on the carrier, LD on the [[net-front]] forward, C on the third forward, the wingers on the [[point|points]].',
 			phase: 'puck-low',
@@ -249,6 +251,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'puck-to-point',
 			caption:
 				'They move the puck up the wall to their right D at the [[point]]. RW jumps out to his man as he winds up to shoot; everyone else stays glued to theirs.',
 			phase: 'puck-to-point',
@@ -354,6 +357,7 @@ const play: Play = {
 			}
 		},
 		{
+			id: 'recover',
 			caption:
 				'Their point shot hits traffic and the rebound squirts into our right corner. RD wins it, and everyone releases his man to get into [[breakout]] spots.',
 			phase: 'recover',

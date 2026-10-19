@@ -8,11 +8,11 @@ const lesson: Lesson = {
 	sections: [
 		{
 			heading: 'Why the net-front matters',
-			body: 'The [[net-front]] is the small area right in front of the crease. Goalies stop most shots they can see cleanly from far out. What beats them is a shot they never saw, a [[tip]] that changes direction, or a rebound before they can recover. All three happen in front of the net, so both teams fight for that ice.'
+			body: 'The [[net-front]] is the small area right in front of the [[crease]]. Goalies stop most shots they can see cleanly from far out. What beats them is a shot they never saw, a [[tip]] that changes direction, or a rebound before they can recover. All three happen in front of the net, so both teams fight for that ice.'
 		},
 		{
 			heading: 'Offense: get in the goalie\'s eyes',
-			body: 'When the puck goes to the [[point]], the net-front player sets up on top of the goalie\'s line of sight to the shooter, heels near the top of the crease. Standing beside the goalie does nothing; you have to be in the line between him and the puck. Stick on the ice, blade ready for a [[tip]]. Get there early, before the defender takes the spot, because it is much easier to hold position than to win it back.',
+			body: 'When the puck goes to the [[point]], the net-front player sets up on top of the goalie\'s line of sight to the shooter, heels near the top of the [[crease]]. Standing beside the goalie does nothing; you have to be in the line between him and the puck. Stick on the ice, blade ready for a [[tip]]. Get there early, before the defender takes the spot, because it is much easier to hold position than to win it back.',
 			diagram: {
 				players: [
 					{ id: 'ld', team: 'us', label: 'LD', pos: { x: 130, y: 28 } },
@@ -30,7 +30,7 @@ const lesson: Lesson = {
 				arrows: [{ kind: 'shot', from: 'ld', to: { x: 189, y: 42 } }],
 				reads: [{ at: 'ld', label: 'Shooter' }],
 				caption:
-					'LD shoots from the left point. C stands at the top of the crease right in the goalie\'s line to the puck, stick down to tip it or bang in the rebound.'
+					'LD shoots from the left point. C stands at the top of the [[crease]] right in the goalie\'s line to the puck, stick down to tip it or bang in the rebound.'
 			}
 		},
 		{
@@ -57,12 +57,12 @@ const lesson: Lesson = {
 				arrows: [{ kind: 'shot', from: 'x4', to: { x: 11, y: 43 } }],
 				reads: [{ at: 'x3', label: 'His stick' }],
 				caption:
-					'Their D shoots from the right point. LD has inside position on the net-front forward, between him and the goalie but off the goalie\'s line to the puck, with his stick on the attacker\'s stick.'
+					'Their D shoots from the point on our right side. LD has inside position on the net-front forward, between him and the goalie but off the goalie\'s line to the puck, with his stick on the attacker\'s stick.'
 			}
 		},
 		{
 			heading: 'Fronting instead of boxing out',
-			body: 'Some coaches, especially on the penalty kill, have the defender stand in front of the attacker (between him and the shooter) instead of behind him. That blocks the shot before it gets to the net-front. The trade-off: it is easier for the attacker to get to the crease behind you. Whichever your team uses, the same habit applies: be in position before the shot, not after.'
+			body: 'Some coaches, especially on the penalty kill, have the defender stand in front of the attacker (between him and the shooter) instead of behind him. That blocks the shot before it gets to the net-front. The trade-off: you lose sight of him, so he is free behind you to tip the shot or grab the rebound. Whichever your team uses, the same habit applies: be in position before the shot, not after.'
 		}
 	],
 	examplePlays: []

@@ -48,10 +48,10 @@ const lesson: Lesson = {
 					{ id: 'rw', team: 'us', label: 'RW', pos: { x: 160, y: 74 } },
 					{ id: 'c', team: 'us', label: 'C', pos: { x: 175, y: 72 } },
 					{ id: 'rd', team: 'us', label: 'RD', pos: { x: 128, y: 66 } },
-					{ id: 'ld', team: 'us', label: 'LD', pos: { x: 128, y: 34 }, highlight: true },
+					{ id: 'ld', team: 'us', label: 'LD', pos: { x: 128, y: 42 }, highlight: true },
 					{ id: 'lw', team: 'us', label: 'LW', pos: { x: 182, y: 34 }, highlight: true },
-					{ id: 'x1', team: 'them', label: 'F', pos: { x: 164, y: 68 } },
-					{ id: 'x2', team: 'them', label: 'D', pos: { x: 180, y: 45 } },
+					{ id: 'x1', team: 'them', label: 'F', pos: { x: 166, y: 80 } },
+					{ id: 'x2', team: 'them', label: 'D', pos: { x: 182, y: 50 } },
 					{ id: 'x3', team: 'them', label: 'D', pos: { x: 177, y: 63 } },
 					{ id: 'x4', team: 'them', label: 'F', pos: { x: 166, y: 50 } },
 					{ id: 'x5', team: 'them', label: 'F', pos: { x: 150, y: 36 } }

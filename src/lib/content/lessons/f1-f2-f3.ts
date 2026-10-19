@@ -8,7 +8,7 @@ const lesson: Lesson = {
 	sections: [
 		{
 			heading: 'Roles, not positions',
-			body: 'F1, F2 and F3 describe what a forward is doing right now, not where he lines up. Whoever is closest to the puck when it goes in deep is [[f1|F1]]. The next forward is [[f2|F2]]. The last one is [[f3|F3]]. Your center might be F1 on one dump-in and F3 on the next. Do not wait for "the center\'s job"; look at who is closest and fill whatever role is left.'
+			body: 'F1, F2 and F3 describe what a forward is doing right now, not where he lines up. Whoever is closest to the puck when it goes in deep is [[f1|F1]]. The next forward is [[f2|F2]]. The last one is [[f3|F3]]. Your center might be F1 on one [[dump-in]] and F3 on the next. Do not wait for "the center\'s job"; look at who is closest and fill whatever role is left.'
 		},
 		{
 			heading: 'F1: pressure the puck',
@@ -20,20 +20,20 @@ const lesson: Lesson = {
 					{ id: 'lw', team: 'us', label: 'F3', pos: { x: 150, y: 42 } },
 					{ id: 'ld', team: 'us', label: 'LD', pos: { x: 128, y: 22 } },
 					{ id: 'rd', team: 'us', label: 'RD', pos: { x: 128, y: 64 } },
-					{ id: 'xd1', team: 'them', label: 'D', pos: { x: 194, y: 52 } },
+					{ id: 'xd1', team: 'them', label: 'D', pos: { x: 194, y: 47 } },
 					{ id: 'xd2', team: 'them', label: 'D', pos: { x: 190, y: 30 } },
 					{ id: 'xc', team: 'them', label: 'C', pos: { x: 170, y: 54 } },
 					{ id: 'xw1', team: 'them', label: 'W', pos: { x: 160, y: 80 } },
 					{ id: 'xw2', team: 'them', label: 'W', pos: { x: 162, y: 10 } }
 				],
-				puck: { x: 195, y: 55 },
+				puck: { x: 195, y: 49 },
 				arrows: [
-					{ kind: 'skate', from: 'c', to: { x: 190, y: 47 }, via: { x: 186, y: 40 } },
+					{ kind: 'skate', from: 'c', to: { x: 194, y: 38 }, via: { x: 184, y: 33 } },
 					{ kind: 'skate', from: 'rw', to: { x: 170, y: 74 } }
 				],
 				reads: [{ at: 'xd1', label: 'Puck carrier' }],
 				caption:
-					'Their D picks up the puck behind the net. F1 comes from the middle side so the D can only go toward the right boards, where F2 is already heading.'
+					'Their D picks up the puck behind the net. F1 comes around the far side of the net, taking away the [[reverse]] to the other D, so the puck carrier can only go toward the right boards, where F2 is already heading.'
 			}
 		},
 		{

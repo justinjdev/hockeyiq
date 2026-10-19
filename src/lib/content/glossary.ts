@@ -261,4 +261,14 @@ export const glossary: Term[] = [
 		term: "Odd-man rush",
 		definition: "An attack where the puck-carrying team has more players than the defense, like a 2-on-1 or 3-on-2."
 	},
+	{
+		id: "dump-in",
+		term: "Dump-in",
+		definition: "Shooting the puck deep into the other team's end, usually into a corner, instead of carrying it in."
+	},
+	{
+		id: "crease",
+		term: "Crease",
+		definition: "The painted half-circle right in front of the goal. It belongs to the goalie."
+	},
 ];

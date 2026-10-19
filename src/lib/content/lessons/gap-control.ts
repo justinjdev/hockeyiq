@@ -12,7 +12,7 @@ const lesson: Lesson = {
 		},
 		{
 			heading: 'A rule of thumb in stick lengths',
-			body: 'A common coaching guideline: about three stick lengths when the rush starts near their blue line, about two at the red line, and one stick length (or contact) by the time he reaches your blue line. The numbers are a guide, not a law; a faster skater needs a little more room. The trend is what matters: the gap should be shrinking as the play comes toward your net, not growing.',
+			body: 'A common coaching guideline: about three stick lengths when the rush starts near their blue line, about two at the red line, and one stick length (close enough to reach his stick or the puck) by the time he reaches your blue line. The numbers are a guide, not a law; a faster skater needs a little more room. The trend is what matters: the gap should be shrinking as the play comes toward your net, not growing.',
 			diagram: {
 				players: [
 					{ id: 'rd', team: 'us', label: 'RD', pos: { x: 90, y: 60 }, highlight: true },
@@ -38,7 +38,7 @@ const lesson: Lesson = {
 		},
 		{
 			heading: 'Inside-out: give him the boards, not the middle',
-			body: 'Line yourself up a little toward the middle of the ice from the puck carrier, so the straight line from him to your net goes through you. That leaves him only the outside lane along the boards, which is the worst place to shoot from. Keep your stick on the ice out in front of you to take away the pass into the middle. When he commits wide, close the gap and finish on his body against the boards.',
+			body: 'Line yourself up a little toward the middle of the ice from the puck carrier, so the straight line from him to your net goes through you. That leaves him only the outside lane along the boards, which is the worst place to shoot from. Keep your stick on the ice out in front of you to take away the pass into the middle. When he commits wide, close the gap and keep angling him into the boards: stick on the puck, your body between him and the net.',
 			diagram: {
 				players: [
 					{ id: 'rd', team: 'us', label: 'RD', pos: { x: 64, y: 62 }, highlight: true },
@@ -59,7 +59,7 @@ const lesson: Lesson = {
 		},
 		{
 			heading: 'When to step up, when to hold',
-			body: 'Close the gap hard when the puck carrier looks down at the puck, fumbles it, turns his back, or when a teammate is [[backcheck|backchecking]] right behind him. Hold your gap and protect the middle when you are outnumbered (an [[odd-man-rush|odd-man rush]]): stepping up and missing there gives up a breakaway. If you do get beaten, turn and skate to the net front; a teammate covering for you is better than chasing from behind.'
+			body: 'Close the gap hard when the puck carrier looks down at the puck, fumbles it, turns his back, or when a teammate is [[backcheck|backchecking]] right behind him. Hold your gap and protect the middle when you are outnumbered (an [[odd-man-rush|odd-man rush]]): stepping up and missing there leaves a shooter alone on your goalie. If you do get beaten, turn and skate to the net front; a teammate covering for you is better than chasing from behind.'
 		}
 	],
 	examplePlays: []

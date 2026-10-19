@@ -33,7 +33,7 @@ const lesson: Lesson = {
 				],
 				reads: [{ at: 'x3', label: 'Blocking the lane' }],
 				caption:
-					'C is open in the slot, but their D is standing right on the line from RW to C. A few strides up and to the left puts C off that line and opens the pass.'
+					'C is open in the slot, but their D is standing right on the line from RW to C. A few strides back toward the blue line, higher in the slot, puts C off that line and opens the pass.'
 			}
 		},
 		{

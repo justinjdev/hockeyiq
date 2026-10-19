@@ -11,22 +11,22 @@ const lesson: Lesson = {
 			body: 'A [[triangle]] is the puck carrier plus two teammates placed so the carrier has two different passes available. With one option, a single defender can take it away and the carrier is stuck. With two options at different angles, the defender has to pick one, and the carrier uses the other. On a [[breakout]] it is the D with the puck, the winger on the wall, and the center swinging low.',
 			diagram: {
 				players: [
-					{ id: 'rd', team: 'us', label: 'RD', pos: { x: 6, y: 54 }, highlight: true },
+					{ id: 'rd', team: 'us', label: 'RD', pos: { x: 6, y: 47 }, highlight: true },
 					{ id: 'rw', team: 'us', label: 'RW', pos: { x: 32, y: 80 }, highlight: true },
 					{ id: 'c', team: 'us', label: 'C', pos: { x: 30, y: 48 }, highlight: true },
 					{ id: 'ld', team: 'us', label: 'LD', pos: { x: 10, y: 32 } },
 					{ id: 'lw', team: 'us', label: 'LW', pos: { x: 52, y: 10 } },
-					{ id: 'f1', team: 'them', label: 'F1', pos: { x: 18, y: 66 } },
+					{ id: 'f1', team: 'them', label: 'F1', pos: { x: 24, y: 60 } },
 					{ id: 'f2', team: 'them', label: 'F2', pos: { x: 46, y: 62 } },
 					{ id: 'f3', team: 'them', label: 'F3', pos: { x: 70, y: 40 } }
 				],
-				puck: { x: 7, y: 56 },
+				puck: { x: 7, y: 48 },
 				arrows: [
 					{ kind: 'pass', from: 'rd', to: { x: 31, y: 79 } },
 					{ kind: 'pass', from: 'rd', to: { x: 29, y: 49 } }
 				],
 				caption:
-					'RD has the puck behind the net. RW on the wall and C low in the middle give him two passes at different angles. F2 cannot cover both.'
+					'RD has the puck behind the net. RW on the wall and C low in the middle give him two passes at different angles. F1 is caught between the two lanes and cannot take away both.'
 			}
 		},
 		{
@@ -47,9 +47,9 @@ const lesson: Lesson = {
 					{ id: 'lw', team: 'us', label: 'LW', pos: { x: 160, y: 50 }, highlight: true },
 					{ id: 'rd', team: 'us', label: 'RD', pos: { x: 128, y: 68 } },
 					{ id: 'ld', team: 'us', label: 'LD', pos: { x: 128, y: 24 } },
-					{ id: 'x1', team: 'them', label: 'D', pos: { x: 172, y: 69 } },
+					{ id: 'x1', team: 'them', label: 'D', pos: { x: 188, y: 70 } },
 					{ id: 'x2', team: 'them', label: 'D', pos: { x: 181, y: 45 } },
-					{ id: 'x3', team: 'them', label: 'F', pos: { x: 167, y: 62 } },
+					{ id: 'x3', team: 'them', label: 'F', pos: { x: 172, y: 56 } },
 					{ id: 'x4', team: 'them', label: 'F', pos: { x: 148, y: 30 } },
 					{ id: 'x5', team: 'them', label: 'F', pos: { x: 145, y: 60 } }
 				],

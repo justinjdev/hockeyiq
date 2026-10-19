@@ -184,6 +184,9 @@ export function validatePlay(p: Play, ctx: Ctx): Issue[] {
 	for (const id of duplicates([...slotIds, ...oppIds])) {
 		issues.push({ where: base, message: `duplicate slot/opponent id ${id}` });
 	}
+	for (const home of duplicates(p.slots.map((s) => s.home))) {
+		issues.push({ where: base, message: `duplicate home label ${home}` });
+	}
 
 	if (p.slots.length !== SLOT_COUNT[p.strength]) {
 		issues.push({ where: base, message: `slot count ${p.slots.length} does not match ${p.strength} (expected ${SLOT_COUNT[p.strength]})` });

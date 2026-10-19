@@ -130,6 +130,13 @@ describe('validatePlay', () => {
 		p.steps[1].quiz!.rw.drag!.target = { kind: 'ellipse', cx: 100, cy: 78, rx: 6, ry: 6 };
 		expect(validatePlay(p, ctx())).toEqual([]);
 	});
+
+	it('flags duplicate home labels', () => {
+		const p = validPlay();
+		p.slots[1].home = 'LW';
+		const issues = validatePlay(p, ctx());
+		expect(issues.map((i) => i.message)).toContain('duplicate home label LW');
+	});
 });
 
 describe('rich text refs', () => {

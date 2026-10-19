@@ -281,4 +281,14 @@ export const glossary: Term[] = [
 		term: "Left wing lock",
 		definition: "A 2-3 forecheck where the left winger drops back to the blue line and plays like a third defenseman while two forwards pressure."
 	},
+	{
+		id: "trap",
+		term: "Trap",
+		definition: "A neutral zone defensive setup that waits for the other team in layers, pushes the puck to one side, and squeezes it there instead of chasing it in their end."
+	},
+	{
+		id: "delayed-offside",
+		term: "Delayed offside",
+		definition: "The linesman raises an arm instead of blowing the whistle when the puck enters the zone with an attacker already in it. Play goes on as long as the attackers clear the zone without touching the puck."
+	},
 ];

@@ -26,7 +26,7 @@ const play: Play = {
 	],
 	keyConcepts: [],
 	variations:
-		'F1 is whoever gets there first, not always the RW; the other two forwards fill F2 and F3 by side. Some coaches set F2 and F3 lower (near the faceoff dots) to pressure more, others push them back toward the blue line so the system works more like a neutral-zone trap. Some teams let the strong-side D [[pinch]] on every rim up the wall; more cautious teams only pinch when F3 is already covering the middle. A common variation has F1 take away the [[d-to-d|D-to-D]] pass behind the net instead of angling to the wall, which pushes the play to the other side.',
+		'F1 is whoever gets there first, not always the RW; the other two forwards fill F2 and F3 by side. Some coaches set F2 and F3 lower (near the faceoff dots) to pressure more, others push them back toward the blue line so the system works more like a neutral-zone trap. Some teams let the strong-side D [[pinch]] on every [[rim]] up the wall; more cautious teams only pinch when F3 is already covering the middle. A common variation has F1 take away the [[d-to-d|D-to-D]] pass behind the net instead of angling to the wall, which pushes the play to the other side.',
 	sources: [
 		{
 			title: 'Explained: 1-2-2 Offensive Zone Forecheck',
@@ -46,7 +46,7 @@ const play: Play = {
 			phase: 'dump-in',
 			positions: {
 				lw: { x: 118, y: 24 },
-				c: { x: 122, y: 58 },
+				c: { x: 128, y: 58 },
 				rw: { x: 128, y: 76 },
 				ld: { x: 110, y: 30 },
 				rd: { x: 112, y: 56 },
@@ -56,7 +56,7 @@ const play: Play = {
 				o4: { x: 106, y: 46 },
 				o5: { x: 110, y: 14 }
 			},
-			puck: { x: 124, y: 60 },
+			puck: { x: 130, y: 60 },
 			puckCarrier: 'c',
 			arrows: [
 				{ kind: 'pass', from: 'c', to: { x: 185, y: 76 } },
@@ -71,7 +71,7 @@ const play: Play = {
 				lw: {
 					where: 'Crossing the blue line on the left side, about 20 feet off the boards.',
 					read: 'Watch where the puck is dumped. It is going to the far corner, so you are the [[weak-side]] forward: you become [[f3|F3]].',
-					why: 'In a 1-2-2 only one forward chases. You set up high on your side so their breakout has nowhere to go up the middle.'
+					why: 'In a 1-2-2 only one forward chases. You set up high on your side so their [[breakout]] has nowhere to go up the middle.'
 				},
 				c: {
 					where: 'Just inside their blue line on the right side, dumping the puck into the right corner.',
@@ -91,7 +91,7 @@ const play: Play = {
 				rd: {
 					where: 'In the neutral zone right of the middle, behind C.',
 					read: 'Watch the corner and their winger on your side. You are the [[strong-side]] D for this forecheck.',
-					why: 'If they rim the puck up your wall, you are the one who might [[pinch]], so get to the line early.'
+					why: 'If they [[rim]] the puck up your wall, you are the one who might [[pinch]], so get to the line early.'
 				}
 			},
 			reads: {
@@ -117,7 +117,7 @@ const play: Play = {
 							{
 								text: 'Try to beat both D one-on-one through the middle',
 								correct: false,
-								why: 'Two set D standing up at the line will take the puck, and their breakout starts with your forwards caught going the wrong way.'
+								why: 'Two set D standing up at the line will take the puck, and their [[breakout]] starts with your forwards caught going the wrong way.'
 							},
 							{
 								text: 'Dump it into the left corner, away from RW',
@@ -131,7 +131,7 @@ const play: Play = {
 		},
 		{
 			caption:
-				'Their D picks the puck up in the corner. RW ([[f1|F1]]) comes at him from the inside to push him toward the boards. C ([[f2|F2]]) and LW ([[f3|F3]]) sit at the tops of the circles. Both D hold the blue line.',
+				'A couple of seconds later, their D picks the puck up in the corner. RW ([[f1|F1]]) comes at him from the inside to push him toward the boards. C ([[f2|F2]]) and LW ([[f3|F3]]) sit at the tops of the circles. Both D hold the blue line.',
 			phase: 'd-retrieves',
 			positions: {
 				lw: { x: 156, y: 26 },
@@ -173,7 +173,7 @@ const play: Play = {
 				rd: {
 					where: 'A couple of feet inside their blue line, on the right side.',
 					read: 'Watch their winger on your wall. If the puck comes up the boards to him, you can step down on him.',
-					why: 'A rim up the wall is their easiest way out. You are in position to stop it, and LD and F3 cover behind you.'
+					why: 'A [[rim]] up the wall is their easiest way out. You are in position to stop it, and LD and F3 cover behind you.'
 				}
 			},
 			reads: {
@@ -191,9 +191,9 @@ const play: Play = {
 					drag: {
 						target: { kind: 'ellipse', cx: 156, cy: 63, rx: 9, ry: 6 },
 						correct:
-							'Yes. Top of the right circle, between the dot and the boards: close enough to jump a pass up the wall, high enough to stay above the puck.',
+							'Yes. Top of the right circle, level with the dot: close enough to jump a pass up the wall, high enough to stay above the puck.',
 						incorrect:
-							'As [[f2|F2]] in a 1-2-2 you sit at the top of the [[strong-side]] circle, between the dot and the boards. Going into the corner with F1 leaves the wall open; sitting at the blue line is too far to stop the pass.'
+							'As [[f2|F2]] in a 1-2-2 you sit at the top of the [[strong-side]] circle, level with the dot. Going into the corner with F1 leaves the wall open; sitting at the blue line is too far to stop the pass.'
 					}
 				},
 				lw: {
@@ -267,7 +267,7 @@ const play: Play = {
 					why: 'Coming from the inside means the only place he can go is along the boards, straight into RD.'
 				},
 				rw: {
-					where: 'Near the bottom of the right circle, turning back up the wall after the rim.',
+					where: 'Near the bottom of the right circle, turning back up the wall after the [[rim]].',
 					read: 'Look at the puck on the wall and their D who just passed it. Follow the puck up the boards from below.',
 					why: 'If the winger tries to chip it back down, you are there. F1 keeps working after the first pass.'
 				},
@@ -296,7 +296,7 @@ const play: Play = {
 				rd: {
 					decision: {
 						prompt:
-							'Their D rims it up your wall to their winger. C is closing on him from the inside and LD is sliding to the middle. You...',
+							'Their D [[rim|rims]] it up your wall to their winger. C is closing on him from the inside and LD is sliding to the middle. You...',
 						options: [
 							{
 								text: '[[pinch|Pinch]] down the boards and squeeze the winger with C',
@@ -377,7 +377,7 @@ const play: Play = {
 				rw: {
 					where: 'Driving to the front of the net.',
 					read: 'Watch LW for the shot and their D nearest you. Get your stick down for a tip or rebound.',
-					why: 'A shot from the slot needs a body at the [[net-front|net]]. F1 finishes by going to the net.'
+					why: 'A shot from the [[slot]] needs a body at the [[net-front|net]]. F1 finishes by going to the net.'
 				},
 				ld: {
 					where: 'Centered on the blue line, a couple of feet inside.',
@@ -401,10 +401,10 @@ const play: Play = {
 				lw: {
 					decision: {
 						prompt:
-							'C has just stripped their winger on the right wall. You are [[f3|F3]] in the high slot. You...',
+							'C has just stripped their winger on the right wall. You are [[f3|F3]] in the [[high-slot|high slot]]. You...',
 						options: [
 							{
-								text: 'Stay in the high slot, stick down, and call for the puck',
+								text: 'Stay in the [[high-slot|high slot]], stick down, and call for the puck',
 								correct: true,
 								why: 'You are the open player in the middle. A quick pass to you is a shot before their team can recover.'
 							},

@@ -51,7 +51,7 @@ const play: Play = {
 			phase: 'dump-in',
 			positions: {
 				lw: { x: 120, y: 14 },
-				c: { x: 122, y: 36 },
+				c: { x: 128, y: 36 },
 				rw: { x: 126, y: 64 },
 				ld: { x: 110, y: 32 },
 				rd: { x: 110, y: 56 },
@@ -61,7 +61,7 @@ const play: Play = {
 				o4: { x: 106, y: 44 },
 				o5: { x: 114, y: 76 }
 			},
-			puck: { x: 124, y: 34 },
+			puck: { x: 130, y: 34 },
 			puckCarrier: 'c',
 			arrows: [
 				{ kind: 'pass', from: 'c', to: { x: 184, y: 13 } },
@@ -81,7 +81,7 @@ const play: Play = {
 				c: {
 					where: 'Just inside their blue line, left of the middle, dumping into the left corner.',
 					read: 'Their D are backing up. Put the puck in the left corner and go after it: you are [[f1|F1]].',
-					why: 'The system pushes their breakout up the left boards, where LW is waiting. Dumping it to the left starts that.'
+					why: 'The system pushes their [[breakout]] up the left boards, where LW is waiting. Dumping it to the left starts that.'
 				},
 				rw: {
 					where: 'Right of the middle at their blue line, at speed.',
@@ -134,7 +134,7 @@ const play: Play = {
 		},
 		{
 			caption:
-				'Their D gets the puck in the left corner. C ([[f1|F1]]) comes from the inside and pushes him up the left boards. RW ([[f2|F2]]) takes away the pass behind the net. LW, LD and RD form a wall across the blue line.',
+				'A couple of seconds later, their D gets the puck in the left corner. C ([[f1|F1]]) comes from the inside and pushes him up the left boards. RW ([[f2|F2]]) takes away the pass behind the net. LW, LD and RD form a wall across the blue line.',
 			phase: 'd-retrieves',
 			positions: {
 				lw: { x: 130, y: 14 },
@@ -143,7 +143,7 @@ const play: Play = {
 				ld: { x: 130, y: 42 },
 				rd: { x: 130, y: 68 },
 				o1: { x: 181, y: 16 },
-				o2: { x: 188, y: 62 },
+				o2: { x: 192, y: 60 },
 				o3: { x: 156, y: 6 },
 				o4: { x: 164, y: 44 },
 				o5: { x: 156, y: 78 }
@@ -215,7 +215,7 @@ const play: Play = {
 							{
 								text: 'Skate into the lane behind the net to cut off the pass',
 								correct: true,
-								why: 'Taking away the D-to-D leaves him only the left boards, where LW is waiting.'
+								why: 'Taking away the [[d-to-d|D-to-D]] leaves him only the left boards, where LW is waiting.'
 							},
 							{
 								text: 'Join C on the puck carrier',
@@ -243,7 +243,7 @@ const play: Play = {
 				ld: { x: 130, y: 28 },
 				rd: { x: 130, y: 50 },
 				o1: { x: 181, y: 14 },
-				o2: { x: 190, y: 60 },
+				o2: { x: 193, y: 58 },
 				o3: { x: 152, y: 6 },
 				o4: { x: 164, y: 32 },
 				o5: { x: 152, y: 74 }
@@ -269,7 +269,7 @@ const play: Play = {
 					why: 'With LW in front and you behind, the winger has nowhere to go.'
 				},
 				rw: {
-					where: 'In the low slot, in front of the net.',
+					where: 'In the [[low-slot|low slot]], in front of the net.',
 					read: 'Watch their center. Stay between him and the net.',
 					why: 'If the winger chips it to the middle, you are the first one there.'
 				},
@@ -318,7 +318,7 @@ const play: Play = {
 		},
 		{
 			caption:
-				'LW pins the winger on the boards and C picks up the loose puck. RW is open in the slot. LD and RD are still across the blue line if anything goes wrong.',
+				'LW pins the winger on the boards and C picks up the loose puck. RW is open in the [[slot]]. LD and RD are still across the blue line if anything goes wrong.',
 			phase: 'outcome',
 			positions: {
 				lw: { x: 149, y: 7 },
@@ -344,7 +344,7 @@ const play: Play = {
 				},
 				c: {
 					where: 'Coming off the left boards with the puck, near the top of the left circle.',
-					read: 'Head up: RW is open in the slot. Their center is chasing you.',
+					read: 'Head up: RW is open in the [[slot]]. Their center is chasing you.',
 					why: 'A turnover high on the wall is the payoff of the lock. Move it to the middle before they recover.'
 				},
 				rw: {
@@ -376,9 +376,9 @@ const play: Play = {
 						prompt: 'LW pins their winger on the left boards and the puck squirts loose near you. You...',
 						options: [
 							{
-								text: 'Pick it up and move it to RW in the slot',
+								text: 'Pick it up and move it to RW in the [[slot]]',
 								correct: true,
-								why: 'Their team is still spread out for a breakout. A quick pass to the middle is a scoring chance.'
+								why: 'Their team is still spread out for a [[breakout]]. A quick pass to the middle is a scoring chance.'
 							},
 							{
 								text: 'Shoot it from the boards right away',

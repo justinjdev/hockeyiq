@@ -42,11 +42,11 @@ const play: Play = {
 	steps: [
 		{
 			caption:
-				'C [[dump-in|dumps it in]] to the right corner. RW chases as [[f1|F1]], C stops in the high slot as [[f2|F2]], and LW drops back to line up with the two D.',
+				'C [[dump-in|dumps it in]] to the right corner. RW chases as [[f1|F1]], C stops in the [[high-slot|high slot]] as [[f2|F2]], and LW drops back to line up with the two D.',
 			phase: 'dump-in',
 			positions: {
 				lw: { x: 116, y: 22 },
-				c: { x: 122, y: 58 },
+				c: { x: 128, y: 58 },
 				rw: { x: 128, y: 76 },
 				ld: { x: 110, y: 34 },
 				rd: { x: 112, y: 58 },
@@ -56,7 +56,7 @@ const play: Play = {
 				o4: { x: 106, y: 46 },
 				o5: { x: 110, y: 12 }
 			},
-			puck: { x: 124, y: 60 },
+			puck: { x: 130, y: 60 },
 			puckCarrier: 'c',
 			arrows: [
 				{ kind: 'pass', from: 'c', to: { x: 185, y: 76 } },
@@ -128,7 +128,7 @@ const play: Play = {
 		},
 		{
 			caption:
-				'Their D gets the puck. RW ([[f1|F1]]) comes at him from the inside but does not dive in. C ([[f2|F2]]) reads from the high slot. LW, LD and RD hold a line of three at the blue line.',
+				'A couple of seconds later, their D gets the puck. RW ([[f1|F1]]) comes at him from the inside but does not dive in. C ([[f2|F2]]) reads from the [[high-slot|high slot]]. LW, LD and RD hold a line of three at the blue line.',
 			phase: 'd-retrieves',
 			positions: {
 				lw: { x: 130, y: 18 },
@@ -255,7 +255,7 @@ const play: Play = {
 					why: 'Holding the line means even a good pass only gets them to a wall of three.'
 				},
 				c: {
-					where: 'Stepping down from the high slot toward the right circle.',
+					where: 'Stepping down from the [[high-slot|high slot]] toward the right circle.',
 					read: 'Watch the D\'s eyes and stick. He is looking at his center, so jump the lane.',
 					why: 'This is what F2 waits for: a pass through the middle you can pick off.'
 				},
@@ -289,7 +289,7 @@ const play: Play = {
 				ld: {
 					decision: {
 						prompt:
-							'Their D is behind the net looking for his center in the middle. C is in the high slot. You are on the middle of the blue line. You...',
+							'Their D is behind the net looking for his center in the middle. C is in the [[high-slot|high slot]]. You are on the middle of the blue line. You...',
 						options: [
 							{
 								text: 'Hold the middle of the line and watch their center',
@@ -297,7 +297,7 @@ const play: Play = {
 								why: 'C has the first try at the pass. You are the backup if it gets through.'
 							},
 							{
-								text: 'Jump down into the slot to help C',
+								text: 'Jump down into the [[slot]] to help C',
 								correct: false,
 								why: 'That opens the middle of the line. If the pass beats you both, nobody is back.'
 							}
@@ -308,7 +308,7 @@ const play: Play = {
 		},
 		{
 			caption:
-				'C picks off the pass in the slot and shoots. RW heads for the net. The line of three never had to move.',
+				'C picks off the pass in the [[slot]] and shoots. RW heads for the net. The line of three never had to move.',
 			phase: 'outcome',
 			positions: {
 				lw: { x: 132, y: 18 },
@@ -336,8 +336,8 @@ const play: Play = {
 					why: 'If the puck comes out, you keep it in or get back.'
 				},
 				c: {
-					where: 'In the slot with the puck.',
-					read: 'Their goalie is still set for a breakout. Shoot quickly.',
+					where: 'In the [[slot]] with the puck.',
+					read: 'Their players are still set up for a [[breakout]], facing the wrong way. Shoot quickly.',
 					why: 'A turnover in the middle is the best chance the 1-1-3 creates.'
 				},
 				rw: {

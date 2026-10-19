@@ -9,7 +9,7 @@ const play: Play = {
 	system: '2-1-2',
 	strength: '5v5',
 	summary:
-		'An aggressive [[forecheck]]: two forwards go in deep, [[f1|F1]] to pressure the puck carrier hard and [[f2|F2]] to take away his first pass and grab the loose puck, while [[f3|F3]] stays high in the slot and both D hold the blue line.',
+		'An aggressive [[forecheck]]: two forwards go in deep, [[f1|F1]] to pressure the puck carrier hard and [[f2|F2]] to take away his first pass and grab the loose puck, while [[f3|F3]] stays high in the [[slot]] and both D hold the blue line.',
 	slots: [
 		{ id: 'lw', home: 'LW' },
 		{ id: 'c', home: 'C' },
@@ -26,7 +26,7 @@ const play: Play = {
 	],
 	keyConcepts: [],
 	variations:
-		'The roles go to whoever gets there first and second, not to fixed positions. In the "spread" version F1 and F2 come at the puck from opposite sides of the net; in the "stack" version F2 follows F1 down the same side and reads off his pressure. Some teams also let the D [[pinch]] hard on any rim up the wall, with F3 dropping back to cover the D\'s spot at the blue line. Coaches disagree on how high F3 should sit: around the tops of the circles is most common, but some put him at the hash marks to add pressure.',
+		'The roles go to whoever gets there first and second, not to fixed positions. In the "spread" version F1 and F2 come at the puck from opposite sides of the net; in the "stack" version F2 follows F1 down the same side and reads off his pressure. Some teams also let the D [[pinch]] hard on any [[rim]] up the wall, with F3 dropping back to cover the D\'s spot at the blue line. Coaches disagree on how high F3 should sit: around the tops of the circles is most common, but some put him at the hash marks to add pressure.',
 	sources: [
 		{
 			title: 'Explained: 2-1-2 Offensive Zone Forecheck',
@@ -47,12 +47,12 @@ const play: Play = {
 	steps: [
 		{
 			caption:
-				'C [[dump-in|dumps it in]] to the right corner. RW has the most speed and goes first ([[f1|F1]]). C follows him in deep ([[f2|F2]]), and LW heads for the high slot ([[f3|F3]]).',
+				'C [[dump-in|dumps it in]] to the right corner. RW has the most speed and goes first ([[f1|F1]]). C follows him in deep ([[f2|F2]]), and LW heads for the [[high-slot|high slot]] ([[f3|F3]]).',
 			phase: 'dump-in',
 			positions: {
 				lw: { x: 120, y: 26 },
-				c: { x: 122, y: 58 },
-				rw: { x: 130, y: 76 },
+				c: { x: 128, y: 58 },
+				rw: { x: 128, y: 76 },
 				ld: { x: 110, y: 30 },
 				rd: { x: 112, y: 56 },
 				o1: { x: 150, y: 60 },
@@ -61,7 +61,7 @@ const play: Play = {
 				o4: { x: 106, y: 46 },
 				o5: { x: 110, y: 14 }
 			},
-			puck: { x: 124, y: 60 },
+			puck: { x: 130, y: 60 },
 			puckCarrier: 'c',
 			arrows: [
 				{ kind: 'pass', from: 'c', to: { x: 185, y: 76 } },
@@ -133,7 +133,7 @@ const play: Play = {
 		},
 		{
 			caption:
-				'Their D gets to the puck in the corner. RW ([[f1|F1]]) closes on him fast with his stick on the puck. C ([[f2|F2]]) comes in low on the net side to cut off the pass behind the net. LW ([[f3|F3]]) sits in the high slot.',
+				'A couple of seconds later, their D gets to the puck in the corner. RW ([[f1|F1]]) closes on him fast with his stick on the puck. C ([[f2|F2]]) comes in low on the net side to cut off the pass behind the net. LW ([[f3|F3]]) sits in the [[high-slot|high slot]].',
 			phase: 'd-retrieves',
 			positions: {
 				lw: { x: 158, y: 44 },
@@ -162,7 +162,7 @@ const play: Play = {
 				},
 				c: {
 					where: 'Below the right faceoff dot, heading for the goal line beside the net.',
-					read: 'Watch their D and his partner behind the net. Skate into the lane between them so the [[reverse]] or [[d-to-d|D-to-D]] is gone.',
+					read: 'Watch their D and his partner behind the net. Skate into the lane between them so the [[d-to-d|D-to-D]] pass behind the net is gone.',
 					why: 'As [[f2|F2]] you take away his first pass. With that gone, RW\'s stick pressure will knock the puck loose, and you are right there to pick it up.'
 				},
 				rw: {
@@ -196,7 +196,7 @@ const play: Play = {
 					drag: {
 						target: { kind: 'ellipse', cx: 158, cy: 44, rx: 9, ry: 7 },
 						correct:
-							'Yes. The high slot, around the tops of the circles: close enough to jump a loose puck, high enough to get back.',
+							'Yes. The [[high-slot|high slot]], around the tops of the circles: close enough to jump a loose puck, high enough to get back.',
 						incorrect:
 							'[[f3|F3]] in a 2-1-2 sits in the [[high-slot|high slot]], around the tops of the circles. Lower and the middle opens behind you; up at the blue line you cannot help the two deep forwards.'
 					}
@@ -236,7 +236,7 @@ const play: Play = {
 		},
 		{
 			caption:
-				'RW pins their D on the boards. The D tries to bank a [[reverse]] behind the net to his partner, but C is sitting in that lane. LW holds the high slot; RD is ready on the wall.',
+				'RW pins their D on the boards. The D tries to [[rim]] it behind the net to his partner ([[d-to-d|D-to-D]]), but C is sitting in that lane. LW holds the [[high-slot|high slot]]; RD is ready on the wall.',
 			phase: 'first-pass',
 			positions: {
 				lw: { x: 160, y: 44 },
@@ -265,12 +265,12 @@ const play: Play = {
 				c: {
 					where: 'Low beside the net on the right side, in the lane behind the net.',
 					read: 'The puck is coming right at you along the end boards. Get your stick down and stop it.',
-					why: 'You took away the [[reverse]]. Now his pass lands on your stick instead of his partner\'s.'
+					why: 'You took away the [[d-to-d|D-to-D]] pass behind the net. Now his pass lands on your stick instead of his partner\'s.'
 				},
 				rw: {
 					where: 'On the boards in the corner, pinning their D.',
 					read: 'Keep your body on him and your stick on his. Watch where the puck goes.',
-					why: 'As long as you pin him, he cannot join the play and their breakout has one less player.'
+					why: 'As long as you pin him, he cannot join the play and their [[breakout]] has one less player.'
 				},
 				ld: {
 					where: 'Inside the blue line on the left side.',
@@ -284,7 +284,7 @@ const play: Play = {
 				}
 			},
 			reads: {
-				c: [{ at: { x: 191, y: 63 }, label: 'Reverse' }],
+				c: [{ at: { x: 191, y: 63 }, label: 'Rim behind net' }],
 				rw: [{ at: 'o1' }],
 				lw: [{ at: 'c' }],
 				rd: [{ at: 'o3' }],
@@ -335,7 +335,7 @@ const play: Play = {
 		},
 		{
 			caption:
-				'C picks off the [[reverse]] and walks to the side of the net. LW steps into the slot for a pass, and RW leaves the pin to go to the net. Their D never got the puck out.',
+				'C picks off the [[rim]] behind the net and walks to the side of the net. LW steps into the [[slot]] for a pass, and RW leaves the pin to go to the net. Their D never got the puck out.',
 			phase: 'outcome',
 			positions: {
 				lw: { x: 168, y: 42 },
@@ -364,8 +364,8 @@ const play: Play = {
 				},
 				c: {
 					where: 'At the side of the net with the puck, just off the goal line.',
-					read: 'Head up: LW is open in the slot, RW is driving the net. Their D are both down low.',
-					why: 'Their whole team is in breakout mode and facing the wrong way. A quick pass to the slot beats them.'
+					read: 'Head up: LW is open in the [[slot]], RW is driving the net. Their D are both down low.',
+					why: 'Their whole team is in [[breakout]] mode and facing the wrong way. A quick pass to the [[slot]] beats them.'
 				},
 				rw: {
 					where: 'Leaving the corner, driving to the front of the net.',
@@ -394,12 +394,12 @@ const play: Play = {
 				c: {
 					decision: {
 						prompt:
-							'You picked off the reverse beside their net. LW is in the slot and RW is driving to the net. You...',
+							'You picked off their [[rim]] behind the net. LW is in the [[slot]] and RW is driving to the net. You...',
 						options: [
 							{
-								text: 'Pass it quickly to LW in the slot',
+								text: 'Pass it quickly to LW in the [[slot]]',
 								correct: true,
-								why: 'Their team is caught in breakout mode. A fast pass to the middle is a shot before they can turn around.'
+								why: 'Their team is caught in [[breakout]] mode. A fast pass to the middle is a shot before they can turn around.'
 							},
 							{
 								text: 'Skate it back up the boards to the blue line',

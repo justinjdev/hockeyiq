@@ -16,7 +16,7 @@ const play: Play = {
 	system: '1-3-1 (neutral zone)',
 	strength: '5v5',
 	summary:
-		'A [[neutral-zone|neutral zone]] [[forecheck]] with one forward up top, a line of three across the ice (both wingers and one D), and one D deep. F1 pushes the puck to a wall, the winger on that wall jumps the first pass, and the line shifts with him. It is built to create turnovers in the neutral zone, not just to slow the other team down.',
+		'A [[neutral-zone|neutral zone]] [[forecheck]] with one forward up top, a line of three across the ice (both wingers and one D), and one D deep. [[f1|F1]] pushes the puck to a wall, the winger on that wall jumps the first pass, and the line shifts with him. It is built to create turnovers in the neutral zone, not just to slow the other team down.',
 	slots: [
 		{ id: 'lw', home: 'LW' },
 		{ id: 'c', home: 'C' },
@@ -33,7 +33,7 @@ const play: Play = {
 	],
 	keyConcepts: [],
 	variations:
-		'Who stands where in the line of three differs by team. Here the wingers take the walls and RD plays the middle; some teams put the center in the middle and send a winger up as F1, and some use the left D instead of the right. Some coaches run a passive version that just clogs the middle and waits (often called the [[trap]]); others, as shown here, have the wall winger attack the first pass to force a turnover. The more aggressive it is, the more it relies on F1 not getting beaten: if F1 overcommits, the puck goes past him and the one deep D faces an odd-man rush.',
+		'Who stands where in the line of three differs by team. Here the wingers take the walls and RD plays the middle; some teams put the center in the middle and send a winger up as [[f1|F1]], and some use the left D instead of the right. Some coaches run a passive version that just clogs the middle and waits (often called the [[trap]]); others, as shown here, have the wall winger attack the first pass to force a turnover. The more aggressive it is, the more it relies on [[f1|F1]] not getting beaten: if F1 overcommits, the puck goes past him and the one deep D faces an [[odd-man-rush|odd-man rush]].',
 	sources: [
 		{
 			title: 'Explained: 1-3-1 Neutral Zone Forecheck',
@@ -57,9 +57,9 @@ const play: Play = {
 				'Their D has the puck in their end. We set up a 1-3-1: C up top, LW, RD and RW in a line across the [[neutral-zone|neutral zone]], and LD deep near our blue line.',
 			phase: 'setup',
 			positions: {
-				lw: { x: 110, y: 10 },
+				lw: { x: 110, y: 5 },
 				c: { x: 136, y: 42 },
-				rw: { x: 110, y: 75 },
+				rw: { x: 110, y: 80 },
 				ld: { x: 82, y: 42 },
 				rd: { x: 106, y: 42 },
 				o1: { x: 164, y: 50 },
@@ -81,7 +81,7 @@ const play: Play = {
 				c: {
 					where: 'Near their blue line in the middle of the ice.',
 					read: 'Watch the D with the puck and his partner. Set up so you can cut off the [[d-to-d|D-to-D]] pass.',
-					why: 'F1 picks the side the puck goes. The other four shift based on where you send it.'
+					why: '[[f1|F1]] picks the side the puck goes. The other four shift based on where you send it.'
 				},
 				rw: {
 					where: 'On the right boards just past the red line, back to the boards and open to the puck.',
@@ -142,7 +142,7 @@ const play: Play = {
 			positions: {
 				lw: { x: 106, y: 26 },
 				c: { x: 143, y: 50 },
-				rw: { x: 114, y: 76 },
+				rw: { x: 114, y: 80 },
 				ld: { x: 84, y: 50 },
 				rd: { x: 106, y: 52 },
 				o1: { x: 151, y: 58 },
@@ -209,7 +209,7 @@ const play: Play = {
 				c: {
 					decision: {
 						prompt:
-							'Their D starts to carry up the right side of his zone. You are F1 in a 1-3-1. You...',
+							'Their D starts to carry up the right side of his zone. You are [[f1|F1]] in a 1-3-1. You...',
 						options: [
 							{
 								text: 'Angle from the inside, stick in the lane to his partner, and push him to the right wall',
@@ -219,7 +219,7 @@ const play: Play = {
 							{
 								text: 'Dive at the puck to force a turnover yourself',
 								correct: false,
-								why: 'If he slips you, five of theirs are coming at four of ours with only one D deep. F1 steers, the wall winger attacks the puck.'
+								why: 'If he slips you, five of theirs are coming at four of ours with only one D deep. [[f1|F1]] steers, the wall winger attacks the puck.'
 							},
 							{
 								text: 'Skate back to the red line and let him come',

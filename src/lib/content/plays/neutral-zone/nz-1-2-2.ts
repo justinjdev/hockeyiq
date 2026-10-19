@@ -33,7 +33,7 @@ const play: Play = {
 	],
 	keyConcepts: [],
 	variations:
-		'There are several flavors. In a "retreating" 1-2-2 everybody backs up together and gives up the first pass, which keeps it simple for rec teams. In a more aggressive version the two wingers sit higher, near their blue line, and jump the first pass up the wall. Some coaches have the strong-side winger attack the wall receiver and the D stay home; others (as shown here) have the winger take the middle away and the strong-side D step up on the wall. Who plays F1 also varies: many teams use the center, others send whichever forward is first back. Some coaches call the 1-2-2 a [[trap]]; others save that word for a more passive setup.',
+		'There are several flavors. In a "retreating" 1-2-2 everybody backs up together and gives up the first pass, which keeps it simple for rec teams. In a more aggressive version the two wingers sit higher, near their blue line, and jump the first pass up the wall. Some coaches have the strong-side winger attack the wall receiver and the D stay home; others (as shown here) have the winger take the middle away and the strong-side D step up on the wall. Who plays [[f1|F1]] also varies: many teams use the center, others send whichever forward is first back. Some coaches call the 1-2-2 a [[trap]]; others save that word for a more passive setup.',
 	sources: [
 		{
 			title: 'Explained: 1-2-2 Neutral Zone Forecheck',
@@ -76,7 +76,7 @@ const play: Play = {
 				c: {
 					where: 'Near their blue line in the middle of the ice, facing their D.',
 					read: 'Watch the D with the puck and his partner. Get between them so you can take away the [[d-to-d|D-to-D]] pass.',
-					why: 'F1 decides which side of the ice the play goes. If you sit in the middle, their D can only go one way: the way you leave open.'
+					why: '[[f1|F1]] decides which side of the ice the play goes. If you sit in the middle, their D can only go one way: the way you leave open.'
 				},
 				rw: {
 					where: 'Right side of the neutral zone, between the red line and their blue line, inside the faceoff dot.',
@@ -108,12 +108,12 @@ const play: Play = {
 				c: {
 					decision: {
 						prompt:
-							'You are F1 in a 1-2-2. Their D has the puck behind their blue line. What is your main job?',
+							'You are [[f1|F1]] in a 1-2-2. Their D has the puck behind their blue line. What is your main job?',
 						options: [
 							{
 								text: 'Take away the middle and the [[d-to-d|D-to-D]] pass so he has to go up one side',
 								correct: true,
-								why: 'F1 picks the side. Once the puck can only go one way, your four teammates know exactly where to squeeze.'
+								why: '[[f1|F1]] picks the side. Once the puck can only go one way, your four teammates know exactly where to squeeze.'
 							},
 							{
 								text: 'Charge straight at him and try to strip the puck',
@@ -208,7 +208,7 @@ const play: Play = {
 				c: { x: 122, y: 12 },
 				rw: { x: 102, y: 40 },
 				ld: { x: 92, y: 10 },
-				rd: { x: 84, y: 38 },
+				rd: { x: 80, y: 34 },
 				o1: { x: 138, y: 24 },
 				o2: { x: 148, y: 54 },
 				o3: { x: 104, y: 5 },
@@ -231,7 +231,7 @@ const play: Play = {
 				c: {
 					where: 'Chasing their winger from behind along the left boards.',
 					read: 'Watch the puck on his stick. Close fast and get your stick into his.',
-					why: 'Pressure from behind makes him rush. A rushed winger chips or dumps it instead of making a play.'
+					why: 'Pressure from behind makes him rush. A rushed winger [[chip|chips]] or dumps it instead of making a play.'
 				},
 				rw: {
 					where: 'In the middle of the neutral zone, level with LW.',
@@ -239,7 +239,7 @@ const play: Play = {
 					why: 'Their only good escape is a pass off the wall into the middle. You are the one who shuts it.'
 				},
 				ld: {
-					where: 'Stepping up along the left boards toward their winger, just past the red line.',
+					where: 'Stepping up along the left boards toward their winger, up to the red line.',
 					read: 'Read his head and the puck. If his head is down and the puck is on the wall, close the gap: body between him and the middle, stick on the puck.',
 					why: 'Stepping up while you still have the 1-2-2 behind you squeezes him against the boards before he can get speed.'
 				},
@@ -316,7 +316,7 @@ const play: Play = {
 		},
 		{
 			caption:
-				'Squeezed on the wall, their winger [[chip|chips]] the puck in deep. RD is first to it and our forwards turn back to [[support]] the [[breakout]].',
+				'Squeezed on the wall, their winger [[chip|chips]] the puck in deep. A couple of seconds later, RD is nearly there: he is first to it and our forwards turn back to [[support]] the [[breakout]].',
 			phase: 'outcome',
 			positions: {
 				lw: { x: 104, y: 16 },
@@ -346,7 +346,7 @@ const play: Play = {
 				c: {
 					where: 'Above the left circle, turning back into the middle.',
 					read: 'Look at RD going for the puck. Get low in the middle so he has a short pass.',
-					why: 'F1 becomes the low [[support]] once the puck is dumped in. That turns their dump-in into our breakout.'
+					why: '[[f1|F1]] becomes the low [[support]] once the puck is dumped in. That turns their dump-in into our breakout.'
 				},
 				rw: {
 					where: 'Middle of the ice, heading back toward our zone on the right.',
@@ -359,7 +359,7 @@ const play: Play = {
 					why: 'You were the one who forced the chip. Get back to be RD\'s [[d-to-d|D-to-D]] option.'
 				},
 				rd: {
-					where: 'Racing back into our left corner toward the puck.',
+					where: 'Racing back along the left boards toward the puck, next to our left circle.',
 					read: '[[shoulder-check|Shoulder check]] before you get there: where are their forecheckers, and where are your outlets?',
 					why: 'Because you were already the safety in the middle, you beat everyone to the dump-in with time to make a play.'
 				}

@@ -261,4 +261,9 @@ export const glossary: Term[] = [
 		term: "Delayed offside",
 		definition: "The linesman raises an arm instead of blowing the whistle when the puck enters the zone with an attacker already in it. Play goes on as long as the attackers clear the zone without touching the puck."
 	},
+	{
+		id: "odd-man-rush",
+		term: "Odd-man rush",
+		definition: "An attack where the puck-carrying team has more players than the defenders back, like a 2-on-1 or 3-on-2."
+	},
 ];

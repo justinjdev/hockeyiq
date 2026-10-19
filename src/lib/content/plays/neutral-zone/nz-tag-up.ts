@@ -7,7 +7,7 @@ const play: Play = {
 	system: 'Delayed offside, tag-up rules',
 	strength: '5v5',
 	summary:
-		'You are [[offside]] when both of your skates are over their blue line before the puck completely crosses it. In leagues with [[delayed-offside|delayed offside]] play does not stop right away: every one of us in the zone has to skate back out over the blue line ([[tag-up|tag up]]) without touching the puck, and then we can go back in. Knowing this turns a would-be whistle into a dump-and-chase.',
+		'You are [[offside]] when both of your skates are over their blue line before the puck completely crosses it. In leagues with [[delayed-offside|delayed offside]] play does not stop right away: every one of us in the zone has to get back to the blue line ([[tag-up|tag up]]; a skate touching the line counts) without touching the puck, and then we can go back in. Knowing this turns a would-be whistle into a [[dump-in]] we can still chase.',
 	slots: [
 		{ id: 'lw', home: 'LW' },
 		{ id: 'c', home: 'C' },
@@ -24,7 +24,7 @@ const play: Play = {
 	],
 	keyConcepts: [],
 	variations:
-		'Not every league plays tag-up. USA Hockey uses delayed (tag-up) offside at Youth 15 Only and Girls 16U and older, but younger levels and some adult rec leagues still blow the whistle the moment anyone is offside; ask your league. Leagues also differ on what happens if the puck is shot at the net during a delayed offside, so do not shoot on goal until the arm is down. If the linesman thinks a team went offside on purpose, the faceoff can move all the way back to that team\'s own end. Remember it is the skates that count, not your stick: one skate on the line keeps you onside.',
+		'Not every league plays tag-up. USA Hockey uses delayed (tag-up) offside at Youth 15 Only and Girls 16U and older, but younger levels and some adult rec leagues still blow the whistle the moment anyone is offside; ask your league. Leagues also differ on what happens if the puck is shot at the net during a delayed offside, so do not shoot on goal until the arm is down. If the linesman thinks a team went offside on purpose, the faceoff can move all the way back to that team\'s own end. Remember it is the skates that count, not your stick: one skate touching the line keeps you onside, and a skate touching the line is also enough to tag up. Under NHL and IIHF rules every offside player has to be back at the line at the same instant; some referees in rec leagues are looser about this, but do not count on it.',
 	sources: [
 		{
 			title: 'Playing Rules: Breaking Down the 2025-29 Rulebook Updates',
@@ -35,6 +35,16 @@ const play: Play = {
 			title: 'Offside (ice hockey)',
 			publisher: 'Wikipedia',
 			url: 'https://en.wikipedia.org/wiki/Offside_(ice_hockey)'
+		},
+		{
+			title: 'IIHF Official Rule Book, Rule 83: Off-side',
+			publisher: 'International Ice Hockey Federation',
+			url: 'https://test.rulebook.iihf.com/documents/rule-book-2026-27/83'
+		},
+		{
+			title: 'Coyotes Ruled Onside After Kings Challenge Bunting\'s Hat Trick Goal (quotes NHL Rule 83.3)',
+			publisher: 'Scouting the Refs',
+			url: 'https://scoutingtherefs.com/2021/04/31364/coyotes-goal-stands-after-kings-challenge-offside/'
 		},
 		{
 			title: 'Delayed Offside and Tag-Up: A Player\'s Practical Guide',
@@ -187,7 +197,7 @@ const play: Play = {
 							'LW dumps it in while you are still inside the zone. The linesman raises his arm. You...',
 						options: [
 							{
-								text: 'Skate straight out over the blue line without touching the puck, then come back in',
+								text: 'Skate straight back to the blue line without touching the puck, then come back in',
 								correct: true,
 								why: 'That is the [[tag-up]]. Once every one of us is out, the arm drops and we can chase the puck.'
 							},
@@ -231,7 +241,7 @@ const play: Play = {
 		},
 		{
 			caption:
-				'RW skates back out over the blue line. C and LW hold just outside. Their D goes back for the puck in the corner.',
+				'RW skates back to the blue line and gets a skate on it. C and LW hold just outside. Their D goes back for the puck in the corner.',
 			phase: 'tag-up',
 			positions: {
 				lw: { x: 120, y: 16 },
@@ -263,9 +273,9 @@ const play: Play = {
 					why: 'Reading their D now tells you which side to forecheck the moment the arm drops.'
 				},
 				rw: {
-					where: 'Skating back out over their blue line on the right side.',
-					read: 'Look down at the line. Both skates have to be back outside, on the neutral zone side.',
-					why: 'One skate still inside means you have not cleared. Get all the way out, then turn and go.'
+					where: 'Skating back to their blue line on the right side.',
+					read: 'Look down at the line. You have tagged up once a skate is touching the blue line (or you are past it into the neutral zone).',
+					why: 'If both skates are still inside the line, you have not cleared. Get a skate on the line, then turn and go.'
 				},
 				ld: {
 					where: 'Near the red line on the left side.',
@@ -288,11 +298,11 @@ const play: Play = {
 			quiz: {
 				rw: {
 					drag: {
-						target: { kind: 'ellipse', cx: 117, cy: 70, rx: 7, ry: 7 },
+						target: { kind: 'ellipse', cx: 118, cy: 70, rx: 8, ry: 7 },
 						correct:
-							'Yes. Both skates back on the neutral zone side of their blue line. You have tagged up and can go back in.',
+							'Yes. A skate touching the blue line (or back in the neutral zone) means you have tagged up and can go back in.',
 						incorrect:
-							'To tag up, both skates have to get back over their blue line into the neutral zone. Anywhere inside the zone, you are still offside.'
+							'To tag up, get back to their blue line: a skate touching the line counts. With both skates still inside the zone, you are still offside.'
 					}
 				},
 				ld: {
@@ -329,19 +339,19 @@ const play: Play = {
 				c: { x: 138, y: 46 },
 				rw: { x: 140, y: 68 },
 				ld: { x: 122, y: 30 },
-				rd: { x: 122, y: 58 },
+				rd: { x: 124, y: 72 },
 				o1: { x: 128, y: 54 },
 				o2: { x: 126, y: 24 },
 				o3: { x: 116, y: 66 },
 				o4: { x: 166, y: 38 },
-				o5: { x: 174, y: 62 }
+				o5: { x: 180, y: 70 }
 			},
-			puck: { x: 172.5, y: 60.5 },
+			puck: { x: 178.5, y: 68.5 },
 			puckCarrier: 'o5',
 			arrows: [
 				{ kind: 'skate', from: 'rw', to: { x: 164, y: 66 } },
 				{ kind: 'skate', from: 'c', to: { x: 156, y: 50 } },
-				{ kind: 'skate', from: 'rd', to: { x: 126, y: 62 } }
+				{ kind: 'skate', from: 'rd', to: { x: 128, y: 76 } }
 			],
 			roles: { rw: 'F1', c: 'F2', lw: 'F3' },
 			notes: {
@@ -352,7 +362,7 @@ const play: Play = {
 				},
 				c: {
 					where: 'Inside their blue line in the middle, heading toward the net.',
-					read: 'Watch their D with the puck. Take away his pass to his partner behind the net.',
+					read: 'Watch their D with the puck. Take away his pass to his partner in front of the net.',
 					why: 'RW pressures the puck, you take the easy outlet. Two of us working together makes him rush.'
 				},
 				rw: {
@@ -363,7 +373,7 @@ const play: Play = {
 				ld: {
 					where: 'At their blue line on the left side.',
 					read: 'Watch the puck and their forward on your side.',
-					why: 'You are the left point. Holding the line keeps the forecheck alive.'
+					why: 'You are the left [[point]]. Holding the line keeps the forecheck alive.'
 				},
 				rd: {
 					where: 'At their blue line on the right side, near the boards.',
@@ -397,7 +407,7 @@ const play: Play = {
 							{
 								text: 'Join the forwards deep in the corner',
 								correct: false,
-								why: 'Four of us deep leaves nobody back. One quick pass and it is an odd-man rush the other way.'
+								why: 'Four of us deep leaves nobody back. One quick pass and it is an [[odd-man-rush|odd-man rush]] the other way.'
 							}
 						]
 					}

@@ -4,6 +4,7 @@
 	import { cubicOut } from 'svelte/easing';
 	import type { Arrow, Play, Region, Vec } from '../content/types';
 	import Rink from '../rink/Rink.svelte';
+	import { regionCenter } from '#lib/quiz/regions.ts';
 	import { clampToRink, flipY } from '../rink/geometry';
 	import { frameAt, lerpFrame, type Frame } from './interpolate';
 
@@ -92,15 +93,6 @@
 		if (!a.via) return `M ${f.x} ${f.y} L ${t.x} ${t.y}`;
 		const v = view(a.via);
 		return `M ${f.x} ${f.y} Q ${v.x} ${v.y} ${t.x} ${t.y}`;
-	}
-
-	function regionCenter(r: Region): Vec {
-		if (r.kind === 'ellipse') return { x: r.cx, y: r.cy };
-		const n = r.points.length;
-		return {
-			x: r.points.reduce((s, p) => s + p.x, 0) / n,
-			y: r.points.reduce((s, p) => s + p.y, 0) / n
-		};
 	}
 
 	function toRink(e: PointerEvent): Vec | null {

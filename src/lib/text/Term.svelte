@@ -5,42 +5,64 @@
 
 	const uid = $props.id();
 	const entry = $derived(glossary.find((t) => t.id === id));
+	// Click toggles `pinned`, so a tap opens and a second tap closes. Hover counts for mouse
+	// pointers only (touch emulates it before the click) and focus for keyboard focus only.
 	let pinned = $state(false);
 	let hovered = $state(false);
 	let focused = $state(false);
 	const open = $derived(pinned || hovered || focused);
 
+	let root: HTMLElement | undefined = $state();
+	let pop: HTMLElement | undefined = $state();
+
 	function close() {
 		pinned = false;
 		hovered = false;
+		focused = false;
 	}
+
+	// Keep the popover inside the viewport (it opens at the term's left edge).
+	$effect(() => {
+		if (!pop) return;
+		const margin = 8;
+		pop.style.left = '0px';
+		const r = pop.getBoundingClientRect();
+		const vw = document.documentElement.clientWidth;
+		let dx = 0;
+		if (r.right > vw - margin) dx = vw - margin - r.right;
+		if (r.left + dx < margin) dx = margin - r.left;
+		pop.style.left = `${dx}px`;
+	});
 </script>
 
+<svelte:window
+	onpointerdown={(e) => {
+		if (pinned && root && !root.contains(e.target as Node)) pinned = false;
+	}}
+/>
+
 <span
+	bind:this={root}
 	class="term"
 	role="presentation"
-	onmouseenter={() => (hovered = true)}
-	onmouseleave={() => (hovered = false)}
+	onpointerenter={(e) => (hovered = e.pointerType === 'mouse')}
+	onpointerleave={() => (hovered = false)}
 >
 	<button
 		type="button"
 		aria-describedby={open && entry ? `${uid}-def` : undefined}
 		aria-expanded={open}
 		onclick={() => (pinned = !pinned)}
-		onfocus={() => (focused = true)}
-		onblur={() => {
-			focused = false;
-			pinned = false;
-		}}
+		onfocus={(e) => (focused = e.currentTarget.matches(':focus-visible'))}
+		onblur={close}
 		onkeydown={(e) => {
 			if (e.key === 'Escape' && open) {
 				e.stopPropagation();
 				close();
-				focused = false;
 			}
 		}}>{text}</button
 	>{#if open && entry}
-		<span class="pop" id="{uid}-def" role="tooltip"><b>{entry.term}</b> {entry.definition}</span>{/if}</span>
+		<span bind:this={pop} class="pop" id="{uid}-def" role="tooltip"><b>{entry.term}</b> {entry.definition}</span>{/if}</span>
 
 <style>
 	.term {

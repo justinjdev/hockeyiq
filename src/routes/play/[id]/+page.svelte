@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { onMount, untrack } from 'svelte';
+	import { untrack } from 'svelte';
+	import { page } from '$app/state';
 	import { replaceState } from '$app/navigation';
 	import { resolve } from '$app/paths';
 	import PlayCanvas from '#lib/play/PlayCanvas.svelte';
@@ -8,7 +9,7 @@
 	import NotesPanel from '#lib/play/NotesPanel.svelte';
 	import RichText from '#lib/text/RichText.svelte';
 	import { parseStudyParams } from '#lib/play/params.ts';
-	import { CATEGORY_LABELS } from '#lib/content/registry.ts';
+	import { CATEGORY_LABELS, getLesson } from '#lib/content/registry.ts';
 	import { isMastered, loadProgress, type Progress } from '#lib/quiz/progress.ts';
 	import type { PageProps } from './$types';
 
@@ -25,10 +26,15 @@
 	const current = $derived(play.steps[step]);
 	const mastered = $derived(new Set(play.slots.filter((s) => isMastered(play, s.id, progress)).map((s) => s.id)));
 
-	onMount(() => {
-		({ step, slot, flip } = parseStudyParams(play, new URLSearchParams(location.search)));
-		progress = loadProgress();
-		ready = true;
+	// Re-runs when the component is reused for a different play, so the previous play's
+	// step and slot never leak into it.
+	$effect(() => {
+		const p = play;
+		untrack(() => {
+			({ step, slot, flip } = parseStudyParams(p, new URLSearchParams(page.url.search)));
+			progress = loadProgress();
+			ready = true;
+		});
 	});
 
 	$effect(() => {
@@ -94,7 +100,7 @@
 					<h3>Key concepts</h3>
 					<ul class="concepts">
 						{#each play.keyConcepts as id}
-							<li><a href={`/learn/${id}`}>{id}</a></li>
+							<li><a href={`/learn/${id}`}>{getLesson(id)?.title ?? id}</a></li>
 						{/each}
 					</ul>
 				{/if}

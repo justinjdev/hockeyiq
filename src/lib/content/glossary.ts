@@ -246,4 +246,24 @@ export const glossary: Term[] = [
 		term: "Puck-side",
 		definition: "The side of the ice where the puck currently is, the same as the strong side."
 	},
+	{
+		id: "power-play",
+		term: "Power play",
+		definition: "When the other team has a player in the penalty box, so you play with more skaters than they do, usually 5 on 4."
+	},
+	{
+		id: "flank",
+		term: "Flank",
+		definition: "A power play spot out wide on one side of the zone, near the boards or the faceoff dot, where a player passes and shoots one-timers."
+	},
+	{
+		id: "drop-pass",
+		term: "Drop pass",
+		definition: "Leaving the puck behind you, or passing it straight back, for a teammate skating up behind you with speed."
+	},
+	{
+		id: "back-door",
+		term: "Back door",
+		definition: "The far post, on the side of the net away from the puck, where a player waits for a pass or a rebound the goalie cannot reach in time."
+	},
 ];

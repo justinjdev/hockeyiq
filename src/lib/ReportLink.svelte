@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { page } from '$app/state';
 	import { reportIssueUrl, type ReportContext } from '#lib/report.ts';
 
 	let ctx: Omit<ReportContext, 'pageUrl'> = $props();
@@ -9,7 +8,13 @@
 	$effect(() => {
 		mounted = true;
 	});
-	const href = $derived(mounted ? reportIssueUrl({ ...ctx, pageUrl: page.url.href }) : undefined);
+	// Shallow goto does not update page.url, so rebuild the query from the current context.
+	function pageUrl() {
+		const url = `${location.origin}${location.pathname}`;
+		if (ctx.slot === undefined || ctx.stepNumber === undefined) return url;
+		return `${url}?${new URLSearchParams({ as: ctx.slot, step: String(ctx.stepNumber) })}`;
+	}
+	const href = $derived(mounted ? reportIssueUrl({ ...ctx, pageUrl: pageUrl() }) : undefined);
 </script>
 
 <p class="report">

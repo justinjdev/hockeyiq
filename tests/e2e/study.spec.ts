@@ -91,6 +91,11 @@ test('report link carries the play, step and position', async ({ page }) => {
 
 	await page.locator('[data-slot="lw"]').click();
 	await expect.poll(async () => (await q()).get('title')).toContain('LW');
+
+	await page.getByRole('button', { name: 'Next step' }).click();
+	await expect
+		.poll(async () => (await q()).get('body'))
+		.toMatch(/Page: .*\/play\/bo-standard\?as=lw&step=3\n/);
 });
 
 test('lesson page report link carries the lesson id', async ({ page }) => {

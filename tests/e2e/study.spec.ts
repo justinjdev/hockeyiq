@@ -77,3 +77,24 @@ test('Back after leaving restores the study step and position', async ({ page })
 	await expect(page.getByRole('button', { name: 'RW', exact: true })).toHaveAttribute('aria-pressed', 'true');
 	await expect(page).toHaveURL(/as=rw&step=3/);
 });
+
+test('report link carries the play, step and position', async ({ page }) => {
+	await open(page, '/play/bo-standard?as=rw&step=2');
+	const link = page.getByRole('link', { name: 'Report a problem' });
+	await expect(link).toHaveAttribute('target', '_blank');
+	await expect(link).toHaveAttribute('rel', /noopener/);
+	const q = async () => new URL((await link.getAttribute('href'))!).searchParams;
+	const body = decodeURIComponent((await q()).get('body')!);
+	expect(body).toContain('bo-standard');
+	expect(body).toContain(bo.steps[1].id);
+	expect((await q()).get('title')).toContain('step 2, RW');
+
+	await page.locator('[data-slot="lw"]').click();
+	await expect.poll(async () => (await q()).get('title')).toContain('LW');
+});
+
+test('lesson page report link carries the lesson id', async ({ page }) => {
+	await open(page, '/learn/gap-control');
+	const href = await page.getByRole('link', { name: 'Report a problem' }).getAttribute('href');
+	expect(decodeURIComponent(href!)).toContain('gap-control');
+});

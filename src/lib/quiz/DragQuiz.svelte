@@ -1,6 +1,7 @@
 <script lang="ts">
 	import type { DragQuizDef, Play, Vec } from '#lib/content/types.ts';
 	import PlayCanvas from '#lib/play/PlayCanvas.svelte';
+	import ReportLink from '#lib/ReportLink.svelte';
 	import RichText from '#lib/text/RichText.svelte';
 	import { pointInRegion } from './regions.ts';
 
@@ -59,6 +60,7 @@
 				<p class="key">Green zone: where you should be.</p>
 			</div>
 			<button type="button" class="btn primary" onclick={onNext}>{last ? 'See score' : 'Next'}</button>
+			<ReportLink kind="play" id={play.id} title={play.title} stepId={play.steps[step].id} stepNumber={step + 1} {slot} />
 		{/if}
 	</aside>
 </div>

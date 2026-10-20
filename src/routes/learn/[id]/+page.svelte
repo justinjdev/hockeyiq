@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
 	import DiagramCanvas from '#lib/play/DiagramCanvas.svelte';
+	import ReportLink from '#lib/ReportLink.svelte';
 	import RichText from '#lib/text/RichText.svelte';
 	import type { PageProps } from './$types';
 
@@ -40,6 +41,8 @@
 			</ul>
 		</section>
 	{/if}
+
+	<ReportLink kind="lesson" id={lesson.id} title={lesson.title} />
 </main>
 
 <style>

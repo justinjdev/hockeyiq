@@ -7,6 +7,7 @@
 	import Scrubber from '#lib/play/Scrubber.svelte';
 	import SlotChips from '#lib/play/SlotChips.svelte';
 	import NotesPanel from '#lib/play/NotesPanel.svelte';
+	import ReportLink from '#lib/ReportLink.svelte';
 	import RichText from '#lib/text/RichText.svelte';
 	import { parseStudyParams } from '#lib/play/params.ts';
 	import { CATEGORY_LABELS } from '#lib/content/categories.ts';
@@ -71,6 +72,7 @@
 		<aside class="panel">
 			<SlotChips slots={play.slots} selected={slot} {mastered} onSelect={(s) => (slot = s)} />
 			<NotesPanel {play} step={current} {slot} />
+			<ReportLink kind="play" id={play.id} title={play.title} stepId={current.id} stepNumber={shown + 1} {slot} />
 
 			<div class="foot">
 				<h3>Summary</h3>

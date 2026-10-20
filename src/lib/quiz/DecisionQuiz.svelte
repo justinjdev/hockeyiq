@@ -3,6 +3,7 @@
 	import type { DecisionQuizDef, Play } from '#lib/content/types.ts';
 	import PlayCanvas from '#lib/play/PlayCanvas.svelte';
 	import { plainText } from '#lib/text/richText.ts';
+	import ReportLink from '#lib/ReportLink.svelte';
 	import RichText from '#lib/text/RichText.svelte';
 	import { quizKey } from './quizItems.ts';
 	import { shuffledOrder } from './shuffle.ts';
@@ -69,6 +70,7 @@
 
 		{#if chosen !== null}
 			<button type="button" class="btn primary" bind:this={nextButton} onclick={onNext}>{last ? 'See score' : 'Next'}</button>
+			<ReportLink kind="play" id={play.id} title={play.title} stepId={play.steps[step].id} stepNumber={step + 1} {slot} />
 		{/if}
 	</aside>
 </div>
